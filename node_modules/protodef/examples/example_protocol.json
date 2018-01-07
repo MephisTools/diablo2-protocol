@@ -1,0 +1,57 @@
+{
+  "container": "native",
+  "varint": "native",
+  "byte": "native",
+  "bool": "native",
+  "switch": "native",
+  "entity_look": [
+    "container",
+    [
+      {
+        "name": "entityId",
+        "type": "varint"
+      },
+      {
+        "name": "yaw",
+        "type": "i8"
+      },
+      {
+        "name": "pitch",
+        "type": "i8"
+      },
+      {
+        "name": "onGround",
+        "type": "bool"
+      }
+    ]
+  ],
+  "packet": [
+    "container",
+    [
+      {
+        "name": "name",
+        "type": [
+          "mapper",
+          {
+            "type": "varint",
+            "mappings": {
+              "22": "entity_look"
+            }
+          }
+        ]
+      },
+      {
+        "name": "params",
+        "type": [
+          "switch",
+          {
+            "compareTo": "name",
+            "fields": {
+              "entity_look": "entity_look"
+            }
+          }
+        ]
+      }
+    ]
+  ]
+}

@@ -33,6 +33,22 @@ function createClient(options) {
     })
   });
 
+
+  client.socket.write(Buffer.from("02","hex")); // This initialises a BNFTP file download conversation
+
+
+  client.on('SID_AUTH_INFO', ({mpqLocaleId}) => {
+    console.log("Downloading mpq : ",mpqLocaleId);
+    client.write('SID_AUTH_INFO',{
+      mpqLocaleId
+    })
+  });
+
+
+
+
+
+
   client.connect();
 
   return client;
