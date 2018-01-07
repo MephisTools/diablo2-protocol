@@ -26,12 +26,12 @@ class Client extends EventEmitter
 
     this.socket.on('data', (data) => {
       console.log("received that hex", data.toString("hex"));
-      const parsed = bnftpToClient.parsePacketBuffer("packet",data).data;
+      const parsed = bnftpToClient.parsePacketBuffer("FILE_TRANSFER_PROTOCOL",data);
 
       this.emit("packet",parsed);
-      console.info("received packet", name, params);
+      console.info("received packet", parsed);
 
-      this.emit(name,params);
+      
     });
     this.socket.on('end', () => {
       console.log('disconnected from server');
@@ -39,9 +39,9 @@ class Client extends EventEmitter
 
   }
 
-  write(packet_name, params) {
-    bnftpToServer.createPacketBuffer("packet",params);
-    console.info("sending packet", packet_name, params);
+  write(params) {
+    bnftpToServer.createPacketBuffer("FILE_TRANSFER_PROTOCOL",params);
+    console.info("sending packet", params);
 
     this.socket.write(buffer);
   }
