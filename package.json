@@ -1,0 +1,27 @@
+{
+  "name": "pathofbot",
+  "version": "1.0.0",
+  "description": "Bot for diablo2 implementing the packets in node.js",
+  "main": "PathOfBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louis030195/PathOfBot.git"
+  },
+  "keywords": [
+    "bot",
+    "diablo2",
+    "packets"
+  ],
+  "author": "Louis Beaumont",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/louis030195/PathOfBot/issues"
+  },
+  "homepage": "https://github.com/louis030195/PathOfBot#readme",
+  "dependencies": {
+    "protodef": "^1.6.0"
+  }
+}

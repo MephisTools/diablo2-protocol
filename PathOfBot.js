@@ -1,6 +1,3 @@
-
-
-
 const net = require('net');
 const client = net.createConnection({ port: 6112, host:'176.31.38.228' }, () => {
   //'connect' listener
