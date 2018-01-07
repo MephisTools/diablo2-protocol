@@ -2,6 +2,14 @@
 
 Bot for diablo2 implementing the packets in node.js
 
+## File organization
+
+* bot.js : the bot
+* createClient.js : do the login sequence
+* client.js : low level network implementation with node and protodef
+
+* parse_dump.js : to parse some packet dumps using protodef
+
 ## Docs
 
 ### Diablo
