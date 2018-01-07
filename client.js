@@ -25,7 +25,7 @@ class Client extends EventEmitter
     });
 
     this.socket.on('data', (data) => {
-      console.log(data.toString("hex"));
+      console.log("received that hex", data.toString("hex"));
       const parsed = protoToClient.parsePacketBuffer("packet",data).data;
 
       const {name,params} = parsed;
