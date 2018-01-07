@@ -15,5 +15,6 @@ Bot for diablo2 implementing the packets in node.js
 
 ### Libs
 
+* node basic client implementation https://nodejs.org/api/net.html#net_net_createconnection_options_connectlistener
 * protodef js implementation doc https://github.com/ProtoDef-io/node-protodef https://github.com/ProtoDef-io/node-protodef/blob/master/doc/api.md and https://github.com/ProtoDef-io/node-protodef/blob/master/example.js
 * protodef types https://github.com/ProtoDef-io/ProtoDef/blob/master/doc/datatypes.md
