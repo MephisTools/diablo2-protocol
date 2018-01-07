@@ -11,6 +11,7 @@ Bot for diablo2 implementing the packets in node.js
 * index of packets https://bnetdocs.org/packet/index
 * example of packet doc https://bnetdocs.org/packet/146
 * basic example of packet parsing in python of a diablo2 packet https://gist.github.com/rom1504/8d2824d9d89dbd8b991b102696a1321e
+* previous python implementation https://github.com/louis030195/PathOfBot/blob/56ebf61cac93f9ff65493c39c15db4aaaca6fbe5/PathOfBot.py
 
 ### Libs
 
