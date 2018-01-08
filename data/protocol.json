@@ -18,6 +18,71 @@
   },
   "toServer": {
     "types": {
+      "SID_AUTH_CHECK": [
+        "container",
+        [
+          {
+            "name": "clientToken",
+            "type": "lu32"
+          },
+          {
+            "name": "exeVersion",
+            "type": "lu32"
+          },
+          {
+            "name": "exeHash",
+            "type": "lu32"
+          },
+          {
+            "name": "numberOfCDKeys",
+            "type": "lu32"
+          },
+          {
+            "name": "spawnKey",
+            "type": "lu32"
+          },
+          {
+            "name": "cdKeys",
+            "type": ["array",
+              {
+                "count":"numberOfCDKeys",
+                "type": ["container",[
+                  {
+                    "name": "keyLength",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "keyProductValue",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "keyPublicValue",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "unknown",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "hashedKeyData",
+                    "type": ["buffer",{
+                      "count":20
+                    }]
+                  }
+                ]]
+              }
+            ]
+          },
+          {
+            "name": "exeInformation",
+            "type": "string"
+          },
+          {
+            "name": "keyOwnerName",
+            "type": "string"
+          }
+        ]
+      ],
       "SID_PING": [
         "container",
         [
@@ -91,7 +156,8 @@
                 "type": "lu8",
                 "mappings": {
                   "0x25": "SID_PING",
-                  "0x50": "SID_AUTH_INFO"
+                  "0x50": "SID_AUTH_INFO",
+                  "0x51": "SID_AUTH_CHECK"
                 }
               }
             ]
@@ -108,7 +174,8 @@
                 "compareTo": "name",
                 "fields": {
                   "SID_AUTH_INFO": "SID_AUTH_INFO",
-                  "SID_PING": "SID_PING"
+                  "SID_PING": "SID_PING",
+                  "SID_AUTH_CHECK": "SID_AUTH_CHECK"
                 }
               }
             ]
