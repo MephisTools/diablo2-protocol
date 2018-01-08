@@ -1,0 +1,110 @@
+{
+  "types": {
+    "cstring": "native",
+    "lu16": "native",
+    "lu8": "native",
+    "lu64": "native",
+    "lu32": "native",
+    "bool": "native",
+    "lf32": "native",
+    "lf64": "native",
+    "option": "native",
+    "container": "native",
+    "switch": "native",
+    "void": "native",
+    "array": "native",
+    "string": "cstring",
+    "restBuffer": "native"
+  },
+  "toServer": {
+    "types": {
+      "FILE_TRANSFER_PROTOCOL": [
+        "container",
+        [
+          {
+            "name": "requestLength",
+            "type": "lu16"
+          },
+          {
+            "name": "protocolVersion",
+            "type": "lu16"
+          },
+          {
+            "name": "platformId",
+            "type": "lu32"
+          },
+          {
+            "name": "productId",
+            "type": "lu32"
+          },
+          {
+            "name": "bannerId",
+            "type": "lu32"
+          },
+          {
+            "name": "bannerFileExtension",
+            "type": "lu32"
+          },
+          {
+            "name": "startPositonInFile",
+            "type": "lu32"
+          },
+          {
+            "name": "filetimeOfLocalFile",
+            "type": "lu64"
+          },
+          {
+            "name": "fileName",
+            "type": "string"
+          }
+        ]
+      ]
+    }
+  },
+  "toClient": {
+    "types": {
+      "FILE_TRANSFER_PROTOCOL": [
+        "container",
+        [
+          {
+            "name": "headerLength",
+            "type": "lu16"
+          },
+          {
+            "name": "type",
+            "type": "lu16"
+          },
+          {
+            "name": "fileSize",
+            "type": "lu32"
+          },
+          {
+            "name": "bannersId",
+            "type": "lu32"
+          },
+          {
+            "name": "bannerFileExtension",
+            "type": "lu32"
+          },
+          {
+            "name": "remoteFiletime",
+            "type": "lu64"
+          },
+          {
+            "name": "fileName",
+            "type": "string"
+          },
+          {
+            "name": "fileData",
+            "type": [
+              "buffer",
+              {
+                "count": "fileSize"
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}
