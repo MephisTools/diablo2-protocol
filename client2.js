@@ -1,6 +1,7 @@
 const net = require('net');
 
 const ProtoDef = require("protodef").ProtoDef;
+const Parser = require("protodef").Parser;
 const bnftp = require('./data/bnftp');
 const EventEmitter = require('events').EventEmitter;
 
@@ -10,6 +11,8 @@ bnftpToServer.addProtocol(bnftp,["toServer"]);
 
 const bnftpToClient = new ProtoDef();
 bnftpToClient.addProtocol(bnftp,["toClient"]);
+
+const parser = new Parser(bnftpToClient,"FILE_TRANSFER_PROTOCOL");
 
 class Client extends EventEmitter
 {
@@ -26,22 +29,28 @@ class Client extends EventEmitter
 
     this.socket.on('data', (data) => {
       console.log("received that hex", data.toString("hex"));
-      const parsed = bnftpToClient.parsePacketBuffer("FILE_TRANSFER_PROTOCOL",data);
 
-      this.emit("packet",parsed);
-      console.info("received packet", parsed);
+    });
+    parser.on('data', (parsed) => {
+      this.emit("FILE_TRANSFER_PROTOCOL",parsed);
+      console.info("received packet FILE_TRANSFER_PROTOCOL", parsed);
 
       
     });
+
+    this.socket.pipe(parser);
+
     this.socket.on('end', () => {
       console.log('disconnected from server');
     });
 
   }
 
-  write(params) {
-    bnftpToServer.createPacketBuffer("FILE_TRANSFER_PROTOCOL",params);
-    console.info("sending packet", params);
+  write(name,params) {
+    const buffer=bnftpToServer.createPacketBuffer("FILE_TRANSFER_PROTOCOL",params);
+    console.info("sending packet FILE_TRANSFER_PROTOCOL", params);
+
+    buffer.writeInt16LE(buffer.length,0);
 
     this.socket.write(buffer);
   }
