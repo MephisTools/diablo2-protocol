@@ -2,9 +2,13 @@ const Client = require('./client');
 
 const Client2 = require('./client2');
 
+const fs = require('fs');
+
 function createClient(options) {
   const client = new Client(options);
   const client2 = new Client2(options);
+  const key1 = fs.readFileSync('./key1');
+  const key2 = fs.readFileSync('./key2');
 
   client.on('connect', () => {
     //'connect' listener
@@ -65,6 +69,31 @@ function createClient(options) {
 
     client2.on('FILE_TRANSFER_PROTOCOL', (data) => {
       console.log(data);
+      client.write("SID_AUTH_CHECK",{
+            "clientToken": 1520917560,
+            "exeVersion": 16780544,
+            "exeHash": 1666909528,
+            "numberOfCDKeys": 2,
+            "spawnKey": 0,
+            "cdKeys": [
+              {
+                "keyLength": 26,
+                "keyProductValue": 24,
+                "keyPublicValue": 10916470,
+                "unknown": 0,
+                "hashedKeyData": key1
+              },
+              {
+                "keyLength": 26,
+                "keyProductValue": 25,
+                "keyPublicValue": 6187878,
+                "unknown": 0,
+                "hashedKeyData": key2
+              }
+            ],
+            "exeInformation": "Game.exe 10/18/11 20:48:14 65536",
+            "keyOwnerName": "sonlight"
+          });
     });
 
     });

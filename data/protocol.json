@@ -186,6 +186,18 @@
   },
   "toClient": {
     "types": {
+      "SID_AUTH_CHECK": [ "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          },
+          {
+            "name": "additionalInformation",
+            "type": "string"
+          }
+        ]
+      ],
       "SID_PING": [
         "container",
         [
@@ -239,7 +251,8 @@
                 "type": "lu8",
                 "mappings": {
                   "0x25": "SID_PING",
-                  "0x50": "SID_AUTH_INFO"
+                  "0x50": "SID_AUTH_INFO",
+                  "0x51": "SID_AUTH_CHECK"
                 }
               }
             ]
@@ -256,7 +269,8 @@
                 "compareTo": "name",
                 "fields": {
                   "SID_AUTH_INFO": "SID_AUTH_INFO",
-                  "SID_PING": "SID_PING"
+                  "SID_PING": "SID_PING",
+                  "SID_AUTH_CHECK": "SID_AUTH_CHECK"
                 }
               }
             ]
