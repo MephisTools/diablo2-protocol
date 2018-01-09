@@ -235,10 +235,6 @@
           {
             "name": "status",
             "type": "lu32"
-          },
-          {
-            "name": "additionalInformation",
-            "type": "string"
           }
         ]
       ],
