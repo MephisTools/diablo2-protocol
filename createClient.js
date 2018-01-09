@@ -7,10 +7,13 @@ const crypto = require('crypto');
 const getMpq = require('./getMpq');
 
 
-function createClient({host, port}) {
+function createClient({username, password, host, port}) {
   const client = new Client({host, port});
   const key1 = fs.readFileSync('./key1');
   const key2 = fs.readFileSync('./key2');
+  client.clientToken = 18226750;
+  client.username = username;
+  client.password = password;
 
   client.on('connect', () => {
     //'connect' listener
@@ -48,7 +51,7 @@ function createClient({host, port}) {
 
   function writeAuthCheck() {
     client.write("SID_AUTH_CHECK",{
-      "clientToken": 1520917560,
+      "clientToken": client.clientToken,
       "exeVersion": 16780544,
       "exeHash": 1666909528,
       "numberOfCDKeys": 2,
@@ -76,6 +79,7 @@ function createClient({host, port}) {
 
 
   client.on("SID_AUTH_INFO",({logonType,serverToken,udpValue,mpqFiletime,mpqFilename,valuestring}) => {
+    client.serverToken = serverToken;
     getMpq(host, port, mpqFiletime, mpqFilename, client.platformId, client.productId, writeAuthCheck);
   });
 
@@ -89,32 +93,20 @@ function createClient({host, port}) {
         unknown:0,
         filename:"bnserver-D2DV.ini"
       });
+      const bufferClientToken=new Buffer(4);
+      bufferClientToken.writeUInt32LE(client.clientToken, 0);
+      const bufferServerToken=new Buffer(4);
+      bufferServerToken.writeUInt32LE(client.serverToken, 0);
+      const hash = crypto.createHash('sha1')
+        .update(bufferClientToken)
+        .update(bufferServerToken)
+        .update(crypto.createHash('sha1').update(client.password).digest()).digest();
+
       client.write('SID_LOGONRESPONSE2',{
-        clientToken:18226750,
-        serverToken:1515471831,
-        passwordHash:new Buffer([ // TODO : use sha1 algorithm
-          209,
-          191,
-          200,
-          138,
-          138,
-          129,
-          17,
-          9,
-          224,
-          15,
-          179,
-          176,
-          152,
-          190,
-          71,
-          27,
-          95,
-          95,
-          94,
-          84
-        ]),
-        username:"urukubal"
+        clientToken:client.clientToken,
+        serverToken:client.serverToken,
+        passwordHash:hash,
+        username:client.username
       })
     }
   });
