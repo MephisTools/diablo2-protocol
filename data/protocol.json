@@ -18,6 +18,46 @@
   },
   "toServer": {
     "types": {
+      "SID_LOGONRESPONSE2": [
+        "container",
+        [
+          {
+            "name": "clientToken",
+            "type": "lu32"
+          },
+          {
+            "name": "serverToken",
+            "type": "lu32"
+          },
+          {
+            "name": "passwordHash",
+            "type": ["buffer",{
+              "count":20
+            }]
+          },
+          {
+            "name": "username",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_GETFILETIME": [
+        "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu32"
+          },
+          {
+            "name": "unknown",
+            "type": "lu32"
+          },
+          {
+            "name": "filename",
+            "type": "string"
+          }
+        ]
+      ],
       "SID_AUTH_CHECK": [
         "container",
         [
@@ -157,7 +197,9 @@
                 "mappings": {
                   "0x25": "SID_PING",
                   "0x50": "SID_AUTH_INFO",
-                  "0x51": "SID_AUTH_CHECK"
+                  "0x51": "SID_AUTH_CHECK",
+                  "0x33": "SID_GETFILETIME",
+                  "0x3A": "SID_LOGONRESPONSE2"
                 }
               }
             ]
@@ -175,7 +217,9 @@
                 "fields": {
                   "SID_AUTH_INFO": "SID_AUTH_INFO",
                   "SID_PING": "SID_PING",
-                  "SID_AUTH_CHECK": "SID_AUTH_CHECK"
+                  "SID_AUTH_CHECK": "SID_AUTH_CHECK",
+                  "SID_GETFILETIME": "SID_GETFILETIME",
+                  "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2"
                 }
               }
             ]
@@ -186,6 +230,39 @@
   },
   "toClient": {
     "types": {
+      "SID_LOGONRESPONSE2": [ "container",
+        [
+          {
+            "name": "status",
+            "type": "lu32"
+          },
+          {
+            "name": "additionalInformation",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_GETFILETIME": [ "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu32"
+          },
+          {
+            "name": "unknown",
+            "type": "lu32"
+          },
+          {
+            "name": "lastUpdateTime",
+            "type": "lu64"
+          },
+          {
+            "name": "filename",
+            "type": "string"
+          }
+        ]
+
+      ],
       "SID_AUTH_CHECK": [ "container",
         [
           {
@@ -252,7 +329,9 @@
                 "mappings": {
                   "0x25": "SID_PING",
                   "0x50": "SID_AUTH_INFO",
-                  "0x51": "SID_AUTH_CHECK"
+                  "0x51": "SID_AUTH_CHECK",
+                  "0x33": "SID_GETFILETIME",
+                  "0x3A": "SID_LOGONRESPONSE2"
                 }
               }
             ]
@@ -270,7 +349,9 @@
                 "fields": {
                   "SID_AUTH_INFO": "SID_AUTH_INFO",
                   "SID_PING": "SID_PING",
-                  "SID_AUTH_CHECK": "SID_AUTH_CHECK"
+                  "SID_AUTH_CHECK": "SID_AUTH_CHECK",
+                  "SID_GETFILETIME": "SID_GETFILETIME",
+                  "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2"
                 }
               }
             ]

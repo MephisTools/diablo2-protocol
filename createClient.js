@@ -4,9 +4,12 @@ const Client2 = require('./client2');
 
 const fs = require('fs');
 
+const crypto = require('crypto');
+
+
 function createClient(options) {
   const client = new Client(options);
-  const client2 = new Client2(options);
+  const client2 = new Client2(options); // TODO : 4 param ???
   const key1 = fs.readFileSync('./key1');
   const key2 = fs.readFileSync('./key2');
 
@@ -94,6 +97,48 @@ function createClient(options) {
             "exeInformation": "Game.exe 10/18/11 20:48:14 65536",
             "keyOwnerName": "sonlight"
           });
+
+        client.on('SID_AUTH_CHECK',({result,additionalInformation}) => {
+            if(0 == result) {
+                console.log("Correct keys");
+                client.write('SID_GETFILETIME',{
+                  requestId:2147483652,
+                  unknown:0,
+                  filename:"bnserver-D2DV.ini"
+                });
+                client.write('SID_LOGONRESPONSE2',{
+                  clientToken:18226750,
+                    serverToken:1515471831,
+                    passwordHash:[ // TODO : use sha1 algorithm
+                        209,
+                        191,
+                        200,
+                        138,
+                        138,
+                        129,
+                        17,
+                        9,
+                        224,
+                        15,
+                        179,
+                        176,
+                        152,
+                        190,
+                        71,
+                        27,
+                        95,
+                        95,
+                        94,
+                        84
+                    ],
+                    username:"urukubal"
+                })
+            }
+        });
+
+        client.on('SID_LOGONRESPONSE2',({status,additionalInformation}) => {
+          console.log(status == 0 ? "Success" : status == 1 ? "Account doesn't exist" : status == 2 ? "Invalid password" : "Account closed");
+        });
     });
 
     });

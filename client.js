@@ -13,10 +13,12 @@ protoToClient.addProtocol(protocol,["toClient"]);
 
 class Client extends EventEmitter
 {
-  constructor({host,port}) {
+  constructor({host,port,username,password}) {
     super();
     this.host = host;
     this.port = port;
+    this.username = username;
+    this.password = password;
   }
 
   connect() {
