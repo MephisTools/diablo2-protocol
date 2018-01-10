@@ -2,7 +2,7 @@ const Client = require('./client');
 
 const fs = require('fs');
 
-const crypto = require('crypto');
+const getHash = require('./getHash');
 
 const getMpq = require('./getMpq');
 
@@ -93,22 +93,18 @@ function createClient({username, password, host, port}) {
         unknown:0,
         filename:"bnserver-D2DV.ini"
       });
-      const bufferClientToken=new Buffer(4);
-      bufferClientToken.writeUInt32LE(client.clientToken, 0);
-      const bufferServerToken=new Buffer(4);
-      bufferServerToken.writeUInt32LE(client.serverToken, 0);
-      const hash = crypto.createHash('sha1')
-        .update(bufferClientToken)
-        .update(bufferServerToken)
-        .update(crypto.createHash('sha1').update(client.password).digest()).digest();
+    }
+  });
 
+  client.on('SID_GETFILETIME', () => {
+    getHash(client.clientToken, client.serverToken, client.password,(err,hash) => {
       client.write('SID_LOGONRESPONSE2',{
         clientToken:client.clientToken,
         serverToken:client.serverToken,
-        passwordHash:hash,
+        passwordHash: hash,
         username:client.username
-      })
-    }
+      });
+    })
   });
 
 

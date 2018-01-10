@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/louis030195/PathOfBot#readme",
   "dependencies": {
+    "bridge.net": "^1.0.0",
     "protodef": "^1.6.0"
   }
 }
