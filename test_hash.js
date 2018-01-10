@@ -28,7 +28,5 @@ const expectedPasswordHash = new Buffer([
 ]);
 
 
-const hash = getHash(clientToken,serverToken,passwd,(err,hash) => {
-  console.log(hash.toString("hex"));
-});
-console.log(expectedPasswordHash.toString("hex"))
+console.log(getHash(clientToken,serverToken,passwd).toString("hex"));
+console.log(expectedPasswordHash.toString("hex"));

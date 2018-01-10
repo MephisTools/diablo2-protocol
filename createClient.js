@@ -97,14 +97,12 @@ function createClient({username, password, host, port}) {
   });
 
   client.on('SID_GETFILETIME', () => {
-    getHash(client.clientToken, client.serverToken, client.password,(err,hash) => {
-      client.write('SID_LOGONRESPONSE2',{
-        clientToken:client.clientToken,
-        serverToken:client.serverToken,
-        passwordHash: hash,
-        username:client.username
-      });
-    })
+    client.write('SID_LOGONRESPONSE2',{
+      clientToken:client.clientToken,
+      serverToken:client.serverToken,
+      passwordHash: getHash(client.clientToken, client.serverToken, client.password),
+      username:client.username
+    });
   });
 
 
@@ -117,12 +115,10 @@ function createClient({username, password, host, port}) {
 
   client.on('SID_QUERYREALMS2', data => {
     console.log(data);
-    getHash(Buffer.from("01 00 00 00", "hex"), client.serverToken, "password",(err,hash) => {
-        client.write('SID_LOGONREALMEX', {
-            clientToken: Buffer.from("01 00 00 00", "hex"),
-            hashedRealmPassword:hash,
-            realmTitle: data.realmTitle
-        });
+    client.write('SID_LOGONREALMEX', {
+        clientToken: client.clientToken,
+        hashedRealmPassword:getHash(client.clientToken, client.serverToken, client.password),
+        realmTitle: data.realms[0].realmTitle
     });
   });
 
