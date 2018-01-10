@@ -263,13 +263,16 @@
         {
           "name": "MCPChunk1",
           "type": ["array", {
-            "count": "2",
+            "count": 2,
             "type": "lu32"
           }]
         },
         {
           "name": "IP",
-          "type": "lu32"
+          "type": ["array", {
+            "count": 4,
+            "type": "lu8"
+          }]
         },
         {
           "name": "port",
@@ -278,7 +281,7 @@
         {
           "name": "MCPChunk2",
           "type": ["array", {
-            "count": "12",
+            "count": 12,
             "type": "lu32"
           }]
         },
