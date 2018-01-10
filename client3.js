@@ -51,7 +51,7 @@ class Client extends EventEmitter
         });
 
         console.info("sending packet", packet_name, params);
-        buffer.writeInt32LE(buffer.length,2);
+        buffer.writeInt16LE(buffer.length,2);
 
         this.socket.write(buffer);
     }
