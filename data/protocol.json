@@ -18,6 +18,7 @@
   },
   "toServer": {
     "types": {
+      "SID_QUERYREALMS2": ["container",[]],
       "SID_LOGONRESPONSE2": [
         "container",
         [
@@ -199,7 +200,8 @@
                   "0x50": "SID_AUTH_INFO",
                   "0x51": "SID_AUTH_CHECK",
                   "0x33": "SID_GETFILETIME",
-                  "0x3A": "SID_LOGONRESPONSE2"
+                  "0x3A": "SID_LOGONRESPONSE2",
+                  "0x40": "SID_QUERYREALMS2"
                 }
               }
             ]
@@ -219,7 +221,8 @@
                   "SID_PING": "SID_PING",
                   "SID_AUTH_CHECK": "SID_AUTH_CHECK",
                   "SID_GETFILETIME": "SID_GETFILETIME",
-                  "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2"
+                  "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2",
+                  "SID_QUERYREALMS2": "SID_QUERYREALMS2"
                 }
               }
             ]
@@ -230,6 +233,32 @@
   },
   "toClient": {
     "types": {
+      "SID_QUERYREALMS2": ["container",[
+        {
+          "name": "unknown2",
+          "type": "lu32"
+        },
+        {
+          "name": "realms",
+          "type": ["array", {
+            "countType": "lu32",
+            "type": ["container",[
+              {
+                "name": "unknown",
+                "type": "lu32"
+              },
+              {
+                "name": "realmTitle",
+                "type": "string"
+              },
+              {
+                "name": "realmDescription",
+                "type": "string"
+              }
+            ]]
+          }]
+        }
+      ]],
       "SID_LOGONRESPONSE2": [ "container",
         [
           {
@@ -327,7 +356,8 @@
                   "0x50": "SID_AUTH_INFO",
                   "0x51": "SID_AUTH_CHECK",
                   "0x33": "SID_GETFILETIME",
-                  "0x3A": "SID_LOGONRESPONSE2"
+                  "0x3A": "SID_LOGONRESPONSE2",
+                  "0x40": "SID_QUERYREALMS2"
                 }
               }
             ]
@@ -347,7 +377,8 @@
                   "SID_PING": "SID_PING",
                   "SID_AUTH_CHECK": "SID_AUTH_CHECK",
                   "SID_GETFILETIME": "SID_GETFILETIME",
-                  "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2"
+                  "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2",
+                  "SID_QUERYREALMS2": "SID_QUERYREALMS2"
                 }
               }
             ]

@@ -108,8 +108,15 @@ function createClient({username, password, host, port}) {
   });
 
 
-  client.on('SID_LOGONRESPONSE2',({status,additionalInformation}) => {
+  client.on('SID_LOGONRESPONSE2',({status}) => {
     console.log(status === 0 ? "Success" : status === 1 ? "Account doesn't exist" : status === 2 ? "Invalid password" : "Account closed");
+    if(status === 0) {
+      client.write('SID_QUERYREALMS2',{});
+    }
+  });
+
+  client.on('SID_QUERYREALMS2', data => {
+    console.log(data);
   });
 
 
