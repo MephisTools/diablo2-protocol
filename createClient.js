@@ -113,12 +113,11 @@ function createClient({username, password, host, port}) {
     }
   });
 
-  client.on('SID_QUERYREALMS2', data => {
-    console.log(data);
+  client.on('SID_QUERYREALMS2', ({realms}) => {
     client.write('SID_LOGONREALMEX', {
         clientToken: client.clientToken,
         hashedRealmPassword:getHash(client.clientToken, client.serverToken, client.password),
-        realmTitle: data.realms[0].realmTitle
+        realmTitle: realms[0].realmTitle
     });
   });
 
