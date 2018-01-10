@@ -6,6 +6,9 @@ const getHash = require('./getHash');
 
 const getMpq = require('./getMpq');
 
+const Client3 = require('./client3');
+
+
 
 function createClient({username, password, host, port}) {
   const client = new Client({host, port});
@@ -121,9 +124,30 @@ function createClient({username, password, host, port}) {
     });
   });
 
-  client.on('SID_LOGONREALMEX', data =>{
-    console.log(data);
+  client.on('SID_LOGONREALMEX', ({MCPCookie,MCPStatus,MCPChunk1,IP,port,MCPChunk2,battleNetUniqueName}) =>{
+    console.log(MCPCookie,MCPStatus,MCPChunk1,IP,port,MCPChunk2,battleNetUniqueName);
+    host = IP[0]+"."+IP[1]+"."+IP[2]+"."+IP[3];
+    const client3 = new Client3({host, port});
+
+    client3.connect();
+
   });
+
+  client3.on('connect', () => {
+      //'connect' listener
+      console.log('connected to MCP server!');
+
+      client3.socket.write(Buffer.from("01","hex")); // This Initialise conversation
+
+      client3.write('MCP_STARTUP', {
+          MCPCookie:client.MCPCookie,
+          MCPStatus:client.MCPStatus,
+          MCPChunk1:client.MCPChunk1,
+          MCPChunk2:client.MCPChunk2,
+          battleNetUniqueName:client.battleNetUniqueName
+      });
+  });
+
 
 
   client.connect();
