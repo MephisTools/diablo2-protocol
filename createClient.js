@@ -117,6 +117,17 @@ function createClient({username, password, host, port}) {
 
   client.on('SID_QUERYREALMS2', data => {
     console.log(data);
+    getHash(Buffer.from("01 00 00 00", "hex"), client.serverToken, "password",(err,hash) => {
+        client.write('SID_LOGONREALMEX', {
+            clientToken: Buffer.from("01 00 00 00", "hex"),
+            hashedRealmPassword:hash,
+            realmTitle: data.realmTitle
+        });
+    });
+  });
+
+  client.on('SID_LOGONREALMEX', data =>{
+    console.log(data);
   });
 
 

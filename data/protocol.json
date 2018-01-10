@@ -18,6 +18,22 @@
   },
   "toServer": {
     "types": {
+      "SID_LOGONREALMEX": ["container",[
+        {
+          "name": "clientToken",
+          "type": "lu32"
+        },
+        {
+          "name": "hashedRealmPassword",
+          "type": ["buffer",{
+            "count":20
+          }]
+        },
+        {
+          "name": "realmTitle",
+          "type": "string"
+        }
+      ]],
       "SID_QUERYREALMS2": ["container",[]],
       "SID_LOGONRESPONSE2": [
         "container",
@@ -201,7 +217,8 @@
                   "0x51": "SID_AUTH_CHECK",
                   "0x33": "SID_GETFILETIME",
                   "0x3A": "SID_LOGONRESPONSE2",
-                  "0x40": "SID_QUERYREALMS2"
+                  "0x40": "SID_QUERYREALMS2",
+                  "0x3E": "SID_LOGONREALMEX"
                 }
               }
             ]
@@ -222,7 +239,8 @@
                   "SID_AUTH_CHECK": "SID_AUTH_CHECK",
                   "SID_GETFILETIME": "SID_GETFILETIME",
                   "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2",
-                  "SID_QUERYREALMS2": "SID_QUERYREALMS2"
+                  "SID_QUERYREALMS2": "SID_QUERYREALMS2",
+                  "SID_LOGONREALMEX": "SID_LOGONREALMEX"
                 }
               }
             ]
@@ -233,6 +251,44 @@
   },
   "toClient": {
     "types": {
+      "SID_LOGONREALMEX": ["container",[
+        {
+          "name": "MCPCookie",
+          "type": "lu32"
+        },
+        {
+          "name": "MCPStatus",
+          "type": "lu32"
+        },
+        {
+          "name": "MCPChunk1",
+          "type": ["array", {
+            "count": "2",
+            "type": "lu32"
+          }]
+        },
+        {
+          "name": "IP",
+          "type": "lu32"
+        },
+        {
+          "name": "port",
+          "type": "lu32"
+        },
+        {
+          "name": "MCPChunk2",
+          "type": ["array", {
+            "count": "12",
+            "type": "lu32"
+          }]
+        },
+        {
+          "name": "battleNetUniqueName",
+          "type": "string"
+        }
+
+      ]
+      ],
       "SID_QUERYREALMS2": ["container",[
         {
           "name": "unknown2",
@@ -357,7 +413,8 @@
                   "0x51": "SID_AUTH_CHECK",
                   "0x33": "SID_GETFILETIME",
                   "0x3A": "SID_LOGONRESPONSE2",
-                  "0x40": "SID_QUERYREALMS2"
+                  "0x40": "SID_QUERYREALMS2",
+                  "0x3E": "SID_LOGONREALMEX"
                 }
               }
             ]
@@ -378,7 +435,8 @@
                   "SID_AUTH_CHECK": "SID_AUTH_CHECK",
                   "SID_GETFILETIME": "SID_GETFILETIME",
                   "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2",
-                  "SID_QUERYREALMS2": "SID_QUERYREALMS2"
+                  "SID_QUERYREALMS2": "SID_QUERYREALMS2",
+                  "SID_LOGONREALMEX": "SID_LOGONREALMEX"
                 }
               }
             ]
