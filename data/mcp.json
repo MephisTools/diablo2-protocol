@@ -18,6 +18,52 @@
   },
   "toServer": {
     "types": {
+      "SID_DISPLAYAD": ["container",[
+        {
+          "name": "platformId",
+          "type": "lu32"
+        },
+        {
+          "name": "productId",
+          "type": "lu32"
+        },
+        {
+          "name": "adId",
+          "type": "lu32"
+        },
+        {
+          "name": "filename",
+          "type": "string"
+        },
+        {
+          "name": "URL",
+          "type": "string"
+        }
+      ]],
+      "SID_CHECKAD": ["container",[
+        {
+          "name": "platformId",
+          "type": "lu32"
+        },
+        {
+          "name": "productId",
+          "type": "lu32"
+        },
+        {
+          "name": "idOfLastDisplayedBanner",
+          "type": "lu32"
+        },
+        {
+          "name": "currentTime",
+          "type": "lu32"
+        }
+      ]],
+      "SID_NEWS_INFO": ["container",[
+        {
+          "name": "newsTimestamp",
+          "type": "lu32"
+        }
+      ]],
       "MCP_STARTUP": [
         "container",
         [
@@ -89,7 +135,10 @@
                 "mappings": {
                   "0x01": "MCP_STARTUP",
                   "0x07": "MCP_CHARLOGON",
-                  "0x19": "MCP_CHARLIST2"
+                  "0x15": "SID_CHECKAD",
+                  "0x19": "MCP_CHARLIST2",
+                  "0x21": "SID_DISPLAYAD",
+                  "0x46": "SID_NEWS_INFO"
                 }
               }
             ]
@@ -103,7 +152,10 @@
                 "fields": {
                   "MCP_STARTUP": "MCP_STARTUP",
                   "MCP_CHARLOGON": "MCP_CHARLOGON",
-                  "MCP_CHARLIST2": "MCP_CHARLIST2"
+                  "MCP_CHARLIST2": "MCP_CHARLIST2",
+                  "SID_NEWS_INFO": "SID_NEWS_INFO",
+                  "SID_CHECKAD": "SID_CHECKAD",
+                  "SID_DISPLAYAD": "SID_DISPLAYAD"
                 }
               }
             ]
@@ -114,6 +166,67 @@
   },
   "toClient": {
     "types": {
+      "SID_CHECKAD": ["container",[
+        {
+          "name": "adId",
+          "type": "lu32"
+        },
+        {
+          "name": "fileExtension",
+          "type": "lu32"
+        },
+        {
+          "name": "localFileTime",
+          "type": "lu64"
+        },
+        {
+          "name": "filename",
+          "type": "string"
+        },
+        {
+          "name": "linkURL",
+          "type": "string"
+        }
+      ]],
+      "SID_NEWS_INFO": ["container",[
+        {
+          "name": "numberOfEntries",
+          "type": "lu8"
+        },
+        {
+          "name": "lastLogonTimestamp",
+          "type": "lu32"
+        },
+        {
+          "name": "oldestNewsTimestamp",
+          "type": "lu32"
+        },
+        {
+          "name": "newestNewsTimestamp",
+          "type": "lu32"
+        },
+        {
+          "name": "entries",
+          "type": ["array",
+            {
+              "countType": "numberOfEntries",
+              "type": [
+                "container",
+                [
+                  {
+                    "name": "timestamp",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "news",
+                    "type": "string"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]],
       "MCP_CHARLOGON": [
         "container",
         [
@@ -181,7 +294,9 @@
                 "mappings": {
                   "0x01": "MCP_STARTUP",
                   "0x07": "MCP_CHARLOGON",
-                  "0x19": "MCP_CHARLIST2"
+                  "0x15": "SID_CHECKAD",
+                  "0x19": "MCP_CHARLIST2",
+                  "0x46": "SID_NEWS_INFO"
                 }
               }
             ]
@@ -195,7 +310,9 @@
                 "fields": {
                   "MCP_STARTUP": "MCP_STARTUP",
                   "MCP_CHARLOGON": "MCP_CHARLOGON",
-                  "MCP_CHARLIST2": "MCP_CHARLIST2"
+                  "MCP_CHARLIST2": "MCP_CHARLIST2",
+                  "SID_NEWS_INFO": "SID_NEWS_INFO",
+                  "SID_CHECKAD": "SID_CHECKAD"
                 }
               }
             ]
