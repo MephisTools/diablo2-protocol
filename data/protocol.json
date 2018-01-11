@@ -18,6 +18,63 @@
   },
   "toServer": {
     "types": {
+      "SID_LEAVECHAT": ["container",[]],
+      "SID_NOTIFYJOIN": ["container", [
+        {
+          "name": "productId",
+          "type": "lu32"
+        },
+        {
+          "name": "productVersion",
+          "type": "lu32"
+        },
+        {
+          "name": "gameName",
+          "type": "string"
+        },
+        {
+          "name": "gamePassword",
+          "type": "string"
+        }
+      ]],
+      "SID_STARTADVEX3": ["container", [
+        {
+          "name": "gameStats",
+          "type": "lu32"
+        },
+        {
+          "name": "gameUptimeInSeconds",
+          "type": "lu32"
+        },
+        {
+          "name": "gameType",
+          "type": "lu16"
+        },
+        {
+          "name": "subGameType",
+          "type": "lu16"
+        },
+        {
+          "name": "providerVersionConstant",
+          "type": "lu32"
+        },
+        {
+          "name": "ladderType",
+          "type": "lu32"
+        },
+        {
+          "name": "gameName",
+          "type": "string"
+        },
+        {
+          "name": "gamePassword",
+          "type": "string"
+        },
+        {
+          "name": "gameStatstring",
+          "type": "string"
+        }
+      ]],
       "SID_ENTERCHAT": ["container", [
         {
           "name": "username",
@@ -228,6 +285,9 @@
               {
                 "type": "lu8",
                 "mappings": {
+                  "0x10": "SID_LEAVECHAT",
+                  "0x1C": "SID_STARTADVEX3",
+                  "0x22": "SID_NOTIFYJOIN",
                   "0x25": "SID_PING",
                   "0x50": "SID_AUTH_INFO",
                   "0x51": "SID_AUTH_CHECK",
@@ -260,7 +320,10 @@
                   "SID_QUERYREALMS2": "SID_QUERYREALMS2",
                   "SID_LOGONREALMEX": "SID_LOGONREALMEX",
                   "SID_GETCHANNELLIST": "SID_GETCHANNELLIST",
-                  "SID_ENTERCHAT": "SID_ENTERCHAT"
+                  "SID_ENTERCHAT": "SID_ENTERCHAT",
+                  "SID_STARTADVEX3": "SID_STARTADVEX3",
+                  "SID_NOTIFYJOIN": "SID_NOTIFYJOIN",
+                  "SID_LEAVECHAT": "SID_LEAVECHAT"
                 }
               }
             ]

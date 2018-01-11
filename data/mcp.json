@@ -18,6 +18,55 @@
   },
   "toServer": {
     "types": {
+      "MCP_JOINGAME": ["container", [
+        {
+          "name": "requestId",
+          "type": "lu16"
+        },
+        {
+          "name": "gameName",
+          "type": "string"
+        },
+        {
+          "name": "gamePassword",
+          "type": "string"
+        }
+      ]],
+      "MCP_CREATEGAME": ["container", [
+        {
+          "name": "requestId",
+          "type": "lu16"
+        },
+        {
+          "name": "difficulty",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "levelRestrictionDifference",
+          "type": "lu8"
+        },
+        {
+          "name": "maximumPlayers",
+          "type": "lu8"
+        },
+        {
+          "name": "gameName",
+          "type": "string"
+        },
+        {
+          "name": "gamePassword",
+          "type": "string"
+        },
+        {
+          "name": "gameDescription",
+          "type": "string"
+        }
+      ]],
+      "MCP_MOTD": ["container", []],
       "SID_DISPLAYAD": ["container",[
         {
           "name": "platformId",
@@ -134,7 +183,10 @@
                 "type": "lu8",
                 "mappings": {
                   "0x01": "MCP_STARTUP",
+                  "0x03": "MCP_CREATEGAME",
+                  "0x04": "MCP_JOINGAME",
                   "0x07": "MCP_CHARLOGON",
+                  "0x12": "MCP_MOTD",
                   "0x15": "SID_CHECKAD",
                   "0x19": "MCP_CHARLIST2",
                   "0x21": "SID_DISPLAYAD",
@@ -155,7 +207,10 @@
                   "MCP_CHARLIST2": "MCP_CHARLIST2",
                   "SID_NEWS_INFO": "SID_NEWS_INFO",
                   "SID_CHECKAD": "SID_CHECKAD",
-                  "SID_DISPLAYAD": "SID_DISPLAYAD"
+                  "SID_DISPLAYAD": "SID_DISPLAYAD",
+                  "MCP_MOTD": "MCP_MOTD",
+                  "MCP_CREATEGAME": "MCP_CREATEGAME",
+                  "MCP_JOINGAME": "MCP_JOINGAME"
                 }
               }
             ]
@@ -166,6 +221,60 @@
   },
   "toClient": {
     "types": {
+      "MCP_JOINGAME": ["container",[
+        {
+          "name": "requestId",
+          "type": "lu16"
+        },
+        {
+          "name": "gameToken",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "IPOfD2GSServer",
+          "type": "lu32"
+        },
+        {
+          "name": "gameHash",
+          "type": "lu32"
+        },
+        {
+          "name": "result",
+          "type": "lu32"
+        }
+      ]],
+      "MCP_CREATEGAME": ["container", [
+        {
+          "name": "requestId",
+          "type": "lu16"
+        },
+        {
+          "name": "gameToken",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "result",
+          "type": "lu32"
+        }
+      ]],
+      "MCP_MOTD": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "motd",
+          "type": "string"
+        }
+      ]],
       "SID_CHECKAD": ["container",[
         {
           "name": "adId",
@@ -293,7 +402,10 @@
                 "type": "lu8",
                 "mappings": {
                   "0x01": "MCP_STARTUP",
+                  "0x03": "MCP_CREATEGAME",
+                  "0x04": "MCP_JOINGAME",
                   "0x07": "MCP_CHARLOGON",
+                  "0x12": "MCP_MOTD",
                   "0x15": "SID_CHECKAD",
                   "0x19": "MCP_CHARLIST2",
                   "0x46": "SID_NEWS_INFO"
@@ -312,7 +424,10 @@
                   "MCP_CHARLOGON": "MCP_CHARLOGON",
                   "MCP_CHARLIST2": "MCP_CHARLIST2",
                   "SID_NEWS_INFO": "SID_NEWS_INFO",
-                  "SID_CHECKAD": "SID_CHECKAD"
+                  "SID_CHECKAD": "SID_CHECKAD",
+                  "MCP_MOTD": "MCP_MOTD",
+                  "MCP_CREATEGAME": "MCP_CREATEGAME",
+                  "MCP_JOINGAME": "MCP_JOINGAME"
                 }
               }
             ]
