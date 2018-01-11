@@ -271,7 +271,21 @@
   },
   "toClient": {
     "types": {
-      "SID_GETCHANNELLIST" :["container",[
+      "SID_ENTERCHAT": ["container",[
+        {
+          "name": "uniqueName",
+          "type": "string"
+        },
+        {
+          "name": "statstring",
+          "type": "string"
+        },
+        {
+          "name": "accountName",
+          "type": "string"
+        }
+      ]],
+      "SID_GETCHANNELLIST": ["container",[
         {
           "name": "channelNames",
           "type": ["array", {
@@ -451,7 +465,8 @@
                   "0x3A": "SID_LOGONRESPONSE2",
                   "0x40": "SID_QUERYREALMS2",
                   "0x3E": "SID_LOGONREALMEX",
-                  "0x0B": "SID_GETCHANNELLIST"
+                  "0x0B": "SID_GETCHANNELLIST",
+                  "0x0A": "SID_ENTERCHAT"
                 }
               }
             ]
@@ -474,7 +489,8 @@
                   "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2",
                   "SID_QUERYREALMS2": "SID_QUERYREALMS2",
                   "SID_LOGONREALMEX": "SID_LOGONREALMEX",
-                  "SID_GETCHANNELLIST": "SID_GETCHANNELLIST"
+                  "SID_GETCHANNELLIST": "SID_GETCHANNELLIST",
+                  "SID_ENTERCHAT": "SID_ENTERCHAT"
                 }
               }
             ]
