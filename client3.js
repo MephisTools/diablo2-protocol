@@ -27,7 +27,7 @@ class Client extends EventEmitter
 
         this.socket.on('data', (data) => {
             console.log("received that hex", data.toString("hex"));
-            const parsed = protoToClient.parsePacketBuffer("packet",data).data;
+            const parsed = mcpToClient.parsePacketBuffer("packet",data).data;
 
             const {name,params} = parsed;
             console.info("received packet", name, params);
@@ -49,7 +49,7 @@ class Client extends EventEmitter
         });
 
         console.info("sending packet", name, params);
-        buffer.writeInt16LE(buffer.length,2);
+        buffer.writeInt16LE(buffer.length,0);
 
         this.socket.write(buffer);
     }

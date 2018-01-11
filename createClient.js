@@ -145,6 +145,24 @@ function createClient({username, password, host, port}) {
       });
     });
 
+    client3.on('MCP_STARTUP', ({result}) => {
+      if(result === 0x02 || (result>= 0x0A && result <= 0x0D)) {
+        console.log("Realm Unavailable: No Battle.net connection detected.");
+      }
+      else if(result === 0x7E) {
+        console.log("CDKey banned from realm play.");
+      }
+      else if(result === 0x7F) {
+        console.log("Temporary IP ban \"Your connection has been temporarily restricted from this realm. Please try to log in at another time.\"");
+      }
+      else {
+        console.log("Success!");
+        client3.write('MCP_CHARLIST2', {
+          numberOfCharacterToList: 8
+        });
+      }
+    });
+
 
     client3.connect();
   });

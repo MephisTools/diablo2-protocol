@@ -123,6 +123,48 @@
           }
         ]
       ],
+      "MCP_STARTUP": [
+        "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "MCP_CHARLIST2": [
+        "container",
+        [
+          {
+            "name": "numbersOfCharactersRequested",
+            "type": "lu16"
+          },
+          {
+            "name": "numbersOfCharactersInAccount",
+            "type": "lu32"
+          },
+          {
+            "name": "characters",
+            "type": ["array",{
+              "countType": "lu16",
+              "type": ["container",[
+                {
+                  "name": "expirationDate",
+                  "type": "lu32"
+                },
+                {
+                  "name": "characterName",
+                  "type": "string"
+                },
+                {
+                  "name": "characterStatstring",
+                  "type": "string"
+                }
+              ]]
+            }]
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -137,7 +179,9 @@
               {
                 "type": "lu8",
                 "mappings": {
-                  "0x07": "MCP_CHARLOGON"
+                  "0x01": "MCP_STARTUP",
+                  "0x07": "MCP_CHARLOGON",
+                  "0x19": "MCP_CHARLIST2"
                 }
               }
             ]
@@ -149,7 +193,9 @@
               {
                 "compareTo": "name",
                 "fields": {
-                  "MCP_CHARLOGON": "MCP_CHARLOGON"
+                  "MCP_STARTUP": "MCP_STARTUP",
+                  "MCP_CHARLOGON": "MCP_CHARLOGON",
+                  "MCP_CHARLIST2": "MCP_CHARLIST2"
                 }
               }
             ]
