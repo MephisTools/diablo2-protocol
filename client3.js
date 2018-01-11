@@ -35,8 +35,6 @@ class Client extends EventEmitter
             this.emit(name,params);
         });
 
-        this.socket.pipe(parser);
-
         this.socket.on('end', () => {
             console.log('disconnected from mcp server');
         });
@@ -44,13 +42,13 @@ class Client extends EventEmitter
     }
 
     write(name,params) {
-        const buffer = protoToServer.createPacketBuffer("packet",{
+        const buffer = mcpToServer.createPacketBuffer("packet",{
             size: 0,
-            name: packet_name,
+            name: name,
             params
         });
 
-        console.info("sending packet", packet_name, params);
+        console.info("sending packet", name, params);
         buffer.writeInt16LE(buffer.length,2);
 
         this.socket.write(buffer);

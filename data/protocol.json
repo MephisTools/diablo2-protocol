@@ -276,7 +276,11 @@
         },
         {
           "name": "port",
-          "type": "lu32"
+          "type": "u16"
+        },
+        {
+          "name": "zero",
+          "type": "u16"
         },
         {
           "name": "MCPChunk2",

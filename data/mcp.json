@@ -18,40 +18,61 @@
   },
   "toServer": {
     "types": {
-      "MCP_STARTUP": ["container",[
-        {
-          "name": "MCPCookie",
-          "type": "lu32"
-        },
-        {
-          "name": "MCPStatus",
-          "type": "lu32"
-        },
-        {
-          "name": "MCPChunk1",
-          "type": ["array", {
-            "count": 2,
+      "MCP_STARTUP": [
+        "container",
+        [
+          {
+            "name": "MCPCookie",
             "type": "lu32"
-          }]
-        },
-        {
-          "name": "MCPChunk2",
-          "type": ["array", {
-            "count": 12,
+          },
+          {
+            "name": "MCPStatus",
             "type": "lu32"
-          }]
-        },
-        {
-          "name": "battleNetUniqueName",
-          "type": "string"
-        }
-        ]],
-      "MCP_CHARLIST2": ["container", [
-        {
-          "name": "numberOfCharacterToList",
-          "type": "lu32"
-        }
-      ]],
+          },
+          {
+            "name": "MCPChunk1",
+            "type": [
+              "array",
+              {
+                "count": 2,
+                "type": "lu32"
+              }
+            ]
+          },
+          {
+            "name": "MCPChunk2",
+            "type": [
+              "array",
+              {
+                "count": 12,
+                "type": "lu32"
+              }
+            ]
+          },
+          {
+            "name": "battleNetUniqueName",
+            "type": "string"
+          }
+        ]
+      ],
+      "MCP_CHARLIST2": [
+        "container",
+        [
+          {
+            "name": "numberOfCharacterToList",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "MCP_CHARLOGON": [
+        "container",
+        [
+          {
+            "name": "characterName",
+            "type": "string"
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -93,13 +114,14 @@
   },
   "toClient": {
     "types": {
-      "MCP_CHARLOGON": ["container", [
-        {
-          "name": "result",
-          "type": "lu32"
-        }
-      ]
-
+      "MCP_CHARLOGON": [
+        "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          }
+        ]
       ],
       "packet": [
         "container",
@@ -134,7 +156,6 @@
           }
         ]
       ]
-
     }
   }
 }
