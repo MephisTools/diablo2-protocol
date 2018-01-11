@@ -318,7 +318,7 @@
           "name": "entries",
           "type": ["array",
             {
-              "countType": "numberOfEntries",
+              "count": "numberOfEntries",
               "type": [
                 "container",
                 [

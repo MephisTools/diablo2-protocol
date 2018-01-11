@@ -116,6 +116,7 @@ function createClient({username, password, host, port}) {
     }
   });
 
+
   client.on('SID_QUERYREALMS2', ({realms}) => {
     client.write('SID_LOGONREALMEX', {
         clientToken: client.clientToken,
@@ -123,6 +124,7 @@ function createClient({username, password, host, port}) {
         realmTitle: realms[0].realmTitle
     });
   });
+
 
   client.on('SID_LOGONREALMEX', ({MCPCookie,MCPStatus,MCPChunk1,IP,port,MCPChunk2,battleNetUniqueName}) =>{
     host = IP[0]+"."+IP[1]+"."+IP[2]+"."+IP[3];
@@ -160,8 +162,83 @@ function createClient({username, password, host, port}) {
         client3.write('MCP_CHARLIST2', {
           numberOfCharacterToList: 8
         });
+
+        client3.on('MCP_CHARLIST2',({numbersOfCharactersRequested,numbersOfCharactersInAccount,characters}) => {
+          console.log(numbersOfCharactersRequested,numbersOfCharactersInAccount,characters);
+          client.write('SID_GETCHANNELLIST', {
+              productId: 0
+              // In the past this packet returned a product list for the specified Product ID,
+              // however, the Product ID field is now ignored -- it does not need to be a valid Product ID,
+              // and can be set to zero. The list of channels returned will be for the client's product,
+              // as specified during the client's logon.
+          });
+          client.write('SID_ENTERCHAT', {
+            characterName: process.argv[4],
+            realm:"Path of Diablo" // TODO: dynamic realm ?
+          });
+          client.on('SID_GETCHANNELLIST', (data) => {
+            console.log(data);
+            client.on('SID_ENTERCHAT', (data) => {
+              console.log(data);
+              /*
+              client3.write('SID_NEWS_INFO', {
+                newsTimestamp:0
+              });
+              */ // "disconnected from mcp server" when using this packet
+                /*
+              client3.write('SID_CHECKAD', { // useless ?
+                  platformId: client.platformId,
+                  productId: client.productId,
+                  IDOfLastDisplayedBanned: 0,
+                  currentTime:0
+              });
+
+
+
+
+
+
+              // server -> client NEWS_INFO, useless ?
+              // server -> client SID_CHECKAD
+              // client -> server SID_DISPLAYAD
+              */
+
+              client3.write('MCP_CHARLOGON', {
+                  characterName: process.argv[4]
+              });
+
+              client3.on('MCP_CHARLOGON', (data) => {
+                  console.log(data);
+                  client3.write('MCP_MOTD', {
+                      characterName: process.argv[4]
+                  });
+                  client3.on('MCP_CHARLOGON', ({MOTD}) => {
+                      console.log(MOTD);
+
+
+                      client3.write('MCP_CREATEGAME', {
+                        requestId: 2,
+                        difficulty: 8192, // HELL, TODO : set diff with args
+                        unknown: 1,
+                        levelRestrictionDifference: 99,
+                        maximumPlayers:8,
+                        gameName: "testttttt",
+                        gamePassword: "zzzzzzzzzzz",
+                        gameDescription: "gs 21",
+                      });
+
+                      client3.on('MCP_CREATEGAME', ({requestId,gameToken,unknown,result}) => {
+                        console.log(requestId,gameToken,unknown,result);
+                      });
+                  });
+              });
+            });
+          });
+        });
       }
     });
+
+
 
 
     client3.connect();

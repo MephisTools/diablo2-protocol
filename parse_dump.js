@@ -1,6 +1,6 @@
 const ProtoDef = require("protodef").ProtoDef;
 
-const protocol = require('./data/protocol');
+const protocol = require('./data/mcp');
 
 const protoToServer = new ProtoDef();
 protoToServer.addProtocol(protocol,["toServer"]);
@@ -30,7 +30,11 @@ console.log(JSON.stringify(protoToServer.parsePacketBuffer("packet",Buffer.from(
 
    */
 
-
+/*
 console.log(JSON.stringify(protoToServer.parsePacketBuffer("packet",Buffer.from(`ff 3a 29 00 3e 1e 16 01 d7 43 54 5a d1 bf c8 8a
    8a 81 11 09 e0 0f b3 b0 98 be 47 1b 5f 5f 5e 54
    75 72 75 6b 75 62 61 6c 00`.replace(/[ \n\r\t]/g,""),"hex")).data,null,2));
+*/
+
+console.log(JSON.stringify(protoToServer.parsePacketBuffer("packet",Buffer.from(`1a 00 03 02 00 00 20 00 00 01 63 08 41 73 61 00
+   5a 64 64 00 67 73 20 32 31 00`.replace(/[ \n\r\t]/g,""),"hex")).data,null,2));

@@ -77,11 +77,11 @@
       ]],
       "SID_ENTERCHAT": ["container", [
         {
-          "name": "username",
+          "name": "characterName",
           "type": "string"
         },
         {
-          "name": "statstring",
+          "name": "realm",
           "type": "string"
         }
       ]],
