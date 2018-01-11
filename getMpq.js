@@ -2,7 +2,7 @@ const Client2 = require('./client2');
 
 
 function getMpq(host, port, mpqFiletime, mpqFilename, platformId, productId, cb) {
-  const client2 = new Client2({host, port}); // TODO : 4 param ???
+  const client2 = new Client2({host, port});
 
   client2.connect();
 

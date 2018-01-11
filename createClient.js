@@ -6,6 +6,9 @@ const getHash = require('./getHash');
 
 const getMpq = require('./getMpq');
 
+const Client3 = require('./client3');
+
+
 
 function createClient({username, password, host, port}) {
   const client = new Client({host, port});
@@ -121,8 +124,47 @@ function createClient({username, password, host, port}) {
     });
   });
 
-  client.on('SID_LOGONREALMEX', data =>{
-    console.log(data);
+  client.on('SID_LOGONREALMEX', ({MCPCookie,MCPStatus,MCPChunk1,IP,port,MCPChunk2,battleNetUniqueName}) =>{
+    host = IP[0]+"."+IP[1]+"."+IP[2]+"."+IP[3];
+    const client3 = new Client3({host, port});
+
+
+
+    client3.on('connect', () => {
+      //'connect' listener
+      console.log('connected to MCP server!');
+
+      client3.socket.write(Buffer.from("01","hex")); // This Initialise conversation
+
+      client3.write('MCP_STARTUP', {
+        MCPCookie:MCPCookie,
+        MCPStatus:MCPStatus,
+        MCPChunk1:MCPChunk1,
+        MCPChunk2:MCPChunk2,
+        battleNetUniqueName:battleNetUniqueName
+      });
+    });
+
+    client3.on('MCP_STARTUP', ({result}) => {
+      if(result === 0x02 || (result>= 0x0A && result <= 0x0D)) {
+        console.log("Realm Unavailable: No Battle.net connection detected.");
+      }
+      else if(result === 0x7E) {
+        console.log("CDKey banned from realm play.");
+      }
+      else if(result === 0x7F) {
+        console.log("Temporary IP ban \"Your connection has been temporarily restricted from this realm. Please try to log in at another time.\"");
+      }
+      else {
+        console.log("Success!");
+        client3.write('MCP_CHARLIST2', {
+          numberOfCharacterToList: 8
+        });
+      }
+    });
+
+
+    client3.connect();
   });
 
 

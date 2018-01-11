@@ -1,0 +1,207 @@
+{
+  "types": {
+    "cstring": "native",
+    "lu16": "native",
+    "lu8": "native",
+    "lu64": "native",
+    "lu32": "native",
+    "bool": "native",
+    "lf32": "native",
+    "lf64": "native",
+    "option": "native",
+    "container": "native",
+    "switch": "native",
+    "void": "native",
+    "array": "native",
+    "string": "cstring",
+    "restBuffer": "native"
+  },
+  "toServer": {
+    "types": {
+      "MCP_STARTUP": [
+        "container",
+        [
+          {
+            "name": "MCPCookie",
+            "type": "lu32"
+          },
+          {
+            "name": "MCPStatus",
+            "type": "lu32"
+          },
+          {
+            "name": "MCPChunk1",
+            "type": [
+              "array",
+              {
+                "count": 2,
+                "type": "lu32"
+              }
+            ]
+          },
+          {
+            "name": "MCPChunk2",
+            "type": [
+              "array",
+              {
+                "count": 12,
+                "type": "lu32"
+              }
+            ]
+          },
+          {
+            "name": "battleNetUniqueName",
+            "type": "string"
+          }
+        ]
+      ],
+      "MCP_CHARLIST2": [
+        "container",
+        [
+          {
+            "name": "numberOfCharacterToList",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "MCP_CHARLOGON": [
+        "container",
+        [
+          {
+            "name": "characterName",
+            "type": "string"
+          }
+        ]
+      ],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "size",
+            "type": "lu16"
+          },
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "lu8",
+                "mappings": {
+                  "0x01": "MCP_STARTUP",
+                  "0x07": "MCP_CHARLOGON",
+                  "0x19": "MCP_CHARLIST2"
+                }
+              }
+            ]
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "MCP_STARTUP": "MCP_STARTUP",
+                  "MCP_CHARLOGON": "MCP_CHARLOGON",
+                  "MCP_CHARLIST2": "MCP_CHARLIST2"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  },
+  "toClient": {
+    "types": {
+      "MCP_CHARLOGON": [
+        "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "MCP_STARTUP": [
+        "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "MCP_CHARLIST2": [
+        "container",
+        [
+          {
+            "name": "numbersOfCharactersRequested",
+            "type": "lu16"
+          },
+          {
+            "name": "numbersOfCharactersInAccount",
+            "type": "lu32"
+          },
+          {
+            "name": "characters",
+            "type": ["array",{
+              "countType": "lu16",
+              "type": ["container",[
+                {
+                  "name": "expirationDate",
+                  "type": "lu32"
+                },
+                {
+                  "name": "characterName",
+                  "type": "string"
+                },
+                {
+                  "name": "characterStatstring",
+                  "type": "string"
+                }
+              ]]
+            }]
+          }
+        ]
+      ],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "size",
+            "type": "lu16"
+          },
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "lu8",
+                "mappings": {
+                  "0x01": "MCP_STARTUP",
+                  "0x07": "MCP_CHARLOGON",
+                  "0x19": "MCP_CHARLIST2"
+                }
+              }
+            ]
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "MCP_STARTUP": "MCP_STARTUP",
+                  "MCP_CHARLOGON": "MCP_CHARLOGON",
+                  "MCP_CHARLIST2": "MCP_CHARLIST2"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}
