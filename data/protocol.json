@@ -18,6 +18,22 @@
   },
   "toServer": {
     "types": {
+      "SID_ENTERCHAT": ["container", [
+        {
+          "name": "username",
+          "type": "string"
+        },
+        {
+          "name": "statstring",
+          "type": "string"
+        }
+      ]],
+      "SID_GETCHANNELLIST": ["container",[
+        {
+          "name": "productId",
+          "type": "lu32"
+        }
+      ]],
       "SID_LOGONREALMEX": ["container",[
         {
           "name": "clientToken",
@@ -218,7 +234,9 @@
                   "0x33": "SID_GETFILETIME",
                   "0x3A": "SID_LOGONRESPONSE2",
                   "0x40": "SID_QUERYREALMS2",
-                  "0x3E": "SID_LOGONREALMEX"
+                  "0x3E": "SID_LOGONREALMEX",
+                  "0x0B": "SID_GETCHANNELLIST",
+                  "0x0A": "SID_ENTERCHAT"
                 }
               }
             ]
@@ -240,7 +258,9 @@
                   "SID_GETFILETIME": "SID_GETFILETIME",
                   "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2",
                   "SID_QUERYREALMS2": "SID_QUERYREALMS2",
-                  "SID_LOGONREALMEX": "SID_LOGONREALMEX"
+                  "SID_LOGONREALMEX": "SID_LOGONREALMEX",
+                  "SID_GETCHANNELLIST": "SID_GETCHANNELLIST",
+                  "SID_ENTERCHAT": "SID_ENTERCHAT"
                 }
               }
             ]
@@ -251,6 +271,15 @@
   },
   "toClient": {
     "types": {
+      "SID_GETCHANNELLIST" :["container",[
+        {
+          "name": "channelNames",
+          "type": ["array", {
+            "count": "string",
+            "type": "string"
+          }]
+        }
+      ]],
       "SID_LOGONREALMEX": ["container",[
         {
           "name": "MCPCookie",
@@ -421,7 +450,8 @@
                   "0x33": "SID_GETFILETIME",
                   "0x3A": "SID_LOGONRESPONSE2",
                   "0x40": "SID_QUERYREALMS2",
-                  "0x3E": "SID_LOGONREALMEX"
+                  "0x3E": "SID_LOGONREALMEX",
+                  "0x0B": "SID_GETCHANNELLIST"
                 }
               }
             ]
@@ -443,7 +473,8 @@
                   "SID_GETFILETIME": "SID_GETFILETIME",
                   "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2",
                   "SID_QUERYREALMS2": "SID_QUERYREALMS2",
-                  "SID_LOGONREALMEX": "SID_LOGONREALMEX"
+                  "SID_LOGONREALMEX": "SID_LOGONREALMEX",
+                  "SID_GETCHANNELLIST": "SID_GETCHANNELLIST"
                 }
               }
             ]
