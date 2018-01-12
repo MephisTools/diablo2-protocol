@@ -334,6 +334,12 @@
   },
   "toClient": {
     "types": {
+      "SID_STARTADVEX3": ["container", [
+        {
+          "name": "status",
+          "type": "lu32"
+        }
+      ]],
       "SID_ENTERCHAT": ["container",[
         {
           "name": "uniqueName",
@@ -522,6 +528,7 @@
                 "type": "lu8",
                 "mappings": {
                   "0x25": "SID_PING",
+                  "0x1C": "SID_STARTADVEX3",
                   "0x50": "SID_AUTH_INFO",
                   "0x51": "SID_AUTH_CHECK",
                   "0x33": "SID_GETFILETIME",
@@ -553,7 +560,8 @@
                   "SID_QUERYREALMS2": "SID_QUERYREALMS2",
                   "SID_LOGONREALMEX": "SID_LOGONREALMEX",
                   "SID_GETCHANNELLIST": "SID_GETCHANNELLIST",
-                  "SID_ENTERCHAT": "SID_ENTERCHAT"
+                  "SID_ENTERCHAT": "SID_ENTERCHAT",
+                  "SID_STARTADVEX3": "SID_STARTADVEX3"
                 }
               }
             ]

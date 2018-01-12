@@ -241,7 +241,39 @@ function createClient({username, password, host, port}) {
     });
 
     client3.on('MCP_CREATEGAME', ({requestId, gameToken, unknown, result}) => {
-      console.log(requestId, gameToken, unknown, result);
+        console.log(requestId, gameToken, unknown, result);
+        client3.write('MCP_JOINGAME', {
+            requestId: requestId,
+            gameName: "testttttt",
+            gamePassword: "zzzzzzzzzzz"
+        });
+    });
+
+    client3.on('MCP_JOINGAME', (data) => {
+        console.log(data); // TODO: handle result possibilities
+        client.write('SID_STARTADVEX3', {
+            gameStats:1, // private game, TODO: dynamic
+            gameUptimeInSeconds:0,
+            gameType:0,
+            subGameType:0,
+            providerVersionConstant:0,
+            ladderType:0, // Ladder game, no point in player non-ladder
+            gameName:"testttttt",
+            gamePassword:"zzzzzzzzzzz",
+            gameStatstring:""
+        });
+
+    });
+
+
+    client.on('SID_STARTADVEX3', (data) => {
+      console.log(data);
+        client.write('SID_NOTIFYJOIN', {
+            productId: 1, // random
+            productVersion: 13,
+            gameName: "testttttt",
+            gamePassword: "zzzzzzzzzzz"
+        });
     });
 
     client3.connect();
