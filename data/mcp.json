@@ -236,7 +236,10 @@
         },
         {
           "name": "IPOfD2GSServer",
-          "type": "lu32"
+          "type": ["array", {
+            "count": 4,
+            "type": "lu8"
+          }]
         },
         {
           "name": "gameHash",
