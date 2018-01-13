@@ -1,0 +1,734 @@
+Skeleton
+Returned
+Bone Warrior
+Burning Dead
+Horror
+Zombie
+Hungry Dead
+Ghoul
+Drowned Carcass
+Plague Bearer
+Afflicted
+Tainted
+Misshapen
+Disfigured
+Damned
+Foul Crow
+Blood Hawk
+Black Raptor
+Cloud Stalker
+Fallen
+Carver
+Devilkin
+Dark One
+Warped One
+Brute
+Yeti
+Crusher
+Wailing Beast
+Gargantuan Beast
+Sand Raider
+Marauder
+Invader
+Infidel
+Assailant
+
+
+
+
+Ghost
+Wraith
+Specter
+Apparition
+Dark Shape
+Dark Hunter
+Vile Hunter
+Dark Stalker
+Black Rogue
+Flesh Hunter
+Dune Beast
+Rock Dweller
+Jungle Hunter
+Doom Ape
+Temple Guard
+Moon Clan
+Night Clan
+Blood Clan
+Hell Clan
+Death Clan
+Fallen Shaman
+Carver Shaman
+Devilkin Shaman
+Dark Shaman
+Warped Shaman
+Quill Rat
+Spike Fiend
+Thorn Beast
+Razor Spine
+Bush Barb
+Sand Maggot
+Rock Worm
+Devourer
+Giant Lamprey
+Blood Maggot
+Tomb Viper
+Claw Viper
+Salamander
+Pit Viper
+Serpent Magus
+Sand Leaper
+Cave Leaper
+Tomb Creeper
+Tree Lurker
+Cliff Lurker
+Huntress
+Saber Cat
+Night Tiger
+Hell Cat
+Itchies
+Black Locusts
+Plague Bugs
+Hell Swarm
+Dung Soldier
+Death Beetle
+Scarab
+Steel Scarab
+Bone Scarab
+Dried Corpse
+Decayed
+Embalmed
+Preserved Dead
+Cadaver
+Hollow One
+Guardian
+Unraveler
+Horadrim Ancient
+Unraveler
+
+
+
+
+Carrion Bird
+Undead Scavenger
+Hell Buzzard
+Winged Nightmare
+Sucker
+Feeder
+Blood Hook
+Blood Wing
+Gloam
+Swamp Ghost
+Burning Soul
+Black Soul
+Arach
+Sand Fisher
+Poison Spinner
+Flame Spider
+Spider Magus
+Thorned Hulk
+Bramble Hulk
+Thrasher
+Spikefist
+Ghoul Lord
+Night Lord
+Dark Lord
+Blood Lord
+The Banished
+Desert Wing
+Fiend
+Gloombat
+Blood Diver
+Dark Familiar
+Rat Man
+Fetish
+Flayer
+Soul Killer
+Stygian Doll
+Deckard Cain
+Gheed
+Akara
+
+Kashya
+
+
+
+Charsi
+Warriv
+Andariel
+
+
+
+Dark Ranger
+Vile Archer
+Dark Archer
+Black Archer
+Flesh Archer
+Dark Spearwoman
+Vile Lancer
+Dark Lancer
+Black Lancer
+Flesh Lancer
+Skeleton Archer
+Returned Archer
+Bone Archer
+Burning Dead Archer
+Horror Archer
+Warriv
+Atma
+Drognan
+Fara
+
+Sand Maggot Young
+Rock Worm Young
+Devourer Young
+Giant Lamprey Young
+Blood Maggot Young
+
+Blunderbore
+Gorebelly
+Mauler
+Urdar
+Sand Maggot Egg
+Rock Worm Egg
+Devourer Egg
+Giant Lamprey Egg
+Blood Maggot Egg
+
+
+
+Greiz
+Elzix
+Geglash
+Jerhyn
+Lysander
+
+
+
+Foul Crow Nest
+Blood Hawk Nest
+Black Raptor Nest
+Cloud Stalker Nest
+Meshif
+Duriel
+Undead Rat Man
+Undead Fetish
+Undead Flayer
+Undead Soul Killer
+Undead Stygian Doll
+
+
+
+
+
+
+
+
+
+
+Maggot
+Mummy Sarcophagus
+Radament
+
+
+
+
+Flying Scimitar
+Zakarumite
+Faithful
+Zealot
+Sexton
+Cantor
+Heirophant
+Heirophant
+Mephisto
+Diablo
+Deckard Cain
+Deckard Cain
+Deckard Cain
+Swamp Dweller
+Bog Creature
+Slime Prince
+The Summoner
+Tyrael
+Asheara
+Hratli
+Alkor
+Ormus
+Izual
+Halbu
+Water Watcher
+River Stalker
+Stygian Watcher
+Water Watcher
+River Stalker
+Stygian Watcher
+Meshif
+Deckard Cain
+Flavie
+Blood Raven
+
+
+Rogue Scout
+
+
+Gargoyle Trap
+Returned Mage
+Bone Mage
+Burning Dead Mage
+Horror Mage
+RatMan Shaman
+Fetish Shaman
+Flayer Shaman
+Soul Killer Shaman
+Stygian Doll Shaman
+Larva
+Sand Maggot Queen
+Rock Worm Queen
+Devourer Queen
+Giant Lamprey Queen
+Blood Maggot Queen
+Clay Golem
+Blood Golem
+Iron Golem
+Fire Golem
+
+
+Night Marauder
+
+Natalya
+Flesh Spawner
+Stygian Hag
+Grotesque
+Flesh Beast
+Stygian Dog
+Grotesque Wyrm
+Doom Caster
+Strangler
+Storm Caster
+Corpulent
+Corpse Spitter
+Maw Fiend
+Doom Knight
+Abyss Knight
+Oblivion Knight
+Quill Bear
+Spike Giant
+Thorn Brute
+Razor Beast
+Barbed Giant
+
+
+
+
+
+
+
+
+a Trap
+a Trap
+a Trap
+a Trap
+a Trap
+Kaelan
+
+Diablo
+Sucker Nest
+Feeder Nest
+Blood Hook Nest
+Blood Wing Nest
+Guard
+
+
+
+
+
+
+Council Member
+Council Member
+Council Member
+a Turret
+a Turret
+a Turret
+Hydra
+Hydra
+Hydra
+a Trap
+
+Decoy
+Valkyrie
+
+Iron Wolf
+Balrog
+Pit Lord
+Venom Lord
+Necroskeleton
+Necromage
+Griswold
+Compelling Orb
+Tyrael
+Dark Wanderer
+a Trap
+
+Lightning Spire
+Fire Tower
+Slinger
+Spear Cat
+Night Slinger
+Hell Slinger
+
+
+Returned Mage
+Bone Mage
+Death Mage
+Horror Mage
+Returned Mage
+Bone Mage
+Burning Dead Mage
+Horror Mage
+Returned Mage
+Bone Mage
+Burning Dead Mage
+Horror Mage
+Hell Bovine
+
+
+Spear Cat
+Night Slinger
+Rat Man
+Fetish
+Flayer
+Soul Killer
+Stygian Doll
+
+The Smith
+Trapped Soul
+Trapped Soul
+Jamella
+Izual
+Rat Man
+Hadriel
+Hephasto The Armorer
+Wake of Fire
+Charged Bolt Sentry
+Lightning Sentry
+Blade Sentinel
+Pet
+Inferno Sentry
+Death Sentry
+Shadow Warrior
+Shadow Master
+Raven
+Spirit Wolf
+Dire Wolf
+Spirit of Barbs
+Heart of Wolverine
+Oak Sage
+Plague Poppy
+Cycle of Life
+Vine Creature
+Grizzly
+Eagle
+Wolf
+Bear
+Barricaded Door
+Barricaded Door
+Prison Door
+Barricaded Tower
+Rot Walker
+Reanimated Horde
+Prowling Dead
+Unholy Corpse
+Defiled Warrior
+Siege Beast
+Crush Beast
+Blood Bringer
+Gore Bearer
+Demon Steed
+Snow Drifter
+Abominable
+Chilled Froth
+Frozen Abyss
+Fallen Wolfrider
+Carver Wolfrider
+Devilkin Wolfrider
+Enslaved
+Slayer
+Ice Boar
+Fire Boar
+Hell Spawn
+Ice Spawn
+Greater Hell Spawn
+Greater Ice Spawn
+Fanatic Enslaved
+Berserker Slayer
+Consumed Ice Boar
+Consumed Fire Boar
+Frenzied Hell Spawn
+Frenzied Ice Spawn
+Insane Hell Spawn
+Insane Ice Spawn
+Succubus
+Vile Temptress
+Stygian Harlot
+Hell Temptress
+Blood Temptress
+Siren
+Vile Witch
+Stygian Fury
+Blood Witch
+Hell Witch
+Overseer
+Lasher
+Overlord
+Blood Boss
+Hell Whip
+Demon Portal
+Demon Portal
+Demon Portal
+Demon Portal
+Demon Portal
+Demon Portal
+Demon Portal
+Demon Portal
+Demon Imp
+Demon Rascal
+Demon Gremlin
+Demon Trickster
+Demon Sprite
+Catapult
+Catapult
+Catapult
+Catapult
+Frozen Creeper
+Frozen Terror
+Frozen Scourge
+Frozen Horror
+Frozen Scorch
+Moon Lord
+Night Lord
+Blood Lord
+Hell Lord
+Death Lord
+Larzuk
+Anya
+Malah
+Nihlathak
+Qual-Kehk
+Catapult
+Catapult
+Catapult
+Catapult
+Deckard Cain
+Tyrael
+Combatant
+Combatant
+Barricade
+Barricade
+Nihlathak
+Anya
+Evil Demon Hut
+Death Mauler
+Death Brawler
+Death Slasher
+Death Berserker
+Death Brigadier
+Barbarian Captive
+Guard
+Guard
+Talic the Defender
+Madawc the Guardian
+Korlic the Protector
+Talic
+Madawc
+Korlic
+Baal
+Baal
+Baal
+Putrid Defiler
+Wretched Defiler
+Fetid Defiler
+Rancid Defiler
+Rank Defiler
+Pain Worm
+Torment Worm
+Agony Worm
+Menace Worm
+Anguish Worm
+Bunny
+Council Member
+Venom Lord
+Baal
+Act 5 Hireling 1hs
+Act 5 Hireling 2hs
+Festering Appendages
+Festering Appendages
+Festering Appendages
+Festering Appendages
+Festering Appendages
+Injured Barbarian 1
+Injured Barbarian 2
+Injured Barbarian 3
+Baal
+Minion of Destruction
+Minion of Destruction
+Minion of Destruction
+Worldstone Effect
+Burning Dead Archer
+Bone Archer
+Burning Dead Archer
+Returned Archer
+Horror Archer
+Afflicted
+Tainted
+Misshapen
+Disfigured
+Damned
+Moon Clan
+Night Clan
+Hell Clan
+Blood Clan
+Death Clan
+Foul Crow
+Blood Hawk
+Black Raptor
+Cloud Stalker
+Claw Viper
+Pit Viper
+Salamander
+Tomb Viper
+Serpent Magus
+Marauder
+Infidel
+Sand Raider
+Invader
+Assailant
+Death Mauler
+Quill Rat
+Spike Fiend
+Razor Spine
+Carrion Bird
+Thorned Hulk
+Slinger
+Slinger
+Slinger
+Vile Archer
+Dark Archer
+Vile Lancer
+Dark Lancer
+Black Lancer
+Blunderbore
+Mauler
+Returned Mage
+Burning Dead Mage
+Returned Mage
+Horror Mage
+Bone Mage
+Horror Mage
+Horror Mage
+Huntress
+Saber Cat
+Cave Leaper
+Tomb Creeper
+Ghost
+Wraith
+Specter
+Succubus
+Hell Temptress
+Siren
+Hell Witch
+Vile Witch
+Gloam
+Black Soul
+Burning Soul
+Carver
+Devilkin
+Dark One
+Carver Shaman
+Devilkin Shaman
+Dark Shaman
+Bone Warrior
+Returned
+Gloombat
+Fiend
+Moon Lord
+Hell Lord
+Scarab
+Steel Scarab
+Flayer
+Stygian Doll
+Soul Killer
+Flayer
+Stygian Doll
+Soul Killer
+Flayer Shaman
+Stygian Doll Shaman
+Soul Killer Shaman
+Temple Guard
+Temple Guard
+Guardian
+Unraveler
+Horadrim Ancient
+Horadrim Ancient
+Zealot
+Zealot
+Heirophant
+Heirophant
+Grotesque
+Flesh Spawner
+Grotesque Wyrm
+Flesh Beast
+Blood Maggot
+Blood Maggot Young
+Blood Maggot Egg
+Slayer
+Hell Spawn
+Greater Hell Spawn
+Arach
+Balrog
+Pit Lord
+Demon Imp
+Demon Trickster
+Undead Stygian Doll
+Undead Soul Killer
+Strangler
+Storm Caster
+Maw Fiend
+Blood Lord
+Ghoul Lord
+Dark Lord
+Unholy Corpse
+Doom Knight
+Doom Knight
+Oblivion Knight
+Oblivion Knight
+Cadaver
+Mephisto
+Diablo
+Izual
+Pandora
+Duriel
+Baal
+Evil Demon Hut
+
+Pit Lord
+Oblivion Knight
+Demon Trickster
+Hell Swarm
+Blood Maggot
+Arach
+Steel Scarab
+Hell Temptress
+Vile Witch
+Flesh Hunter
+Dark Archer
+Black Lancer
+Hell Whip
+Returned
+Horror Archer
+Burning Dead Mage
+Horror Mage
+Bone Mage
+Horror Mage
+Dark Lord
+Specter
+Burning Soul

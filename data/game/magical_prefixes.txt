@@ -1,0 +1,669 @@
+||||
+Sturdy|3|Enhanced Defense,,20,30||
+Strong|6|Enhanced Defense,,31,40||
+Glorious|14|Enhanced Defense,,41,50||
+Blessed|18|Enhanced Defense,,51,65||
+Saintly|23|Enhanced Defense,,66,80||
+Holy|27|Enhanced Defense,,81,100||
+Devious|5|Magic Damage Reduction,0,1,1||
+Fortified|10|Magic Damage Reduction,0,2,2||
+||||
+||||
+||||
+Jagged|1|Enhanced Damage,0,10,20||
+Deadly|3|Enhanced Damage,0,21,30||
+Vicious|6|Enhanced Damage,0,31,40||
+Brutal|10|Enhanced Damage,0,41,50||
+Massive|15|Enhanced Damage,0,51,65||
+Savage|19|Enhanced Damage,0,66,80||
+Merciless|24|Enhanced Damage,0,81,100||
+Vulpine|6|Damage to Mana,0,10,10||
+||||
+||||
+||||
+||||
+Tireless|10|Regenerate Stamina,0,50,50||
+Rugged|10|Stamina,0,5,10||
+Bronze|1|Attack Rating,0,10,20||
+Iron|3|Attack Rating,0,21,40||
+Steel|6|Attack Rating,0,41,60||
+Silver|9|Attack Rating,0,61,80||
+||||
+Gold|12|Attack Rating,0,81,100||
+Platinum|16|Attack Rating,0,101,120||
+Meteoric|20|Attack Rating,0,121,150||
+Sharp|3|Attack Rating,0,10,20|Enhanced Damage,0,10,20|
+Fine|6|Attack Rating,0,21,40|Enhanced Damage,0,21,30|
+Warrior's|11|Attack Rating,0,41,60|Enhanced Damage,0,31,40|
+Soldier's|15|Attack Rating,0,61,80|Enhanced Damage,0,41,50|
+Knight's|18|Attack Rating,0,81,100|Enhanced Damage,0,51,65|
+Lord's|22|Attack Rating,0,101,120|Enhanced Damage,0,66,80|
+King's|26|Attack Rating,0,121,150|Enhanced Damage,0,81,100|
+Howling|12|Hit Causes Monster To Flee,0,128,128||
+Fortuitous|3|Better Chance of Getting Magic Item,0,10,15||
+||||
+||||
+||||
+||||
+||||
+Glimmering|1|Light Radius,0,1,1||
+Glowing|4|Light Radius,0,2,2||
+||||
+||||
+Lizard's|2|Mana,0,1,5||
+||||
+Snake's|4|Mana,0,5,10||
+Serpent's|10|Mana,0,11,20||
+Serpent's|27|Mana,0,11,20||
+Drake's|15|Mana,0,21,30||
+Dragon's|18|Mana,0,31,40||
+Dragon's|39|Mana,0,31,40||
+Wyrm's|22|Mana,0,41,60||
+||||
+||||
+Prismatic|20|All Resistances,0,15,25||
+Prismatic|46|All Resistances,0,15,15||
+Azure|3|Cold Resistance,0,5,10||
+Lapis|9|Cold Resistance,0,11,20||
+Lapis|26|Cold Resistance,0,11,20||
+Cobalt|13|Cold Resistance,0,21,30||
+Cobalt|41|Cold Resistance,0,21,30||
+||||
+Sapphire|18|Cold Resistance,0,31,50||
+||||
+||||
+Crimson|3|Fire Resistance,0,5,10||
+Burgundy|9|Fire Resistance,0,11,20||
+Burgundy|26|Fire Resistance,0,11,20||
+Garnet|13|Fire Resistance,0,21,30||
+Garnet|41|Fire Resistance,0,21,30||
+||||
+Ruby|18|Fire Resistance,0,31,50||
+||||
+||||
+Ocher|3|Lightning Resistance,0,5,10||
+Tangerine|9|Lightning Resistance,0,11,20||
+Tangerine|26|Lightning Resistance,0,11,20||
+Coral|13|Lightning Resistance,0,21,30||
+Coral|41|Lightning Resistance,0,21,30||
+||||
+Amber|18|Lightning Resistance,0,31,50||
+||||
+||||
+Beryl|3|Poison Resistance,0,5,10||
+Jade|9|Poison Resistance,0,11,20||
+Jade|26|Poison Resistance,0,11,20||
+Viridian|13|Poison Resistance,0,21,30||
+Viridian|41|Poison Resistance,0,21,30||
+||||
+Emerald|18|Poison Resistance,0,31,50||
+||||
+Fletcher's|22|Amazon Skills,0,1,1||
+Archer's|30|Amazon Skills,0,2,2||
+Archer's|67|Amazon Skills,0,2,2||
+Monk's|22|Paladin Skills,0,1,1||
+Priest's|30|Paladin Skills,0,2,2||
+Priest's|67|Paladin Skills,0,2,2||
+Summoner's|22|Necromancer Skills,0,1,1||
+Necromancer's|30|Necromancer Skills,0,2,2||
+Necromancer's|67|Necromancer Skills,0,2,2||
+Angel's|22|Sorceress Skill,0,1,1||
+Arch-Angel's|30|Sorceress Skill,0,2,2||
+Arch-Angel's|67|Sorceress Skill,0,2,2||
+Slayer's|22|Barbarian,0,1,1||
+Berserker's|30|Barbarian,0,2,2||
+Berserker's|67|Barbarian,0,2,2||
+||||
+||||
+Triumphant|2|Mana After Each Kill,0,1,1||
+Stout|1|Defense,,3,5||
+Stout|5|Defense,,6,9||
+Stout|9|Defense,,10,12||
+Burly|12|Defense,,13,15||
+Burly|16|Defense,,16,22||
+Burly|20|Defense,,23,30||
+Stalwart|24|Defense,,33,40||
+Stalwart|29|Defense,,44,50||
+Stalwart|34|Defense,,60,100||
+Stout|1|Defense,,2,3||
+Stout|10|Defense,,4,6||
+Stout|15|Defense,,8,12||
+Burly|19|Defense,,13,18||
+Burly|24|Defense,,20,30||
+Stalwart|30|Defense,,30,40||
+Stalwart|37|Defense,,45,60||
+Stout|1|Defense,,1,1||
+Stout|15|Defense,,4,8||
+Burly|28|Defense,,15,20||
+Stalwart|40|Defense,,20,30||
+Blanched|1|Defense,,5,8||
+Eburine|12|Defense,,9,20||
+Bone|24|Defense,,21,40||
+Ivory|56|Defense,,41,64||
+Sturdy|1|Enhanced Defense,,10,20||
+Sturdy|3|Enhanced Defense,,21,30||
+Strong|6|Enhanced Defense,,31,40||
+Glorious|14|Enhanced Defense,,41,50||
+Blessed|18|Enhanced Defense,,51,65||
+Saintly|23|Enhanced Defense,,66,80||
+Holy|27|Enhanced Defense,,81,100||
+Godly|38|Enhanced Defense,,101,200||
+Devious|5|Magic Damage Reduction,,1,1||
+Void|10|Magic Damage Reduction,,2,2||
+Null|16|Magic Damage Reduction,,3,5||
+Antimagic|21|Magic Damage Reduction,,6,10||
+Red|3|Minimum Damage,,1,2||
+Red|12|Minimum Damage,,3,3||
+Sanguinary|21|Minimum Damage,,4,4||
+Sanguinary|32|Minimum Damage,,5,6||
+Bloody|46|Minimum Damage,,7,8||
+Red|8|Minimum Damage,,1,2||
+Sanguinary|25|Minimum Damage,,3,3||
+Bloody|47|Minimum Damage,,4,4||
+Red|16|Minimum Damage,,1,1||
+Sanguinary|33|Minimum Damage,,2,2||
+Bloody|50|Minimum Damage,,3,3||
+Scarlet|6|Minimum Damage,,1,4||
+Crimson|30|Minimum Damage,,5,8||
+Jagged|2|Maximum Damage,,1,2||
+Jagged|7|Maximum Damage,,3,4||
+Jagged|12|Maximum Damage,,5,6||
+Forked|18|Maximum Damage,,7,8||
+Forked|24|Maximum Damage,,9,10||
+Serrated|31|Maximum Damage,,11,12||
+Serrated|39|Maximum Damage,,13,14||
+Jagged|7|Maximum Damage,,1,1||
+Jagged|15|Maximum Damage,,2,2||
+Forked|22|Maximum Damage,,3,3||
+Forked|32|Maximum Damage,,4,5||
+Serrated|42|Maximum Damage,,6,7||
+Jagged|17|Maximum Damage,,1,1||
+Forked|30|Maximum Damage,,2,2||
+Serrated|45|Maximum Damage,,3,3||
+Carbuncle|9|Maximum Damage,,1,5||
+Carmine|27|Maximum Damage,,6,9||
+Vermilion|50|Maximum Damage,,11,15||
+Jagged|1|Enhanced Damage,,10,20||
+Deadly|3|Enhanced Damage,,21,30||
+Vicious|6|Enhanced Damage,,31,40||
+Brutal|10|Enhanced Damage,,41,50||
+Massive|15|Enhanced Damage,,51,65||
+Savage|19|Enhanced Damage,,66,80||
+Merciless|24|Enhanced Damage,,81,100||
+Ferocious|33|Enhanced Damage,,101,200||
+Cruel|43|Enhanced Damage,,201,300||
+Cinnabar|1|Enhanced Damage,,5,10||
+Rusty|9|Enhanced Damage,,11,20||
+Realgar|37|Enhanced Damage,,21,30||
+Ruby|58|Enhanced Damage,,31,40||
+Vulpine|6|Damage to Mana,,7,12||
+Dun|5|Damage to Mana,,7,12||
+Tireless|4|Regenerate Stamina,,25,25||
+Tireless|10|Regenerate Stamina,,50,50||
+Brown|31|Regenerate Stamina,,10,15||
+Rugged|1|Stamina,,12,24||
+Rugged|5|Stamina,,25,36||
+Rugged|15|Stamina,,37,50||
+Rugged||Stamina,,8,16||
+Rugged|5|Stamina,,17,25||
+Rugged|15|Stamina,,26,32||
+Rugged||Stamina,,4,8||
+Rugged|15|Stamina,,9,16||
+Rugged|1|Stamina,,5,10||
+Rugged|6|Stamina,,11,20||
+Rugged|6|Stamina,,11,20||
+Vigorous|12|Stamina,,21,30||
+Chestnut|1|Stamina,,10,15||
+Maroon|12|Stamina,,16,25||
+Bronze|1|Attack Rating,,6,12||
+Bronze|5|Attack Rating,,13,27||
+Bronze|9|Attack Rating,,28,42||
+Iron|14|Attack Rating,,43,57||
+Iron|18|Attack Rating,,58,72||
+Iron|23|Attack Rating,,73,87||
+Steel|29|Attack Rating,,88,102||
+Steel|35|Attack Rating,,103,117||
+Steel|41|Attack Rating,,118,132||
+Bronze|1|Attack Rating,,4,8||
+Bronze|5|Attack Rating,,6,12||
+Bronze|12|Attack Rating,,13,25||
+Iron|18|Attack Rating,,26,38||
+Iron|26|Attack Rating,,39,51||
+Steel|36|Attack Rating,,52,64||
+Steel|44|Attack Rating,,65,77||
+Bronze|1|Attack Rating,,2,4||
+Bronze|15|Attack Rating,,6,12||
+Iron|31|Attack Rating,,13,24||
+Steel|49|Attack Rating,,25,36||
+Bronze|1|Attack Rating,,10,20||
+Iron|3|Attack Rating,,21,40||
+Steel|6|Attack Rating,,41,60||
+Silver|9|Attack Rating,,61,80||
+Gold|12|Attack Rating,,81,100||
+Platinum|16|Attack Rating,,101,120||
+Meteoric|20|Attack Rating,,121,150||
+Strange|24|Attack Rating,,151,300||
+Weird|27|Attack Rating,,301,450||
+Nickel|1|Attack Rating,,10,20||
+Tin|6|Attack Rating,,21,40||
+Silver|18|Attack Rating,,41,60||
+Argent|36|Attack Rating,,61,100||
+Fine|11|Attack Rating,,10,20|Maximum Damage,,1,3|
+Fine|16|Attack Rating,,21,48|Maximum Damage,,4,6|
+Sharp|21|Attack Rating,,49,76|Maximum Damage,,7,10|
+Fine|14|Attack Rating,,10,20|Maximum Damage,,1,3|
+Sharp|21|Attack Rating,,21,48|Maximum Damage,,4,6|
+Fine|21|Attack Rating,,10,20|Maximum Damage,,1,3|
+Sharp|3|Attack Rating,,10,20|Enhanced Damage,,10,20|
+Fine|9|Attack Rating,,21,40|Enhanced Damage,,21,30|
+Warrior's|13|Attack Rating,,41,60|Enhanced Damage,,31,40|
+Soldier's|19|Attack Rating,,61,80|Enhanced Damage,,41,50|
+Knight's|30|Attack Rating,,81,100|Enhanced Damage,,51,65|
+Lord's|39|Attack Rating,,101,120|Enhanced Damage,,66,80|
+King's|48|Attack Rating,,121,150|Enhanced Damage,,81,100|
+Master's|48|Attack Rating,,151,250|Enhanced Damage,,101,150|
+Grandmaster's|61|Attack Rating,,251,300|Enhanced Damage,,151,200|
+Glimmering|1|Light Radius,,1,1||
+Glowing|4|Light Radius,,2,2||
+Bright|1|Light Radius,,1,1|Attack Rating,,10,10|
+Screaming|7|Hit Causes Monster To Flee,,32,32||
+Howling|12|Hit Causes Monster To Flee,,64,64||
+Wailing|13|Hit Causes Monster To Flee,,128,128||
+Screaming|7|Hit Causes Monster To Flee,,16,16||
+Howling|12|Hit Causes Monster To Flee,,24,24||
+Wailing|18|Hit Causes Monster To Flee,,32,32||
+Lucky||Better Chance of Getting Magic Item,,1,4||
+Lucky||Better Chance of Getting Magic Item,,5,7||
+Lucky||Better Chance of Getting Magic Item,,8,12||
+Lucky||Better Chance of Getting Magic Item,,1,1||
+Lucky||Better Chance of Getting Magic Item,,2,3||
+Lucky||Better Chance of Getting Magic Item,,4,6||
+Felicitous|3|Better Chance of Getting Magic Item,,5,10||
+Fortuitous|8|Better Chance of Getting Magic Item,,11,15||
+Emerald|12|Better Chance of Getting Magic Item,,3,7||
+Lizard's|1|Mana,,3,7||
+Lizard's|5|Mana,,8,13||
+Lizard's|9|Mana,,14,20||
+Snake's|14|Mana,,21,26||
+Snake's|18|Mana,,27,33||
+Snake's|23|Mana,,34,39||
+Serpent's|29|Mana,,40,46||
+Serpent's|35|Mana,,47,52||
+Serpent's|41|Mana,,53,59||
+Lizard's|1|Mana,,2,4||
+Lizard's|6|Mana,,5,7||
+Lizard's|12|Mana,,8,12||
+Snake's|18|Mana,,13,18||
+Snake's|25|Mana,,19,23||
+Serpent's|33|Mana,,24,29||
+Serpent's|41|Mana,,30,34||
+Lizard's|12|Mana,,1,2||
+Lizard's|12|Mana,,3,7||
+Snake's|24|Mana,,8,12||
+Serpent's|40|Mana,,13,17||
+Lizard's|2|Mana,,3,5||
+Snake's|4|Mana,,5,10||
+Serpent's|10|Mana,,11,20||
+Serpent's|27|Mana,,11,20||
+Drake's|15|Mana,,21,30||
+Dragon's|18|Mana,,31,40||
+Dragon's|39|Mana,,31,40||
+Wyrm's|22|Mana,,41,60||
+Great Wyrm's|29|Mana,,61,90||
+Bahamut's|37|Mana,,91,120||
+Zircon|2|Mana,,5,10||
+Jacinth|12|Mana,,11,15||
+Turquoise|21|Mana,,16,20||
+Shimmering|6|All Resistances,,3,6||
+Shimmering|10|All Resistances,,8,12||
+Shimmering|27|All Resistances,,13,15||
+Shimmering|12|All Resistances,,3,5||
+Shimmering|26|All Resistances,,6,8||
+Shimmering|25|All Resistances,,3,5||
+Shimmering|4|All Resistances,,3,7||
+Rainbow|13|All Resistances,,8,11||
+Scintillating|21|All Resistances,,12,15||
+Prismatic|31|All Resistances,,16,20||
+Chromatic|42|All Resistances,,21,30||
+Shimmering|6|All Resistances,,3,7||
+Rainbow|15|All Resistances,,8,11||
+Scintillating|25|All Resistances,,12,15||
+Prismatic|31|All Resistances,,16,20||
+Chromatic|41|All Resistances,,21,30||
+Shimmering|37|All Resistances,,3,7||
+Rainbow|48|All Resistances,,8,11||
+Scintillating|59|All Resistances,,12,15||
+Shimmering|12|All Resistances,,5,10||
+Scintillating|26|All Resistances,,11,15||
+Azure|1|Cold Resistance,,7,15||
+Lapis|7|Cold Resistance,,16,20||
+Cobalt|15|Cold Resistance,,21,25||
+Sapphire|22|Cold Resistance,,26,30||
+Azure|1|Cold Resistance,,4,7||
+Lapis|12|Cold Resistance,,8,10||
+Cobalt|18|Cold Resistance,,11,12||
+Sapphire|27|Cold Resistance,,13,15||
+Azure|1|Cold Resistance,,3,5||
+Lapis|10|Cold Resistance,,6,7||
+Cobalt|20|Cold Resistance,,8,9||
+Sapphire|32|Cold Resistance,,10,11||
+Azure|3|Cold Resistance,,5,10||
+Lapis|9|Cold Resistance,,11,20||
+Lapis|26|Cold Resistance,,11,20||
+Cobalt|13|Cold Resistance,,21,30||
+Cobalt|41|Cold Resistance,,21,30||
+Sapphire|18|Cold Resistance,,31,40||
+Lapis Lazuli|1|Cold Resistance,,5,15||
+Sapphire|14|Cold Resistance,,16,30||
+Crimson|1|Fire Resistance,,7,15||
+Russet|7|Fire Resistance,,16,20||
+Garnet|15|Fire Resistance,,21,25||
+Ruby|22|Fire Resistance,,26,30||
+Crimson|1|Fire Resistance,,4,7||
+Russet|12|Fire Resistance,,8,10||
+Garnet|18|Fire Resistance,,11,12||
+Ruby|27|Fire Resistance,,13,15||
+Crimson|1|Fire Resistance,,3,5||
+Russet|10|Fire Resistance,,6,7||
+Garnet|20|Fire Resistance,,8,9||
+Ruby|32|Fire Resistance,,10,11||
+Russet|9|Fire Resistance,,11,20||
+Russet|26|Fire Resistance,,11,20||
+Garnet|13|Fire Resistance,,21,30||
+Garnet|41|Fire Resistance,,21,30||
+Ruby|18|Fire Resistance,,31,40||
+Garnet|1|Fire Resistance,,5,15||
+Ruby|13|Fire Resistance,,16,30||
+Tangerine|1|Lightning Resistance,,7,15||
+Ocher|7|Lightning Resistance,,16,20||
+Coral|15|Lightning Resistance,,21,25||
+Amber|22|Lightning Resistance,,26,30||
+Tangerine|1|Lightning Resistance,,4,7||
+Ocher|12|Lightning Resistance,,8,10||
+Coral|18|Lightning Resistance,,11,12||
+Amber|27|Lightning Resistance,,13,15||
+Tangerine|1|Lightning Resistance,,3,5||
+Ocher|10|Lightning Resistance,,6,7||
+Coral|20|Lightning Resistance,,8,9||
+Amber|32|Lightning Resistance,,10,11||
+Tangerine|3|Lightning Resistance,,5,10||
+Ocher|9|Lightning Resistance,,11,20||
+Ocher|26|Lightning Resistance,,11,20||
+Coral|13|Lightning Resistance,,21,30||
+Coral|41|Lightning Resistance,,21,30||
+Amber|18|Lightning Resistance,,31,40||
+Camphor|1|Lightning Resistance,,5,15||
+Ambergris|14|Lightning Resistance,,16,30||
+Beryl|1|Poison Resistance,,7,15||
+Viridian|7|Poison Resistance,,16,20||
+Jade|15|Poison Resistance,,21,25||
+Emerald|22|Poison Resistance,,26,30||
+Beryl|1|Poison Resistance,,4,7||
+Viridian|12|Poison Resistance,,8,10||
+Jade|18|Poison Resistance,,11,12||
+Emerald|27|Poison Resistance,,13,15||
+Beryl|1|Poison Resistance,,3,5||
+Viridian|10|Poison Resistance,,6,7||
+Jade|20|Poison Resistance,,8,9||
+Emerald|32|Poison Resistance,,10,11||
+Beryl|3|Poison Resistance,,5,10||
+Viridian|9|Poison Resistance,,11,20||
+Viridian|26|Poison Resistance,,11,20||
+Jade|13|Poison Resistance,,21,30||
+Jade|41|Poison Resistance,,21,30||
+Emerald|18|Poison Resistance,,31,40||
+Beryl|1|Poison Resistance,,5,15||
+Jade|14|Poison Resistance,,16,30||
+Triumphant|2|Mana After Each Kill,,1,1||
+Victorious|12|Mana After Each Kill,,2,5||
+Aureolic|16|Mana After Each Kill,,1,3||
+Mechanic's|7|Add Sockets,,1,2||
+Artisan's|25|Add Sockets,3,,||
+Jeweler's|47|Add Sockets,4,,||
+Lunar|1|Attack Rating Against Demons,,25,50|Damage To Demons,,10,25|
+Arcadian|11|Attack Rating Against Demons,,51,100|Damage To Demons,,26,50|
+Unearthly|18|Attack Rating Against Demons,,101,150|Damage To Demons,,51,100|
+Astral|26|Attack Rating Against Demons,,151,200|Damage To Demons,,101,150|
+Elysian|33|Attack Rating Against Demons,,201,300|Damage To Demons,,151,200|
+Celestial|41|Attack Rating Against Demons,,301,400|Damage To Demons,,201,300|
+Diamond|19|Attack Rating Against Demons,,25,50|Damage To Demons,,25,40|
+Fletcher's|42|Skill Tab,0,1,1||
+Acrobatic|42|Skill Tab,1,1,1||
+Harpoonist's|42|Skill Tab,2,1,1||
+Fletcher's|15|Skill Tab,0,1,1||
+Bowyer's|30|Skill Tab,0,2,2||
+Archer's|45|Skill Tab,0,3,3||
+Acrobatic|15|Skill Tab,1,1,1||
+Gymnastic|30|Skill Tab,1,2,2||
+Athletic|45|Skill Tab,1,3,3||
+Harpoonist's|15|Skill Tab,2,1,1||
+Spearmaiden's|30|Skill Tab,2,2,2||
+Lancer's|45|Skill Tab,2,3,3||
+Burning|42|Skill Tab,3,1,1||
+Sparking|42|Skill Tab,4,1,1||
+Chilling|42|Skill Tab,5,1,1||
+Burning|15|Skill Tab,3,1,1||
+Blazing|30|Skill Tab,3,2,2||
+Volcanic|45|Skill Tab,3,3,3||
+Sparking|15|Skill Tab,4,1,1||
+Charged|30|Skill Tab,4,2,2||
+Powered|45|Skill Tab,4,3,3||
+Chilling|15|Skill Tab,5,1,1||
+Freezing|30|Skill Tab,5,2,2||
+Glacial|45|Skill Tab,5,3,3||
+Hexing|42|Skill Tab,6,1,1||
+Fungal|42|Skill Tab,7,1,1||
+Graverobber's|42|Skill Tab,8,1,1||
+Hexing|15|Skill Tab,6,1,1||
+Blighting|30|Skill Tab,6,2,2||
+Cursing|45|Skill Tab,6,3,3||
+Fungal|15|Skill Tab,7,1,1||
+Noxious|30|Skill Tab,7,2,2||
+Venomous|45|Skill Tab,7,3,3||
+Graverobber's|15|Skill Tab,8,1,1||
+Mojo|30|Skill Tab,8,2,2||
+Golemlord's|45|Skill Tab,8,3,3||
+Lion Branded|42|Skill Tab,9,1,1||
+Captain's|42|Skill Tab,10,1,1||
+Preserver's|42|Skill Tab,11,1,1||
+Lion Branded|15|Skill Tab,9,1,1||
+Hawk Branded|30|Skill Tab,9,2,2||
+Rose Branded|45|Skill Tab,9,3,3||
+Captain's|15|Skill Tab,10,1,1||
+Commander's|30|Skill Tab,10,2,2||
+Marshal's|45|Skill Tab,10,3,3||
+Preserver's|15|Skill Tab,11,1,1||
+Warden's|30|Skill Tab,11,2,2||
+Guardian's|45|Skill Tab,11,3,3||
+Expert's|42|Skill Tab,12,1,1||
+Fanatic|42|Skill Tab,13,1,1||
+Sounding|42|Skill Tab,14,1,1||
+Expert's|15|Skill Tab,12,1,1||
+Veteran's|30|Skill Tab,12,2,2||
+Master's|45|Skill Tab,12,3,3||
+Fanatic|15|Skill Tab,13,1,1||
+Raging|30|Skill Tab,13,2,2||
+Furious|45|Skill Tab,13,3,3||
+Sounding|15|Skill Tab,14,1,1||
+Resonant|30|Skill Tab,14,2,2||
+Echoing|45|Skill Tab,14,3,3||
+Trainer's|42|Skill Tab,15,1,1||
+Spiritual|42|Skill Tab,16,1,1||
+Natural|42|Skill Tab,17,1,1||
+Trainer's|15|Skill Tab,15,1,1||
+Caretaker's|30|Skill Tab,15,2,2||
+Keeper's|45|Skill Tab,15,3,3||
+Spiritual|15|Skill Tab,16,1,1||
+Feral|30|Skill Tab,16,2,2||
+Communal|45|Skill Tab,16,3,3||
+Natural|15|Skill Tab,17,1,1||
+Terrene|30|Skill Tab,17,2,2||
+Gaean|45|Skill Tab,17,3,3||
+Entrapping|42|Skill Tab,18,1,1||
+Mentalist's|42|Skill Tab,19,1,1||
+Shogukusha's|42|Skill Tab,20,1,1||
+Entrapping|15|Skill Tab,18,1,1||
+Trickster's|30|Skill Tab,18,2,2||
+Cunning|45|Skill Tab,18,3,3||
+Mentalist's|15|Skill Tab,19,1,1||
+Psychic|30|Skill Tab,19,2,2||
+Shadow|45|Skill Tab,19,3,3||
+Shogukusha's|15|Skill Tab,20,1,1||
+Sensei's|30|Skill Tab,20,2,2||
+Kenshi's|45|Skill Tab,20,3,3||
+Enlightened|1|Defense Per Level,6,,||
+Enlightened|1|Defense Per Level,1,,||
+Honorable|7|Defense Per Level,9,,||
+Honorable|7|Defense Per Level,2,,||
+Righteous|15|Defense Per Level,18,,||
+Righteous|15|Defense Per Level,3,,||
+Faithful|22|Defense Per Level,24,,||
+Faithful|22|Defense Per Level,4,,||
+Knave's|1|Damage Per Level,1,,|Attack Rating Per Level,10,,|
+Jack's|7|Damage Per Level,2,,|Attack Rating Per Level,15,,|
+Jester's|15|Damage Per Level,3,,|Attack Rating Per Level,22,,|
+Joker's|26|Damage Per Level,4,,|Attack Rating Per Level,33,,|
+Fool's|37|Damage Per Level,4,,|Attack Rating Per Level,33,,|
+Alarming|1|Damage Per Level,2,,||
+Calling|7|Damage Per Level,3,,||
+Yelling|15|Damage Per Level,4,,||
+Howling|26|Damage Per Level,5,,||
+Grinding|37|Damage Per Level,6,,||
+Paradox|18|Enhanced Defense Per Level,12,,||
+Paradox|18|Enhanced Damage Per Level,12,,||
+Robineye|1|Attack Rating Per Level,4,,||
+Sparroweye|7|Attack Rating Per Level,6,,||
+Falconeye|15|Attack Rating Per Level,8,,||
+Hawkeye|26|Attack Rating Per Level,12,,||
+Eagleeye|37|Attack Rating Per Level,16,,||
+Visionary|18|Bonus To Attack Rating per Level,2,,||
+Mnemonic|18|Mana Per Level,6,,||
+Snowy|18|Cold Damage length,,25,25|Minimum Cold Damage,,6,9|Maximum Cold Damage,,19,30
+Shivering|26|Cold Damage length,,50,50|Minimum Cold Damage,,10,15|Maximum Cold Damage,,31,45
+Boreal|40|Cold Damage length,,75,75|Minimum Cold Damage,,16,23|Maximum Cold Damage,,46,90
+Hibernal|60|Cold Damage length,,100,100|Minimum Cold Damage,,24,45|Maximum Cold Damage,,91,140
+Fiery|18|Minimum Fire Damage,,16,25|Maximum Fire Damage,,31,60|
+Smoldering|26|Minimum Fire Damage,,26,50|Maximum Fire Damage,,61,90|
+Smoking|37|Minimum Fire Damage,,51,80|Maximum Fire Damage,,91,130|
+Flaming|51|Minimum Fire Damage,,81,120|Maximum Fire Damage,,131,180|
+Condensing|67|Minimum Fire Damage,,121,170|Maximum Fire Damage,,181,240|
+Static|18|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,49,120|
+Glowing|25|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,121,180|
+Buzzing|36|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,181,260|
+Arcing|50|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,261,360|
+Shocking|66|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,361,480|
+Septic|1|Adds Poison Damage,50,31,31||
+Foul|7|Adds Poison Damage,75,41,41||
+Corrosive|15|Adds Poison Damage,100,205,205||
+Toxic|26|Adds Poison Damage,125,308,308||
+Pestilent|37|Adds Poison Damage,150,470,470||
+Maiden's|27|Amazon Skills,,1,1||
+Valkyrie's|67|Amazon Skills,,2,2||
+Maiden's|22|Amazon Skills,,1,1||
+Valkyrie's|42|Amazon Skills,,2,2||
+Monk's|27|Paladin Skills,,1,1||
+Priest's|67|Paladin Skills,,2,2||
+Monk's|22|Paladin Skills,,1,1||
+Priest's|42|Paladin Skills,,2,2||
+Monk's|27|Paladin Skills,,1,1||
+Priest's|58|Paladin Skills,,2,2||
+Summoner's|27|Necromancer Skills,,1,1||
+Necromancer's|67|Necromancer Skills,,2,2||
+Summoner's|22|Necromancer Skills,,1,1||
+Necromancer's|42|Necromancer Skills,,2,2||
+Angel's|27|Sorceress Skill,,1,1||
+Arch-Angel's|67|Sorceress Skill,,2,2||
+Angel's|22|Sorceress Skill,,1,1||
+Arch-Angel's|42|Sorceress Skill,,2,2||
+Slayer's|27|Barbarian,,1,1||
+Berserker's|67|Barbarian,,2,2||
+Slayer's|22|Barbarian,,1,1||
+Berserker's|42|Barbarian,,2,2||
+Slayer's|22|Barbarian,,1,1||
+Berserker's|42|Barbarian,,2,2||
+Shaman's|27|Druid Skills,,1,1||
+Hierophant's|67|Druid Skills,,2,2||
+Shaman's|22|Druid Skills,,1,1||
+Hierophant's|42|Druid Skills,,2,2||
+Magekiller's|27|Assassin Skills,,1,1||
+Witch-hunter's|67|Assassin Skills,,2,2||
+Magekiller's|22|Assassin Skills,,1,1||
+Witch-hunter's|42|Assassin Skills,,2,2||
+Compact|1|Increased Stack Size,,20,40||
+Thin|12|Increased Stack Size,,41,80||
+Dense|30|Increased Stack Size,,81,120||
+Consecrated|1|Attack Rating Against Undead,,25,75|Damage To Undead,,25,75|
+Pure|11|Attack Rating Against Undead,,76,175|Damage To Undead,,76,125|
+Sacred|18|Attack Rating Against Undead,,175,250|Damage To Undead,,126,200|
+Hallowed|27|Attack Rating Against Undead,,251,325|Damage To Undead,,201,275|
+Divine|37|Attack Rating Against Undead,,326,450|Damage To Undead,,276,350|
+Pearl|13|Attack Rating Against Undead,,25,50|Damage To Undead,,25,50|
+Crimson|3|Fire Resistance,,5,10||
+Red|11|Minimum Damage,,1,1||
+Sanguinary|37|Minimum Damage,,2,2||
+Bloody|67|Minimum Damage,,3,3||
+Red|22|Minimum Damage,,1,1||
+Sanguinary|52|Minimum Damage,,2,2||
+Red|82|Minimum Damage,,1,1||
+Jagged|5|Maximum Damage,,1,1||
+Forked|29|Maximum Damage,,2,2||
+Serrated|59|Maximum Damage,,3,3||
+Jagged|16|Maximum Damage,,1,1||
+Forked|44|Maximum Damage,,2,2||
+Jagged|73|Maximum Damage,,1,1||
+Snowy|6|Cold Damage length,,25,25|Minimum Cold Damage,,1,1|Maximum Cold Damage,,2,3
+Shivering|11|Cold Damage length,,25,25|Minimum Cold Damage,,2,4|Maximum Cold Damage,,4,8
+Boreal|22|Cold Damage length,,25,25|Minimum Cold Damage,,5,7|Maximum Cold Damage,,9,15
+Hibernal|38|Cold Damage length,,25,25|Minimum Cold Damage,,8,13|Maximum Cold Damage,,16,25
+Snowy|13|Cold Damage length,,25,25|Minimum Cold Damage,,2,3|Maximum Cold Damage,,3,5
+Shivering|21|Cold Damage length,,25,25|Minimum Cold Damage,,4,5|Maximum Cold Damage,,6,10
+Boreal|41|Cold Damage length,,25,25|Minimum Cold Damage,,6,10|Maximum Cold Damage,,11,20
+Hibernal|61|Cold Damage length,,25,25|Minimum Cold Damage,,11,15|Maximum Cold Damage,,21,30
+Snowy|20|Cold Damage length,,25,25|Minimum Cold Damage,,1,2|Maximum Cold Damage,,2,4
+Shivering|34|Cold Damage length,,25,25|Minimum Cold Damage,,3,4|Maximum Cold Damage,,5,8
+Boreal|58|Cold Damage length,,25,25|Minimum Cold Damage,,5,7|Maximum Cold Damage,,9,14
+Hibernal|83|Cold Damage length,,25,25|Minimum Cold Damage,,8,10|Maximum Cold Damage,,15,20
+Fiery|3|Minimum Fire Damage,,1,1|Maximum Fire Damage,,2,3|
+Smoldering|11|Minimum Fire Damage,,2,3|Maximum Fire Damage,,4,7|
+Smoking|21|Minimum Fire Damage,,4,7|Maximum Fire Damage,,8,19|
+Flaming|35|Minimum Fire Damage,,8,18|Maximum Fire Damage,,20,36|
+Fiery|9|Minimum Fire Damage,,1,1|Maximum Fire Damage,,2,3|
+Smoldering|20|Minimum Fire Damage,,2,3|Maximum Fire Damage,,4,12|
+Smoking|39|Minimum Fire Damage,,4,9|Maximum Fire Damage,,13,27|
+Flaming|59|Minimum Fire Damage,,10,27|Maximum Fire Damage,,28,43|
+Fiery|15|Minimum Fire Damage,,1,1|Maximum Fire Damage,,2,3|
+Smoldering|32|Minimum Fire Damage,,2,3|Maximum Fire Damage,,4,10|
+Smoking|56|Minimum Fire Damage,,4,9|Maximum Fire Damage,,11,19|
+Flaming|81|Minimum Fire Damage,,10,19|Maximum Fire Damage,,20,29|
+Static|5|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,4,5|
+Glowing|10|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,6,17|
+Arcing|21|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,18,44|
+Shocking|36|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,45,79|
+Static|10|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,5,9|
+Glowing|20|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,10,26|
+Arcing|40|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,27,58|
+Shocking|60|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,59,90|
+Static|17|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,6,11|
+Glowing|33|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,12,24|
+Arcing|57|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,25,43|
+Shocking|82|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,44,71|
+Septic|1|Adds Poison Damage,75,18,18||
+Foul|9|Adds Poison Damage,100,39,39||
+Toxic|20|Adds Poison Damage,125,103,103||
+Pestilent|34|Adds Poison Damage,150,171,171||
+Septic|6|Adds Poison Damage,75,35,35||
+Foul|19|Adds Poison Damage,100,77,77||
+Toxic|38|Adds Poison Damage,125,185,185||
+Pestilent|58|Adds Poison Damage,150,299,299||
+Septic|13|Adds Poison Damage,75,52,52||
+Foul|31|Adds Poison Damage,100,128,128||
+Toxic|55|Adds Poison Damage,125,205,205||
+Pestilent|80|Adds Poison Damage,150,299,299||
+Tireless|1|Regenerate Stamina,,10,10||
+Lizard's|1|Mana,,1,2||
+Azure|1|Cold Resistance,,5,5||
+Crimson|1|Fire Resistance,,5,5||
+Tangerine|1|Lightning Resistance,,5,5||
+Beryl|1|Poison Resistance,,5,5||
+Godly|43|Enhanced Defense,,101,200||
+Cruel|48|Enhanced Damage,,201,300||

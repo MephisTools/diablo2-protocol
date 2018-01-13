@@ -1,0 +1,402 @@
+The Gnasher|hax|5|Strength,,8,8|Open Wounds,,50,50|Crushing Blow,,20,20|Enhanced Damage,,60,70
+Deathspade|axe|9|Hit Blinds Target,,1,1|Minimum Damage,,8,8|Bonus to Attack Rating,,15,15|Mana After Each Kill,,4,4|Enhanced Damage,,60,70
+Bladebone|2ax|15|Damage To Undead,,100,100|Attack Rating Against Undead,,40,40|Increased Attack Speed,,20,20|Defense,,20,20|Minimum Fire Damage,,8,8|Maximum Fire Damage,,12,12|Enhanced Damage,,30,50
+Skull Splitter|mpi|21|Hit Blinds Target,,2,2|Regenerate Mana,,20,20|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,12,15|Attack Rating,,50,100|Enhanced Damage,,60,100|Open Wounds,,15,15
+Rakescar|wax|27|Minimum Poison Damage,,128,128|Maximum Poison Damage,,128,128|Poison Damage Length,,75,75|Attack Rating,,50,50|Poison Resistance,,50,50|Enhanced Damage,,75,150|Increased Attack Speed,,30,30
+Axe of Fechmar|lax|8|Enhanced Damage,,70,90|Freezes Target,,3,3|Cold Resistance,,50,50|Light Radius,,2,2
+Goreshovel|bax|14|Increased Attack Speed,,30,30|Strength,,25,25|Open Wounds,,60,60|Enhanced Damage,,40,50|Maximum Damage,,9,9
+The Chieftain|btx|19|Enhanced Damage,,100,100|All Resistances,,10,20|Mana After Each Kill,,6,6|Increased Attack Speed,,20,20|Adds Lightning Damage,,1,40
+Brainhew|gax|25|Minimum Damage,,14,14|Mana,,25,25|Light Radius,,4,4|Mana Stolen Per Hit,,10,13|Enhanced Damage,,50,80|Adds Fire Damage,,15,35
+Humongous|gix|29|Strength,,20,30|Minimum Damage,,8,8|Maximum Damage,,15,25|Crushing Blow,,33,33|Requirements,,20,20|Enhanced Damage,,80,120
+Torch of Iro|wnd|5|Necromancer Skills,,1,1|Life Stolen Per Hit,,6,6|Adds Fire Damage,,5,9|Light Radius,,3,3|Energy,,10,10|Regenerate Mana,,5,5
+Maelstrom|ywn|14|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,9,9|Lightning Resistance,,40,40|Mana,,13,13|Faster Cast Rate,,30,30|Skill,74,1,3|Skill,77,1,3|Skill,66,1,3|Skill,76,1,3
+Gravenspine|bwn|20|Strength,,10,10|Dexterity,,10,10|Minimum Cold Damage,,4,4|Maximum Cold Damage,,8,8|Cold Damage length,,75,75|Mana Stolen Per Hit,,5,5|Necromancer Skills,,2,2|Mana,,25,50
+Ume's Lament|gwn|28|Necromancer Skills,,2,2|Mana,,40,40|Faster Cast Rate,,20,20|Hit Causes Monster To Flee,,64,64|Skill,77,3,3|Skill,87,2,2
+Felloak|clb|3|Lightning Resistance,,60,60|Fire Resistance,,20,20|Knockback,,1,1|Minimum Fire Damage,,6,6|Maximum Fire Damage,,8,8|Enhanced Damage,,70,80
+Knell Striker|scp|5|Crushing Blow,,25,25|Fire Resistance,,20,20|Poison Resistance,,20,20|Mana,,15,15|Attack Rating,,35,35|Enhanced Damage,,70,80
+Rusthandle|gsc|17|Paladin Skills,,1,1|Adds Damage,,3,7|Magic Damage Reduction,,1,1|Life Stolen Per Hit,,8,8|Enhanced Damage,,50,60|Damage To Undead,,50,60|Skill,111,1,3|Skill,103,3,3
+Stormeye|wsp|23|Adds Lightning Damage,,1,6|Adds Cold Damage,75,3,5|Replenish Life,,10,10|Enhanced Damage,,80,120|Skill,110,3,5|Skill,118,3,3|Skill,121,1,1
+Stoutnail|spc|5|Attacker Takes Damage,,3,10|Enhanced Damage,,100,100|Vitality,,7,7|Magic Damage Reduction,,2,2
+Crushflange|mac|9|Strength,,15,15|Knockback,,1,1|Light Radius,,2,2|Fire Resistance,,50,50|Enhanced Damage,,50,60|Crushing Blow,,33,33
+Bloodrise|mst|15|Enhanced Damage,,120,120|Bonus to Attack Rating,,50,50|Open Wounds,,25,25|Light Radius,,2,2|Increased Attack Speed,,10,10|Skill,96,3,3|Life Stolen Per Hit,,5,5
+The General's Tan Do Li Ga|fla|21|Minimum Damage,,1,1|Maximum Damage,,20,20|Slows Down Target,,50,50|Defense,,25,25|Mana Stolen Per Hit,,5,5|Enhanced Damage,,50,60|Increased Attack Speed,,20,20
+Ironstone|whm|27|Attack Rating,,100,150|Enhanced Damage,,100,150|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,10,10|Strength,,10,10
+Bonesnap|mau|24|Enhanced Damage,,200,300|Crushing Blow,,40,40|Fire Resistance,,30,30|Cold Resistance,,30,30|Damage To Undead,,50,50
+Steeldriver|gma|29|Requirements,,-50,-50|Increased Attack Speed,,40,40|Regenerate Stamina,,25,25|Enhanced Damage,,150,250
+Rixot's Keen|ssd|2|Minimum Damage,,5,5|Bonus to Attack Rating,,20,20|Light Radius,,2,2|Crushing Blow,,25,25|Defense,,25,25|Enhanced Damage,,100,100
+Blood Crescent|scm|7|All Resistances,,15,15|Enhanced Damage,,60,80|Life,,15,15|Light Radius,,4,4|Open Wounds,,33,33|Increased Attack Speed,,15,15|Life Stolen Per Hit,,15,15
+Skewer of Krintiz|sbr|10|Ignore Target's Defense,,1,1|Strength,,10,10|Dexterity,,10,10|Mana Stolen Per Hit,,7,7|Enhanced Damage,,50,50|Adds Damage,,3,7
+Gleamscythe|flc|13|Light Radius,,3,3|Mana,,30,30|Defense,,20,20|Increased Attack Speed,,20,20|Enhanced Damage,,60,100|Adds Cold Damage,50,3,5
+Azurewrath|crs|13|Deadly Strike,,50,50|Better Chance of Getting Magic Item,,10,10|Adds Cold Damage,100,3,6|Enhanced Damage,,100,100|Durability,,25,25|Adds Magical Damage,,5,10
+Griswold's Edge|bsd|17|Minimum Fire Damage,,10,12|Maximum Fire Damage,,15,25|Attack Rating,,100,100|Increased Attack Speed,,10,10|Knockback,,1,1|Enhanced Damage,,80,120|Strength,,12,12
+Hellplague|lsd|22|Mana Stolen Per Hit,,5,5|Life Stolen Per Hit,,5,5|Minimum Poison Damage,,48,48|Maximum Poison Damage,,96,96|Poison Damage Length,,150,150|Enhanced Damage,,70,80|Adds Fire Damage,,25,75|Fire Skills,,2,2
+Culwen's Point|wsd|29|All Skills,,1,1|Poison Length Reduction,,50,50|Faster Hit Recovery,,20,20|Increased Attack Speed,,20,20|Attack Rating,,60,60|Enhanced Damage,,70,80
+Shadowfang|2hs|12|Mana Stolen Per Hit,,9,9|Cold Resistance,,20,20|Light Radius,,-2,-2|Adds Cold Damage,150,10,30|Enhanced Damage,,100,100|Life Stolen Per Hit,,9,9
+Soulflay|clm|19|Mana Stolen Per Hit,,4,10|Life Stolen Per Hit,,4,4|Enhanced Damage,,70,100|All Resistances,,5,5|Increased Attack Speed,,10,10
+Kinemil's Awl|gis|23|Attack Rating,,100,150|Mana,,20,20|Minimum Fire Damage,,6,6|Maximum Fire Damage,,20,40|Enhanced Damage,,80,100|Skill,102,6,6
+Blacktongue|bsw|26|Adds Poison Damage,150,192,192|Prevent Monster Heal,,1,1|Attack Rating,,50,50|Poison Resistance,,50,50|Enhanced Damage,,50,60
+Ripsaw|flb|26|Open Wounds,,80,80|Maximum Damage,,15,15|Mana Stolen Per Hit,,6,6|Enhanced Damage,,80,100
+The Patriarch|gsd|29|Damage Reduction,,3,3|Magic Damage Reduction,,3,3|Hit Blinds Target,,1,1|Extra Gold,,100,100|Enhanced Damage,,100,120|Strength,,10,10
+Gull|dgr|4|Minimum Damage,,1,1|Maximum Damage,,15,15|Better Chance of Getting Magic Item,,100,100|Mana,,-5,-5
+The Diggler|dir|11|Dexterity,,10,10|Enhanced Damage,,50,50|Increased Attack Speed,,30,30|Cold Resistance,,25,25|Fire Resistance,,25,25|Ignore Target's Defense,,1,1
+The Jade Tan Do|kri|19|Attack Rating,,100,150|Cannot Be Frozen,,1,1|Adds Poison Damage,100,460,460|Poison Resistance,,95,95|Maximum Poison Resistance,,20,20
+Spectral Shard|bld|25|Faster Cast Rate,,50,50|Mana,,50,50|Attack Rating,,55,55|All Resistances,,10,10
+The Dragon Chang|spr|8|Attack Rating,,35,35|Minimum Damage,,10,10|Light Radius,,2,2|Damage To Undead,,100,100|Adds Fire Damage,,3,6
+Razortine|tri|12|Slows Down Target,,25,25|Target Defense Reduction (Percent),,50,50|Strength,,15,15|Dexterity,,8,8|Increased Attack Speed,,30,30|Enhanced Damage,,30,50
+Bloodthief|brn|17|Open Wounds,,35,35|Strength,,10,10|Life Stolen Per Hit,,8,12|Life,,26,26|Enhanced Damage,,50,70
+Lance of Yaggai|spt|22|Attacker Takes Damage,,8,8|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,60,60|All Resistances,,15,15|Increased Attack Speed,,40,40
+The Tannr Gorerod|pik|27|Minimum Fire Damage,,23,23|Maximum Fire Damage,,54,54|Maximum Fire Resistance,,15,15|Life,,30,30|Attack Rating,,60,60|Light Radius,,3,3|Fire Resistance,,15,15|Enhanced Damage,,80,100
+Dimoak's Hew|bar|8|Dexterity,,15,15|Enhanced Damage,,100,100|Increased Attack Speed,,20,20|Defense,,-8,-8
+Steelgoad|vou|14|Hit Causes Monster To Flee,,96,96|Deadly Strike,,30,30|Attack Rating,,30,30|All Resistances,,5,5|Enhanced Damage,,60,80|Durability,,20,40
+Soul Harvest|scy|19|Open Wounds,,30,30|Attack Rating,,45,45|All Resistances,,20,20|Enhanced Damage,,50,90|Mana Stolen Per Hit,,10,10|Energy,,5,5
+The Battlebranch|pax|25|Increased Attack Speed,,30,30|Dexterity,,10,10|Enhanced Damage,,50,70|Attack Rating,,50,100|Life Stolen Per Hit,,7,7
+Woestave|hal|28|Slows Down Target,,50,50|Open Wounds,,50,50|Hit Blinds Target,,3,3|Monster Defense Reduction per Hit,,-50,-50|Freezes Target,,1,1|Light Radius,,-3,-3|Prevent Monster Heal,,1,1|Enhanced Damage,,20,40
+The Grim Reaper|wsc|29|Deadly Strike,,100,100|Prevent Monster Heal,,1,1|Mana Stolen Per Hit,,5,5|Enhanced Damage,,20,20|Minimum Damage,,15,15
+Bane Ash|sst|5|Minimum Fire Damage,,4,4|Maximum Fire Damage,,6,6|Fire Resistance,,50,50|Mana,,30,30|Increased Attack Speed,,20,20|Enhanced Damage,,50,60|Skill,36,5,5|Skill,37,2,2
+Serpent Lord|lst|9|Adds Poison Damage,75,40,40|Poison Resistance,,50,50|Light Radius,,-1,-1|Mana,,10,10|Enhanced Damage,,30,40|Mana Stolen Per Hit,,100,100|Target Defense Reduction (Percent),,50,50
+Spire of Lazarus|cst|18|Lightning Resistance,,75,75|Damage Reduction,,5,5|Energy,,15,15|Skill,53,1,1|Skill,49,2,2|Skill,42,3,3|Regenerate Mana,,43,43|Adds Lightning Damage,,1,28|Sorceress Skill,,1,1
+The Salamander|bst|21|Adds Fire Damage,,15,32|Fire Resistance,,30,30|Skill,51,1,1|Skill,47,2,2|Skill,37,3,3|Fire Skills,,2,2
+The Iron Jang Bong|wst|28|Defense,,30,30|Faster Cast Rate,,20,20|Enhanced Damage,,100,100|Bonus to Attack Rating,,50,50|Skill,48,2,2|Skill,46,2,2|Skill,44,3,3|Sorceress Skill,,2,2
+Pluckeye|sbw|7|Attack Rating,,28,28|Enhanced Damage,,100,100|Life,,10,10|Light Radius,,2,2|Mana Stolen Per Hit,,3,3|Mana After Each Kill,,2,2
+Witherstring|hbw|13|Increased Attack Speed,,30,30|Minimum Damage,,1,1|Maximum Damage,,3,3|Attack Rating,,50,50|Fires Magic Arrows,,3,3|Enhanced Damage,,40,50
+Raven Claw|lbw|15|Bonus to Attack Rating,,50,50|Dexterity,,3,3|Fires Explosive Arrows,,3,3|Strength,,3,3|Enhanced Damage,,60,70
+Rogue's Bow|cbw|20|All Resistances,,10,10|Deadly Strike,,30,30|Attack Rating,,60,60|Damage To Undead,,100,100|Enhanced Damage,,40,60|Increased Attack Speed,,50,50
+Stormstrike|sbb|25|Adds Lightning Damage,,1,30|Strength,,8,8|Attack Rating,,28,28|Piercing Attack,,25,25|Lightning Resistance,,25,25|Enhanced Damage,,70,90
+Wizendraw|lbb|26|Fires Magic Arrows,,5,5|Mana,,30,30|Increased Attack Speed,,20,20|Cold Resistance,,26,26|Attack Rating,,50,100|Enhanced Damage,,70,80|Energy,,15,15|Decreases Enemy Cold Resistance,,20,35
+Hellclap|swb|27|Increased Attack Speed,,10,10|Minimum Fire Damage,,15,15|Maximum Fire Damage,,30,50|Attack Rating,,50,75|Fire Resistance,,40,40|Dexterity,,12,12|Enhanced Damage,,70,90|Fire Skills,,1,1
+Blastbark|lwb|28|Enhanced Damage,,70,130|Strength,,5,5|Amazon Skills,,1,1|Mana Stolen Per Hit,,3,3|Skill,16,2,2
+Leadcrow|lxb|9|Dexterity,,10,10|Life,,10,10|Enhanced Damage,,70,70|Poison Resistance,,30,30|Deadly Strike,,25,25|Attack Rating,,40,40
+Ichorsting|mxb|18|Adds Poison Damage,75,102,102|Dexterity,,20,20|Piercing Attack,,50,50|Attack Rating,,50,50|Enhanced Damage,,50,50|Increased Attack Speed,,20,20
+Hellcast|hxb|27|Fires Explosive Arrows,,5,5|Maximum Fire Resistance,,15,15|Fire Resistance,,15,15|Attack Rating,,70,70|Increased Attack Speed,,20,20|Enhanced Damage,,70,80|Adds Fire Damage,,15,35
+Doomslinger|rxb|28|Amazon Skills,,1,1|Piercing Attack,,35,35|Increased Attack Speed,,30,30|Life,,15,15|Enhanced Damage,,60,100
+Biggin's Bonnet|cap|3|Life,,15,15|Attack Rating,,30,30|Enhanced Damage,,30,30|Mana,,15,15|Defense,,14,14
+Tarnhelm|skp|15|Extra Gold,,75,75|Better Chance of Getting Magic Item,,25,50|All Skills,,1,1
+Coif of Glory|hlm|14|Attacker Takes Lightning Damage,,7,7|Hit Blinds Target,,1,1|Lightning Resistance,,15,15|Defense vs. Missile,,100,100|Defense,,10,10
+Duskdeep|fhl|17|Light Radius,,-2,-2|All Resistances,,15,15|Damage Reduction,,7,7|Maximum Damage,,8,8|Defense,,10,20|Enhanced Defense,,30,50
+Wormskull|bhm|21|Necromancer Skills,,1,1|Life Stolen Per Hit,,5,5|Mana,,10,10|Poison Resistance,,25,25|Adds Poison Damage,200,102,102
+Howltusk|ghm|25|Magic Damage Reduction,,2,2|Attacker Takes Damage,,3,3|Enhanced Defense,,80,80|Damage to Mana,,35,35|Knockback,,1,1|Hit Causes Monster To Flee,,33,33
+Undead Crown|crn|29|Life Stolen Per Hit,,5,5|Defense,,40,40|Poison Resistance,,50,50|Half Freeze Duration,,1,1|Enhanced Defense,,30,60|Damage To Undead,,50,50|Attack Rating Against Undead,,50,100|Skill,69,3,3
+The Face of Horror|msk|20|Hit Causes Monster To Flee,,64,64|Strength,,20,20|All Resistances,,10,10|Damage To Undead,,50,50|Defense,,25,25
+Greyform|qui|7|Magic Damage Reduction,,3,3|Cold Resistance,,20,20|Fire Resistance,,20,20|Dexterity,,10,10|Life Stolen Per Hit,,5,5|Defense,,20,20
+Blinkbat's Form|lea|12|Defense vs. Missile,,50,50|Faster Run/Walk,,10,10|Defense,,25,25|Minimum Fire Damage,,3,3|Maximum Fire Damage,,6,6|Faster Hit Recovery,,40,40
+The Centurion|hla|14|Defense,,30,30|Attack Rating,,50,50|Damage Reduction,,2,2|Life,,15,15|Mana,,15,15|Stamina,,15,15|Replenish Life,,5,5|Slow Stamina Drain,,25,25
+Twitchthroe|stu|16|Increased Attack Speed,,20,20|Dexterity,,10,10|Increased Blocking, Faster Block Rate,,25,25|Defense,,25,25|Strength,,10,10|Faster Hit Recovery,,20,20
+Darkglow|rng|14|Attack Rating,,20,20|Maximum All Resistances,,5,5|Light Radius,,3,3|Defense vs. Melee,,50,50|All Resistances,,10,10|Enhanced Defense,,70,100
+Hawkmail|scl|15|Enhanced Defense,,80,100|Maximum Cold Resistance,,15,15|Cold Resistance,,15,15|Cannot Be Frozen,,1,1|Faster Run/Walk,,10,10
+Sparking Mail|chn|17|Enhanced Defense,,75,85|Adds Lightning Damage,,1,20|Attacker Takes Lightning Damage,,10,14|Lightning Resistance,,30,30
+Venom Ward|brs|20|Maximum Poison Resistance,,15,15|Poison Length Reduction,,50,50|Poison Resistance,,90,90|Light Radius,,2,2|Enhanced Defense,,60,100
+Iceblink|spl|22|Freezes Target,,1,1|Cold Resistance,,30,30|Light Radius,,4,4|Magic Damage Reduction,,1,1|Enhanced Defense,,70,80
+Boneflesh|plt|26|Life Stolen Per Hit,,5,5|Enhanced Defense,,100,120|Attack Rating,,35,35|Open Wounds,,25,25
+Rockfleece|fld|28|Requirements,,-10,-10|Enhanced Defense,,100,130|Damage Reduction (Percent),,10,10|Damage Reduction,,5,5|Strength,,5,5
+Rattlecage|gth|29|Hit Causes Monster To Flee,,52,52|Attack Rating,,45,45|Crushing Blow,,25,25|Defense,,200,200
+Goldskin|ful|28|Enhanced Defense,,120,150|All Resistances,,35,35|Attacker Takes Damage,,10,10|Light Radius,,2,2|Extra Gold,,100,100
+Silks of the Victor|aar|28|Mana Stolen Per Hit,,5,5|All Skills,,1,1|Light Radius,,2,2|Enhanced Defense,,100,120
+Heavenly Garb|ltp|29|Enhanced Defense,,100,100|All Resistances,,10,10|Regenerate Mana,,25,25|Energy,,15,15|Damage To Undead,,50,50|Attack Rating Against Undead,,100,100
+Pelta Lunata|buc|2|Defense,,30,30|Vitality,,10,10|Strength,,2,2|Energy,,10,10|Enhanced Defense,,30,40|Increased Blocking, Faster Block Rate,,20,20|Increased Blocking, Faster Block Rate,,40,40|Durability,,8,12
+Umbral Disk|sml|9|Hit Blinds Target,,1,1|Dexterity,,10,10|Defense,,30,30|Life,,20,20|Light Radius,,-2,-2|Enhanced Defense,,40,50|Increased Blocking, Faster Block Rate,,30,30|Durability,,10,15
+Stormguild|lrg|13|Magic Damage Reduction,,1,1|Lightning Resistance,,25,25|Defense,,30,30|Adds Lightning Damage,,1,6|Enhanced Defense,,50,60|Increased Blocking, Faster Block Rate,,30,30|Attacker Takes Lightning Damage,,3,3|Durability,,10,15
+Wall of the Eyeless|bsh|20|Mana After Each Kill,,5,5|Mana Stolen Per Hit,,3,3|Faster Cast Rate,,20,20|Poison Resistance,,20,20|Enhanced Defense,,30,40|Defense,,10,10
+Swordback Hold|spk|15|Attacker Takes Damage,,5,5|Increased Blocking, Faster Block Rate,,20,20|Open Wounds,,50,50|Bloody,,3,5|Enhanced Defense,,30,60|Attacker Takes Damage,,5,5|Defense,,10,10
+Steelclash|kit|17|Increased Blocking, Faster Block Rate,,25,25|Paladin Skills,,1,1|Damage Reduction,,3,3|Light Radius,,3,3|Enhanced Defense,,60,100|Increased Blocking, Faster Block Rate,,20,20|All Resistances,,15,15|Defense,,20,20|Durability,,15,20
+Bverrit Keep|tow|19|Defense,,30,30|Fire Resistance,,75,75|Strength,,5,5|Magic Damage Reduction,,5,5|Enhanced Defense,,80,120|Increased Blocking, Faster Block Rate,,10,10|Durability,,80,100
+The Ward|gts|26|Defense,,40,40|Magic Damage Reduction,,2,2|Strength,,10,10|Increased Blocking, Faster Block Rate,,10,10|Enhanced Defense,,100,100|All Resistances,,30,50
+The Hand of Broc|lgl|5|Mana Stolen Per Hit,,3,3|Life Stolen Per Hit,,3,3|Poison Resistance,,10,10|Mana,,20,20|Defense,,10,10|Enhanced Defense,,10,20
+Bloodfist|vgl|9|Minimum Damage,,5,5|Life,,40,40|Faster Hit Recovery,,30,30|Defense,,10,10|Enhanced Defense,,10,20|Increased Attack Speed,,10,10
+Chance Guards|mgl|15|Extra Gold,,200,200|Better Chance of Getting Magic Item,,25,40|Attack Rating,,25,25|Defense,,15,15|Light Radius,,2,2|Enhanced Defense,,20,30
+Magefist|tgl|23|Faster Cast Rate,,20,20|Regenerate Mana,,25,25|Fire Skills,,1,1|Adds Fire Damage,,1,6|Defense,,10,10|Enhanced Defense,,20,30
+Frostburn|hgl|29|Defense,,30,30|Enhanced Damage,,5,5|Mana (Percent),,40,40|Adds Cold Damage,50,1,6|Enhanced Defense,,10,20
+Hotspur|lbt|5|Maximum Fire Resistance,,15,15|Life,,15,15|Adds Fire Damage,,3,6|Defense,,6,6|Fire Resistance,,45,45|Enhanced Defense,,10,20
+Gorefoot|vbt|9|Bloody,,3,5|Faster Run/Walk,,20,20|Mana Stolen Per Hit,,2,2|Attacker Takes Damage,,2,2|Defense,,12,12|Enhanced Defense,,20,30|Skill,132,2,2
+Treads of Cthon|mbt|15|Faster Run/Walk,,30,30|Defense vs. Missile,,50,50|Slow Stamina Drain,,50,50|Life,,10,10|Defense,,12,12|Enhanced Defense,,30,40
+Goblin Toe|tbt|22|Crushing Blow,,25,25|Damage Reduction,,1,1|Magic Damage Reduction,,1,1|Defense,,15,15|Light Radius,,-1,-1|Enhanced Defense,,50,60
+Tearhaunch|hbt|29|Defense,,35,35|Strength,,5,5|Dexterity,,5,5|Faster Run/Walk,,20,20|All Resistances,,10,10|Enhanced Defense,,60,80|Skill,115,2,2
+Lenymo|lbl|7|Mana,,15,15|Regenerate Mana,,30,30|All Resistances,,5,5|Light Radius,,1,1
+Snakecord|vbl|12|Adds Poison Damage,75,40,40|Poison Resistance,,25,25|Defense,,10,10|Enhanced Defense,,20,30|Replenish Life,,5,5|Poison Length Reduction,,50,50
+Nightsmoke|mbl|20|All Resistances,,10,10|Damage to Mana,,50,50|Mana,,20,20|Damage Reduction,,2,2|Defense,,15,15|Enhanced Defense,,30,50
+Goldwrap|tbl|27|Better Chance of Getting Magic Item,,30,30|Light Radius,,2,2|Defense,,25,25|Increased Attack Speed,,10,10|Enhanced Defense,,40,60|Extra Gold,,50,80
+Bladebuckle|hbl|29|Attacker Takes Damage,,8,8|Defense,,30,30|Damage Reduction,,3,3|Strength,,5,5|Dexterity,,10,10|Enhanced Defense,,80,100|Faster Hit Recovery,,30,30
+Nokozan Relic|amu|10|Adds Fire Damage,,3,6|Maximum Fire Resistance,,10,10|Fire Resistance,,50,50|Light Radius,,3,3|Faster Hit Recovery,,20,20
+The Eye of Etlich|amu|15|Defense vs. Missile,,10,40|Light Radius,,1,5|All Skills,,1,1|Life Stolen Per Hit,,3,7|Minimum Cold Damage,,1,2|Maximum Cold Damage,,3,5|Cold Damage length,,50,250
+The Mahim-Oak Curio|amu|25|Dexterity,,10,10|Strength,,10,10|Energy,,10,10|Vitality,,10,10|Defense,,10,10|Bonus to Attack Rating,,10,10|All Resistances,,10,10|Enhanced Defense,,10,10
+Nagelring|rin|7|Magic Damage Reduction,,3,3|Attacker Takes Damage,,3,3|Attack Rating,,50,75|Better Chance of Getting Magic Item,,15,30
+Manald Heal|rin|15|Mana Stolen Per Hit,,4,7|Replenish Life,,5,8|Life,,20,20|Regenerate Mana,,20,20
+The Stone of Jordan|rin|29|Mana,,20,20|Mana (Percent),,25,25|Minimum Lightning Damage,,1,1|All Skills,,1,1|Maximum Lightning Damage,,12,12
+Amulet of the Viper|vip|0|Mana,,10,10|Poison Resistance,,25,25|Life,,10,10
+Staff of Kings|msf|0|All Resistances,,10,10|Increased Attack Speed,,50,50
+Horadric Staff|hst|0|Mana,,10,10|Poison Resistance,,25,25|Life,,10,10|All Resistances,,10,10|Increased Attack Speed,,50,50
+Hell Forge Hammer|hfh|0|Minimum Fire Damage,,5,5|Maximum Fire Damage,,20,20|Fire Resistance,,40,40|Defense,,35,35
+Khalim's Flail|qf1|0|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,20,20|Increased Attack Speed,,50,50|Attack Rating,,40,40
+Khalim's Will|qf2|0|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,40,40|Increased Attack Speed,,50,50|Attack Rating,,40,40|Mana Stolen Per Hit,,6,6|Life Stolen Per Hit,,6,6
+Coldkill|9ha|36|Adds Cold Damage,50,40,40|Cold Resistance,,15,15|Maximum Cold Resistance,,15,15|Increased Attack Speed,,30,30|Skill On Striking,45,10,10|Skill When Struck,44,10,5|Enhanced Damage,,150,190
+Butcher's Pupil|9ax|39|Deadly Strike,,35,35|Open Wounds,,25,25|Enhanced Damage,,150,200|Indestructible,,1,1|Increased Attack Speed,,30,30|Adds Damage,,30,50
+Islestrike|92a|43|Druid Skills,,2,2|Strength,,10,10|Dexterity,,10,10|Vitality,,10,10|Energy,,10,10|Defense vs. Missile,,50,50|Crushing Blow,,25,25|Enhanced Damage,,170,190|Skill,233,1,1|Skill,248,1,1
+Pompeii's Wrath|9mp|45|Skill On Striking,244,4,8|Slows Down Target,,50,50|Adds Fire Damage,,35,150|Knockback,,1,1|Enhanced Damage,,140,170
+Guardian Naga|9wa|48|Skill On Striking,92,5,8|Attacker Takes Damage,,15,15|Poison Resistance,,30,30|Enhanced Damage,,150,180|Adds Poison Damage,250,256,256|Maximum Damage,,20,20
+Warlord's Trust|9la|35|Defense,,75,75|Replenish Life,,20,20|Vitality Per Level,4,,|All Resistances,,10,10|Repairs Durability,25,,|Enhanced Damage,,175,175
+Spellsteel|9ba|39|Requirements,,-60,-60|Mana,,100,100|Magic Damage Reduction,,12,15|Faster Cast Rate,,10,10|Enhanced Damage,,165,165|Regenerate Mana,,25,25|Charges,54,20,1|Charges,87,30,3|Charges,101,100,10|Charges,225,60,12
+Stormrider|9bt|41|Skill On Striking,53,5,10|Skill On Striking,38,10,0|Adds Lightning Damage,,1,200|Adds Damage,,35,75|Enhanced Damage,,100,100|Durability,,50,50|Attacker Takes Lightning Damage,,15,15|Skill When Struck,38,15,5
+Boneslayer Blade|9ga|42|Attack Rating Against Undead Per Level,10,,|Damage To Undead Per Level,20,,|Strength,,8,8|Increased Attack Speed,,20,20|Bonus to Attack Rating,,35,35|Enhanced Damage,,180,220|Charges,101,200,20|Skill When Struck,101,50,0
+The Minotaur|9gi|45|Hit Blinds Target,,2,2|Half Freeze Duration,,1,1|Strength,,15,20|Slows Down Target,,50,50|Crushing Blow,,30,30|Adds Damage,,20,30|Enhanced Damage,,140,200
+Suicide Branch|9wn|33|Attacker Takes Damage,,25,25|Faster Cast Rate,,50,50|All Resistances,,10,10|Mana (Percent),,10,10|Life,,40,40|All Skills,,1,1
+Carin Shard|9yw|35|Life Per Level,10,,|Faster Cast Rate,,10,10|Mana Per Level,10,,|Faster Hit Recovery,,30,30|Replenish Life,,5,5|Necromancer Skills,,1,1|Skill Tab,8,2,2
+Arm of King Leoric|9bw|36|Skill Tab,8,2,2|Skill When Struck,93,5,10|Mana Per Level,10,,|Skill When Struck,88,10,2|Faster Cast Rate,,10,10|Skill Tab,7,2,2|Skill,77,2,2|Skill,80,2,2|Skill,69,3,3|Skill,70,3,3
+Blackhand Key|9gw|41|Skill Tab,6,1,1|Damage to Mana,,20,20|Life,,50,50|Light Radius,,-2,-2|Faster Cast Rate,,30,30|Fire Resistance,,37,37|Necromancer Skills,,2,2|Charges,150,30,13
+Dark Clan Crusher|9cl|34|Druid Skills,,2,2|Damage To Demons,,200,200|Attack Rating Against Demons,,200,200|Enhanced Damage,,195,195|Bonus to Attack Rating,,20,25|Life After Each Demon Kill,,15,15
+Zakarum's Hand|9sc|37|Mana Stolen Per Hit,,8,8|Ignore Target's Defense,,1,1|Regenerate Mana,,10,10|Regenerate Stamina,,15,15|Skill On Striking,59,6,5|Enhanced Damage,,180,220|Increased Attack Speed,,30,30|Skill,114,2,2|Skill,118,2,2
+The Fetid Sprinkler|9qs|38|Paladin Skills,,2,2|Skill On Striking,87,5,1|Skill On Striking,81,10,1|Adds Poison Damage,100,409,409|Enhanced Damage,,160,190|Attack Rating,,150,200|Adds Damage,,15,25
+Hand of Blessed Light|9ws|42|Paladin Skills,,2,2|Enhanced Damage,,130,160|Bonus to Attack Rating,,100,100|Defense,,50,50|Regenerate Mana,,15,15|Light Radius,,4,4|Adds Damage,,20,45|Skill,101,4,4|Skill,121,2,2|Skill On Striking,121,5,4
+Fleshrender|9sp|38|Open Wounds,,25,25|Prevent Monster Heal,,1,1|Crushing Blow,,20,20|Deadly Strike,,20,20|Adds Damage,,35,50|Enhanced Damage,,130,200|Druid Skills,,1,1|Skill Tab,16,2,2|Durability,,20,20
+Sureshrill Frost|9ma|39|Adds Cold Damage,125,63,112|Cannot Be Frozen,,1,1|Enhanced Damage,,150,180|Adds Damage,,5,10|Freezes Target,,3,3|Charges,64,50,9
+Moonfall|9mt|42|Skill On Striking,56,5,6|Adds Fire Damage,,55,115|Magic Damage Reduction,,9,12|Enhanced Damage,,120,150|Light Radius,,2,2|Charges,56,60,11|Adds Damage,,10,15
+Baezil's Vortex|9fl|45|Skill On Striking,48,5,8|Adds Lightning Damage,,1,150|Mana,,100,100|Lightning Resistance,,25,25|Enhanced Damage,,160,200|Increased Attack Speed,,20,20|Charges,48,80,15
+Earthshaker|9wh|43|Skill On Striking,234,5,7|Knockback,,1,1|Increased Attack Speed,,30,30|Enhanced Damage,,180,180|Hit Blinds Target,,1,1|Skill Tab,17,3,3|Durability,,50,50
+Bloodtree Stump|9m9|48|Crushing Blow,,50,50|Enhanced Damage,,180,220|All Resistances,,20,20|Strength,,25,25|Skill Tab,13,2,2|Skill,129,3,3|Durability,,40,40
+The Gavel of Pain|9gm|45|Skill On Striking,66,5,1|Skill When Struck,76,5,1|Attacker Takes Damage,,26,26|Indestructible,,1,1|Adds Damage,,12,30|Enhanced Damage,,130,160|Charges,66,3,8
+Bloodletter|9ss|30|Adds Damage,,12,45|Attack Rating,,90,90|Life Stolen Per Hit,,8,8|Slow Stamina Drain,,10,10|Increased Attack Speed,,20,20|Enhanced Damage,,140,140|Skill,127,2,4|Skill,151,1,3|Durability,,30,30
+Coldsteel Eye|9sm|31|Hit Blinds Target,,1,1|Slows Down Target,,30,30|Deadly Strike,,50,50|Durability,,50,50|Enhanced Damage,,200,250|Increased Attack Speed,,20,20|Mana Stolen Per Hit,,6,6
+Hexfire|9sb|33|Charges,62,36,6|Ignore Target's Defense,,1,1|Fire Resistance,,25,25|Maximum Fire Resistance,,10,10|Adds Damage,,35,40|Enhanced Damage,,140,160|Fire Skills,,3,3
+Blade of Ali Baba|9fc|35|Add Sockets,3,,|Extra Gold Per Level,20,,|Better Chance of Getting Magic Item Per Level,8,,|Mana,,15,15|Enhanced Damage,,60,120|Dexterity,,5,15
+Ginther's Rift|9cr|37|Magic Damage Reduction,,7,12|Increased Attack Speed,,30,30|Repairs Durability,20,,|Durability,,40,40|Adds Magical Damage,,50,120|Enhanced Damage,,100,150
+Headstriker|9bs|39|Prevent Monster Heal,,1,1|Strength,,15,15|Deadly Strike Per Level,12,,|Damage Per Level,8,,|Enhanced Damage,,150,150
+Plague Bearer|9ls|41|Skill On Striking,92,5,4|Adds Poison Damage,200,384,384|Adds Damage,,10,45|Enhanced Damage,,150,150|Poison Resistance,,45,45|Skill,238,5,5
+The Atlantean|9wd|42|Durability,,100,100|Defense,,75,75|Strength,,16,16|Dexterity,,12,12|Vitality,,8,8|Enhanced Damage,,200,250|Paladin Skills,,2,2|Bonus to Attack Rating,,50,50
+Crainte Vomir|92h|42|Slows Down Target,,35,35|Monster Defense Reduction per Hit,,-70,-70|Faster Run/Walk,,20,20|Damage Reduction (Percent),,10,10|Enhanced Damage,,160,200|Increased Attack Speed,,50,50
+Bing Sz Wang|9cm|43|Requirements,,-30,-30|Adds Cold Damage,75,50,140|Strength,,20,20|Freezes Target,,2,2|Skill On Striking,64,5,3|Enhanced Damage,,130,160
+The Vile Husk|9gs|44|Skill On Striking,66,6,1|Damage To Undead Per Level,60,,|Poison Resistance,,50,50|Adds Poison Damage,150,426,426|Enhanced Damage,,150,200|Attack Rating Against Undead Per Level,20,,
+Cloudcrack|9b9|45|Skill On Striking,121,6,7|Adds Lightning Damage,,1,240|Defense,,30,30|Light Radius,,2,2|Maximum Lightning Resistance,,10,10|Enhanced Damage,,150,200|Attacker Takes Lightning Damage,,15,15|Skill Tab,10,2,2|Skill Tab,11,2,2
+Todesfaelle Flamme|9fb|46|Adds Fire Damage,,50,200|Fire Resistance,,40,40|Fire Absorption,,10,10|Skill On Attack,47,10,6|Enhanced Damage,,120,160|Charges,52,45,10|Charges,51,20,10
+Swordguard|9gd|48|Requirements,,-50,-50|Defense Per Level,40,,|All Resistances,,10,20|Defense vs. Missile,,100,100|Damage to Mana,,30,30|Enhanced Damage,,170,180|Defense vs. Melee,,200,200|Faster Hit Recovery,,20,20|Increased Blocking, Faster Block Rate,,20,20
+Spineripper|9dg|32|Ignore Target's Defense,,1,1|Life Stolen Per Hit,,8,8|Prevent Monster Heal,,1,1|Increased Attack Speed,,15,15|Dexterity,,10,10|Enhanced Damage,,200,240|Adds Damage,,15,27|Necromancer Skills,,1,1
+Heart Carver|9di|36|Deadly Strike,,35,35|Ignore Target's Defense,,1,1|Adds Damage,,15,35|Enhanced Damage,,190,240|Skill,131,4,4|Skill,142,4,4|Skill,150,4,4
+Blackbog's Sharp|9kr|38|Slows Down Target,,50,50|Defense,,50,50|Adds Damage,,15,45|Increased Attack Speed,,30,30|Adds Poison Damage,250,500,500|Skill,73,5,5|Skill,83,4,4|Skill,92,4,4
+Stormspike|9bl|41|Adds Lightning Damage,,1,120|Attacker Takes Lightning Damage,,20,20|Skill When Struck,38,25,3|Enhanced Damage,,150,150|Lightning Resistance Per Level,8,,
+The Impaler|9sr|31|Ignore Target's Defense,,1,1|Attack Rating,,150,150|Increased Attack Speed,,20,20|Open Wounds,,40,40|Prevent Monster Heal,,1,1|Enhanced Damage,,140,170|Skill,19,5,5|Skill,14,3,3
+Kelpie Snare|9tr|33|Slows Down Target,,75,75|Fire Resistance,,50,50|Life Per Level,10,,|Adds Damage,,30,50|Strength,,10,10|Enhanced Damage,,140,180
+Soulfeast Tine|9br|35|Requirements,,-20,-20|Life Stolen Per Hit,,7,7|Mana Stolen Per Hit,,7,7|Slow Stamina Drain,,20,20|Enhanced Damage,,150,190|Attack Rating,,150,250|Durability,,15,15
+Hone Sundan|9st|37|Add Sockets,3,,|Adds Damage,,20,40|Crushing Blow,,45,45|Repairs Durability,10,,|Enhanced Damage,,160,200
+Spire of Honor|9p9|39|Bonus to Attack Rating,,25,25|Light Radius,,3,3|Replenish Life,,20,20|Faster Hit Recovery,,20,20|Adds Damage,,20,40|Damage To Demons Per Level,12,,|Enhanced Damage,,150,200|Skill Tab,9,3,3|Enhanced Defense,,25,25
+The Meat Scraper|9b7|41|Enhanced Damage,,150,200|Increased Attack Speed,,30,30|Life Stolen Per Hit,,10,10|Open Wounds,,50,50|Better Chance of Getting Magic Item,,25,25|Skill Tab,13,3,3
+Blackleach Blade|9vo|42|Requirements,,-25,-25|Skill On Striking,72,5,5|Light Radius,,-2,-2|Life Stolen Per Hit,,8,8|Damage Per Level,10,,|Enhanced Damage,,100,140
+Athena's Wrath|9s8|42|Druid Skills,,1,3|Dexterity,,15,15|Increased Attack Speed,,30,30|Life Per Level,8,,|Damage Per Level,8,,|Enhanced Damage,,150,180
+Pierre Tombale Couant|9pa|43|Deadly Strike,,55,55|Barbarian,,3,3|Faster Hit Recovery,,30,30|Mana Stolen Per Hit,,6,6|Adds Damage,,12,20|Enhanced Damage,,160,220|Attack Rating,,100,200
+Husoldal Evo|9h9|44|Replenish Life,,20,20|Attack Rating,,200,250|Prevent Monster Heal,,1,1|Adds Damage,,20,32|Enhanced Damage,,160,200|Increased Attack Speed,,20,20
+Grim's Burning Dead|9wc|45|Adds Fire Damage,,131,232|Fire Resistance,,45,45|Enhanced Damage,,140,180|Attacker Takes Damage,,8,8|Requirements,,-50,-50|Necromancer Skills,,3,3|Target Defense Reduction (Percent),,50,50|Enhanced Defense,,20,20|Attack Rating,,200,250
+Razorswitch|8ss|28|Faster Cast Rate,,30,30|Attacker Takes Damage,,15,15|Mana,,175,175|Life,,80,80|Magic Damage Reduction,,15,15|All Resistances,,50,50|All Skills,,1,1
+Ribcracker|8ls|31|Adds Damage,,30,65|Enhanced Damage,,200,300|Crushing Blow,,50,50|Dexterity,,15,15|Defense,,100,100|Enhanced Defense,,100,100|Faster Hit Recovery,,50,50|Increased Attack Speed,,50,50|Durability,,100,100
+Chromatic Ire|8cs|35|Sorceress Skill,,3,3|All Resistances,,20,40|Faster Cast Rate,,20,20|Attacker Takes Lightning Damage,,20,20|Life (Percent),,20,25|Skill,61,1,1|Skill,63,1,1|Skill,65,1,1
+Warpspear|8bs|39|Sorceress Skill,,3,3|Ignore Target's Defense,,1,1|Skill,54,3,3|Skill,43,3,3|Skill,58,3,3|Defense vs. Missile,,250,250
+Skull Collector|8ws|41|Mana (Percent),,20,20|Mana After Each Kill,,20,20|All Skills,,2,2|Better Chance of Getting Magic Item Per Level,8,,
+Skystrike|8sb|28|Adds Lightning Damage,,1,250|Attack Rating,,100,100|Energy,,10,10|Increased Attack Speed,,30,30|Enhanced Damage,,150,200|Skill On Striking,56,2,6|Amazon Skills,,1,1
+Riphook|8hb|31|Open Wounds,,30,30|Enhanced Damage,,180,220|Slows Down Target,,30,30|Mana,,35,35|Increased Attack Speed,,30,30|Life Stolen Per Hit,,7,10
+Kuko Shakaku|8lb|33|Skill,27,3,3|Fires Explosive Arrows,,7,7|Enhanced Damage,,150,180|Piercing Attack,,50,50|Adds Fire Damage,,40,180|Skill Tab,0,3,3
+Endlesshail|8cb|36|Cold Resistance,,35,35|Mana,,40,40|Defense vs. Missile,,50,50|Skill,26,3,5|Enhanced Damage,,180,220|Adds Cold Damage,75,15,30
+Witchwild String|8s8|39|Skill On Striking,66,2,5|All Resistances,,40,40|Deadly Strike Per Level,8,,|Enhanced Damage,,150,170|Fires Magic Arrows,,20,20|Add Sockets,2,,
+Cliffkiller|8l8|41|Amazon Skills,,2,2|Enhanced Damage,,190,230|Defense vs. Missile,,80,80|Knockback,,1,1|Life,,50,50|Minimum Damage,,5,10|Maximum Damage,,20,30
+Magewrath|8sw|43|Mana Stolen Per Hit,,15,15|Magic Damage Reduction,,9,13|Skill,22,3,3|Attack Rating,,200,250|Dexterity,,10,10|Hit Blinds Target,,1,1|Adds Damage,,25,50|Enhanced Damage,,120,150|Amazon Skills,,1,1
+Goldstrike Arch|8lw|46|Enhanced Damage,,200,250|Bonus to Attack Rating,,100,150|Damage To Undead,,100,200|Damage To Demons,,100,200|Skill On Striking,121,5,7|Increased Attack Speed,,50,50|Replenish Life,,12,12
+Langer Briser|8lx|32|Knockback,,1,1|Enhanced Damage,,170,200|Better Chance of Getting Magic Item,,30,60|Life,,30,30|Maximum Damage,,10,30|Open Wounds,,33,33|Adds Lightning Damage,,1,212
+Pus Spitter|8mx|36|Adds Poison Damage,200,192,192|Skill On Striking,91,4,1|Necromancer Skills,,2,2|Requirements,,-60,-60|Skill When Struck,92,9,6|Increased Attack Speed,,10,10|Enhanced Damage,,150,220|Attack Rating Per Level,10,,
+Buriza-Do Kyanon|8hx|41|Piercing Attack,,100,100|Dexterity,,35,35|Defense,,75,150|Damage Per Level,20,,|Increased Attack Speed,,80,80|Enhanced Damage,,150,200|Freezes Target,,3,3|Adds Cold Damage,200,32,196
+Demon Machine|8rx|49|Defense,,321,321|Mana,,36,36|Piercing Attack,,66,66|Fires Explosive Arrows,,6,6|Maximum Damage,,66,66|Enhanced Damage,,123,123|Attack Rating,,632,632
+
+Peasant Crown|xap|28|Energy,,20,20|Vitality,,20,20|All Skills,,1,1|Faster Run/Walk,,15,15|Replenish Life,,6,12|Enhanced Defense,,100,100
+Rockstopper|xkp|31|Lightning Resistance,,20,40|Damage Reduction (Percent),,10,10|Faster Hit Recovery,,30,30|Enhanced Defense,,160,220|Fire Resistance,,20,50|Cold Resistance,,20,40|Vitality,,15,15
+Stealskull|xlm|35|Mana Stolen Per Hit,,5,5|Life Stolen Per Hit,,5,5|Faster Hit Recovery,,10,10|Increased Attack Speed,,10,10|Enhanced Defense,,200,240|Better Chance of Getting Magic Item,,30,50
+Darksight Helm|xhl|38|Light Radius,,-4,-4|Defense Per Level,16,,|Cannot Be Frozen,,1,1|Mana Stolen Per Hit,,5,5|Skill When Struck,71,6,3|Charges,264,30,5|Fire Resistance,,20,40
+Valkyrie Wing|xhm|44|Enhanced Defense,,150,200|Faster Run/Walk,,20,20|Faster Hit Recovery,,20,20|Amazon Skills,,1,2|Mana After Each Kill,,2,4
+Crown of Thieves|xrn|49|Dexterity,,25,25|Life Stolen Per Hit,,9,12|Life,,50,50|Mana,,35,35|Fire Resistance,,33,33|Enhanced Defense,,160,200|Extra Gold,,80,100
+Blackhorn's Face|xsk|41|Attacker Takes Lightning Damage,,25,25|Slows Down Target,,20,20|Prevent Monster Heal,,1,1|Lightning Absorption,,20,20|Lightning Resistance,,15,15|Enhanced Defense,,180,220
+Vampire Gaze|xh9|41|Mana Stolen Per Hit,,6,8|Life Stolen Per Hit,,6,8|Slow Stamina Drain,,15,15|Damage Reduction (Percent),,15,20|Magic Damage Reduction,,10,15|Enhanced Defense,,100,100|Adds Cold Damage,100,6,22
+The Spirit Shroud|xui|28|Cannot Be Frozen,,1,1|All Skills,,1,1|Magic Damage Reduction,,7,11|Replenish Life,,10,10|Enhanced Defense,,150,150
+Skin of the Vipermagi|xea|29|Enhanced Defense,,120,120|All Resistances,,20,35|Faster Cast Rate,,30,30|Magic Damage Reduction,,9,13|All Skills,,1,1
+Skin of the Flayed One|xla|31|Repairs Durability,10,,|Replenish Life,,15,25|Durability,,30,30|Life Stolen Per Hit,,5,7|Enhanced Defense,,150,190|Attacker Takes Damage,,15,15
+Iron Pelt|xtu|33|Durability,,125,125|Life,,25,25|Magic Damage Reduction,,10,16|Damage Reduction,,15,20|Defense Per Level,24,,|Enhanced Defense,,50,100
+Spirit Forge|xng|35|Light Radius,,4,4|Life Per Level,10,,|Adds Fire Damage,,20,65|Fire Resistance,,5,5|Enhanced Defense,,120,160|Strength,,15,15|Add Sockets,2,,
+Crow Caw|xcl|37|Open Wounds,,35,35|Enhanced Defense,,150,180|Dexterity,,15,15|Faster Hit Recovery,,15,15|Increased Attack Speed,,15,15
+Shaftstop|xhn|38|Defense vs. Missile,,250,250|Damage Reduction (Percent),,30,30|Life,,60,60|Enhanced Defense,,180,220
+Duriel's Shell|xrs|41|Strength,,15,15|Defense Per Level,10,,|Life Per Level,8,,|Enhanced Defense,,160,200|Fire Resistance,,20,20|Lightning Resistance,,20,20|Poison Resistance,,20,20|Cold Resistance,,50,50|Cannot Be Frozen,,1,1|Durability,,100,100
+Skullder's Ire|xpl|42|All Skills,,1,1|Better Chance of Getting Magic Item Per Level,10,,|Enhanced Defense,,160,200|Durability,,60,60|Magic Damage Reduction,,10,10|Repairs Durability,20,,
+Guardian Angel|xlt|45|Light Radius,,4,4|Paladin Skills,,1,1|Enhanced Defense,,180,200|Increased Blocking, Faster Block Rate,,30,30|Maximum All Resistances,,15,15|Attack Rating Against Demons Per Level,5,,|Increased Blocking, Faster Block Rate,,20,20
+Toothrow|xld|48|Attacker Takes Damage,,20,40|Defense,,40,60|Strength,,10,10|Open Wounds,,40,40|Fire Resistance,,15,15|Enhanced Defense,,160,220|Durability,,15,15
+Atma's Wail|xth|51|Dexterity,,15,15|Replenish Life,,10,10|Mana (Percent),,15,15|Faster Hit Recovery,,30,30|Defense Per Level,16,,|Durability,,50,50|Enhanced Defense,,120,160|Better Chance of Getting Magic Item,,20,20
+Black Hades|xul|53|Light Radius,,-2,-2|Attack Rating Against Demons,,200,250|Half Freeze Duration,,1,1|Add Sockets,3,,|Enhanced Defense,,140,200|Damage To Demons,,30,60
+Corpsemourn|xar|55|Strength,,8,8|Vitality,,10,10|Cold Resistance,,35,35|Skill When Struck,76,6,2|Enhanced Defense,,150,180|Adds Fire Damage,,12,36|Charges,74,40,5
+Que-Hegan's Wisdom|xtp|51|Faster Cast Rate,,20,20|Mana After Each Kill,,3,3|Magic Damage Reduction,,6,10|Energy,,15,15|Faster Hit Recovery,,20,20|Enhanced Defense,,140,160|All Skills,,1,1
+Visceratuant|xuc|28|Sorceress Skill,,1,1|Increased Blocking, Faster Block Rate,,30,30|Increased Blocking, Faster Block Rate,,30,30|Enhanced Defense,,100,150|Attacker Takes Lightning Damage,,10,10
+Moser's Blessed Circle|xml|31|All Resistances,,25,25|Increased Blocking, Faster Block Rate,,25,25|Add Sockets,2,,|Enhanced Defense,,180,220|Increased Blocking, Faster Block Rate,,30,30
+Stormchaser|xrg|35|Adds Lightning Damage,,1,60|Increased Blocking, Faster Block Rate,,20,20|Half Freeze Duration,,1,1|Lightning Resistance,,50,50|Attack Rating,,150,150|Enhanced Defense,,160,220|Increased Blocking, Faster Block Rate,,10,10|Skill When Struck,59,4,6|Skill When Struck,245,4,5
+Tiamat's Rebuke|xit|38|Adds Cold Damage,150,27,53|Adds Fire Damage,,35,95|Adds Lightning Damage,,1,120|All Resistances,,25,35|Enhanced Defense,,140,200|Skill When Struck,44,5,9|Skill When Struck,48,5,7|Skill When Struck,62,3,6|Durability,,40,40
+Gerke's Sanctuary|xow|44|Damage Reduction,,11,16|Magic Damage Reduction,,14,18|Replenish Life,,15,15|Enhanced Defense,,180,240|Durability,,100,100|Increased Blocking, Faster Block Rate,,30,30|All Resistances,,20,30
+Radament's Sphere|xts|50|Adds Poison Damage,100,204,204|Skill When Struck,92,5,5|Poison Resistance,,75,75|Enhanced Defense,,160,200|Increased Blocking, Faster Block Rate,,20,20|Increased Blocking, Faster Block Rate,,20,20|Charges,83,40,6|Durability,,20,20
+Lidless Wall|xsh|41|Light Radius,,1,1|All Skills,,1,1|Faster Cast Rate,,20,20|Mana After Each Kill,,3,5|Enhanced Defense,,80,130|Energy,,10,10|Mana (Percent),,10,10
+Lance Guard|xpk|35|Life,,50,50|Faster Hit Recovery,,30,30|Damage to Mana,,15,15|Attacker Takes Damage,,47,47|Enhanced Defense,,70,120|Deadly Strike,,20,20
+Venom Grip|xlg|29|Poison Resistance,,30,30|Maximum Poison Resistance,,5,5|Adds Poison Damage,100,153,153|Crushing Blow,,5,5|Life Stolen Per Hit,,5,5|Defense,,15,25|Enhanced Defense,,130,160
+Gravepalm|xvg|32|Energy,,10,10|Strength,,10,10|Damage To Undead,,100,200|Attack Rating Against Undead,,100,200|Enhanced Defense,,140,180
+Ghoulhide|xmg|36|Attack Rating Against Undead Per Level,16,,|Damage To Undead Per Level,16,,|Mana Stolen Per Hit,,4,5|Life,,20,20|Enhanced Defense,,150,190
+Lava Gout|xtg|42|Fire Resistance,,24,24|Half Freeze Duration,,1,1|Skill On Striking,52,2,10|Increased Attack Speed,,20,20|Enhanced Defense,,150,200|Adds Fire Damage,,13,46|Durability,,20,20
+Hellmouth|xhg|47|Adds Fire Damage,,15,72|Fire Absorption,,15,15|Enhanced Defense,,150,200|Durability,,15,15|Skill On Striking,56,2,4|Skill On Striking,225,4,12
+Infernostride|xlb|29|Adds Fire Damage,,12,33|Faster Run/Walk,,20,20|Maximum Fire Resistance,,10,10|Fire Resistance,,30,30|Light Radius,,2,2|Enhanced Defense,,120,150|Extra Gold,,40,70|Defense,,15,15|Skill When Struck,46,5,8
+Waterwalk|xvb|32|Defense vs. Missile,,100,100|Faster Run/Walk,,20,20|Dexterity,,15,15|Enhanced Defense,,180,210|Life,,45,65|Stamina,,40,40|Maximum Fire Resistance,,5,5|Regenerate Stamina,,50,50
+Silkweave|xmb|36|Enhanced Defense,,150,190|Mana After Each Kill,,5,5|Defense vs. Missile,,200,200|Mana (Percent),,10,10|Faster Run/Walk,,30,30
+War Traveler|xtb|42|Vitality,,10,10|Strength,,10,10|Better Chance of Getting Magic Item,,30,50|Durability,,30,30|Faster Run/Walk,,25,25|Enhanced Defense,,150,190|Adds Damage,,15,25|Attacker Takes Damage,,5,10|Slow Stamina Drain,,40,40
+Gore Rider|xhb|47|Requirements,,-25,-25|Deadly Strike,,15,15|Faster Run/Walk,,30,30|Crushing Blow,,15,15|Open Wounds,,10,10|Enhanced Defense,,160,200|Durability,,10,10|Stamina,,20,20
+String of Ears|zlb|29|Magic Damage Reduction,,10,15|Damage Reduction (Percent),,10,15|Life Stolen Per Hit,,6,8|Enhanced Defense,,150,180|Defense,,15,15|Durability,,10,10
+Razortail|zvb|32|Attacker Takes Damage Per Level,8,,|Dexterity,,15,15|Piercing Attack,,33,33|Defense,,15,15|Enhanced Defense,,120,150|Maximum Damage,,10,10
+Gloom's Trap|zmb|36|Light Radius,,-3,-3|Mana (Percent),,15,15|Mana Stolen Per Hit,,5,5|Enhanced Defense,,120,150|Vitality,,15,15|Regenerate Mana,,15,15
+Snowclash|ztb|42|Skill When Struck,59,5,0|Cold Absorption,,15,15|Maximum Cold Resistance,,15,15|Adds Cold Damage,75,13,21|Enhanced Defense,,130,170|Skill,59,2,2|Skill,55,3,3|Skill,60,2,2
+Thundergod's Vigor|zhb|47|Skill When Struck,121,5,7|Adds Lightning Damage,,1,50|Maximum Lightning Resistance,,10,10|Lightning Absorption,,20,20|Enhanced Defense,,160,200|Vitality,,20,20|Strength,,20,20|Skill,34,3,3|Skill,35,3,3
+
+Harlequin Crest|uap|62|All Skills,,2,2|Life Per Level,12,,|Mana Per Level,12,,|Better Chance of Getting Magic Item,,50,50|Damage Reduction (Percent),,10,10|Strength,,2,2|Dexterity,,2,2|Vitality,,2,2|Energy,,2,2
+Veil of Steel|uhm|73|All Resistances,,50,50|Enhanced Defense,,60,60|Strength,,15,15|Vitality,,15,15|Light Radius,,-4,-4|Durability,,20,20|Defense,,140,140
+The Gladiator's Bane|utu|85|Enhanced Defense,,150,200|Magic Damage Reduction,,15,20|Damage Reduction,,15,20|Attacker Takes Damage,,20,20|Poison Length Reduction,,50,50|Durability,,103,103|Faster Hit Recovery,,30,30|Defense,,50,50|Cannot Be Frozen,,1,1
+Arkaine's Valor|upl|85|Enhanced Defense,,150,180|Faster Hit Recovery,,30,30|All Skills,,1,2|Damage Reduction,,10,15|Vitality Per Level,4,,
+Blackoak Shield|uml|61|Dexterity Per Level,4,,|Enhanced Defense,,160,200|Cold Absorption Per Level,5,,|Skill When Struck,72,4,5|Durability,,45,45|Life Per Level,10,,|Increased Blocking, Faster Block Rate,,50,50|Half Freeze Duration,,1,1
+Stormshield|uit|73|Defense Per Level,30,,|Damage Reduction (Percent),,35,35|Strength,,30,30|Indestructible,,1,1|Increased Blocking, Faster Block Rate,,35,35|Lightning Resistance,,25,25|Increased Blocking, Faster Block Rate,,25,25|Cold Resistance,,60,60|Attacker Takes Lightning Damage,,10,10
+Hellslayer|7bt|66|Strength Per Level,4,,|Vitality Per Level,4,,|Enhanced Damage Per Level,24,,|Adds Fire Damage,,150,250|Life,,25,25|Enhanced Damage,,100,100|Skill On Attack,47,10,0
+Messerschmidt's Reaver|7ga|70|Enhanced Damage Per Level,20,,|Enhanced Damage,,200,200|Strength,,15,15|Dexterity,,15,15|Vitality,,15,15|Energy,,15,15|Adds Fire Damage,,20,240|Durability,,25,25|Bonus to Attack Rating,,100,100
+Baranar's Star|7mt|65|Bonus to Attack Rating,,200,200|Enhanced Damage,,200,200|Dexterity,,15,15|Strength,,15,15|Increased Attack Speed,,50,50|Durability,,100,100|Adds Lightning Damage,,1,200|Adds Fire Damage,,1,200|Adds Cold Damage,,1,200
+Schaefer's Hammer|7wh|79|Skill On Striking,42,20,10|Life,,50,50|Attack Rating Per Level,16,,|Lightning Resistance,,75,75|Increased Attack Speed,,20,20|Damage Per Level,16,,|Indestructible,,1,1|Enhanced Damage,,100,130|Light Radius,,1,1|Adds Lightning Damage,,50,200
+The Cranium Basher|7gm|87|Increased Attack Speed,,20,20|Indestructible,,1,1|Strength,,25,25|All Resistances,,25,25|Crushing Blow,,75,75|Adds Damage,,20,20|Enhanced Damage,,200,240|Skill On Striking,66,4,1
+Lightsabre|7cr|58|Light Radius,,7,7|Skill On Attack,53,5,0|Ignore Target's Defense,1,1,1|Lightning Absorption (Percent),,25,25|Increased Attack Speed,,20,20|Adds Magical Damage,,60,120|Adds Lightning Damage,,1,200|Mana Stolen Per Hit,,5,7|Enhanced Damage,,150,200|Adds Damage,,10,30
+Doombringer|7b7|69|Life (Percent),,20,20|Enhanced Damage,,180,250|Bonus to Attack Rating,,40,40|Indestructible,,1,1|Adds Damage,,30,100|Skill On Striking,72,8,3|Life Stolen Per Hit,,5,7
+The Grandfather|7gd|81|Strength,,20,20|Dexterity,,20,20|Vitality,,20,20|Energy,,20,20|Bonus to Attack Rating,,50,50|Life,,80,80|Damage Per Level,20,,|Indestructible,,1,1|Enhanced Damage,,150,250
+Wizardspike|7dg|61|Mana Per Level,16,,|Regenerate Mana,,15,15|Mana (Percent),,15,15|All Resistances,,75,75|Indestructible,,1,1|Faster Cast Rate,,50,50
+Constricting Ring|rin|95|All Resistances,,100,100|Replenish Life,,-30,-30|Better Chance of Getting Magic Item,,100,100|Maximum All Resistances,,15,15
+Stormspire|7wc|70|Lightning Resistance,,50,50|Skill When Struck,53,5,5|Enhanced Damage,,150,250|Strength,,10,10|Skill When Struck,38,2,0|Increased Attack Speed,,30,30|Indestructible,,1,1|Adds Lightning Damage,,1,237|Attacker Takes Lightning Damage,,27,27
+Eaglehorn|6l7|69|Ignore Target's Defense,,1,1|Attack Rating Per Level,12,,|Enhanced Damage Per Level,16,,|Enhanced Damage,,200,200|Amazon Skills,,1,1|Dexterity,,25,25
+Windforce|6lw|73|Dexterity,,5,5|Damage Per Level,25,,|Regenerate Stamina,,30,30|Mana Stolen Per Hit,,6,8|Knockback,,1,1|Enhanced Damage,,250,250|Increased Attack Speed,,20,20|Strength,,10,10
+
+Bul-Kathos' Wedding Band|rin|58|Life Per Level,4,,|All Skills,,1,1|Life Stolen Per Hit,,3,5|Stamina,,50,50
+The Cat's Eye|amu|50|Faster Run/Walk,,30,30|Increased Attack Speed,,20,20|Defense,,100,100|Defense vs. Missile,,100,100|Dexterity,,25,25
+The Rising Sun|amu|65|Fire Absorption Per Level,6,,|Light Radius,,4,4|Skill When Struck,56,2,0|Adds Fire Damage,,24,48|Fire Skills,,2,2|Replenish Life,,10,10
+Crescent Moon|amu|50|Mana Stolen Per Hit,,11,15|Magic Damage Reduction,,10,10|Damage to Mana,,10,10|Light Radius,,-2,-2|Mana,,45,45|Life Stolen Per Hit,,3,6
+Mara's Kaleidoscope|amu|67|All Skills,,2,2|All Resistances,,20,30|Strength,,5,5|Dexterity,,5,5|Vitality,,5,5|Energy,,5,5
+Atma's Scarab|amu|60|Adds Poison Damage,100,102,102|Poison Resistance,,75,75|Light Radius,,3,3|Attacker Takes Damage,,5,5|Skill On Striking,66,5,2|Bonus to Attack Rating,,20,20
+Dwarf Star|rin|45|Extra Gold,,100,100|Stamina,,40,40|Regenerate Stamina,,15,15|Life,,40,40|Magic Damage Reduction,,12,15|Fire Absorption (Percent),,15,15
+Raven Frost|rin|45|Cannot Be Frozen,,1,1|Adds Cold Damage,100,15,45|Cold Absorption (Percent),,20,20|Mana,,40,40|Dexterity,,15,20|Attack Rating,,150,250
+Highlord's Wrath|amu|65|Lightning Resistance,,35,35|Adds Lightning Damage,,1,30|Increased Attack Speed,,20,20|All Skills,,1,1|Deadly Strike Per Level,3,,|Attacker Takes Lightning Damage,,15,15
+Saracen's Chance|amu|47|All Resistances,,15,25|Skill When Struck,76,10,2|Strength,,12,12|Dexterity,,12,12|Energy,,12,12|Vitality,,12,12
+
+Arreat's Face|baa|42|Barbarian,,2,2|Skill Tab,12,2,2|Enhanced Defense,,150,200|Faster Hit Recovery,,30,30|Bonus to Attack Rating,,20,20|Strength,,20,20|Dexterity,,20,20|Life Stolen Per Hit,,3,6|All Resistances,,30,30
+Homunculus|nea|42|Necromancer Skills,,2,2|Skill Tab,6,2,2|Enhanced Defense,,150,200|Increased Blocking, Faster Block Rate,,30,30|Increased Blocking, Faster Block Rate,,40,40|Energy,,20,20|Regenerate Mana,,33,33|Mana After Each Kill,,5,5|All Resistances,,40,40
+Titan's Revenge|ama|42|Amazon Skills,,2,2|Skill Tab,2,2,2|Enhanced Damage,,150,200|Faster Run/Walk,,30,30|Replenishes Quantity,30,,|Strength,,20,20|Dexterity,,20,20|Life Stolen Per Hit,,5,9|Adds Damage,,25,50|Increased Stack Size,,60,60
+Lycander's Aim|am7|42|Amazon Skills,,2,2|Skill Tab,0,2,2|Enhanced Damage,,150,200|Increased Attack Speed,,20,20|Enhanced Defense,,20,20|Dexterity,,20,20|Energy,,20,20|Mana Stolen Per Hit,,5,8|Adds Damage,,25,50
+Lycander's Flank|am9|42|Amazon Skills,,2,2|Skill Tab,2,2,2|Enhanced Damage,,150,200|Increased Attack Speed,,30,30|Enhanced Defense,,20,20|Strength,,20,20|Vitality,,20,20|Life Stolen Per Hit,,5,9|Adds Damage,,25,50
+The Oculus|oba|42|Sorceress Skill,,3,3|Skill When Struck,54,25,1|All Resistances,,20,20|Faster Cast Rate,,30,30|Enhanced Defense,,20,20|Vitality,,20,20|Energy,,20,20|Mana After Each Kill,,5,5|Better Chance of Getting Magic Item,,50,50
+Herald of Zakarum|pa9|42|Paladin Skills,,2,2|Skill Tab,9,2,2|Enhanced Defense,,150,200|Increased Blocking, Faster Block Rate,,30,30|Increased Blocking, Faster Block Rate,,30,30|Strength,,20,20|Vitality,,20,20|Bonus to Attack Rating,,20,20|All Resistances,,50,50
+Bartuc's Cut-Throat|9tw|42|Assassin Skills,,2,2|Skill Tab,20,1,1|Enhanced Damage,,150,200|Faster Hit Recovery,,30,30|Bonus to Attack Rating,,20,20|Strength,,20,20|Dexterity,,20,20|Life Stolen Per Hit,,5,9|Adds Damage,,25,50
+Jalal's Mane|dra|42|Druid Skills,,2,2|Skill Tab,16,2,2|Enhanced Defense,,150,200|Faster Hit Recovery,,30,30|Bonus to Attack Rating,,20,20|Strength,,20,20|Energy,,20,20|Mana After Each Kill,,5,5|All Resistances,,30,30
+The Scalper|9ta|57|Replenishes Quantity,30,,|Enhanced Damage,,150,200|Bonus to Attack Rating,,25,25|Increased Attack Speed,,20,20|Open Wounds,,33,33|Life Stolen Per Hit,,4,6|Mana After Each Kill,,4,4
+Bloodmoon|7sb|61|Enhanced Damage,,210,260|Life Stolen Per Hit,,10,15|Charges,BloodGolem,9,15|Life After Each Kill,,7,13|Open Wounds,,50,50
+Djinn Slayer|7sm|65|Enhanced Damage,,190,240|Adds Fire Damage,,250,500|Damage To Demons,,100,150|Attack Rating Against Demons,,200,300|Lightning Absorption,,3,7|Mana Stolen Per Hit,,3,6|Add Sockets,,1,2
+Deathbit|9tk|44|Deadly Strike,,40,40|Enhanced Damage,,130,180|Attack Rating,,200,450|Life Stolen Per Hit,,7,9|Mana Stolen Per Hit,,4,6|Replenishes Quantity,25,,
+Warshrike|7bk|75|Enhanced Damage,,200,250|Piercing Attack,,50,50|Increased Attack Speed,,30,30|Deadly Strike,,50,50|Replenishes Quantity,30,,|Skill On Striking,Nova,25,9
+Gut Siphon|6rx|71|Enhanced Damage,,160,220|Piercing Attack,,33,33|Life Stolen Per Hit,,12,18|Slows Down Target,,25,25|Open Wounds,,33,33
+Razor's Edge|7ha|67|Enhanced Damage,,175,225|Increased Attack Speed,,40,40|Target Defense Reduction (Percent),,33,33|Deadly Strike,,50,50|Open Wounds,,50,50
+
+Demon Limb|7sp|63|Enhanced Damage,,180,230|Adds Fire Damage,,222,333|Life Stolen Per Hit,,7,13|Charges,Enchant,20,23|Repairs Durability,5,,|Damage To Demons,,123,123|Fire Resistance,,15,20
+Steel Shade|ulm|62|Enhanced Defense,,100,130|Fire Absorption,,5,11|Mana Stolen Per Hit,,4,8|Replenish Life,,10,18
+Tomb Reaver|7pa|84|Increased Attack Speed,,60,60|Light Radius,,4,4|Enhanced Damage,,200,280|Damage To Undead,,150,230|Better Chance of Getting Magic Item,,50,80|All Resistances,,30,50|Attack Rating Against Undead,,250,350|Reanimation,1,10,10|Life After Each Kill,,10,14|Add Sockets,,1,3
+Death's Web|7gw|66|All Skills,,2,2|Decreases Enemy Poison Resistance,,40,50|Life After Each Kill,,7,12|Mana After Each Kill,,7,12|Skill Tab,7,1,2
+Nature's Peace|rin|69|Prevent Monster Heal,,1,1|Slain Monsters Rest In Peace,,1,1|Damage Reduction,,7,11|Poison Resistance,,20,30|Charges,Oak Sage,27,5
+Azurewrath|7cr|85|Adds Magical Damage,,250,500|Enhanced Damage,,230,270|Aura,Sanctuary,10,13|Adds Cold Damage,250,250,500|Increased Attack Speed,,30,30|All Attributes,,5,10|Light Radius,,3,3|All Skills,,1,1
+Seraph's Hymn|amu|65|All Skills,,2,2|Skill Tab,11,1,2|Damage To Demons,,25,50|Damage To Undead,,25,50|Attack Rating Against Demons,,150,250|Attack Rating Against Undead,,150,250|Light Radius,,2,2
+
+Fleshripper|7kr|68|Enhanced Damage,,200,300|Target Defense Reduction (Percent),,50,50|Prevent Monster Heal,,1,1|Crushing Blow,,25,25|Open Wounds,,50,50|Deadly Strike,,33,33|Slows Down Target,,20,20
+
+Horizon's Tornado|7fl|64|Enhanced Damage,,230,280|Increased Attack Speed,,50,50|Slows Down Target,,20,20|Skill On Striking,Tornado,20,15|Requirements,,-20,-20
+Stone Crusher|7wh|68|Enhanced Damage,,280,320|Strength,,20,30|Crushing Blow,,40,40|Target Defense Reduction (Percent),,25,25|Monster Defense Reduction per Hit,,-100,-100|Adds Damage,,10,30
+Jade Talon|7wb|66|Enhanced Damage,,190,240|Mana Stolen Per Hit,,10,15|All Resistances,,40,50|Faster Hit Recovery,,30,30|Skill Tab,19,1,2|Skill Tab,20,1,2
+Shadow Dancer|uhb|71|Enhanced Defense,,70,100|Faster Run/Walk,,30,30|Faster Hit Recovery,,30,30|Dexterity,,15,25|Skill Tab,19,1,2|Requirements,,-20,-20
+Cerebus' Bite|drb|63|Enhanced Defense,,130,140|Skill Tab,16,2,4|Life Stolen Per Hit,,7,10|Bonus to Attack Rating,,60,120|Open Wounds,,33,33|Skill,feral rage,1,2
+Tyrael's Might|uar|84|Requirements,,-100,-100|Indestructible,,1,1|Enhanced Defense,,120,150|Slain Monsters Rest In Peace,,1,1|Damage To Demons,,50,100|Cannot Be Frozen,,1,1|Faster Run/Walk,,20,20|All Resistances,,20,30|Strength,,20,30
+Soul Drainer|umg|74|Enhanced Defense,,90,120|Mana Stolen Per Hit,,4,7|Life Stolen Per Hit,,4,7|Skill On Striking,Weaken,8,3|Monster Defense Reduction per Hit,,-50,-50
+Rune Master|72a|72|Enhanced Damage,,220,270|Add Sockets,,3,5|Maximum Cold Resistance,,5,5|Cannot Be Frozen,,1,1
+Death Cleaver|7wa|70|Enhanced Damage,,230,280|Deadly Strike,,66,66|Target Defense Reduction (Percent),,33,33|Increased Attack Speed,,40,40|Life After Each Kill,,6,9
+Executioner's Justice|7gi|75|Enhanced Damage,,240,290|Crushing Blow,,25,25|Target Defense Reduction (Percent),,33,33|Skill On Kill,Decrepify,50,6|Increased Attack Speed,,30,30
+Stoneraven|amd|64|Enhanced Damage,,230,280|Adds Magical Damage,,101,187|All Resistances,,30,50|Defense,,400,600|Skill Tab,2,1,3
+Leviathan|uld|65|Enhanced Defense,,170,200|Defense,,100,150|Damage Reduction (Percent),,15,25|Strength,,40,50|Indestructible,,1,1
+
+Wisp Projector|rin|76|Lightning Absorption (Percent),,10,20|Skill On Striking,Lightning,10,16|Better Chance of Getting Magic Item,,10,20|Charges,Oak Sage,15,2|Charges,Heart of Wolverine,13,5|Charges,Spirit of Barbs,11,7
+Gargoyle's Bite|7ts|70|Enhanced Damage,,180,230|Replenishes Quantity,30,,|Adds Poison Damage,250,300,300|Life Stolen Per Hit,,9,15|Charges,Plague Javelin,60,11
+Lacerator|7b8|68|Enhanced Damage,,150,210|Replenishes Quantity,25,,|Increased Attack Speed,,30,30|Prevent Monster Heal,,1,1|Open Wounds,,33,33|Hit Causes Monster To Flee,,64,64|Skill On Striking,Amplify Damage,33,3
+Mang Song's Lesson|6ws|82|All Skills,,5,5|Decreases Enemy Fire Resistance,,7,15|Decreases Enemy Lightning Resistance,,7,15|Decreases Enemy Cold Resistance,,7,15|Regenerate Mana,,10,10|Faster Cast Rate,,30,30
+Viperfork|7br|71|Enhanced Damage,,190,240|Adds Poison Damage,250,333,333|Increased Attack Speed,,50,50|Attack Rating,,200,250|Skill On Striking,Poison Explosion,15,9|Poison Resistance,,30,50
+Ethereal Edge|7ba|74|Enhanced Damage,,150,180|Increased Attack Speed,,25,25|Fire Absorption,,10,12|Damage To Demons,,150,200|Life After Each Demon Kill,,5,10|Attack Rating,,270,350|Ethereal,,1,1|Indestructible,,1,1
+Demonhorn's Edge|bad|61|Enhanced Defense,,120,160|Increased Attack Speed,,10,10|Life Stolen Per Hit,,3,6|Attacker Takes Damage,,55,77|Skill Tab,12,1,3|Skill Tab,13,1,3|Skill Tab,14,1,3
+The Reaper's Toll|7s8|75|Enhanced Damage,,190,240|Skill On Striking,Decrepify,33,1|Ignore Target's Defense,,1,1|Life Stolen Per Hit,,11,15|Requirements,,-25,-25|Deadly Strike,,33,33|Adds Cold Damage,,4,44
+Spirit Keeper|drd|67|Enhanced Defense,,170,190|Faster Hit Recovery,,20,20|Lightning Absorption,,9,14|Fire Resistance,,30,40|Cold Absorption (Percent),,15,25|Maximum Poison Resistance,,10,10|Druid Skills,,1,2
+Hellrack|6hx|76|Enhanced Damage,,180,230|Adds Elemental Damage,33,63,324|Increased Attack Speed,,20,20|Bonus to Attack Rating,,100,150|Add Sockets,,2,2|Charges,Immolation Arrow,150,18
+Alma Negra|pac|77|Enhanced Defense,,180,210|Increased Blocking, Faster Block Rate,,30,30|Paladin Skills,,1,2|Increased Blocking, Faster Block Rate,,20,20|Magic Damage Reduction,,5,9|Bonus to Attack Rating,,40,75|Enhanced Damage,,40,75
+Darkforce Spawn|nef|64|Enhanced Defense,,140,180|Faster Cast Rate,,30,30|Mana (Percent),,10,10|Skill Tab,6,1,3|Skill Tab,7,1,3|Skill Tab,8,1,3
+Widowmaker|6sw|65|Enhanced Damage,,150,200|Deadly Strike,,33,33|Ignore Target's Defense,,1,1|Fires Magic Arrows,,11,11|Adds Special Skill,Guided Arrow,3,5
+Blood Raven's Charge|amb|71|Enhanced Damage,,180,230|Bonus to Attack Rating,,200,300|Fires Explosive Arrows,,13,13|Skill Tab,0,2,4|Charges,Revive,30,5
+Ghostflame|7bl|62|Enhanced Damage,,190,240|Ignore Target's Defense,,1,1|Adds Magical Damage,,108,108|Mana Stolen Per Hit,,10,15|Ethereal,,1,1|Indestructible,,1,1|Light Radius,,2,2
+Shadow Killer|7cs|78|Enhanced Damage,,170,220|Target Defense Reduction (Percent),,25,25|Freezes Target,,2,2|Mana After Each Kill,,10,15|Skill On Striking,Frost Nova,33,8|Ethereal,,1,1|Indestructible,,1,1
+Gimmershred|7ta|70|Enhanced Damage,,160,210|Adds Fire Damage,,218,483|Adds Cold Damage,100,176,397|Adds Lightning Damage,,29,501|Increased Stack Size,,60,60|Increased Attack Speed,,30,30
+Griffon's Eye|ci3|76|Defense,,100,200|Faster Cast Rate,,25,25|All Skills,,1,1|Lightning Skill Damage,,10,15|Decreases Enemy Lightning Resistance,,15,20
+Windhammer|7m7|68|Enhanced Damage,,180,230|Crushing Blow,,50,50|Increased Attack Speed,,60,60|Skill On Striking,Twister,33,22
+Thunderstroke|amf|69|Enhanced Damage,,150,200|Adds Lightning Damage,,1,511|Skill On Striking,Lightning,20,14|Increased Attack Speed,,15,15|Decreases Enemy Lightning Resistance,,15,15|Skill,Lightning Bolt,3,3|Skill Tab,2,2,4
+
+Demon's Arch|7s7|68|Enhanced Damage,,160,210|Adds Fire Damage,,232,323|Life Stolen Per Hit,,6,12|Replenishes Quantity,30,,|Increased Attack Speed,,30,30|Adds Lightning Damage,,23,333
+Boneflame|nee|72|Enhanced Defense,,120,150|Faster Run/Walk,,20,20|Skill When Struck,Terror,15,3|Necromancer Skills,,2,3|All Resistances,,20,30
+Steel Pillar|7p7|69|Enhanced Damage,,210,260|Increased Attack Speed,,25,25|Target Defense Reduction (Percent),,20,20|Enhanced Defense,,50,80|Indestructible,,1,1|Crushing Blow,,25,25
+Nightwing's Veil|uhm|67|Enhanced Defense,,90,120|All Skills,,2,2|Dexterity,,10,20|Cold Absorption,,5,9|Half Freeze Duration,,1,1|Cold Skill Damage,,8,15|Requirements,,-50,-50
+Crown of Ages|urn|82|Faster Hit Recovery,,30,30|All Resistances,,20,30|All Skills,,1,1|Defense,,100,150|Indestructible,,1,1|Damage Reduction (Percent),,10,15|Enhanced Defense,,50,50|Add Sockets,,1,2
+Andariel's Visage|usk|83|Enhanced Defense,,100,150|Poison Resistance,,70,70|All Skills,,2,2|Maximum Poison Resistance,,10,10|Increased Attack Speed,,20,20|Strength,,25,30|Skill When Struck,92,15,15|Charges,278,20,3|Life Stolen Per Hit,,8,10|Fire Resistance,,-30,-30
+Darkfear|ulm|
+Dragonscale|pae|80|Enhanced Defense,,170,200|Fire Absorption (Percent),,10,20|Maximum Fire Resistance,,5,5|Strength,,15,25|Adds Fire Damage,,211,371|Adds Special Skill,Hydra,10,10|Fire Skill Damage,,15,15
+Steel Carapace|uul|66|Enhanced Defense,,190,220|Faster Hit Recovery,,20,20|Damage Reduction,,9,14|Cold Resistance,,40,60|Regenerate Mana,,10,15|Repairs Durability,5,,|Skill When Struck,Iron Maiden,8,6
+Medusa's Gaze|uow|76|Enhanced Defense,,150,180|Slows Down Target,,20,20|Skill When Struck,Lower Resist,10,7|Life Stolen Per Hit,,5,9|Skill On Death,Nova,100,44|Cold Resistance,,40,80
+Ravenlore|dre|74|Enhanced Defense,,120,150|All Resistances,,15,25|Skill Tab,17,3,3|Energy,,20,30|Decreases Enemy Fire Resistance,,10,20|Skill,Raven,7,7
+Boneshade|7bw|79|Necromancer Skills,,2,2|Faster Cast Rate,,25,25|Skill,Teeth,4,5|Skill,Bone Armor,4,5|Skill,Bone Spear,2,3|Skill,Bone Spirit,1,2|Skill,Bone Wall,2,3
+
+Flamebellow|7gs|71|Enhanced Damage,,170,240|Adds Fire Damage,,233,482|Fire Skills,,3,3|Fire Absorption (Percent),,20,30|Skill On Striking,Firestorm,12,16|Strength,,10,20|Vitality,,5,10|Adds Special Skill,Inferno,12,18
+Death's Fathom|obf|73|Sorceress Skill,,3,3|Cold Skill Damage,,15,30|Faster Cast Rate,,20,20|Fire Resistance,,25,40|Lightning Resistance,,25,40
+Wolfhowl|bac|79|Enhanced Defense,,120,150|Skill Tab,14,2,3|Strength,,8,15|Dexterity,,8,15|Vitality,,8,15|Adds Special Skill,Wearwolf,3,6|Charges,Summon Fenris,18,15|Adds Special Skill,Shape Shifting,3,6|Adds Special Skill,Feral Rage,3,6
+Spirit Ward|uts|68|Enhanced Defense,,130,180|Cold Absorption,,6,11|All Resistances,,30,40|Increased Blocking, Faster Block Rate,,20,30|Increased Blocking, Faster Block Rate,,25,25|Skill When Struck,Fade,5,8
+Kira's Guardian|ci2|77|Defense,,50,120|All Resistances,,50,70|Cannot Be Frozen,,1,1|Faster Hit Recovery,,20,20
+Ormus' Robes|uui|75|Defense,,10,20|Faster Cast Rate,,20,20|Fire Skill Damage,,10,15|Cold Skill Damage,,10,15|Lightning Skill Damage,,10,15|Regenerate Mana,,10,15|Random Skill,3,36,60
+Gheed's Fortune|cm3|62|Better Chance of Getting Magic Item,,20,40|Extra Gold,,80,160|Reduces All Vendor Prices,,10,15
+Stormlash|7fl|82|Enhanced Damage,,240,300|Increased Attack Speed,,30,30|Skill On Striking,Static Field,15,10|Skill On Striking,Tornado,20,18|Adds Lightning Damage,,1,473|Attacker Takes Lightning Damage,,30,30|Crushing Blow,,33,33|Lightning Absorption,,3,9
+Halaberd's Reign|bae|77|Enhanced Defense,,140,170|Skill Tab,13,1,1|Barbarian,,2,2|Faster Hit Recovery,,20,20|Replenish Life,,15,23|Skill,Battle Orders,1,2|Skill,Battle Command,1,2
+
+Spike Thorn|upk|70|Enhanced Defense,,120,150|Attacker Takes Damage Per Level,11,,|Durability,,250,250|Faster Hit Recovery,,30,30|Damage Reduction (Percent),,15,20|Add Sockets,,1,1
+Dracul's Grasp|uvg|76|Enhanced Defense,,90,120|Life Stolen Per Hit,,7,10|Open Wounds,,25,25|Skill On Striking,Life Tap,5,10|Life After Each Kill,,5,10|Strength,,10,15
+Frostwind|7ls|70|Enhanced Damage,,180,230|Freezes Target,,4,4|Half Freeze Duration,,1,1|Adds Cold Damage,150,237,486|Increased Attack Speed,,25,25|Cold Absorption (Percent),,7,15|Adds Special Skill,Arctic Blast,7,14
+Templar's Might|uar|74|Enhanced Defense,,170,220|Faster Hit Recovery,,20,20|Defense vs. Missile,,250,300|Stamina,,40,50|Strength,,10,15|Vitality,,10,15|Skill Tab,10,1,2
+Eschuta's Temper|obc|72|Sorceress Skill,,1,3|Faster Cast Rate,,40,40|Fire Skill Damage,,10,20|Lightning Skill Damage,,10,20|Energy,,20,30
+Firelizard's Talons|7lw|67|Enhanced Damage,,200,270|Increased Attack Speed,,15,15|Skill Tab,20,1,3|Adds Fire Damage,,236,480|Fire Resistance,,40,70|Skill,Wake of Fire Sentry,1,2|Skill,Inferno Sentry,1,2
+Sandstorm Trek|uvb|64|Enhanced Defense,,140,170|Faster Run/Walk,,20,20|Faster Hit Recovery,,20,20|Stamina Per Level,8,,|Slow Stamina Drain,,50,50|Poison Resistance,,40,70|Repairs Durability,5,,|Strength,,10,15|Vitality,,10,15
+Marrowwalk|umb|66|Enhanced Defense,,170,200|Faster Run/Walk,,20,20|Charges,Bone Prison,13,33|Charges,Life Tap,10,12|Regenerate Stamina,,10,10|Regenerate Mana,,10,10|Half Freeze Duration,,1,1|Strength,,10,20|Dexterity,,17,17|Skill,Skeleton Mastery,1,2
+Heaven's Light|7sc|61|Enhanced Damage,,250,300|Increased Attack Speed,,20,20|Target Defense Reduction (Percent),,33,33|Light Radius,,3,3|Life After Each Demon Kill,,15,20|Crushing Blow,,33,33|Add Sockets,,1,3|Paladin Skills,,2,3
+
+Arachnid Mesh|ulc|80|Enhanced Defense,,90,120|Faster Cast Rate,,20,20|Charges,Venom,11,3|All Skills,,1,1|Slows Down Target,,10,10|Mana (Percent),,5,5
+Nosferatu's Coil|uvc|51|Strength,,15,15|Mana After Each Kill,,2,2|Slows Down Target,,10,10|Life Stolen Per Hit,,5,7|Increased Attack Speed,,10,10|Light Radius,,-3,-3
+Metalgrid|amu|81|Defense,,300,350|All Resistances,,25,35|Attack Rating,,400,450|Charges,IronGolem,11,22|Charges,Iron Maiden,20,12
+Verdungo's Hearty Cord|umc|63|Enhanced Defense,,90,140|Vitality,,30,40|Stamina,,100,120|Faster Hit Recovery,,10,10|Damage Reduction (Percent),,10,15|Replenish Life,,10,13
+
+Carrion Wind|rin|60|Defense vs. Missile,,100,160|Life Stolen Per Hit,,6,9|Poison Resistance,,55,55|Skill When Struck,Poison Nova,10,10|Charges,Plague Poppy,15,21|Skill On Striking,Twister,8,13|Damage to Mana,,10,10
+Giant Skull|uh9|65|Defense,,250,320|Strength,,25,35|Crushing Blow,,10,10|Add Sockets,,1,2|Knockback,,1,1
+Astreon's Iron Ward|7ws|60|Enhanced Damage,,240,290|Slows Down Target,,25,25|Bonus to Attack Rating,,150,200|Increased Attack Speed,,10,10|Adds Magical Damage,,80,240|Damage Reduction,,4,7|Adds Damage,,40,85|Skill Tab,9,2,4|Crushing Blow,,33,33
+Annihilus|cm1|70|All Skills,,1,1|All Attributes,,10,20|All Resistances,,10,20|Experience Bonus,,5,10
+Arioc's Needle|7sr|81|Enhanced Damage,,180,230|Adds Poison Damage,250,403,403|Deadly Strike,,50,50|Ignore Target's Defense,,1,1|All Skills,,2,4|Increased Attack Speed,,30,30
+Cranebeak|7mp|63|Enhanced Damage,,240,300|Adds Lightning Damage,,1,305|Increased Attack Speed,,40,40|Target Defense Reduction (Percent),,25,25|Better Chance of Getting Magic Item,,20,50|Charges,Raven,15,8
+Nord's Tenderizer|7cl|68|Enhanced Damage,,270,330|Freezes Target,,2,4|Increased Attack Speed,,25,25|Charges,Blizzard,12,16|Bonus to Attack Rating,,150,180|Cold Absorption (Percent),,5,15|Adds Cold Damage,125,205,455
+Earth Shifter|7gm|69|Enhanced Damage,,250,300|Skill On Striking,Eruption,25,14|Crushing Blow,,33,33|Increased Attack Speed,,10,10|Charges,Volcano,30,14|Skill Tab,17,7,7|Faster Cast Rate,,10,10
+Wraith Flight|7gl|76|Enhanced Damage,,150,190|Replenishes Quantity,40,,|Life Stolen Per Hit,,9,13|Mana After Each Kill,,15,15|Ethereal,,1,1
+Bonehew|7o7|64|Enhanced Damage,,270,320|Increased Attack Speed,,30,30|Charges,Corpse Explosion,30,14|Skill On Striking,Bone Spear,50,16|Prevent Monster Heal,,1,1|Add Sockets,,2,2
+Ondal's Wisdom|6cs|66|Faster Cast Rate,,45,45|Energy,,40,50|All Skills,,2,4|Defense,,450,550|Experience Bonus,,5,5|Magic Damage Reduction,,5,8
+The Redeemer|7sc|72|Enhanced Damage,,250,300|Damage To Demons,,200,250|Paladin Skills,,2,2|Requirements,,-60,-60|Skill,Redemption,2,4|Skill,Holy Bolt,2,4|Light Radius,,3,3|Target Defense Reduction (Percent),,33,33|Adds Damage,,60,120
+Head Hunter's Glory|ush|75|Defense,,320,420|Defense vs. Missile,,300,350|Poison Resistance,,30,40|Add Sockets,,1,3|Fire Resistance,,20,30|Life After Each Kill,,5,7
+Steelrend|uhg|70|Defense,,170,210|Strength,,15,20|Enhanced Damage,,30,60|Crushing Blow,,10,10
+Rainbow Facet|jew|49|Adds Lightning Damage,,1,74|Decreases Enemy Lightning Resistance,,3,5|Lightning Skill Damage,,3,5|Skill On Death,Chain Lightning,100,47
+Rainbow Facet|jew|49|Adds Cold Damage,3,24,38|Decreases Enemy Cold Resistance,,3,5|Cold Skill Damage,,3,5|Skill On Death,Blizzard,100,37
+Rainbow Facet|jew|49|Adds Fire Damage,,17,45|Decreases Enemy Fire Resistance,,3,5|Fire Skill Damage,,3,5|Skill On Death,Meteor,100,31
+Rainbow Facet|jew|49|Adds Poison Damage,50,187,187|Decreases Enemy Poison Resistance,,3,5|Poison Skill Damage,,3,5|Skill On Death,Poison Nova,100,51
+Rainbow Facet|jew|49|Adds Lightning Damage,,1,74|Decreases Enemy Lightning Resistance,,3,5|Lightning Skill Damage,,3,5|Skill On Levelup,Nova,100,41
+Rainbow Facet|jew|49|Adds Cold Damage,3,24,38|Decreases Enemy Cold Resistance,,3,5|Cold Skill Damage,,3,5|Skill On Levelup,Frost Nova,100,43
+Rainbow Facet|jew|49|Adds Fire Damage,,17,45|Decreases Enemy Fire Resistance,,3,5|Fire Skill Damage,,3,5|Skill On Levelup,Blaze,100,29
+Rainbow Facet|jew|49|Adds Poison Damage,50,187,187|Decreases Enemy Poison Resistance,,3,5|Poison Skill Damage,,3,5|Skill On Levelup,Venom,100,23
+Hellfire Torch|cm2|75|Random Class Skill Bonus,,0,6|All Attributes,,10,20|All Resistances,,10,20|Light Radius,,8,8|Skill On Striking,197,25,10|Charges,Hydra,10,30
+

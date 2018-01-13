@@ -1,0 +1,359 @@
+Strength|8|0|32
+Energy|7|0|32
+Dexterity|7|0|32
+Vitality|7|0|32
+All Attributes|0|0|0
+New Skills|0|0|0
+Life|0|0|0
+Maximum Life|9|0|32
+Mana|0|0|0
+Maximum Mana|8|0|32
+Stamina|0|0|0
+Maximum Stamina|8|0|32
+Level|0|0|0
+Experience|0|0|0
+Gold|0|0|0
+Bank|0|0|0
+Enhanced Defense|9|0|0
+Enhanced Maximum Damage|9|0|0
+Enhanced Minimum Damage|9|0|0
+Attack Rating|10|0|0
+Increased Blocking|6|0|0
+Minimum Damage|6|0|0
+Maximum Damage|7|0|0
+Secondary Minimum Damage|6|0|0
+Secondary Maximum Damage|7|0|0
+Enhanced Damage|8|0|0
+Mana Recovery|8|0|0
+Mana Recovery Bonus|8|0|0
+Stamina Recovery Bonus|8|0|0
+Last Experience|0|0|0
+Next Experience|0|0|0
+Defense|11|0|10
+Defense vs. Missiles|9|0|0
+Defense vs. Melee|8|0|0
+Damage Reduction|6|0|0
+Magical Damage Reduction|6|0|0
+Damage Reduction (Percent)|8|0|0
+Magical Damage Reduction (Percent)|8|0|0
+Maximum Magical Damage Reduction (Percent)|5|0|0
+Fire Resistance|8|0|50
+Maximum Fire Resistance|5|0|0
+Lightning Resistance|8|0|50
+Maximum Lightning Resistance|5|0|0
+Cold Resistance|8|0|50
+Maximum Cold Resistance|5|0|0
+Poison Resistance|8|0|50
+Maximum Poison Resistance|5|0|0
+Damage Aura|0|0|0
+Minimum Fire Damage|8|0|0
+Maximum Fire Damage|9|0|0
+Minimum Lightning Damage|6|0|0
+Maximum Lightning Damage|10|0|0
+Minimum Magical Damage|8|0|0
+Maximum Magical Damage|9|0|0
+Minimum Cold Damage|8|0|0
+Maximum Cold Damage|9|0|0
+Cold Damage Length|8|0|0
+Minimum Poison Damage|10|0|0
+Maximum Poison Damage|10|0|0
+Poison Damage length|9|0|0
+Minimum Life Stolen Per Hit|7|0|0
+Maximum Life Stolen Per Hit|0|0|0
+Minimum Mana Stolen Per Hit|7|0|0
+Maximum Mana Stolen Per Hit|0|0|0
+Minimum Stamina Drain|0|0|0
+Maximum Stamina Drain|0|0|0
+Stun Length|0|0|0
+Velocity Percent|7|0|30
+Attack Rate|7|0|30
+Other Animation Rate|0|0|0
+Quantity|0|0|0
+Value|8|0|100
+Durability|9|0|0
+Maximum Durability|8|0|0
+Replenish Life|6|0|30
+Enhanced Maximum Durability|7|0|20
+Enhanced Life|6|0|10
+Enhanced Mana|6|0|10
+Attacker Takes Damage|7|0|0
+Extra Gold|9|0|100
+Better Chance Of Getting Magic Item|8|0|100
+Knockback|7|0|0
+Time Duration|9|0|20
+Class Skills|3|3|0
+Unsent Parameter|0|0|0
+Add Experience|9|0|50
+Life After Each Kill|7|0|0
+Reduce Vendor Prices|7|0|0
+Double Herb Duration|1|0|0
+Light Radius|4|0|4
+Light Colour|24|0|0
+Reduced Requirements|8|0|100
+Reduced Level Requirement|7|0|0
+Increased Attack Speed|7|0|20
+Reduced Level Requirement (Percent)|7|0|64
+Last Block Frame|0|0|0
+Faster Run Walk|7|0|20
+Non Class Skill|6|9|0
+State|1|8|0
+Faster Hit Recovery|7|0|20
+Monster Player Count|0|0|0
+Skill Poison Override Length|0|0|0
+Faster Block Rate|7|0|20
+Skill Bypass Undead|0|0|0
+Skill Bypass Demons|0|0|0
+Faster Cast Rate|7|0|20
+Skill Bypass Beasts|0|0|0
+Single Skill|3|9|0
+Slain Monsters Rest In Peace|1|0|0
+Curse Resistance|9|0|0
+Poison Length Reduction|8|0|20
+Adds Damage|9|0|20
+Hit Causes Monster To Flee|7|0|-1
+Hit Blinds Target|7|0|0
+Damage To Mana|6|0|0
+Ignore Target's Defense|1|0|0
+Reduce Target's Defense|7|0|0
+Prevent Monster Heal|7|0|0
+Half Freeze Duration|1|0|0
+To Hit Percent|9|0|20
+Monster Defense Reduction per Hit|7|0|128
+Damage To Demons|9|0|20
+Damage To Undead|9|0|20
+Attack Rating Against Demons|10|0|128
+Attack Rating Against Undead|10|0|128
+Throwable|1|0|0
+Elemental Skills|3|3|0
+All Skills|3|0|0
+Attacker Takes Lightning Damage|5|0|0
+Iron Maiden Level|0|0|0
+Lifetap Level|0|0|0
+Thorns Percent|0|0|0
+Bone Armor|0|0|0
+Maximum Bone Armor|0|0|0
+Freezes Target|5|0|0
+Open Wounds|7|0|0
+Crushing Blow|7|0|0
+Kick Damage|7|0|0
+Mana After Each Kill|7|0|0
+Life After Each Demon Kill|7|0|0
+Extra Blood|7|0|0
+Deadly Strike|7|0|0
+Fire Absorption (Percent)|7|0|0
+Fire Absorption|7|0|0
+Lightning Absorption (Percent)|7|0|0
+Lightning Absorption|7|0|0
+Magic Absorption (Percent)|7|0|0
+Magic Absorption|7|0|0
+Cold Absorption (Percent)|7|0|0
+Cold Absorption|7|0|0
+Slows Down Enemies|7|0|0
+Aura|5|9|0
+Indestructible|1|0|0
+Cannot Be Frozen|1|0|0
+Stamina Drain (Percent)|7|0|20
+Reanimate|7|10|0
+Piercing Attack|7|0|0
+Fires Magic Arrows|7|0|0
+Fire Explosive Arrows|7|0|0
+Minimum Throwing Damage|6|0|0
+Maximum Throwing Damage|7|0|0
+Skill Hand Of Athena|0|0|0
+Skill Stamina (Percent)|0|0|0
+Skill Passive Stamina (Percent)|0|0|0
+Concentration|0|0|0
+Enchant|0|0|0
+Pierce|0|0|0
+Conviction|0|0|0
+Chilling Armor|0|0|0
+Frenzy|0|0|0
+Decrepify|0|0|0
+Skill Armor Percent|0|0|0
+Alignment|0|0|0
+Target 0|0|0|0
+Target 1|0|0|0
+Gold Lost|0|0|0
+Conversion Level|0|0|0
+Conversion Maximum Life|0|0|0
+Unit Do Overlay|0|0|0
+Attack Rating Against Monster Type|9|10|0
+Damage To Monster Type|9|10|0
+Fade|3|0|0
+Armor Override Percent|0|0|0
+Unused|183|0|0|0
+Unused|184|0|0|0
+Unused|185|0|0|0
+Unused|186|0|0|0
+Unused|187|0|0|0
+Skill Tab|3|16|0
+Unused|189|0|0|0
+Unused|190|0|0|0
+Unused|191|0|0|0
+Unused|192|0|0|0
+Unused|193|0|0|0
+Socket Count|4|0|0
+Skill On Striking|7|16|0
+Skill On Kill|7|16|0
+Skill On Death|7|16|0
+Skill On Hit|7|16|0
+Skill On Level Up|7|16|0
+Unused|200|0|0|0
+Skill When Struck|7|16|0
+Unused|202|0|0|0
+Unused|203|0|0|0
+Charged|16|16|0
+Unused|204|0|0|0
+Unused|205|0|0|0
+Unused|206|0|0|0
+Unused|207|0|0|0
+Unused|208|0|0|0
+Unused|209|0|0|0
+Unused|210|0|0|0
+Unused|211|0|0|0
+Unused|212|0|0|0
+Defense Per Level|6|0|0
+Enhanced Defense Per Level|6|0|0
+Life Per Level|6|0|0
+Mana Per Level|6|0|0
+Maximum Damage Per Level|6|0|0
+Maximum Enhanced Damage Per Level|6|0|0
+Strength Per Level|6|0|0
+Dexterity Per Level|6|0|0
+Energy Per Level|6|0|0
+Vitality Per Level|6|0|0
+Attack Rating Per Level|6|0|0
+Bonus To Attack Rating Per Level|6|0|0
+Maximum Cold Damage Per Level|6|0|0
+Maximum Fire Damage Per Level|6|0|0
+Maximum Lightning Damage Per Level|6|0|0
+Maximum Poison Damage Per Level|6|0|0
+Cold Resistance Per Level|6|0|0
+Fire Resistance Per Level|6|0|0
+Lightning Resistance Per Level|6|0|0
+Poison Resistance Per Level|6|0|0
+Cold Absorption Per Level|6|0|0
+Fire Absorption Per Level|6|0|0
+Lightning Absorption Per Level|6|0|0
+Poison Absorption Per Level|6|0|0
+Thorns Per Level|5|0|0
+Extra Gold Per Level|6|0|0
+Better Chance Of Getting Magic Item Per Level|6|0|0
+Stamina Regeneration Per Level|6|0|0
+Stamina Per Level|6|0|0
+Damage To Demons Per Level|6|0|0
+Damage To Undead Per Level|6|0|0
+Attack Rating Against Demons Per Level|6|0|0
+Attack Rating Against Undead Per Level|6|0|0
+Crushing Blow Per Level|6|0|0
+Open Wounds Per Level|6|0|0
+Kick Damage Per Level|6|0|0
+Deadly Strike Per Level|6|0|0
+Find Gems Per Level|0|0|0
+Repairs Durability|6|0|0
+Replenishes Quantity|6|0|0
+Increased Stack Size|8|0|0
+Find Item|0|0|0
+Slash Damage|0|0|0
+Slash Damage (Percent)|0|0|0
+Crush Damage|0|0|0
+Crush Damage (Percent)|0|0|0
+Thrust Damage|0|0|0
+Thrust Damage (Percent)|0|0|0
+Slash Damage Absorption|0|0|0
+Crush Damage Absorption|0|0|0
+Thrust Damage Absorption|0|0|0
+Slash Damage Absorption (Percent)|0|0|0
+Crush Damage Absorption (Percent)|0|0|0
+Thrust Damage Absorption (Percent)|0|0|0
+Defense Per Time|22|0|0
+Enhanced Defense Per Time|22|0|0
+Life Per Time|22|0|0
+Mana Per Time|22|0|0
+Maximum Damage Per Time|22|0|0
+Maximum Enhanced Damage Per Time|22|0|0
+Strength Per Time|22|0|0
+Dexterity Per Time|22|0|0
+Energy Per Time|22|0|0
+Vitality Per Time|22|0|0
+Attack Rating Per Time|22|0|0
+Chance To Hit Per Time|22|0|0
+Maximum Cold Damage Per Time|22|0|0
+Maximum Fire Damage Per Time|22|0|0
+Maximum Lightning Damage Per Time|22|0|0
+Maximum Damage Per Poison|22|0|0
+Cold Resistance Per Time|22|0|0
+Fire Resistance Per Time|22|0|0
+Lightning Resistance Per Time|22|0|0
+Poison Resistance Per Time|22|0|0
+Cold Absorption Per Time|22|0|0
+Fire Absorption Per Time|22|0|0
+Lightning Absorption Per Time|22|0|0
+Poison Absorption Per Time|22|0|0
+Extra Gold Per Time|22|0|0
+Better Chance Of Getting magic Item Per Time|22|0|0
+Regenerate Stamina Per Time|22|0|0
+Stamina Per Time|22|0|0
+Damage To Demons Per Time|22|0|0
+Damage To Undead Per Time|22|0|0
+Attack Rating Against Demons Per Time|22|0|0
+Attack Rating Against Undead Per Time|22|0|0
+Crushing Blow Per Time|22|0|0
+Open Wounds Per Time|22|0|0
+Kick Damage Per Time|22|0|0
+Deadly Strike Per Time|22|0|0
+Find Gems Per Time|0|0|0
+Enemy Cold Resistance Reduction|8|0|50
+Enemy Fire Resistance Reduction|8|0|50
+Enemy Lightning Resistance Reduction|8|0|50
+Enemy Poison Resistance Reduction|8|0|50
+Damage vs. Monsters|0|0|0
+Enhanced Damage vs. Monsters|0|0|0
+Attack Rating Against Monsters|0|0|0
+Bonus To Attack Rating Against Monsters|0|0|0
+Defense vs. Monsters|0|0|0
+Enhanced Defense vs. Monsters|0|0|0
+Fire Damage Length|0|0|0
+Minimum Fire Damage Length|0|0|0
+Maximum Fire Damage Length|0|0|0
+Progressive Damage|0|0|0
+Progressive Steal|0|0|0
+Progressive Other|0|0|0
+Progressive Fire|0|0|0
+Progressive Cold|0|0|0
+Progressive Lightning|0|0|0
+Extra Charges|6|0|0
+Progressive Attack Rating|0|0|0
+Poison Count|0|0|0
+Damage Framerate|0|0|0
+Pierce IDX|0|0|0
+Fire Mastery|9|0|50
+Lightning Mastery|9|0|50
+Cold Mastery|9|0|50
+Poison Mastery|9|0|50
+Passive Enemy Fire Resistance Reduction|8|0|0
+Passive Enemy Lightning Resistance Reduction|8|0|0
+Passive Enemy Cold Resistance Reduction|8|0|0
+Passive Enemy Poison Resistance Reduction|8|0|0
+Critical Strike|8|0|0
+Dodge|7|0|0
+Avoid|7|0|0
+Evade|7|0|0
+Warmth|8|0|0
+Melee Attack Rating Mastery|8|0|0
+Melee Damage Mastery|8|0|0
+Melee Critical Hit Mastery|8|0|0
+Thrown Weapon Attack Rating Mastery|8|0|0
+Thrown Weapon Damage Mastery|8|0|0
+Thrown Weapon Critical Hit Mastery|8|0|0
+Weapon Block|8|0|0
+Summon Resist|8|0|0
+Modifier List Skill|0|0|0
+Modifier List Level|0|0|0
+Last Sent Life Percent|0|0|0
+Source Unit Type|0|0|0
+Source Unit ID|0|0|0
+Short Parameter 1|0|0|0
+Quest Item Difficulty|2|0|0
+Passive Magical Damage Mastery|9|0|50
+Passive Magical Resistance Reduction|8|0|0

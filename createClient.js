@@ -232,8 +232,8 @@ function createClient({username, password, host, port}) {
         unknown: 1,
         levelRestrictionDifference: 99,
         maximumPlayers: 8,
-        gameName: "testttttt",
-        gamePassword: "zzzzzzzzzzz",
+        gameName: process.argv[5],
+        gamePassword: process.argv[6],
         gameDescription: "gs 21",
       });
 
@@ -244,8 +244,8 @@ function createClient({username, password, host, port}) {
         console.log(requestId, gameToken, unknown, result);
         client3.write('MCP_JOINGAME', {
             requestId: requestId,
-            gameName: "testttttt",
-            gamePassword: "zzzzzzzzzzz"
+            gameName: process.argv[5],
+            gamePassword: process.argv[6]
         });
     });
 
@@ -257,9 +257,9 @@ function createClient({username, password, host, port}) {
             gameType:0,
             subGameType:0,
             providerVersionConstant:0,
-            ladderType:0, // Ladder game, no point in player non-ladder
-            gameName:"testttttt",
-            gamePassword:"zzzzzzzzzzz",
+            ladderType:0, // Ladder game, no point in playing non-ladder
+            gameName: process.argv[5],
+            gamePassword: process.argv[6],
             gameStatstring:""
         });
 
@@ -271,8 +271,8 @@ function createClient({username, password, host, port}) {
         client.write('SID_NOTIFYJOIN', {
             productId: 1, // random
             productVersion: 13,
-            gameName: "testttttt",
-            gamePassword: "zzzzzzzzzzz"
+            gameName: process.argv[5],
+            gamePassword: process.argv[6]
         });
     });
 

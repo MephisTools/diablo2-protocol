@@ -323,7 +323,7 @@
                   "SID_ENTERCHAT": "SID_ENTERCHAT",
                   "SID_STARTADVEX3": "SID_STARTADVEX3",
                   "SID_NOTIFYJOIN": "SID_NOTIFYJOIN",
-                  "SID_LEAVECHAT": "SID_LEAVECHAT",
+                  "SID_LEAVECHAT": "SID_LEAVECHAT"
                 }
               }
             ]

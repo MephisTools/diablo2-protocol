@@ -1,0 +1,127 @@
+Civerb's Ward|Civerb's Vestments|lrg|9|Defense,,15,15|Increased Blocking, Faster Block Rate,,15,15|Mana,,21,22
+Civerb's Icon|Civerb's Vestments|amu|9|Regenerate Mana,,40,40|Replenish Life,,4,4|Cold Resistance,,25,25
+Civerb's Cudgel|Civerb's Vestments|gsc|9|Attack Rating,,75,75|Maximum Damage,,17,23|Damage Per Level,8,,
+Hsarus' Iron Heel|Hsarus' Defense|mbt|3|Fire Resistance,,25,25|Faster Run/Walk,,20,20|Attack Rating Per Level,20,,
+Hsarus' Iron Fist|Hsarus' Defense|buc|3|Damage Reduction,,2,2|Strength,,10,10|Defense Per Level,20,,
+Hsarus' Iron Stay|Hsarus' Defense|mbl|3|Cold Resistance,,20,20|Life,,20,20|Defense Per Level,20,,
+Cleglaw's Tooth|Cleglaw's Brace|lsd|4|Bonus to Attack Rating,,30,30|Deadly Strike,,50,50|Damage Per Level,10,,
+Cleglaw's Claw|Cleglaw's Brace|sml|4|Defense,,17,17|Poison Length Reduction,,75,75|All Resistances,,15,15
+Cleglaw's Pincers|Cleglaw's Brace|mgl|4|Knockback,,1,1|Slows Down Target,,25,25|Attack Rating Per Level,20,,
+Iratha's Collar|Iratha's Finery|amu|15|Poison Resistance,,30,30|Poison Length Reduction,,75,75|All Resistances,,15,15
+Iratha's Cuff|Iratha's Finery|tgl|15|Cold Resistance,,30,30|Half Freeze Duration,,1,1|Increased Attack Speed,,20,20
+Iratha's Coil|Iratha's Finery|crn|15|Fire Resistance,,30,30|Lightning Resistance,,30,30|Defense Per Level,16,,
+Iratha's Cord|Iratha's Finery|tbl|15|Defense,,25,25|Minimum Damage,,5,5|Dexterity,,10,10
+Isenhart's Lightbrand|Isenhart's Armory|bsd|8|Minimum Damage,,10,10|Increased Attack Speed,,20,20|Attack Rating Per Level,10,,
+Isenhart's Parry|Isenhart's Armory|gts|8|Defense,,40,40|Attacker Takes Lightning Damage,,4,4|All Resistances,,8,8
+Isenhart's Case|Isenhart's Armory|brs|8|Defense,,40,40|Magic Damage Reduction,,2,2|Defense Per Level,16,,
+Isenhart's Horns|Isenhart's Armory|fhl|8|Dexterity,,6,6|Damage Reduction,,2,2|All Resistances,,8,8
+Vidala's Barb|Vidala's Rig|lbb|14|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,20,20|Attack Rating Per Level,16,,
+Vidala's Fetlock|Vidala's Rig|tbt|14|Stamina,,150,150|Faster Run/Walk,,30,30|All Resistances,,8,8
+Vidala's Ambush|Vidala's Rig|lea|14|Defense,,50,50|Dexterity,,11,11|Fire Resistance,,24,24
+Vidala's Snare|Vidala's Rig|amu|14|Life,,15,15|Cold Resistance,,20,20|Better Chance of Getting Magic Item,,50,50
+Milabrega's Orb|Milabrega's Regalia|kit|17|Better Chance of Getting Magic Item,,20,20|Defense,,25,25|Life,,50,50
+Milabrega's Rod|Milabrega's Regalia|wsp|17|Paladin Skills,,1,1|Enhanced Damage,,50,50|Light Radius,,2,2
+Milabrega's Diadem|Milabrega's Regalia|crn|17|Life,,15,15|Mana,,15,15|Cold Resistance,,40,40
+Milabrega's Robe|Milabrega's Regalia|aar|17|Attacker Takes Damage,,3,3|Damage Reduction,,2,2|Enhanced Defense,,100,100
+Cathan's Rule|Cathan's Traps|bst|11|Fire Skills,,1,1|Maximum Fire Damage,,10,10|Mana,,50,50
+Cathan's Mesh|Cathan's Traps|chn|11|Defense,,15,15|Requirements,,-50,-50|Attacker Takes Damage,,5,5
+Cathan's Visage|Cathan's Traps|msk|11|Mana,,20,20|Cold Resistance,,25,25|Defense Per Level,16,,
+Cathan's Sigil|Cathan's Traps|amu|11|Faster Hit Recovery,,10,10|Attacker Takes Lightning Damage,,5,5|Attack Rating,,50,50
+Cathan's Seal|Cathan's Traps|rin|11|Life Stolen Per Hit,,6,6|Damage Reduction,,2,2|Strength,,10,10
+Tancred's Crowbill|Tancred's Battlegear|mpi|20|Attack Rating,,75,75|Enhanced Damage,,80,80|Mana,,20,20
+Tancred's Spine|Tancred's Battlegear|ful|20|Life,,40,40|Strength,,15,15|Defense Per Level,16,,
+Tancred's Hobnails|Tancred's Battlegear|lbt|20|Regenerate Stamina,,25,25|Dexterity,,10,10|Faster Run/Walk,,30,30
+Tancred's Weird|Tancred's Battlegear|amu|20|Damage Reduction,,2,2|Magic Damage Reduction,,1,1|Better Chance of Getting Magic Item,,78,78
+Tancred's Skull|Tancred's Battlegear|bhm|20|Enhanced Damage,,10,10|Attack Rating,,40,40|All Resistances,,10,10
+Sigon's Gage|Sigon's Complete Steel|hgl|6|Strength,,10,10|Attack Rating,,20,20|Increased Attack Speed,,30,30
+Sigon's Visor|Sigon's Complete Steel|ghm|6|Mana,,30,30|Defense,,25,25|Attack Rating Per Level,16,,
+Sigon's Shelter|Sigon's Complete Steel|gth|6|Enhanced Defense,,25,25|Lightning Resistance,,30,30|Attacker Takes Damage,,20,20
+Sigon's Sabot|Sigon's Complete Steel|hbt|6|Faster Run/Walk,,20,20|Cold Resistance,,40,40|Attack Rating,,50,50
+Sigon's Wrap|Sigon's Complete Steel|hbl|6|Fire Resistance,,20,20|Life,,20,20|Defense Per Level,16,,
+Sigon's Guard|Sigon's Complete Steel|tow|6|All Skills,,1,1|Increased Blocking, Faster Block Rate,,20,20
+Infernal Cranium|Infernal Tools|cap|5|All Resistances,,10,10|Damage to Mana,,20,20|Defense Per Level,16,,
+Infernal Torch|Infernal Tools|gwn|5|Minimum Damage,,8,8|Necromancer Skills,,1,1|Attack Rating Per Level,20,,
+Infernal Sign|Infernal Tools|tbl|5|Defense,,25,25|Life,,20,20|Poison Resistance,,25,25
+Berserker's Headgear|Berserker's Garb|hlm|3|Defense,,15,15|Fire Resistance,,25,25|Attack Rating Per Level,16,,
+Berserker's Hauberk|Berserker's Garb|spl|3|Magic Damage Reduction,,2,2|Barbarian,,1,1|Defense Per Level,24,,
+Berserker's Hatchet|Berserker's Garb|2ax|3|Bonus to Attack Rating,,30,30|Mana Stolen Per Hit,,5,5|Enhanced Damage,,50,50
+Death's Hand|Death's Disguise|lgl|6|Poison Resistance,,50,50|Poison Length Reduction,,75,75|Increased Attack Speed,,30,30
+Death's Guard|Death's Disguise|lbl|6|Defense,,20,20|Cannot Be Frozen,,1,1|All Resistances,,15,15
+Death's Touch|Death's Disguise|wsd|6|Enhanced Damage,,25,25|Life Stolen Per Hit,,4,4|Adds Cold Damage,75,25,75
+Angelic Sickle|Angelical Raiment|sbr|12|Attack Rating,,75,75|Damage To Undead,,250,250|Enhanced Damage,,75,75
+Angelic Mantle|Angelical Raiment|rng|12|Damage Reduction,,3,3|Enhanced Defense,,40,40|Defense,,150,150
+Angelic Halo|Angelical Raiment|rin|12|Replenish Life,,6,6|Life,,20,20|Attack Rating Per Level,24,,
+Angelic Wings|Angelical Raiment|amu|12|Light Radius,,3,3|Damage to Mana,,20,20|Life,,75,75
+Arctic Horn|Arctic Gear|swb|2|Bonus to Attack Rating,,20,20|Enhanced Damage,,50,50|Attack Rating Per Level,16,,
+Arctic Furs|Arctic Gear|qui|2|Enhanced Defense,,275,325|All Resistances,,10,10|Defense Per Level,24,,
+Arctic Binding|Arctic Gear|vbl|2|Cold Resistance,,40,40|Defense,,30,30|Better Chance of Getting Magic Item,,40,40
+Arctic Mitts|Arctic Gear|tgl|2|Life,,20,20|Increased Attack Speed,,10,10|Attack Rating,,50,50
+Arcanna's Sign|Arcanna's Tricks|amu|15|Mana,,15,15|Regenerate Mana,,20,20|Better Chance of Getting Magic Item,,50,50
+Arcanna's Deathwand|Arcanna's Tricks|wst|15|Sorceress Skill,,1,1|Deadly Strike,,25,25|Mana,,50,50
+Arcanna's Head|Arcanna's Tricks|skp|15|Replenish Life,,4,4|Attacker Takes Damage,,2,2|Defense Per Level,24,,
+Arcanna's Flesh|Arcanna's Tricks|ltp|15|Light Radius,,2,2|Damage Reduction,,3,3|Defense,,100,100
+Natalya's Totem|Natalya's Odium|xh9|59|Defense,,135,175|Dexterity,,20,30|Strength,,10,20|All Resistances,,10,20|Magic Damage Reduction,,3,3
+Natalya's Mark|Natalya's Odium|7qr|79|Increased Attack Speed,,40,40|Enhanced Damage,,200,200|Ignore Target's Defense,,1,1|Adds Cold Damage,100,50,50|Adds Fire Damage,,12,17|Damage To Undead,,200,200|Damage To Demons,,200,200
+Natalya's Shadow|Natalya's Odium|ucl|73|Defense,,150,225|Life Per Level,8,,|Skill Tab,19,2,2|Poison Length Reduction,,75,75|Poison Resistance,,25,25|Add Sockets,,1,3
+Natalya's Soul|Natalya's Odium|xmb|25|Defense,,75,125|Faster Run/Walk,,40,40|Stamina Regeneration Per Level,2,,|Durability,,50,50|Cold Resistance,,15,25|Lightning Resistance,,15,25
+Aldur's Stony Gaze|Aldur's Watchtower|dr8|36|Defense,,90,90|Regenerate Mana,,17,17|Light Radius,,5,5|Faster Hit Recovery,,25,25|Cold Resistance,,40,50|Add Sockets,,2,2|Energy,,15,15
+Aldur's Deception|Aldur's Watchtower|uul|76|Defense,,300,300|Skill Tab,16,1,1|Strength,,20,20|Dexterity,,15,15|Lightning Resistance,,40,50|Requirements,,-50,-50|Skill Tab,17,1,1|Vitality,,15,15
+Aldur's Rhythm|Aldur's Watchtower|9mt|42|Adds Damage,,40,62|Adds Lightning Damage,,50,75|Life Stolen Per Hit,,10,10|Increased Attack Speed,,30,30|Damage To Demons,,200,200|Mana Stolen Per Hit,,5,5|Add Sockets,,2,5|Strength,,15,15
+Aldur's Advance|Aldur's Watchtower|xtb|45|Indestructible,,1,1|Regenerate Stamina,,32,32|Life,,50,50|Damage to Mana,,10,10|Faster Run/Walk,,40,40|Stamina,,180,180|Fire Resistance,,40,50|Dexterity,,15,15
+Immortal King's Will|Immortal King|ba5|47|Defense,,125,125|Extra Gold,,37,37|Skill Tab,14,2,2|Light Radius,,4,4|Better Chance of Getting Magic Item,,25,40|Add Sockets,,2,2
+Immortal King's Soul Cage|Immortal King|uar|76|Defense,,400,400|Skill When Struck,52,5,5|Skill Tab,12,2,2|Poison Resistance,,50,50|Faster Hit Recovery,,25,25
+Immortal King's Detail|Immortal King|zhb|29|Defense,,36,36|Fire Resistance,,28,28|Lightning Resistance,,31,31|Strength,,25,25|Defense,,105,105
+Immortal King's Forge|Immortal King|xhg|30|Defense,,65,65|Strength,,20,20|Dexterity,,20,20|Skill When Struck,38,12,4|Increased Attack Speed,,25,25
+Immortal King's Pillar|Immortal King|xhb|31|Defense,,75,75|Faster Run/Walk,,40,40|Attack Rating,,110,110|Life,,44,44|Better Chance of Getting Magic Item,,25,25
+Immortal King's Stone Crusher|Immortal King|7m7|76|Indestructible,,1,1|Increased Attack Speed,,40,40|Damage To Demons,,200,200|Damage To Undead,,200,200|Crushing Blow,,35,40|Enhanced Damage,,200,200|Add Sockets,,2,2|Adds Fire Damage,,211,397
+Tal Rasha's Fine-Spun Cloth|Tal Rasha's Wrappings|zmb|53|Requirements,,-20,-20|Mana,,30,30|Dexterity,,20,20|Damage to Mana,,37,37|Better Chance of Getting Magic Item,,10,15|Defense,,60,60
+Tal Rasha's Adjudication|Tal Rasha's Wrappings|amu|67|Lightning Resistance,,33,33|Sorceress Skill,,2,2|Life,,50,50|Adds Lightning Damage,,3,32|Mana,,42,42
+Tal Rasha's Lidless Eye|Tal Rasha's Wrappings|oba|65|Life,,57,57|Mana,,77,77|Energy,,10,10|Faster Cast Rate,,20,20|Skill,Fire Mastery,1,2|Skill,Lightning Mastery,1,2|Skill,Cold Mastery,1,2|Sorceress Skill,,1,1
+Tal Rasha's Guardianship|Tal Rasha's Wrappings|uth|71|Requirements,,-60,-60|Magic Damage Reduction,,15,15|Better Chance of Getting Magic Item,,88,88|Cold Resistance,,40,40|Fire Resistance,,40,40|Lightning Resistance,,40,40|Defense,,400,400|Faster Cast Rate,,10,10
+Tal Rasha's Horadric Crest|Tal Rasha's Wrappings|xsk|66|Mana,,30,30|Life,,60,60|Defense,,45,45|All Resistances,,15,15|Life Stolen Per Hit,,10,10|Mana Stolen Per Hit,,10,10
+Griswold's Valor|Griswold's Legacy|urn|69|Enhanced Defense,,50,75|Cold Absorption Per Level,,2,2|Add Sockets,,2,2|Requirements,,-40,-40|Better Chance of Getting Magic Item,,20,30|All Resistances,,5,5|Skill Tab,10,2,2
+Griswold's Heart|Griswold's Legacy|xar|45|Defense,,500,500|Skill Tab,11,2,2|Add Sockets,,3,3|Strength,,20,20|Requirements,,-40,-40
+Griswold's Redemption|Griswold's Legacy|7ws|53|Enhanced Damage,,200,240|Increased Attack Speed,,40,40|Damage To Undead,,200,200|Requirements,,-20,-20|Add Sockets,,3,4|Skill Tab,9,2,2
+Griswold's Honor|Griswold's Legacy|paf|68|Defense,,108,108|Add Sockets,3,,|Increased Blocking, Faster Block Rate,,65,65|Increased Blocking, Faster Block Rate,,20,20|All Resistances,,45,45
+Trang-Oul's Guise|Trang-Oul's Avatar|uh9|65|Defense,,80,100|Faster Hit Recovery,,25,25|Attacker Takes Damage,,20,20|Mana,,150,150|Replenish Life,,5,5
+Trang-Oul's Scales|Trang-Oul's Avatar|xul|49|Requirements,,-40,-40|Defense vs. Missile,,100,100|Poison Resistance,,40,40|Skill Tab,8,2,2|Faster Run/Walk,,40,40|Enhanced Defense,,150,150
+Trang-Oul's Wing|Trang-Oul's Avatar|ne9|54|Defense,,125,125|Strength,,25,25|Dexterity,,15,15|Fire Resistance,,38,45|Increased Blocking, Faster Block Rate,,30,30|Poison Resistance,,40,40|Skill Tab,7,2,2
+Trang-Oul's Claws|Trang-Oul's Avatar|xmg|45|Defense,,30,30|Faster Cast Rate,,20,20|Cold Resistance,,30,30|Skill Tab,6,2,2
+Trang-Oul's Girth|Trang-Oul's Avatar|utc|47|Defense,,75,100|Stamina,,30,30|Replenish Life,,5,5|Life,,66,66|Cannot Be Frozen,,1,1|Requirements,,-40,-40|Mana,,25,50
+M'avina's True Sight|M'avina's Battle Hymn|ci3|59|Defense,,150,150|Replenish Life,,10,10|Increased Attack Speed,,30,30|Mana,,25,25|All Skills,,1,1
+M'avina's Embrace|M'avina's Battle Hymn|uld|70|Skill When Struck,55,10,3|Requirements,,-30,-30|Magic Damage Reduction,,5,12|Skill Tab,1,2,2|Defense Per Level,32,,|Defense,,350,350
+M'avina's Icy Clutch|M'avina's Battle Hymn|xtg|32|Defense,,45,50|Adds Cold Damage,150,6,18|Half Freeze Duration,,1,1|Extra Gold,,56,56|Strength,,10,10|Dexterity,,15,15
+M'avina's Tenet|M'avina's Battle Hymn|zvb|45|Defense,,50,50|Faster Run/Walk,,20,20|Mana Stolen Per Hit,,5,5|Light Radius,,5,5
+M'avina's Caster|M'avina's Battle Hymn|amc|70|Enhanced Damage,,188,188|Increased Attack Speed,,40,40|Fires Magic Arrows,,1,1|Attack Rating,,50,50|Adds Magical Damage,,114,377
+Telling of Beads|The Disciple|amu|30|Poison Resistance,,35,50|All Skills,,1,1|Cold Resistance,,18,18|Attacker Takes Damage,,8,10
+Laying of Hands|The Disciple|ulg|63|Defense,,25,25|Increased Attack Speed,,20,20|Fire Resistance,,50,50|Damage To Demons,,350,350|Skill On Striking,101,10,3
+Rite of Passage|The Disciple|xlb|29|Defense,,25,25|Faster Run/Walk,,30,30|Half Freeze Duration,,1,1|Stamina,,15,25
+Dark Adherent|The Disciple|uui|43|Defense,,305,415|Fire Resistance,,24,24|Skill When Struck,48,25,3|Adds Poison Damage,50,125,175
+Credendum|The Disciple|umc|65|Defense,,50,50|Strength,,10,10|Dexterity,,10,10|All Resistances,,15,15
+Dangoon's Teaching|Heaven's Brethren|7ma|68|Damage Per Level,12,,|Increased Attack Speed,,40,40|Skill On Striking,44,10,3|Adds Fire Damage,,20,30
+Taebaek's Glory|Heaven's Brethren|uts|81|Defense,,50,50|Mana,,100,100|Lightning Resistance,,30,30|Attacker Takes Damage,,30,30|Indestructible,,1,1|Increased Blocking, Faster Block Rate,,25,25|Increased Blocking, Faster Block Rate,,30,30
+Haemosu's Adamant|Heaven's Brethren|xrs|44|Defense,,500,500|Defense vs. Missile,,35,35|Life,,75,75|Defense vs. Melee,,40,40|Requirements,,-20,-20
+Ondal's Almighty|Heaven's Brethren|uhm|69|Defense,,50,50|Requirements,,-40,-40|Skill On Striking,72,10,3|Strength,,10,10|Dexterity,,15,15|Faster Hit Recovery,,24,24
+Guillaume's Face|Orphan's Call|xhm|34|Enhanced Defense,,120,120|Faster Hit Recovery,,30,30|Crushing Blow,,35,35|Deadly Strike,,15,15|Strength,,15,15
+Wilhelm's Pride|Orphan's Call|ztb|42|Enhanced Defense,,75,75|Mana Stolen Per Hit,,5,5|Cold Resistance,,10,10|Life Stolen Per Hit,,5,5
+Magnus' Skin|Orphan's Call|xvg|37|Enhanced Defense,,50,50|Fire Resistance,,15,15|Increased Attack Speed,,20,20|Light Radius,,3,3|Attack Rating,,100,100
+Whitstan's Guard|Orphan's Call|xml|29|Enhanced Defense,,175,175|Increased Blocking, Faster Block Rate,,40,40|Increased Blocking, Faster Block Rate,,55,55|Half Freeze Duration,,1,1|Light Radius,,5,5
+Hwanin's Splendor|Hwanin's Majesty|xrn|45|Replenish Life,,20,20|Magic Damage Reduction,,10,10|Cold Resistance,,37,37|Enhanced Defense,,100,100
+Hwanin's Refuge|Hwanin's Majesty|xcl|30|Defense,,200,200|Poison Resistance,,27,27|Life,,100,100|Skill When Struck,42,10,3
+Hwanin's Blessing|Hwanin's Majesty|mbl|35|Adds Lightning Damage,,3,33|Prevent Monster Heal,,1,1|Defense Per Level,12,,|Damage to Mana,,12,12
+Hwanin's Justice|Hwanin's Majesty|9vo|28|Attack Rating,,330,330|Indestructible,,1,1|Skill On Striking,45,10,3|Increased Attack Speed,,40,40|Enhanced Damage,,200,200|Adds Lightning Damage,,5,25
+Sazabi's Cobalt Redeemer|Sazabi's Grand Tribute|7ls|73|Enhanced Damage,,150,150|Adds Cold Damage,50,25,35|Increased Attack Speed,,40,40|Damage To Demons,,318,318|Indestructible,,1,1|Dexterity,,15,15|Strength,,5,5
+Sazabi's Ghost Liberator|Sazabi's Grand Tribute|upl|67|Defense,,400,400|Faster Hit Recovery,,30,30|Strength,,25,25|Attack Rating Against Demons,,300,300|Life,,50,75
+Sazabi's Mental Sheath|Sazabi's Grand Tribute|xhl|43|Defense,,100,100|All Skills,,1,1|Fire Resistance,,15,20|Lightning Resistance,,15,20
+Bul-Kathos' Sacred Charge|Bul-Kathos' Children|7gd|61|Crushing Blow,,35,35|All Resistances,,20,20|Increased Attack Speed,,20,20|Knockback,,1,1|Enhanced Damage,,200,200
+Bul-Kathos' Tribal Guardian|Bul-Kathos' Children|7wd|54|Fire Resistance,,50,50|Adds Poison Damage,50,255,255|Increased Attack Speed,,20,20|Strength,,20,20|Enhanced Damage,,200,200
+Cow King's Horns|Cow King's Leathers|xap|25|Defense,,75,75|Half Freeze Duration,,1,1|Damage to Mana,,35,35|Attacker Takes Damage,,10,10
+Cow King's Hide|Cow King's Leathers|stu|18|All Resistances,,18,18|Enhanced Defense,,60,60|Life,,30,30|Skill When Struck,53,18,5
+Cow King's Hooves|Cow King's Leathers|vbt|13|Defense,,25,35|Faster Run/Walk,,30,30|Better Chance of Getting Magic Item,,25,25|Dexterity,,20,20|Adds Fire Damage,,25,35
+Naj's Puzzler|Naj's Ancient Set|6cs|78|Energy,,35,35|Enhanced Damage,,150,150|Charges,54,69,11|Faster Cast Rate,,30,30|Adds Lightning Damage,,6,45|Mana,,70,70|All Skills,,1,1
+Naj's Light Plate|Naj's Ancient Set|ult|71|Requirements,,-60,-60|Life,,65,65|All Resistances,,25,25|Damage to Mana,,45,45|All Skills,,1,1|Defense,,300,300
+Naj's Circlet|Naj's Ancient Set|ci0|28|Defense,,75,75|Adds Fire Damage,,25,35|Add Light Radius,,5,5|Strength,,15,15|Skill When Struck,53,12,5
+Sander's Paragon|McAuley's Folly|cap|25|Better Chance of Getting Magic Item,,35,35|Attacker Takes Damage,,8,8|Defense Per Level,8,,
+Sander's Riprap|McAuley's Folly|vbt|20|Faster Run/Walk,,40,40|Attack Rating,,100,100|Strength,,5,5|Dexterity,,10,10
+Sander's Taboo|McAuley's Folly|vgl|28|Defense,,20,25|Increased Attack Speed,,20,20|Life,,40,40|Adds Poison Damage,75,30,36
+Sander's Superstition|McAuley's Folly|bwn|25|Enhanced Damage,2,75,75|Mana,,25,25|Mana Stolen Per Hit,,8,8|Faster Cast Rate,,20,20|Adds Cold Damage,50,25,75

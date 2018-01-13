@@ -1,0 +1,747 @@
+of Health|5|Damage Reduction,,1,1||
+of Protection|13|Damage Reduction,,2,2||
+of Absorption|19|Damage Reduction,,3,3||
+of Life|26|Damage Reduction,,4,4||
+||||
+of Warding|5|Magic Damage Reduction,,1,1||
+of the Sentinel|13|Magic Damage Reduction,,2,2||
+of Guarding|19|Magic Damage Reduction,,3,3||
+of Negation|26|Magic Damage Reduction,,4,4||
+||||
+of Piercing|18|Ignore Target's Defense,,1,1||
+of Bashing|12|Monster Defense Reduction per Hit,,-25,-40||
+of Puncturing|4|Monster Defense Reduction per Hit,,-10,-20||
+of Thorns|10|Attacker Takes Damage,,1,3||
+of Spikes|15|Attacker Takes Damage,,2,6||
+of Readiness|1|Increased Attack Speed,,10,10||
+of Alacrity|6|Increased Attack Speed,,20,20||
+of Swiftness|14|Increased Attack Speed,,30,30||
+of Quickness|18|Increased Attack Speed,,40,40||
+of Blocking|1|Increased Blocking, Faster Block Rate,,10,10||
+of Deflecting|8|Increased Blocking, Faster Block Rate,,20,20||
+of the Apprentice|3|Faster Cast Rate,,10,10||
+of the Magus|12|Faster Cast Rate,,20,20||
+of Frost|3|Minimum Cold Damage,,1,1|Maximum Cold Damage,,1,4|Cold Damage length,,125,125
+of the Glacier|13|Minimum Cold Damage,,4,4|Maximum Cold Damage,,4,12|Cold Damage length,,150,150
+of Frost|41|Minimum Cold Damage,,1,1|Maximum Cold Damage,,1,4|Cold Damage length,,125,125
+of Thawing|7|Half Freeze Duration,,1,1||
+of Flame|3|Minimum Fire Damage,,1,1|Maximum Fire Damage,,2,6|
+of Fire|11|Minimum Fire Damage,,2,2|Maximum Fire Damage,,6,11|
+of Burning|18|Minimum Fire Damage,,10,10|Maximum Fire Damage,,10,20|
+of Flame|30|Minimum Fire Damage,,1,1|Maximum Fire Damage,,2,6|
+of Shock|3|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,8,8|
+of Lightning|11|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,16,16|
+of Thunder|18|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,32,32|
+of Shock|37|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,8,8|
+of Craftmanship|1|Maximum Damage,,1,2||
+of Quality|3|Maximum Damage,,2,2||
+of Maiming|5|Maximum Damage,,3,4||
+of Slaying|8|Maximum Damage,,5,7||
+of Gore|10|Maximum Damage,,8,10||
+of Carnage|14|Maximum Damage,,11,14||
+of Slaughter|18|Maximum Damage,,15,20||
+of Maiming|31|Maximum Damage,,3,4||
+of Worth|1|Minimum Damage,,1,1||
+of Measure|4|Minimum Damage,,2,2||
+of Excellence|9|Minimum Damage,,3,3||
+of Performance|13|Minimum Damage,,4,5||
+of Measure|27|Minimum Damage,,2,2||
+of Blight|3|Minimum Poison Damage,,8,8|Maximum Poison Damage,,24,24|Poison Damage Length,,75,75
+of Venom|11|Minimum Poison Damage,,16,16|Maximum Poison Damage,,48,48|Poison Damage Length,,75,75
+of Pestilence|18|Minimum Poison Damage,,32,32|Maximum Poison Damage,,72,72|Poison Damage Length,,100,100
+of Blight|33|Minimum Poison Damage,,8,8|Maximum Poison Damage,,24,24|Poison Damage Length,,75,75
+of Dexterity|3|Dexterity,,1,1||
+of Dexterity|3|Dexterity,,1,3||
+of Skill|7|Dexterity,,4,6||
+of Skill|33|Dexterity,,4,6||
+of Accuracy|13|Dexterity,,7,10||
+of Precision|16|Dexterity,,11,15||
+of Precision|45|Dexterity,,11,15||
+of Perfection|22|Dexterity,,16,20||
+of Balance|3|Faster Hit Recovery,,10,10||
+of Stability|6|Faster Hit Recovery,,20,20||
+||||
+of Regeneration|7|Replenish Life,,3,3||
+of Regeneration|30|Replenish Life,,3,3||
+of Regeneration|52|Replenish Life,,3,3||
+of Regrowth|12|Replenish Life,,5,5||
+of Regrowth|41|Replenish Life,,5,5||
+of Vileness|6|Prevent Monster Heal,,1,1||
+||||
+of Greed|1|Extra Gold,,40,60||
+of Wealth|12|Extra Gold,,80,120||
+of Chance|9|Better Chance of Getting Magic Item,,10,19||
+of Fortune|12|Better Chance of Getting Magic Item,,20,35||
+of Energy|3|Mana,,1,1||
+of Energy|3|Mana,,1,5||
+of the Mind|7|Mana,,6,10||
+of Brilliance|13|Mana,,11,15||
+of Sorcery|16|Mana,,16,20||
+of Wizardry|22|Mana,,21,30||
+of the Bear|6|Knockback,,1,1||
+of Light|4|Light Radius,,1,1||
+of Radiance|11|Light Radius,,3,3||
+of the Sun|12|Light Radius,,5,5||
+of Life|17|Life,,5,5||
+of the Jackal|2|Life,,1,5||
+of the Fox|4|Life,,5,10||
+of the Wolf|10|Life,,11,20||
+of the Wolf|33|Life,,11,20||
+of the Tiger|15|Life,,21,30||
+of the Mammoth|18|Life,,31,40||
+of the Mammoth|45|Life,,31,40||
+of the Colossus|22|Life,,41,60||
+of the Leech|4|Life Stolen Per Hit,,4,7||
+of the Locust|15|Life Stolen Per Hit,,8,10||
+of the Bat|4|Mana Stolen Per Hit,,4,8||
+of the Vampire|15|Mana Stolen Per Hit,,9,12||
+of Defiance|18|Poison Length Reduction,,75,75||
+of Amelioration|13|Poison Length Reduction,,50,50||
+of Remedy|5|Poison Length Reduction,,25,25||
+||||
+of Simplicity|18|Requirements,,-40,-40||
+of Ease|11|Requirements,,-20,-20||
+||||
+of Strength|3|Strength,,1,3||
+of Might|7|Strength,,4,6||
+of the Ox|13|Strength,,7,10||
+of the Ox|35|Strength,,7,10||
+of the Giant|16|Strength,,11,15||
+of the Giant|46|Strength,,11,15||
+of the Titan|22|Strength,,16,20||
+of Pacing|1|Faster Run/Walk,,10,10||
+of Haste|9|Faster Run/Walk,,20,20||
+of Speed|16|Faster Run/Walk,,30,30||
+of Health|5|Damage Reduction,,1,1||
+of Protection|13|Damage Reduction,,2,2||
+of Absorption|19|Damage Reduction,,3,3||
+of Life|26|Damage Reduction,,4,4||
+of Life Everlasting|37|Damage Reduction,,10,25||
+of Protection|18|Damage Reduction,,2,2||
+of Absorption|24|Damage Reduction,,3,3||
+of Life|33|Damage Reduction,,4,7||
+of Amicae|43|Damage Reduction,,8,15||
+of Warding|5|Magic Damage Reduction,,1,1||
+of the Sentinel|12|Magic Damage Reduction,,2,2||
+of Guarding|19|Magic Damage Reduction,,3,3||
+of Negation|35|Magic Damage Reduction,,4,6||
+of the Sentinel|18|Magic Damage Reduction,,2,2||
+of Guarding|24|Magic Damage Reduction,,3,3||
+of Negation|33|Magic Damage Reduction,,4,6||
+of Coolness|8|Fire Absorption,,2,2||
+of Inflammability|14|Fire Absorption,,3,3||
+of Amianthus|21|Fire Absorption,,4,5||
+of Quenching|30|Fire Absorption,,6,8||
+of Coolness|9|Fire Absorption,,2,2||
+of Inflammability|16|Fire Absorption,,3,3||
+of Amianthus|25|Fire Absorption,,4,5||
+of Quenching|38|Fire Absorption,,6,8||
+of Faith|17|Fire Absorption,,1,2||
+of Resistance|8|Lightning Absorption,,2,2||
+of Insulation|14|Lightning Absorption,,3,3||
+of Grounding|21|Lightning Absorption,,4,5||
+of the Dynamo|30|Lightning Absorption,,6,8||
+of Resistance|9|Lightning Absorption,,2,2||
+of Insulation|16|Lightning Absorption,,3,3||
+of Grounding|25|Lightning Absorption,,4,5||
+of the Dynamo|38|Lightning Absorption,,6,8||
+of Stoicism|16|Lightning Absorption,,1,2||
+of Warming|8|Cold Absorption,,2,2||
+of Thawing|14|Cold Absorption,,3,3||
+of the Dunes|21|Cold Absorption,,4,5||
+of the Scirocco|30|Cold Absorption,,6,8||
+of Warming|9|Cold Absorption,,2,2||
+of Thawing|16|Cold Absorption,,3,3||
+of the Dunes|25|Cold Absorption,,4,5||
+of the Scirocco|38|Cold Absorption,,6,8||
+of Desire|17|Cold Absorption,,1,2||
+of Piercing|18|Ignore Target's Defense,,1,1||
+of Bashing|12|Monster Defense Reduction per Hit,,-25,-40||
+of Puncturing|4|Monster Defense Reduction per Hit,,-10,-20||
+of Thorns|10|Attacker Takes Damage,,1,3||
+of Spikes|15|Attacker Takes Damage,,4,6||
+of Razors|26|Attacker Takes Damage,,7,9||
+of Swords|39|Attacker Takes Damage,,10,20||
+of Malice|29|Attacker Takes Damage,,1,5||
+of Readiness|3|Increased Attack Speed,,10,10||
+of Alacrity|17|Increased Attack Speed,,20,20||
+of Swiftness|26|Increased Attack Speed,,30,30||
+of Quickness|38|Increased Attack Speed,,40,40||
+of Alacrity|35|Increased Attack Speed,,20,20||
+of Fervor|31|Increased Attack Speed,,15,15||
+of Blocking|1|Increased Blocking, Faster Block Rate,,10,10|Increased Blocking, Faster Block Rate,,15,15|
+of Deflecting|8|Increased Blocking, Faster Block Rate,,20,20|Increased Blocking, Faster Block Rate,,30,30|
+of the Apprentice|3|Faster Cast Rate,,10,10||
+of the Magus|21|Faster Cast Rate,,20,20||
+of Frost|3|Minimum Cold Damage,,1,1|Maximum Cold Damage,,1,2|Cold Damage length,,50,50
+of the Icicle|9|Minimum Cold Damage,,1,1|Maximum Cold Damage,,3,4|Cold Damage length,,75,75
+of the Glacier|20|Minimum Cold Damage,,2,4|Maximum Cold Damage,,4,15|Cold Damage length,,100,100
+of Winter|37|Minimum Cold Damage,,5,9|Maximum Cold Damage,,16,50|Cold Damage length,,150,150
+of Frost|41|Minimum Cold Damage,,1,1|Maximum Cold Damage,,3,6|Cold Damage length,,50,50
+of Frigidity|12|Minimum Cold Damage,,1,1|Maximum Cold Damage,,3,5|Cold Damage length,,50,50
+of Thawing|7|Half Freeze Duration,,1,1||
+of Flame|3|Minimum Fire Damage,,1,1|Maximum Fire Damage,,2,5|
+of Fire|11|Minimum Fire Damage,,1,4|Maximum Fire Damage,,6,11|
+of Burning|18|Minimum Fire Damage,,5,9|Maximum Fire Damage,,10,20|
+of Incineration|35|Minimum Fire Damage,,10,20|Maximum Fire Damage,,21,75|
+of Flame|30|Minimum Fire Damage,,1,1|Maximum Fire Damage,,2,6|
+of Passion|11|Minimum Fire Damage,,1,3|Maximum Fire Damage,,6,10|
+of Shock|3|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,6,8|
+of Lightning|11|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,9,16|
+of Thunder|18|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,17,40|
+of Storms|26|Minimum Lightning Damage,,1,6|Maximum Lightning Damage,,41,120|
+of Shock|37|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,11,23|
+of Ennui|11|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,10,20|
+of Craftmanship|1|Maximum Damage,,1,1||
+of Quality|3|Maximum Damage,,2,2||
+of Maiming|5|Maximum Damage,,3,4||
+of Slaying|8|Maximum Damage,,5,7||
+of Gore|10|Maximum Damage,,8,10||
+of Carnage|14|Maximum Damage,,11,14||
+of Slaughter|18|Maximum Damage,,15,20||
+of Butchery|27|Maximum Damage,,21,40||
+of Evisceration|37|Maximum Damage,,41,63||
+of Maiming|34|Maximum Damage,,3,4||
+of Craftmanship|1|Maximum Damage,,1,2||
+of Craftmanship|6|Maximum Damage,,2,3||
+of Craftmanship|11|Maximum Damage,,4,5||
+of Quality|17|Maximum Damage,,6,7||
+of Quality|22|Maximum Damage,,7,8||
+of Maiming|29|Maximum Damage,,9,10||
+of Maiming|37|Maximum Damage,,11,12||
+of Craftmanship|6|Maximum Damage,,1,1||
+of Craftmanship|13|Maximum Damage,,2,2||
+of Quality|21|Maximum Damage,,3,4||
+of Quality|30|Maximum Damage,,5,6||
+of Maiming|40|Maximum Damage,,7,8||
+of Craftmanship|15|Maximum Damage,,1,1||
+of Quality|28|Maximum Damage,,2,2||
+of Maiming|43|Maximum Damage,,3,4||
+of Ire|3|Maximum Damage,,2,5||
+of Wrath|8|Maximum Damage,,6,9||
+of Carnage|18|Maximum Damage,,11,15||
+of Worth|1|Minimum Damage,,1,2||
+of Measure|9|Minimum Damage,,3,4||
+of Excellence|18|Minimum Damage,,5,8||
+of Performance|40|Minimum Damage,,9,14||
+of Transcendence|68|Minimum Damage,,15,20||
+of Worth|11|Minimum Damage,,2,3||
+of Measure|29|Minimum Damage,,4,5||
+of Excellence|51|Minimum Damage,,6,9||
+of Performance|73|Minimum Damage,,10,13||
+of Joyfulness|3|Minimum Damage,,1,4||
+of Bliss|37|Minimum Damage,,5,10||
+of Blight|3|Adds Poison Damage,75,24,24||
+of Venom|11|Adds Poison Damage,100,54,54||
+of Pestilence|18|Adds Poison Damage,125,103,103||
+of Anthrax|25|Adds Poison Damage,150,171,171||
+of Blight|33|Adds Poison Damage,75,171,171||
+of Envy|1|Adds Poison Damage,50,103,103||
+of Dexterity|1|Dexterity,,1,2||
+of Skill|8|Dexterity,,3,5||
+of Accuracy|20|Dexterity,,6,9||
+of Precision|35|Dexterity,,10,15||
+of Perfection|51|Dexterity,,16,20||
+of Nirvana|64|Dexterity,,21,30||
+of Dexterity|4|Dexterity,,1,2||
+of Skill|16|Dexterity,,3,5||
+of Accuracy|31|Dexterity,,6,9||
+of Precision|48|Dexterity,,10,15||
+of Perfection|67|Dexterity,,16,20||
+of Dexterity|9|Dexterity,,2,3||
+of Skill|26|Dexterity,,4,5||
+of Accuracy|38|Dexterity,,6,9||
+of Precision|52|Dexterity,,10,15||
+of Dexterity|1|Dexterity,,3,4||
+of Dexterity|2|Dexterity,,2,3||
+of Dexterity|5|Dexterity,,1,1||
+of Dexterity|10|Dexterity,,5,6||
+of Dexterity|13|Dexterity,,4,5||
+of Dexterity|16|Dexterity,,2,2||
+of Daring|5|Dexterity,,1,3||
+of Balance|3|Faster Hit Recovery,,10,10||
+of Equilibrium|6|Faster Hit Recovery,,17,17||
+of Stability|13|Faster Hit Recovery,,24,24||
+of Balance|1|Faster Hit Recovery,,12,12||
+of Balance|14|Faster Hit Recovery,,8,8||
+of Balance|29|Faster Hit Recovery,,5,5||
+of Truth|36|Faster Hit Recovery,,7,7||
+of Regeneration|7|Replenish Life,,3,5||
+of Regeneration|30|Replenish Life,,3,5||
+of Regeneration|52|Replenish Life,,3,5||
+of Regrowth|12|Replenish Life,,6,10||
+of Regrowth|41|Replenish Life,,6,9||
+of Revivification|30|Replenish Life,,11,15||
+of Honor|35|Replenish Life,,1,4||
+of Vileness|6|Prevent Monster Heal,,1,1||
+of Greed|1|Extra Gold,,25,40||
+of Wealth|12|Extra Gold,,41,80||
+of Greed|1|Extra Gold,,10,20||
+of Greed|5|Extra Gold,,21,30||
+of Greed|14|Extra Gold,,31,40||
+of Greed|5|Extra Gold,,5,10||
+of Greed|15|Extra Gold,,11,22||
+of Greed|15|Extra Gold,,5,10||
+of Avarice|1|Extra Gold,,10,30||
+of Chance|9|Better Chance of Getting Magic Item,,5,15||
+of Fortune|12|Better Chance of Getting Magic Item,,16,25||
+of Fortune|31|Better Chance of Getting Magic Item,,16,25||
+of Luck|19|Better Chance of Getting Magic Item,,26,35||
+of Fortune|18|Better Chance of Getting Magic Item,,3,5||
+of Good Luck|33|Better Chance of Getting Magic Item,,6,7||
+of Prosperity|19|Better Chance of Getting Magic Item,,5,10||
+of Energy|1|Energy,,1,3||
+of the Mind|3|Energy,,4,6||
+of Brilliance|9|Energy,,7,10||
+of Sorcery|16|Energy,,11,15||
+of Wizardry|23|Energy,,16,20||
+of Enlightenment|33|Energy,,21,30||
+of Energy|5|Energy,,1,3||
+of the Mind|9|Energy,,4,6||
+of Brilliance|16|Energy,,7,10||
+of Sorcery|23|Energy,,11,15||
+of Wizardry|33|Energy,,16,20||
+of Energy|3|Energy,,1,3||
+of the Mind|7|Energy,,4,6||
+of Brilliance|12|Energy,,7,10||
+of Sorcery|21|Energy,,11,15||
+of Knowledge|6|Energy,,1,5||
+of the Bear|6|Knockback,,1,1||
+of Light|4|Light Radius,,1,1|Attack Rating,,15,15|
+of Radiance|11|Light Radius,,3,3|Attack Rating,,30,30|
+of the Sun|12|Light Radius,,5,5|Bonus to Attack Rating,,5,5|
+of the Jackal|1|Life,,1,5||
+of the Fox|5|Life,,6,10||
+of the Wolf|11|Life,,11,20||
+of the Tiger|15|Life,,21,30||
+of the Mammoth|18|Life,,31,40||
+of the Colossus|22|Life,,41,60||
+of the Squid|30|Life,,61,80||
+of the Whale|37|Life,,81,100||
+of the Jackal|3|Life,,1,5||
+of the Fox|8|Life,,6,10||
+of the Wolf|20|Life,,11,20||
+of the Tiger|35|Life,,21,30||
+of the Mammoth|51|Life,,31,40||
+of the Colossus|67|Life,,41,60||
+of the Jackal|6|Life,,1,5||
+of the Fox|13|Life,,6,10||
+of the Wolf|26|Life,,11,20||
+of the Tiger|43|Life,,21,30||
+of the Mammoth|60|Life,,31,40||
+of Life|1|Life,,5,10||
+of Life|6|Life,,11,15||
+of Life|14|Life,,16,20||
+of Sustenance|23|Life,,21,25||
+of Sustenance|37|Life,,26,30||
+of Sustenance|53|Life,,31,35||
+of Vita|69|Life,,36,40||
+of Vita|83|Life,,41,45||
+of Vita|97|Life,,46,50||
+of Life|9|Life,,6,10||
+of Life|9|Life,,11,15||
+of Sustenance|19|Life,,16,20||
+of Sustenance|34|Life,,21,25||
+of Vita|50|Life,,26,30||
+of Vita|66|Life,,31,35||
+of Life|14|Life,,5,10||
+of Sustenance|17|Life,,11,15||
+of Vita|39|Life,,16,20||
+of Spirit|1|Life,,3,8||
+of Hope|37|Life,,9,20||
+of the Leech|4|Life Stolen Per Hit,,4,5||
+of the Locust|15|Life Stolen Per Hit,,6,7||
+of the Lamprey|43|Life Stolen Per Hit,,8,9||
+of the Leech|10|Life Stolen Per Hit,,3,4||
+of the Locust|35|Life Stolen Per Hit,,5,6||
+of the Lamprey|65|Life Stolen Per Hit,,7,8||
+of the Leech|26|Life Stolen Per Hit,,3,3||
+of the Bat|4|Mana Stolen Per Hit,,4,5||
+of the Wraith|16|Mana Stolen Per Hit,,6,7||
+of the Vampire|48|Mana Stolen Per Hit,,8,9||
+of the Bat|11|Mana Stolen Per Hit,,3,4||
+of the Wraith|40|Mana Stolen Per Hit,,5,6||
+of the Vampire|66|Mana Stolen Per Hit,,7,8||
+of the Bat|27|Mana Stolen Per Hit,,3,3||
+of Defiance|18|Poison Length Reduction,,75,75||
+of Amelioration|13|Poison Length Reduction,,50,50||
+of Remedy|5|Poison Length Reduction,,25,25||
+of Simplicity|18|Requirements,,-30,-30||
+of Ease|11|Requirements,,-20,-20||
+of Freedom|1|Requirements,,-15,-15||
+of Strength|1|Strength,,1,2||
+of Might|8|Strength,,3,5||
+of the Ox|19|Strength,,6,9||
+of the Giant|34|Strength,,10,15||
+of the Titan|50|Strength,,16,20||
+of Atlas|63|Strength,,21,30||
+of Strength|3|Strength,,1,2||
+of Might|15|Strength,,3,5||
+of the Ox|30|Strength,,6,9||
+of the Giant|47|Strength,,10,15||
+of the Titan|66|Strength,,16,20||
+of Strength|8|Strength,,1,2||
+of Might|25|Strength,,3,5||
+of the Ox|37|Strength,,6,9||
+of the Giant|51|Strength,,10,15||
+of Strength|1|Strength,,3,4||
+of Strength|2|Strength,,2,3||
+of Strength|5|Strength,,1,1||
+of Strength|10|Strength,,5,6||
+of Strength|13|Strength,,4,5||
+of Strength|16|Strength,,2,2||
+of Virility|13|Strength,,1,4||
+of Pacing|8|Faster Run/Walk,,10,10||
+of Haste|16|Faster Run/Walk,,20,20||
+of Speed|29|Faster Run/Walk,,30,30||
+of Transportation|57|Faster Run/Walk,,30,30|Slow Stamina Drain,,80,90|
+of Acceleration|43|Faster Run/Walk,,40,40||
+of Inertia|14|Faster Run/Walk,,7,7||
+of Inertia|18|Faster Run/Walk,,5,5||
+of Inertia|27|Faster Run/Walk,,3,3||
+of Self-Repair|1|Repairs Durability,3,,||
+of Restoration|12|Repairs Durability,5,,||
+of Ages|42|Indestructible,,,||
+of Replenishing|3|Replenishes Quantity,5,,||
+of Propogation|18|Replenishes Quantity,10,,||
+of the Centaur|1|Life Per Level,6,,||
+of Memory|1|Mana Per Level,6,,||
+of the Elephant|7|Life Per Level,4,,|Mana Per Level,2,,|
+of Power|1|Strength Per Level,3,,||
+of Grace|1|Dexterity Per Level,3,,||
+of Grace and Power|1|Strength Per Level,1,,|Dexterity Per Level,1,,|
+of the Yeti|1|Cold Resistance Per Level,3,,||
+of the Phoenix|1|Fire Resistance Per Level,3,,||
+of the Efreeti|1|Lightning Resistance Per Level,3,,||
+of the Cobra|1|Poison Resistance Per Level,3,,||
+of the Elements|1|Cold Resistance Per Level,1,,|Fire Resistance Per Level,1,,|Lightning Resistance Per Level,1,,
+of Firebolts|12|Skill On Striking,36,10,8||
+of Firebolts|4|Skill On Attack,36,5,3||
+of Firebolts|15|Skill On Attack,36,10,4||
+of Charged Bolt|4|Skill When Struck,38,10,3||
+of Charged Bolt|12|Skill When Struck,38,12,4||
+of Charged Bolt|19|Skill When Struck,38,14,5||
+of Icebolt|4|Skill On Attack,39,5,3||
+of Frozen Armor||||
+of Static Field||||
+of Telekinesis||||
+of Frost Shield|9|Skill When Struck,44,5,3||
+of Ice Blast||||
+of Blaze||||
+of Fire Ball||||
+of Nova|13|Skill On Striking,48,10,3||
+of Nova|21|Skill On Striking,48,12,4||
+of Nova Shield|13|Skill When Struck,48,10,3||
+of Nova Shield|21|Skill When Struck,48,12,4||
+of Nova Shield|28|Skill When Struck,48,14,5||
+of Lightning|13|Skill On Attack,49,5,3||
+of Lightning|18|Charges,49,50,1||
+of Shiver Armor||||
+of Fire Wall||||
+of Enchant||||
+of Chain Lightning|18|Skill On Attack,53,5,3||
+of Chain Lightning|26|Skill On Attack,53,8,3||
+of Chain Lightning|33|Skill On Attack,53,8,5||
+of Teleport Shield|18|Skill When Struck,54,10,3||
+of Teleport Shield|26|Skill When Struck,54,14,3||
+of Teleport Shield|33|Skill When Struck,54,18,3||
+of Glacial Spike||||
+of Meteor||||
+of Thunder Storm||||
+of Energy Shield||||
+of Blizzard||||
+of Chilling Armor||||
+of Hydra Shield|30|Skill When Struck,62,10,3||
+of Frozen Orb||||
+of Dawn|22|Defense Per Time,3,10,40||
+of Sunlight|22|Defense Per Time,0,-10,60||
+of Magic Arrow|11|Charges,6,-30,-10||
+of Magic Arrow|28|Charges,6,-20,-6||
+of Fire Arrow|12|Charges,7,-30,-10||
+of Fire Arrow|32|Charges,7,-20,-6||
+of Inner Sight|14|Charges,8,-30,-6||
+of Inner Sight|42|Charges,8,-20,-4||
+of Jab|18|Charges,10,-60,-7||
+of Jab|42|Charges,10,-20,-4||
+of Cold Arrow|16|Charges,11,-30,-8||
+of Cold Arrow|39|Charges,11,-20,-5||
+of Multiple Shot|19|Charges,12,-30,-8||
+of Multiple Shot|55|Charges,12,-20,-4||
+of Power Strike|13|Charges,14,-60,-6||
+of Power Strike|47|Charges,14,-20,-4||
+of Poison Jab|18|Charges,15,-60,-6||
+of Poison Jab|59|Charges,15,-20,-3||
+of Exploding Arrow|26|Charges,16,-30,-6||
+of Exploding Arrow|61|Charges,16,-20,-4||
+of Slow Missile|27|Charges,17,-30,-5||
+of Slow Missile|60|Charges,17,-20,-3||
+of Impaling Strike|18|Charges,19,-60,-6||
+of Impaling Strike|51|Charges,19,-20,-4||
+of Lightning Javelin|18|Charges,20,-60,-6||
+of Lightning Javelin|62|Charges,20,-20,-3||
+of Ice Arrow|28|Charges,21,-30,-5||
+of Ice Arrow|64|Charges,21,-20,-3||
+of Guided Arrow|26|Charges,22,-30,-5||
+of Guided Arrow|61|Charges,22,-20,-3||
+of Charged Strike|25|Charges,24,-60,-5||
+of Charged Strike|60|Charges,24,-20,-3||
+of Plague Jab|27|Charges,25,-60,-5||
+of Plague Jab|63|Charges,25,-20,-3||
+of Immolating Arrow|36|Charges,27,-30,-4||
+of Immolating Arrow|77|Charges,27,-20,-2||
+of Fending|35|Charges,30,-60,-5||
+of Fending|75|Charges,30,-20,-3||
+of Freezing Arrow|42|Charges,31,-30,-4||
+of Freezing Arrow|86|Charges,31,-20,-2||
+of Lightning Strike|39|Charges,34,-60,-4||
+of Lightning Strike|82|Charges,34,-20,-2||
+of Lightning Fury|41|Charges,35,-60,-4||
+of Lightning Fury|84|Charges,35,-20,-2||
+of Fire Bolt|7|Charges,36,-30,-10||
+of Fire Bolt|14|Charges,36,-20,-6||
+of Charged Bolt|7|Charges,38,-30,-10||
+of Charged Bolt|14|Charges,38,-20,-6||
+of Ice Bolt|7|Charges,39,-30,-10||
+of Ice Bolt|14|Charges,39,-20,-6||
+of Frozen Armor|7|Charges,40,-30,-10||
+of Frozen Armor|14|Charges,40,-20,-6||
+of Static Field|12|Charges,42,-30,-8||
+of Static Field|24|Charges,42,-20,-5||
+of Telekinesis|12|Charges,43,-30,-8||
+of Telekinesis|24|Charges,43,-20,-5||
+of Frost Nova|12|Charges,44,-30,-8||
+of Frost Nova|24|Charges,44,-20,-5||
+of Ice Blast|12|Charges,45,-30,-8||
+of Ice Blast|24|Charges,45,-20,-5||
+of Blazing|18|Charges,46,-30,-7||
+of Blazing|36|Charges,46,-20,-4||
+of Fire Ball|18|Charges,47,-30,-7||
+of Fire Ball|36|Charges,47,-20,-4||
+of Nova|18|Charges,48,-30,-7||
+of Nova|36|Charges,48,-20,-4||
+of Lightning|18|Charges,49,-30,-7||
+of Lightning|36|Charges,49,-20,-4||
+of Shiver Armor|18|Charges,50,-30,-7||
+of Shiver Armor|36|Charges,50,-20,-4||
+of Fire Wall|24|Charges,51,-30,-6||
+of Fire Wall|48|Charges,51,-20,-3||
+of Enchantment|24|Charges,52,-20,-3||
+of Enchantment|48|Charges,52,-10,-1||
+of Chain Lightning|24|Charges,53,-30,-6||
+of Chain Lightning|48|Charges,53,-20,-3||
+of Teleportation|24|Charges,54,-30,-6||
+of Teleportation|48|Charges,54,-20,-3||
+of Glacial Spike|24|Charges,55,-30,-6||
+of Glacial Spike|48|Charges,55,-20,-3||
+of Meteor|30|Charges,56,-30,-5||
+of Meteor|60|Charges,56,-20,-2||
+of Thunder Storm|30|Charges,57,-30,-5||
+of Thunder Storm|60|Charges,57,-20,-2||
+of Energy Shield|30|Charges,58,-30,-5||
+of Energy Shield|60|Charges,58,-20,-2||
+of Blizzard|30|Charges,59,-30,-5||
+of Blizzard|60|Charges,59,-20,-2||
+of Chilling Armor|30|Charges,60,-30,-5||
+of Chilling Armor|60|Charges,60,-20,-2||
+of Hydra|36|Charges,62,-30,-3||
+of Hydra|72|Charges,62,-20,-1||
+of Frozen Orb|36|Charges,64,-30,-3||
+of Frozen Orb|72|Charges,64,-20,-1||
+of Amplify Damage|7|Charges,66,-60,-10||
+of Amplify Damage|14|Charges,66,-20,-6||
+of Teeth|7|Charges,67,-60,-10||
+of Teeth|14|Charges,67,-20,-6||
+of Bone Armor|7|Charges,68,-60,-10||
+of Bone Armor|14|Charges,68,-20,-6||
+of Raise Skeleton|7|Charges,70,-60,-10||
+of Raise Skeleton|14|Charges,70,-20,-6||
+of Dim Vision|12|Charges,71,-60,-8||
+of Dim Vision|24|Charges,71,-20,-5||
+of Weaken|12|Charges,72,-60,-8||
+of Weaken|24|Charges,72,-20,-5||
+of Poison Dagger|12|Charges,73,-60,-8||
+of Poison Dagger|24|Charges,73,-20,-5||
+of Corpse Explosion|12|Charges,74,-60,-8||
+of Corpse Explosion|24|Charges,74,-20,-5||
+of Clay Golem|12|Charges,75,-60,-8||
+of Clay Golem|24|Charges,75,-20,-5||
+of Iron Maiden|18|Charges,76,-60,-7||
+of Iron Maiden|36|Charges,76,-20,-4||
+of Terror|18|Charges,77,-60,-7||
+of Terror|36|Charges,77,-20,-4||
+of Bone Wall|18|Charges,78,-60,-7||
+of Bone Wall|36|Charges,78,-20,-4||
+of Skeletal Mages|18|Charges,80,-60,-7||
+of Skeletal Mages|36|Charges,80,-20,-4||
+of Confusion|24|Charges,81,-60,-6||
+of Confusion|48|Charges,81,-20,-3||
+of Life Tap|24|Charges,82,-60,-6||
+of Life Tap|48|Charges,82,-20,-3||
+of Poison Explosion|24|Charges,83,-60,-6||
+of Poison Explosion|48|Charges,83,-20,-3||
+of Bone Spear|24|Charges,84,-60,-6||
+of Bone Spear|48|Charges,84,-20,-3||
+of Blood Golem|24|Charges,85,-60,-6||
+of Blood Golem|48|Charges,85,-20,-3||
+of Attract|30|Charges,86,-60,-5||
+of Attract|60|Charges,86,-20,-2||
+of Decrepify|30|Charges,87,-60,-5||
+of Decrepify|60|Charges,87,-20,-2||
+of Bone Prison|30|Charges,88,-60,-5||
+of Bone Prison|60|Charges,88,-20,-2||
+of Iron Golem|30|Charges,90,-60,-5||
+of Iron Golem|60|Charges,90,-20,-2||
+of Lower Resistance|36|Charges,91,-60,-3||
+of Lower Resistance|72|Charges,91,-20,-1||
+of Poison Nova|36|Charges,92,-60,-3||
+of Poison Nova|72|Charges,92,-20,-1||
+of Bone Spirit|36|Charges,93,-60,-3||
+of Bone Spirit|72|Charges,93,-20,-1||
+of Fire Golem|36|Charges,94,-60,-3||
+of Fire Golem|72|Charges,94,-20,-1||
+of Revivification|36|Charges,95,-60,-3||
+of Revivification|72|Charges,95,-20,-1||
+of Sacrifice|7|Charges,96,-30,-10||
+of Sacrifice|14|Charges,96,-20,-6||
+of Holy Bolt|12|Charges,101,-30,-8||
+of Holy Bolt|24|Charges,101,-20,-5||
+of Zeal|18|Charges,106,-30,-7||
+of Zeal|36|Charges,106,-20,-4||
+of Vengeance|24|Charges,111,-30,-6||
+of Vengeance|48|Charges,111,-20,-3||
+of Blessed Hammer|24|Charges,112,-30,-6||
+of Blessed Hammer|48|Charges,112,-20,-3||
+of Conversion|30|Charges,116,-30,-5||
+of Conversion|60|Charges,116,-20,-2||
+of Fist of the Heavens|36|Charges,121,-30,-3||
+of Fist of the Heavens|72|Charges,121,-20,-1||
+of Bashing|7|Charges,126,-60,-10||
+of Bashing|14|Charges,126,-20,-6||
+of Howl|7|Charges,130,-60,-10||
+of Howl|14|Charges,130,-20,-6||
+of Find Potion|7|Charges,131,-60,-10||
+of Find Potion|14|Charges,131,-20,-6||
+of Taunt|12|Charges,137,-60,-8||
+of Taunt|24|Charges,137,-20,-5||
+of Shout|12|Charges,138,-60,-8||
+of Shout|24|Charges,138,-20,-5||
+of Stun|18|Charges,139,-60,-7||
+of Stun|36|Charges,139,-20,-4||
+of Find Item|18|Charges,142,-60,-7||
+of Find Item|36|Charges,142,-20,-4||
+of Concentration|24|Charges,144,-60,-6||
+of Concentration|48|Charges,144,-20,-3||
+of Battle Cry|24|Charges,146,-60,-6||
+of Battle Cry|48|Charges,146,-20,-3||
+of Battle Orders|30|Charges,149,-60,-5||
+of Battle Orders|60|Charges,149,-20,-2||
+of Grim Ward|30|Charges,150,-60,-5||
+of Grim Ward|60|Charges,150,-20,-2||
+of War Cry|36|Charges,154,-60,-3||
+of War Cry|72|Charges,154,-20,-1||
+of Battle Command|36|Charges,155,-60,-3||
+of Battle Command|72|Charges,155,-20,-1||
+of Firestorms|7|Charges,225,-30,-10||
+of Firestorms|14|Charges,225,-20,-6||
+of Molten Boulder|12|Charges,229,-30,-8||
+of Molten Boulder|24|Charges,229,-20,-5||
+of Fissure|18|Charges,234,-30,-7||
+of Fissure|36|Charges,234,-20,-4||
+of Cyclone Armor|18|Charges,235,-30,-7||
+of Cyclone Armor|36|Charges,235,-20,-4||
+of Twister|24|Charges,240,-30,-6||
+of Twister|48|Charges,240,-20,-3||
+of Volcano|30|Charges,244,-30,-6||
+of Volcano|60|Charges,244,-20,-3||
+of Tornado|30|Charges,245,-30,-5||
+of Tornado|60|Charges,245,-20,-2||
+of Armageddon|36|Charges,249,-30,-3||
+of Armageddon|72|Charges,249,-20,-1||
+of Hurricane|36|Charges,250,-30,-3||
+of Hurricane|72|Charges,250,-20,-1||
+of Amplify Damage||Skill On Striking,66,5,1||
+of the Icicle|29|Minimum Cold Damage,,2,3|Maximum Cold Damage,,6,10|Cold Damage length,,50,50
+of the Glacier|50|Minimum Cold Damage,,4,5|Maximum Cold Damage,,11,15|Cold Damage length,,50,50
+of Fire|28|Minimum Fire Damage,,4,10|Maximum Fire Damage,,11,30|
+of Burning|49|Minimum Fire Damage,,11,25|Maximum Fire Damage,,31,50|
+of Lightning|28|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,21,60|
+of Thunder|49|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,61,100|
+of Daring|14|Dexterity,,4,6||
+of Daring|28|Dexterity,,7,9||
+of Knowledge|18|Energy,,4,6||
+of Knowledge|33|Energy,,7,9||
+of Virility|25|Strength,,5,6||
+of Virility|42|Strength,,7,9||
+of Readiness|15|Increased Attack Speed,,10,10||
+of Craftmanship|1|Maximum Damage,,1,1||
+of Quality|33|Maximum Damage,,2,2||
+of Maiming|63|Maximum Damage,,3,4||
+of Craftmanship|19|Maximum Damage,,1,1||
+of Quality|48|Maximum Damage,,2,2||
+of Craftmanship|77|Maximum Damage,,1,1||
+of Blight|1|Adds Poison Damage,75,21,21||
+of Venom|4|Adds Poison Damage,100,39,39||
+of Pestilence|10|Adds Poison Damage,125,52,52||
+of Anthrax|15|Adds Poison Damage,150,86,86||
+of Blight|3|Adds Poison Damage,75,21,21||
+of Venom|9|Adds Poison Damage,100,39,39||
+of Pestilence|17|Adds Poison Damage,125,52,52||
+of Anthrax|25|Adds Poison Damage,150,86,86||
+of Blight|6|Adds Poison Damage,75,21,21||
+of Venom|15|Adds Poison Damage,100,39,39||
+of Pestilence|24|Adds Poison Damage,125,52,52||
+of Anthrax|36|Adds Poison Damage,150,86,86||
+of Frost|3|Minimum Cold Damage,,1,1|Maximum Cold Damage,,2,2|Cold Damage length,,25,25
+of the Icicle|6|Minimum Cold Damage,,2,2|Maximum Cold Damage,,3,4|Cold Damage length,,25,25
+of the Glacier|11|Minimum Cold Damage,,3,3|Maximum Cold Damage,,5,7|Cold Damage length,,25,25
+of Winter|17|Minimum Cold Damage,,4,6|Maximum Cold Damage,,8,11|Cold Damage length,,25,25
+of Frost|6|Minimum Cold Damage,,1,1|Maximum Cold Damage,,2,3|Cold Damage length,,25,25
+of the Icicle|11|Minimum Cold Damage,,2,2|Maximum Cold Damage,,4,5|Cold Damage length,,25,25
+of the Glacier|18|Minimum Cold Damage,,3,3|Maximum Cold Damage,,6,8|Cold Damage length,,25,25
+of Winter|27|Minimum Cold Damage,,4,6|Maximum Cold Damage,,9,12|Cold Damage length,,25,25
+of Frost|10|Minimum Cold Damage,,1,1|Maximum Cold Damage,,2,2|Cold Damage length,,25,25
+of the Icicle|15|Minimum Cold Damage,,2,2|Maximum Cold Damage,,3,4|Cold Damage length,,25,25
+of the Glacier|25|Minimum Cold Damage,,3,3|Maximum Cold Damage,,5,6|Cold Damage length,,25,25
+of Winter|38|Minimum Cold Damage,,4,5|Maximum Cold Damage,,7,9|Cold Damage length,,25,25
+of Flame|2|Minimum Fire Damage,,1,1|Maximum Fire Damage,,2,2|
+of Fire|6|Minimum Fire Damage,,1,2|Maximum Fire Damage,,3,3|
+of Burning|10|Minimum Fire Damage,,2,3|Maximum Fire Damage,,4,7|
+of Incineration|16|Minimum Fire Damage,,4,7|Maximum Fire Damage,,8,14|
+of Flame|5|Minimum Fire Damage,,1,1|Maximum Fire Damage,,2,2|
+of Fire|10|Minimum Fire Damage,,2,2|Maximum Fire Damage,,3,5|
+of Burning|18|Minimum Fire Damage,,3,5|Maximum Fire Damage,,6,11|
+of Incineration|26|Minimum Fire Damage,,6,10|Maximum Fire Damage,,12,17|
+of Flame|8|Minimum Fire Damage,,1,1|Maximum Fire Damage,,2,2|
+of Fire|15|Minimum Fire Damage,,2,2|Maximum Fire Damage,,3,4|
+of Burning|24|Minimum Fire Damage,,3,4|Maximum Fire Damage,,5,8|
+of Incineration|37|Minimum Fire Damage,,5,7|Maximum Fire Damage,,9,13|
+of Shock|3|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,2,3|
+of Lightning|5|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,4,7|
+of Thunder|11|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,8,21|
+of Storms|16|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,22,33|
+of Shock|5|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,3,5|
+of Lightning|10|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,6,13|
+of Thunder|18|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,14,25|
+of Storms|26|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,26,38|
+of Shock|9|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,3,6|
+of Lightning|15|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,7,10|
+of Thunder|25|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,11,18|
+of Storms|37|Minimum Lightning Damage,,1,1|Maximum Lightning Damage,,19,28|
+of Dexterity|1|Dexterity,,1,1||
+of Dexterity|1|Dexterity,,1,1||
+of Strength|1|Strength,,1,1||
+of Strength|1|Strength,,1,1||
+of Thorns|1|Attacker Takes Damage,,1,1||
+of Frost|1|Adds Cold Damage,25,1,1||
+of Flame|1|Adds Fire Damage,,1,2||
+of Blight|1|Adds Poison Damage,50,8,8||
+of Shock|1|Adds Lightning Damage,,1,3||
+of Regeneration|1|Replenish Life,,2,2||
+of Energy|1|Energy,,1,1||
+of Light|1|Light Radius,,1,1|Attack Rating,,10,10|
+of the Leech|20|Life Stolen Per Hit,,2,3||
+of the Locust|45|Life Stolen Per Hit,,4,5||
+of the Lamprey|73|Life Stolen Per Hit,,6,6||
+of the Bat|21|Mana Stolen Per Hit,,2,3||
+of the Wraith|46|Mana Stolen Per Hit,,4,5||
+of the Vampire|74|Mana Stolen Per Hit,,6,6||
