@@ -9,13 +9,16 @@ const getMpq = require('./getMpq');
 const Client3 = require('./client3');
 
 
-function createClient({username, password, host, port}) {
+function createClient({username, password, host, port, character, gameName, gamePassword}) {
   const client = new Client({host, port});
   const key1 = fs.readFileSync('./key1');
   const key2 = fs.readFileSync('./key2');
   client.clientToken = 18226750;
   client.username = username;
   client.password = password;
+  client.character = character;
+  client.gameName = gameName;
+  client.gamePassword = gamePassword;
 
   client.on('connect', () => {
     //'connect' listener
@@ -172,7 +175,7 @@ function createClient({username, password, host, port}) {
         // as specified during the client's logon.
       });
       client.write('SID_ENTERCHAT', {
-        characterName: process.argv[4],
+        characterName: client.character,
         realm: "Path of Diablo" // TODO: dynamic realm ?
       });
 
@@ -209,7 +212,7 @@ function createClient({username, password, host, port}) {
     */
 
       client3.write('MCP_CHARLOGON', {
-        characterName: process.argv[4]
+        characterName: client.character
       });
     });
 
@@ -217,7 +220,7 @@ function createClient({username, password, host, port}) {
     client3.on('MCP_CHARLOGON', (data) => {
       console.log(data);
       client3.write('MCP_MOTD', {
-        characterName: process.argv[4]
+        characterName: client.character
       });
 
     });
@@ -232,8 +235,8 @@ function createClient({username, password, host, port}) {
         unknown: 1,
         levelRestrictionDifference: 99,
         maximumPlayers: 8,
-        gameName: process.argv[5],
-        gamePassword: process.argv[6],
+        gameName: client.gameName,
+        gamePassword: client.gamePassword,
         gameDescription: "gs 21",
       });
 
@@ -244,8 +247,8 @@ function createClient({username, password, host, port}) {
         console.log(requestId, gameToken, unknown, result);
         client3.write('MCP_JOINGAME', {
             requestId: requestId,
-            gameName: process.argv[5],
-            gamePassword: process.argv[6]
+            gameName: client.gameName,
+            gamePassword: client.gamePassword
         });
     });
 
@@ -258,8 +261,8 @@ function createClient({username, password, host, port}) {
             subGameType:0,
             providerVersionConstant:0,
             ladderType:0, // Ladder game, no point in playing non-ladder
-            gameName: process.argv[5],
-            gamePassword: process.argv[6],
+            gameName: client.gameName,
+            gamePassword: client.gamePassword,
             gameStatstring:""
         });
 
@@ -271,8 +274,8 @@ function createClient({username, password, host, port}) {
         client.write('SID_NOTIFYJOIN', {
             productId: 1, // random
             productVersion: 13,
-            gameName: process.argv[5],
-            gamePassword: process.argv[6]
+            gameName: client.gameName,
+            gamePassword: client.gamePassword
         });
     });
 
