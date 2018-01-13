@@ -1,0 +1,920 @@
+{
+  "types": {
+    "cstring": "native",
+    "lu16": "native",
+    "lu8": "native",
+    "lu64": "native",
+    "lu32": "native",
+    "bool": "native",
+    "lf32": "native",
+    "lf64": "native",
+    "option": "native",
+    "container": "native",
+    "switch": "native",
+    "void": "native",
+    "array": "native",
+    "string": "cstring",
+    "restBuffer": "native"
+  },
+  "toServer": {
+    "types": {
+      "D2GS_PING": ["container", [
+        {
+          "name": "tickCount",
+          "type": "lu32"
+        },
+        {
+          "name": "null",
+          "type": "lu32"
+        },
+        {
+          "name": "null",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ENTERGAMEENVIRONMENT": ["container", []],
+      "D2GS_GAMELOGON": ["container", [
+        {
+          "name": "MCPCookie",
+          "type": "lu32"
+        },
+        {
+          "name": "gameId",
+          "type": "lu16"
+        },
+        {
+          "name": "characterClass",
+          "type": "lu8"
+        },
+        {
+          "name": "gameVersion",
+          "type": "lu32"
+        },
+        {
+          "name": "gameConstant",
+          "type": "lu64"
+        },
+        {
+          "name": "locale",
+          "type": "lu8"
+        },
+        {
+          "name": "characterName",
+          "type": ["array", {
+            "count": 16,
+            "type": "lu8"
+          }]
+        }
+      ]],
+      "D2GS_POTIONTOMERCENARY": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_PARTY": ["container", [
+        {
+          "name": "actionId",
+          "type": "lu16"
+        },
+        {
+          "name": "playerId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_DROPGOLD": ["container", [
+        {
+          "name": "playedId",
+          "type": "lu32"
+        },
+        {
+          "name": "goldAmount",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_TRADE": ["container", [
+        {
+          "name": "requestId",
+          "type": "lu32"
+        },
+        {
+          "name": "goldAmount",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_WAYPOINT": ["container", [
+        {
+          "name": "waypointId",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "levelNumber",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_CHARACTERPHRASE": ["container", [
+        {
+          "name": "phraseId",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_NPCTRADE": ["container", [
+        {
+          "name": "tradeType",
+          "type": "lu32"
+        },
+        {
+          "name": "npcId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_NPCSELL": ["container", [
+        {
+          "name": "npcId",
+          "type": "lu32"
+        },
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "bufferType",
+          "type": "lu32"
+        },
+        {
+          "name": "cost",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_NPCBUY": ["container", [
+        {
+          "name": "npcId",
+          "type": "lu32"
+        },
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "bufferType",
+          "type": "lu32"
+        },
+        {
+          "name": "cost",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_NPCCANCEL": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "npcId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_NPCINIT": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNSELECTOBJ": ["container", []],
+      "D2GS_ITEMTOCUBE": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "cubeId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SCROLLTOTOME": ["container", [
+        {
+          "name": "scrollId",
+          "type": "lu32"
+        },
+        {
+          "name": "tomeId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_INSERTSOCKETITEM": ["container", [
+        {
+          "name": "itemSocketing",
+          "type": "lu32"
+        },
+        {
+          "name": "itemSocketed",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_USEBELTITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SWITCHBELTITEM": ["container", [
+        {
+          "name": "itemReplacing",
+          "type": "lu32"
+        },
+        {
+          "name": "itemReplaced",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_REMOVEBELTITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ITEMTOBELT": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "beltLocation",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_REMOVESTACKITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_STACKITEM": ["container", [
+        {
+          "name": "stackItem",
+          "type": "lu32"
+        },
+        {
+          "name": "targetItem",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_USEITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "xCoordinate",
+          "type": "lu32"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SWITCHINVENTORYITEM": ["container", [
+        {
+          "name": "itemReplacing",
+          "type": "lu32"
+        },
+        {
+          "name": "itemReplaced",
+          "type": "lu32"
+        },
+        {
+          "name": "xCoordinate",
+          "type": "lu32"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SWITCHBODYITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "bodyLocation",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PICKUPBODYITEM": ["container", [
+        {
+          "name": "bodyLocation",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_SWAP2HANDEDITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "bodyLocation",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ITEMTOBODY": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "bodyLocation",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PICKUPBUFFERITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ITEMTOBUFFER": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "xCoordinate",
+          "type": "lu32"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu32"
+        },
+        {
+          "name": "bufferType",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_DROPITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PICKUPITEM": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu32"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "actionId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_OVERHEADMESSAGE": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "name": "unused",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_INTERACTWITHENTITY": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONENTITYEX3": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONENTITYEX2": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONLOCATIONEX": ["container",[
+        {
+          "name": "xCoordinate",
+          "type": "lu16"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONENTITYEX": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONENTITY": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONLOCATION": ["container",[
+        {
+          "name": "xCoordinate",
+          "type": "lu16"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_LEFTSKILLONENTITYEX3": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_LEFTSKILLONENTITYEX2": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_LEFTSKILLONLOCATIONEX": ["container",[
+        {
+          "name": "xCoordinate",
+          "type": "lu16"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_LEFTSKILLONENTITYEX": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_LEFTSKILLONENTITY": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_LEFTSKILLONLOCATION": ["container", [
+        {
+          "name": "xCoordinate",
+          "type": "lu16"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_RUNTOENTITY": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RUNTOLOCATION": ["container", [
+        {
+          "name": "xCoordinate",
+          "type": "lu16"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_WALKTOENTITY": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_WALKTOLOCATION": ["container",[
+        {
+          "name": "xCoordinate",
+          "type": "lu16"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu16"
+        }
+      ]],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "ff",
+            "type": "lu8"
+          },
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "lu8",
+                "mappings": {
+                  "0x01": "D2GS_WALKTOLOCATION",
+                  "0x02": "D2GS_WALKTOENTITY",
+                  "0x03": "D2GS_RUNTOLOCATION",
+                  "0x04": "D2GS_RUNTOENTITY",
+                  "0x05": "D2GS_LEFTSKILLONLOCATION",
+                  "0x06": "D2GS_LEFTSKILLONENTITY",
+                  "0x07": "D2GS_LEFTSKILLONENTITYEX",
+                  "0x08": "D2GS_LEFTSKILLONLOCATIONEX",
+                  "0x09": "D2GS_LEFTSKILLONENTITYEX2",
+                  "0x0A": "D2GS_LEFTSKILLONENTITYEX3",
+                  "0x0C": "D2GS_RIGHTSKILLONLOCATION",
+                  "0x0D": "D2GS_RIGHTSKILLONENTITY",
+                  "0x0E": "D2GS_RIGHTSKILLONENTITYEX",
+                  "0x0F": "D2GS_RIGHTSKILLONLOCATIONEX",
+                  "0x10": "D2GS_RIGHTSKILLONENTITYEX2",
+                  "0x11": "D2GS_RIGHTSKILLONENTITYEX3",
+                  "0x13": "D2GS_INTERACTWITHENTITY",
+                  "0x14": "D2GS_OVERHEADMESSAGE",
+                  "0x16": "D2GS_PICKUPITEM",
+                  "0x17": "D2GS_DROPITEM",
+                  "0x18": "D2GS_ITEMTOBUFFER",
+                  "0x19": "D2GS_PICKUPBUFFERITEM",
+                  "0x1A": "D2GS_ITEMTOBODY",
+                  "0x1B": "D2GS_SWAP2HANDEDITEM",
+                  "0x1C": "D2GS_PICKUPBODYITEM",
+                  "0x1D": "D2GS_SWITCHBODYITEM",
+                  "0x1F": "D2GS_SWITCHINVENTORYITEM",
+                  "0x20": "D2GS_USEITEM",
+                  "0x21": "D2GS_STACKITEM",
+                  "0x22": "D2GS_REMOVESTACKITEM",
+                  "0x23": "D2GS_ITEMTOBELT",
+                  "0x24": "D2GS_REMOVEBELTITEM",
+                  "0x25": "D2GS_SWITCHBELTITEM",
+                  "0x26": "D2GS_USEBELTITEM",
+                  "0x28": "D2GS_INSERTSOCKETITEM",
+                  "0x29": "D2GS_SCROLLTOTOME",
+                  "0x2A": "D2GS_ITEMTOCUBE",
+                  "0x2D": "D2GS_UNSELECTOBJ",
+                  "0x2F": "D2GS_NPCINIT",
+                  "0x30": "D2GS_NPCCANCEL",
+                  "0x32": "D2GS_NPCBUY",
+                  "0x33": "D2GS_NPCSELL",
+                  "0x38": "D2GS_NPCTRADE",
+                  "0x3F": "D2GS_CHARACTERPHRASE",
+                  "0x49": "D2GS_WAYPOINT",
+                  "0x4F": "D2GS_TRADE",
+                  "0x50": "D2GS_DROPGOLD",
+                  "0x5E": "D2GS_PARTY",
+                  "0x61": "D2GS_POTIONTOMERCENARY",
+                  "0x68": "D2GS_GAMELOGON",
+                  "0x6A": "D2GS_ENTERGAMEENVIRONMENT",
+                  "0x6D": "D2GS_PING"
+                }
+              }
+            ]
+          },
+          {
+            "name": "size",
+            "type": "lu16"
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "D2GS_WALKTOLOCATION": "D2GS_WALKTOLOCATION",
+                  "D2GS_WALKTOENTITY": "D2GS_WALKTOENTITY",
+                  "D2GS_RUNTOLOCATION": "D2GS_RUNTOLOCATION",
+                  "D2GS_RUNTOENTITY": "D2GS_RUNTOENTITY",
+                  "D2GS_LEFTSKILLONLOCATION": "D2GS_LEFTSKILLONLOCATION",
+                  "D2GS_LEFTSKILLONENTITY": "D2GS_LEFTSKILLONENTITY",
+                  "D2GS_LEFTSKILLONENTITYEX": "D2GS_LEFTSKILLONENTITYEX",
+                  "D2GS_LEFTSKILLONLOCATIONEX": "D2GS_LEFTSKILLONLOCATIONEX",
+                  "D2GS_LEFTSKILLONENTITYEX2": "D2GS_LEFTSKILLONENTITYEX2",
+                  "D2GS_LEFTSKILLONENTITYEX3": "D2GS_LEFTSKILLONENTITYEX3",
+                  "D2GS_RIGHTSKILLONLOCATION": "D2GS_RIGHTSKILLONLOCATION",
+                  "D2GS_RIGHTSKILLONENTITY": "D2GS_RIGHTSKILLONENTITY",
+                  "D2GS_RIGHTSKILLONENTITYEX": "D2GS_RIGHTSKILLONENTITYEX",
+                  "D2GS_RIGHTSKILLONLOCATIONEX": "D2GS_RIGHTSKILLONLOCATIONEX",
+                  "D2GS_RIGHTSKILLONENTITYEX2": "D2GS_RIGHTSKILLONENTITYEX2",
+                  "D2GS_RIGHTSKILLONENTITYEX3": "D2GS_RIGHTSKILLONENTITYEX3",
+                  "D2GS_INTERACTWITHENTITY": "D2GS_INTERACTWITHENTITY",
+                  "D2GS_OVERHEADMESSAGE": "D2GS_OVERHEADMESSAGE",
+                  "D2GS_PICKUPITEM": "D2GS_PICKUPITEM",
+                  "D2GS_DROPITEM": "D2GS_DROPITEM",
+                  "D2GS_ITEMTOBUFFER": "D2GS_ITEMTOBUFFER",
+                  "D2GS_PICKUPBUFFERITEM": "D2GS_PICKUPBUFFERITEM",
+                  "D2GS_ITEMTOBODY": "D2GS_ITEMTOBODY",
+                  "D2GS_SWAP2HANDEDITEM": "D2GS_SWAP2HANDEDITEM",
+                  "D2GS_PICKUPBODYITEM": "D2GS_PICKUPBODYITEM",
+                  "D2GS_SWITCHBODYITEM": "D2GS_SWITCHBODYITEM",
+                  "D2GS_SWITCHINVENTORYITEM": "D2GS_SWITCHINVENTORYITEM",
+                  "D2GS_USEITEM": "D2GS_USEITEM",
+                  "D2GS_STACKITEM": "D2GS_STACKITEM",
+                  "D2GS_REMOVESTACKITEM": "D2GS_REMOVESTACKITEM",
+                  "D2GS_ITEMTOBELT": "D2GS_ITEMTOBELT",
+                  "D2GS_REMOVEBELTITEM": "D2GS_REMOVEBELTITEM",
+                  "D2GS_SWITCHBELTITEM": "D2GS_SWITCHBELTITEM",
+                  "D2GS_USEBELTITEM": "D2GS_USEBELTITEM",
+                  "D2GS_INSERTSOCKETITEM": "D2GS_INSERTSOCKETITEM",
+                  "D2GS_SCROLLTOTOME": "D2GS_SCROLLTOTOME",
+                  "D2GS_ITEMTOCUBE": "D2GS_ITEMTOCUBE",
+                  "D2GS_UNSELECTOBJ": "D2GS_UNSELECTOBJ",
+                  "D2GS_NPCINIT": "D2GS_NPCINIT",
+                  "D2GS_NPCCANCEL": "D2GS_NPCCANCEL",
+                  "D2GS_NPCBUY": "D2GS_NPCBUY",
+                  "D2GS_NPCSELL": "D2GS_NPCSELL",
+                  "D2GS_NPCTRADE": "D2GS_NPCTRADE",
+                  "D2GS_CHARACTERPHRASE": "D2GS_CHARACTERPHRASE",
+                  "D2GS_WAYPOINT": "D2GS_WAYPOINT",
+                  "D2GS_TRADE": "D2GS_TRADE",
+                  "D2GS_DROPGOLD": "D2GS_DROPGOLD",
+                  "D2GS_PARTY": "D2GS_PARTY",
+                  "D2GS_POTIONTOMERCENARY": "D2GS_POTIONTOMERCENARY",
+                  "D2GS_GAMELOGON": "D2GS_GAMELOGON",
+                  "D2GS_ENTERGAMEENVIRONMENT": "D2GS_ENTERGAMEENVIRONMENT",
+                  "D2GS_PING": "D2GS_PING"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  },
+  "toClient": {
+    "types": {
+      "D2GS_NEGOTIATECOMPRESSION": ["container", [
+        {
+          "name": "compressionMode",
+          "type": "lu8"
+        },
+        {
+          "name": "customCompressionData",
+          "type": ["array", {
+            "count": 16,
+            "type": "lu8"
+          }]
+        }
+      ]],
+      "D2GS_UNIQUEEVENTS": ["container", [
+        {
+          "name": "eventId",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_LOGONRESPONSE": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_TRADEACTION": ["container", [
+        {
+          "name": "requestType",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_STARTGAME": ["container", []],
+      "D2GS_WORLDOBJECT": ["container", [
+        {
+          "name": "objectType",
+          "type": "lu8"
+        },
+        {
+          "name": "objectId",
+          "type": "lu32"
+        },
+        {
+          "name": "objectUniqueCode",
+          "type": "lu16"
+        },
+        {
+          "name": "xCoordinate",
+          "type": "lu16"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu16"
+        },
+        {
+          "name": "state",
+          "type": "lu8"
+        },
+        {
+          "name": "interactionCondition",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_SETDWORDATTR": ["container", [
+        {
+          "name": "attribute",
+          "type": "lu8"
+        },
+        {
+          "name": "amount",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SETWORDATTR": ["container", [
+        {
+          "name": "attribute",
+          "type": "lu8"
+        },
+        {
+          "name": "amount",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_SETBYTEATTR": ["container", [
+        {
+          "name": "attribute",
+          "type": "lu8"
+        },
+        {
+          "name": "amount",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_SMALLGOLDPICKUP": ["container", [
+        {
+          "name": "amount",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_CHARTOOBJ": ["container", [
+        {
+          "name": "unknown",
+          "type":  "lu8"
+        },
+        {
+          "name": "playerId",
+          "type": "lu32"
+        },
+        {
+          "name": "movementType",
+          "type": "lu8"
+        },
+        {
+          "name": "destinationType",
+          "type": "lu8"
+        },
+        {
+          "name": "objectId",
+          "type": "lu32"
+        },
+        {
+          "name": "xCoordinate",
+          "type": "lu16"
+        },
+        {
+          "name": "yCoordinate",
+          "type": "lu16"
+        }
+      ]],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "ff",
+            "type": "lu8"
+          },
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "lu8",
+                "mappings": {
+                  "0x10": "D2GS_CHARTOOBJ",
+                  "0x19": "D2GS_SMALLGOLDPICKUP",
+                  "0x1D": "D2GS_SETBYTEATTR",
+                  "0x1E": "D2GS_SETWORDATTR",
+                  "0x1F": "D2GS_SETDWORDATTR",
+                  "0x50": "D2GS_STARTGAME",
+                  "0x51": "D2GS_WORLDOBJECT",
+                  "0x77": "D2GS_TRADEACTION",
+                  "0x7A": "D2GS_LOGONRESPONSE",
+                  "0x89": "D2GS_UNIQUEEVENTS",
+                  "0xAF": "D2GS_NEGOTIATECOMPRESSION"
+                }
+              }
+            ]
+          },
+          {
+            "name": "size",
+            "type": "lu16"
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "D2GS_CHARTOOBJ": "D2GS_CHARTOOBJ",
+                  "D2GS_SMALLGOLDPICKUP": "D2GS_SMALLGOLDPICKUP",
+                  "D2GS_SETBYTEATTR": "D2GS_SETBYTEATTR",
+                  "D2GS_SETWORDATTR": "D2GS_SETWORDATTR",
+                  "D2GS_SETDWORDATTR": "D2GS_SETDWORDATTR",
+                  "D2GS_WORLDOBJECT": "D2GS_WORLDOBJECT",
+                  "D2GS_STARTGAME": "D2GS_STARTGAME",
+                  "D2GS_TRADEACTION": "D2GS_TRADEACTION",
+                  "D2GS_LOGONRESPONSE": "D2GS_LOGONRESPONSE",
+                  "D2GS_UNIQUEEVENTS": "D2GS_UNIQUEEVENTS",
+                  "D2GS_NEGOTIATECOMPRESSION": "D2GS_NEGOTIATECOMPRESSION"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}
