@@ -8,6 +8,8 @@ const getMpq = require('./getMpq');
 
 const Client3 = require('./client3');
 
+const ClientD2gs = require('./clientD2gs');
+
 
 function createClient({username, password, host, port, character, gameName, gamePassword}) {
   const client = new Client({host, port});
@@ -252,8 +254,7 @@ function createClient({username, password, host, port, character, gameName, game
         });
     });
 
-    client3.on('MCP_JOINGAME', (data) => {
-        console.log(data); // TODO: handle result possibilities
+    client3.on('MCP_JOINGAME', ({requestId, gameToken, unknown, IPOfD2GSServer:IP2, gameHash, result}) => {
         client.write('SID_STARTADVEX3', {
             gameStats:1, // private game, TODO: dynamic
             gameUptimeInSeconds:0,
@@ -266,6 +267,9 @@ function createClient({username, password, host, port, character, gameName, game
             gameStatstring:""
         });
 
+        const clientD2gs = new ClientD2gs({host:IP2[0] + "." + IP2[1] + "." + IP2[2] + "." + IP2[3],port:4000});
+
+        clientD2gs.connect();
     });
 
 

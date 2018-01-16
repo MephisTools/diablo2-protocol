@@ -591,10 +591,6 @@
         "container",
         [
           {
-            "name": "ff",
-            "type": "lu8"
-          },
-          {
             "name": "name",
             "type": [
               "mapper",
@@ -656,10 +652,6 @@
                 }
               }
             ]
-          },
-          {
-            "name": "size",
-            "type": "lu16"
           },
           {
             "name": "params",
@@ -737,10 +729,19 @@
         },
         {
           "name": "customCompressionData",
-          "type": ["array", {
-            "count": 16,
-            "type": "lu8"
-          }]
+          "type": ["switch",{
+              "compareTo": "compressionMode",
+              "fields":
+              {
+                "0":"void",
+                "1":"void",
+                "129":["array", {
+                  "count": 16,
+                  "type": "lu8"
+                }]
+              }
+            }
+          ]
         }
       ]],
       "D2GS_UNIQUEEVENTS": ["container", [
@@ -862,10 +863,6 @@
         "container",
         [
           {
-            "name": "ff",
-            "type": "lu8"
-          },
-          {
             "name": "name",
             "type": [
               "mapper",
@@ -886,10 +883,6 @@
                 }
               }
             ]
-          },
-          {
-            "name": "size",
-            "type": "lu16"
           },
           {
             "name": "params",
