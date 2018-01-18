@@ -6,7 +6,7 @@ const getHash = require('./getHash');
 
 const getMpq = require('./getMpq');
 
-const clientMCP = require('./clientMCP');
+const ClientMCP = require('./clientMCP');
 
 const ClientD2gs = require('./clientD2gs');
 
@@ -131,7 +131,7 @@ function createClient({username, password, host, port, character, gameName, game
 
   client.on('SID_LOGONREALMEX', ({MCPCookie, MCPStatus, MCPChunk1, IP, port, MCPChunk2, battleNetUniqueName}) => {
     host = IP[0] + "." + IP[1] + "." + IP[2] + "." + IP[3];
-    const clientMCP = new clientMCP({host, port});
+    const clientMCP = new ClientMCP({host, port});
 
 
     clientMCP.on('connect', () => {
@@ -233,7 +233,7 @@ function createClient({username, password, host, port, character, gameName, game
 
       clientMCP.write('MCP_CREATEGAME', {
         requestId: 2,
-        difficulty: 8192, // HELL, TODO : set diff with args
+        difficulty: 0, // NORMAL, TODO : set diff with args
         unknown: 1,
         levelRestrictionDifference: 99,
         maximumPlayers: 8,
@@ -322,7 +322,7 @@ function createClient({username, password, host, port, character, gameName, game
         });
 
     });
-    // TODO : put all login paquets into a function (module programming)
+    // TODO : put all login packets into a function (module programming)
 
 
     client.on('SID_STARTADVEX3', (data) => {

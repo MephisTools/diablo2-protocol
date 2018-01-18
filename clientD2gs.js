@@ -24,6 +24,7 @@ class Client extends EventEmitter
       this.emit('connect');
     });
 
+    /*
     this.socket.on('data', (data) => {
       console.log("received that hex", data.toString("hex"));
 
@@ -34,6 +35,8 @@ class Client extends EventEmitter
 
       this.emit(name,params);
     });
+
+    */
     this.socket.on('end', () => {
       console.log('disconnected from server');
     });
