@@ -130,6 +130,7 @@ function createClient({username, password, host, port, character, gameName, game
 
 
   client.on('SID_LOGONREALMEX', ({MCPCookie, MCPStatus, MCPChunk1, IP, port, MCPChunk2, battleNetUniqueName}) => {
+    client.MCPCookie = MCPCookie;
     host = IP[0] + "." + IP[1] + "." + IP[2] + "." + IP[3];
     const clientMCP = new ClientMCP({host, port});
 
@@ -275,7 +276,7 @@ function createClient({username, password, host, port, character, gameName, game
         clientD2gs.on('D2GS_NEGOTIATECOMPRESSION',() => {
 
           clientD2gs.write('D2GS_GAMELOGON', {
-            MCPCookie: 1516274085,
+            MCPCookie: client.MCPCookie,
             gameId: 1,
             characterClass: 1,
             gameVersion: 13,
@@ -304,14 +305,13 @@ function createClient({username, password, host, port, character, gameName, game
             ]
           });
 
-          clientD2gs.socket.write(Buffer.from("i", "hex"));
-          /*
+
           // https://bnetdocs.org/packet/300/d2gs-entergameenvironment
 
           clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {
 
           });
-          */
+
         });
 
 

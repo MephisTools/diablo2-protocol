@@ -47,13 +47,10 @@ class Client extends EventEmitter
   write(packet_name, params) {
     const buffer = protoToServer.createPacketBuffer("packet",{
       name: packet_name,
-      size: 0,
-      ff:255,
       params
     });
 
     console.info("sending packet", packet_name, params);
-    buffer.writeInt16LE(buffer.length,2);
 
     this.socket.write(buffer);
   }
