@@ -24,9 +24,10 @@ class Client extends EventEmitter
       this.emit('connect');
     });
 
-    /*
+
     this.socket.on('data', (data) => {
-      console.log("received that hex", data.toString("hex"));
+      console.log("received that d2gs hex", data.toString("hex"));
+
 
       const parsed = protoToClient.parsePacketBuffer("packet",data).data;
 
@@ -36,7 +37,7 @@ class Client extends EventEmitter
       this.emit(name,params);
     });
 
-    */
+
     this.socket.on('end', () => {
       console.log('disconnected from server');
     });

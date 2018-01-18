@@ -272,44 +272,47 @@ function createClient({username, password, host, port, character, gameName, game
         clientD2gs.connect();
 
 
-        clientD2gs.write('D2GS_GAMELOGON', {
+        clientD2gs.on('D2GS_NEGOTIATECOMPRESSION',() => {
+
+          clientD2gs.write('D2GS_GAMELOGON', {
             MCPCookie: 1516274085,
             gameId: 1,
             characterClass: 1,
             gameVersion: 13,
             gameConstant: [
-                2443516342,
-                3982347344
+              2443516342,
+              3982347344
             ],
             locale: 0,
             characterName: [
-                85,
-                114,
-                117,
-                107,
-                117,
-                98,
-                97,
-                108,
-                0,
-                18,
-                5,
-                75,
-                0,
-                0,
-                0,
-                0
+              85,
+              114,
+              117,
+              107,
+              117,
+              98,
+              97,
+              108,
+              0,
+              18,
+              5,
+              75,
+              0,
+              0,
+              0,
+              0
             ]
+          });
+
+          clientD2gs.socket.write(Buffer.from("i", "hex"));
+          /*
+          // https://bnetdocs.org/packet/300/d2gs-entergameenvironment
+
+          clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {
+
+          });
+          */
         });
-
-        clientD2gs.socket.write(Buffer.from("i", "hex"));
-        /*
-        // https://bnetdocs.org/packet/300/d2gs-entergameenvironment
-
-        clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {
-
-        });
-        */
 
 
 
