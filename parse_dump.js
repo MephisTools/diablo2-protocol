@@ -3,6 +3,8 @@ const ProtoDef = require("protodef").ProtoDef;
 const protocol = require('./data/protocol');
 
 const protoToServer = new ProtoDef();
+
+
 protoToServer.addProtocol(protocol,["toServer"]);
 
 /*
@@ -38,8 +40,36 @@ console.log(JSON.stringify(protoToServer.parsePacketBuffer("packet",Buffer.from(
 /*
 console.log(JSON.stringify(protoToServer.parsePacketBuffer("packet",Buffer.from(`1a 00 03 02 00 00 20 00 00 01 63 08 41 73 61 00
    5a 64 64 00 67 73 20 32 31 00`.replace(/[ \n\r\t]/g,""),"hex")).data,null,2));
-   */
+
 
 console.log(JSON.stringify(protoToServer.parsePacketBuffer("packet",Buffer.from(` ff 1c 23 00 01 00 00 00 00 00 00 00 00 00 00 00
    00 00 00 00 00 00 00 00 54 65 73 74 00 54 65 73
    74 00 00`.replace(/[ \n\r\t]/g,""),"hex")).data,null,2));
+*/
+
+
+const d2gsProto = require('./data/d2gs');
+
+const d2gs = new ProtoDef();
+d2gs.addProtocol(d2gsProto,["toServer"]);
+
+console.log(JSON.stringify(d2gs.parsePacketBuffer("packet",Buffer.from(`68 A5 81 60 5A 01 00 01 0D 00 00 00 50 CC
+5D ED B6 19 A5 91 00 55 72 75 6B 75 62 61 6C 00
+12 05 4B 00 00 00 00`.replace(/[ \n\r\t]/g,""),"hex")).data,null,2));
+
+
+
+const mcpProto = require('./data/mcp');
+
+const mcp = new ProtoDef();
+mcp.addProtocol(mcpProto,["toServer"]);
+
+/*
+console.log(JSON.stringify(mcp.parsePacketBuffer("packet",Buffer.from(`ff0f870004000000000000001000000
+0000000000df0adba0df0adba5461726b686e617262
+2a5461726b686e61726200596f757220667269656e64205461726b686e617262
+2068617320656e7465726564206120446961626c6f204949
+`.replace(/[ \n\r\t]/g,""),"hex")).data,null,2));
+*/
+
+

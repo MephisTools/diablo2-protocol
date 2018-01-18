@@ -1,6 +1,8 @@
 const createClient = require('./createClient');
 
-if (process.argv.length !== 7 && process.argv.length !== 6) {
+console.log(process.argv.length);
+
+if (process.argv.length !== 7) {
   console.log('Usage : node bot.js <username> <password> <character> <gamename> <gamepasswd>')
   process.exit(1)
 }

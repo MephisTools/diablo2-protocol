@@ -6,7 +6,7 @@ const getHash = require('./getHash');
 
 const getMpq = require('./getMpq');
 
-const Client3 = require('./client3');
+const clientMCP = require('./clientMCP');
 
 const ClientD2gs = require('./clientD2gs');
 
@@ -131,16 +131,16 @@ function createClient({username, password, host, port, character, gameName, game
 
   client.on('SID_LOGONREALMEX', ({MCPCookie, MCPStatus, MCPChunk1, IP, port, MCPChunk2, battleNetUniqueName}) => {
     host = IP[0] + "." + IP[1] + "." + IP[2] + "." + IP[3];
-    const client3 = new Client3({host, port});
+    const clientMCP = new clientMCP({host, port});
 
 
-    client3.on('connect', () => {
+    clientMCP.on('connect', () => {
       //'connect' listener
       console.log('connected to MCP server!');
 
-      client3.socket.write(Buffer.from("01", "hex")); // This Initialise conversation
+      clientMCP.socket.write(Buffer.from("01", "hex")); // This Initialise conversation
 
-      client3.write('MCP_STARTUP', {
+      clientMCP.write('MCP_STARTUP', {
         MCPCookie: MCPCookie,
         MCPStatus: MCPStatus,
         MCPChunk1: MCPChunk1,
@@ -149,7 +149,7 @@ function createClient({username, password, host, port, character, gameName, game
       });
     });
 
-    client3.on('MCP_STARTUP', ({result}) => {
+    clientMCP.on('MCP_STARTUP', ({result}) => {
       if (result === 0x02 || (result >= 0x0A && result <= 0x0D)) {
         console.log("Realm Unavailable: No Battle.net connection detected.");
       }
@@ -161,13 +161,13 @@ function createClient({username, password, host, port, character, gameName, game
       }
       else {
         console.log("Success!");
-        client3.write('MCP_CHARLIST2', {
+        clientMCP.write('MCP_CHARLIST2', {
           numberOfCharacterToList: 8
         });
       }
     });
 
-    client3.on('MCP_CHARLIST2', ({numbersOfCharactersRequested, numbersOfCharactersInAccount, characters}) => {
+    clientMCP.on('MCP_CHARLIST2', ({numbersOfCharactersRequested, numbersOfCharactersInAccount, characters}) => {
       console.log(numbersOfCharactersRequested, numbersOfCharactersInAccount, characters);
       client.write('SID_GETCHANNELLIST', {
         productId: 0
@@ -191,12 +191,12 @@ function createClient({username, password, host, port, character, gameName, game
     client.on('SID_ENTERCHAT', (data) => {
       console.log(data);
       /*
-      client3.write('SID_NEWS_INFO', {
+      clientMCP.write('SID_NEWS_INFO', {
         newsTimestamp:0
       });
       */ // "disconnected from mcp server" when using this packet
       /*
-    client3.write('SID_CHECKAD', { // useless ?
+    clientMCP.write('SID_CHECKAD', { // useless ?
         platformId: client.platformId,
         productId: client.productId,
         IDOfLastDisplayedBanned: 0,
@@ -213,25 +213,25 @@ function createClient({username, password, host, port, character, gameName, game
     // client -> server SID_DISPLAYAD
     */
 
-      client3.write('MCP_CHARLOGON', {
+      clientMCP.write('MCP_CHARLOGON', {
         characterName: client.character
       });
     });
 
 
-    client3.on('MCP_CHARLOGON', (data) => {
+    clientMCP.on('MCP_CHARLOGON', (data) => {
       console.log(data);
-      client3.write('MCP_MOTD', {
+      clientMCP.write('MCP_MOTD', {
         characterName: client.character
       });
 
     });
 
-    client3.on('MCP_CHARLOGON', ({MOTD}) => {
+    clientMCP.on('MCP_CHARLOGON', ({MOTD}) => {
       console.log(MOTD);
 
 
-      client3.write('MCP_CREATEGAME', {
+      clientMCP.write('MCP_CREATEGAME', {
         requestId: 2,
         difficulty: 8192, // HELL, TODO : set diff with args
         unknown: 1,
@@ -245,16 +245,16 @@ function createClient({username, password, host, port, character, gameName, game
 
     });
 
-    client3.on('MCP_CREATEGAME', ({requestId, gameToken, unknown, result}) => {
+    clientMCP.on('MCP_CREATEGAME', ({requestId, gameToken, unknown, result}) => {
         console.log(requestId, gameToken, unknown, result);
-        client3.write('MCP_JOINGAME', {
+        clientMCP.write('MCP_JOINGAME', {
             requestId: requestId,
             gameName: client.gameName,
             gamePassword: client.gamePassword
         });
     });
 
-    client3.on('MCP_JOINGAME', ({requestId, gameToken, unknown, IPOfD2GSServer:IP2, gameHash, result}) => {
+    clientMCP.on('MCP_JOINGAME', ({requestId, gameToken, unknown, IPOfD2GSServer:IP2, gameHash, result}) => {
         client.write('SID_STARTADVEX3', {
             gameStats:1, // private game, TODO: dynamic
             gameUptimeInSeconds:0,
@@ -270,7 +270,59 @@ function createClient({username, password, host, port, character, gameName, game
         const clientD2gs = new ClientD2gs({host:IP2[0] + "." + IP2[1] + "." + IP2[2] + "." + IP2[3],port:4000});
 
         clientD2gs.connect();
+
+
+        clientD2gs.write('D2GS_GAMELOGON', {
+            MCPCookie: 1516274085,
+            gameId: 1,
+            characterClass: 1,
+            gameVersion: 13,
+            gameConstant: [
+                2443516342,
+                3982347344
+            ],
+            locale: 0,
+            characterName: [
+                85,
+                114,
+                117,
+                107,
+                117,
+                98,
+                97,
+                108,
+                0,
+                18,
+                5,
+                75,
+                0,
+                0,
+                0,
+                0
+            ]
+        });
+
+        clientD2gs.socket.write(Buffer.from("i", "hex"));
+        /*
+        // https://bnetdocs.org/packet/300/d2gs-entergameenvironment
+
+        clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {
+
+        });
+        */
+
+
+
+        clientD2gs.on('D2GS_PING', ({tickCount}) => {
+          console.log(tickCount);
+
+            clientD2gs.write('D2GS_PING', {
+              tickCount: tickCount
+            });
+        });
+
     });
+    // TODO : put all login paquets into a function (module programming)
 
 
     client.on('SID_STARTADVEX3', (data) => {
@@ -283,7 +335,7 @@ function createClient({username, password, host, port, character, gameName, game
         });
     });
 
-    client3.connect();
+    clientMCP.connect();
   });
 
 
