@@ -28,6 +28,8 @@ class Client extends EventEmitter
     this.socket.on('data', (data) => {
       console.log("received that d2gs hex", data.toString("hex"));
 
+      if(data[0] !== 0xaf)
+        data = data.slice(1);
 
       const parsed = protoToClient.parsePacketBuffer("packet",data).data;
 

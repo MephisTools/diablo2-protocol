@@ -763,6 +763,7 @@
         }
       ]],
       "D2GS_STARTGAME": ["container", []],
+      "D2GS_COMPSTARTGAME": ["container", []],
       "D2GS_WORLDOBJECT": ["container", [
         {
           "name": "objectType",
@@ -875,6 +876,7 @@
                   "0x1E": "D2GS_SETWORDATTR",
                   "0x1F": "D2GS_SETDWORDATTR",
                   "0x50": "D2GS_STARTGAME",
+                  "0x5C": "D2GS_COMPSTARTGAME",
                   "0x51": "D2GS_WORLDOBJECT",
                   "0x77": "D2GS_TRADEACTION",
                   "0x7A": "D2GS_LOGONRESPONSE",
@@ -898,6 +900,7 @@
                   "D2GS_SETDWORDATTR": "D2GS_SETDWORDATTR",
                   "D2GS_WORLDOBJECT": "D2GS_WORLDOBJECT",
                   "D2GS_STARTGAME": "D2GS_STARTGAME",
+                  "D2GS_COMPSTARTGAME": "D2GS_COMPSTARTGAME",
                   "D2GS_TRADEACTION": "D2GS_TRADEACTION",
                   "D2GS_LOGONRESPONSE": "D2GS_LOGONRESPONSE",
                   "D2GS_UNIQUEEVENTS": "D2GS_UNIQUEEVENTS",

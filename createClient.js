@@ -311,16 +311,19 @@ function createClient({username, password, host, port, character, gameName, game
             ]
           });
 
+          clientD2gs.on('D2GS_LOGONRESPONSE',() => {
+            clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
+          });
+
 
           // https://bnetdocs.org/packet/300/d2gs-entergameenvironment
 
+          /*
           clientD2gs.write('D2GS_PING', {
               tickCount: 1
           });
 
-          clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {
-
-          });
+          */
 
         });
 
