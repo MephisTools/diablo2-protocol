@@ -189,6 +189,10 @@ function createClient({username, password, host, port, character, gameName, game
 
     });
 
+    client.on('SID_CHATEVENT', (data) => {
+      console.log(data);
+    });
+
     client.on('SID_ENTERCHAT', (data) => {
       console.log(data);
       /*
@@ -307,6 +311,10 @@ function createClient({username, password, host, port, character, gameName, game
 
 
           // https://bnetdocs.org/packet/300/d2gs-entergameenvironment
+
+          clientD2gs.write('D2GS_PING', {
+              tickCount: 1
+          });
 
           clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {
 

@@ -334,6 +334,40 @@
   },
   "toClient": {
     "types": {
+      "SID_CHATEVENT": ["container", [
+        {
+          "name": "eventId",
+          "type": "lu32"
+        },
+        {
+          "name": "usersFlags",
+          "type": "lu32"
+        },
+        {
+          "name": "ping",
+          "type": "lu32"
+        },
+        {
+          "name": "ipAdress",
+          "type": "lu32"
+        },
+        {
+          "name": "accountNumber",
+          "type": "lu32"
+        },
+        {
+          "name": "registrationAuthority",
+          "type": "lu32"
+        },
+        {
+          "name": "username",
+          "type": "lu32"
+        },
+        {
+          "name": "text",
+          "type": "lu32"
+        }
+      ]],
       "SID_STARTADVEX3": ["container", [
         {
           "name": "status",
@@ -536,7 +570,8 @@
                   "0x40": "SID_QUERYREALMS2",
                   "0x3E": "SID_LOGONREALMEX",
                   "0x0B": "SID_GETCHANNELLIST",
-                  "0x0A": "SID_ENTERCHAT"
+                  "0x0A": "SID_ENTERCHAT",
+                  "0x0F": "SID_CHATEVENT"
                 }
               }
             ]
@@ -561,7 +596,8 @@
                   "SID_LOGONREALMEX": "SID_LOGONREALMEX",
                   "SID_GETCHANNELLIST": "SID_GETCHANNELLIST",
                   "SID_ENTERCHAT": "SID_ENTERCHAT",
-                  "SID_STARTADVEX3": "SID_STARTADVEX3"
+                  "SID_STARTADVEX3": "SID_STARTADVEX3",
+                  "SID_CHATEVENT": "SID_CHATEVENT"
                 }
               }
             ]
