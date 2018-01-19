@@ -260,6 +260,8 @@ function createClient({username, password, host, port, character, gameName, game
     });
 
     clientMCP.on('MCP_JOINGAME', ({requestId, gameToken, unknown, IPOfD2GSServer:IP2, gameHash, result}) => {
+      client.gameToken = gameToken;
+      client.gameHash = gameHash;
         client.write('SID_STARTADVEX3', {
             gameStats:1, // private game, TODO: dynamic
             gameUptimeInSeconds:0,
@@ -280,8 +282,8 @@ function createClient({username, password, host, port, character, gameName, game
         clientD2gs.on('D2GS_NEGOTIATECOMPRESSION',() => {
 
           clientD2gs.write('D2GS_GAMELOGON', {
-            MCPCookie: client.MCPCookie,
-            gameId: 1,
+            MCPCookie: client.gameHash,
+            gameId: client.gameToken,
             characterClass: 1,
             gameVersion: 13,
             gameConstant: [
