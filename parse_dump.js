@@ -52,10 +52,18 @@ const d2gsProto = require('./data/d2gs');
 
 const d2gs = new ProtoDef();
 d2gs.addProtocol(d2gsProto,["toServer"]);
-
+/*
 console.log(JSON.stringify(d2gs.parsePacketBuffer("packet",Buffer.from(`68 A5 81 60 5A 01 00 01 0D 00 00 00 50 CC
 5D ED B6 19 A5 91 00 55 72 75 6B 75 62 61 6C 00
 12 05 4B 00 00 00 00`.replace(/[ \n\r\t]/g,""),"hex")).data,null,2));
+*/
+
+console.log(JSON.stringify(d2gs.parsePacketBuffer("packet",Buffer.from(`   68 a1 f3 68 5a 0f 00 01 0d 00 00 00 50 cc 5d ed
+   b6 19 a5 91 00 55 72 75 6b 75 62 61 6c 00 af 6f
+   4b 00 00 00 00`.replace(/[ \n\r\t]/g,""),"hex")).data,null,2));
+
+
+
 
 
 

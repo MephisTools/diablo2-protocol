@@ -3,6 +3,8 @@ const net = require('net');
 const ProtoDef = require("protodef").ProtoDef;
 const protocol = require('./data/d2gs');
 const EventEmitter = require('events').EventEmitter;
+const {compress,decompress, getPacketSize} = require('./compression');
+
 
 const protoToServer = new ProtoDef();
 protoToServer.addProtocol(protocol,["toServer"]);
@@ -26,6 +28,7 @@ class Client extends EventEmitter
 
 
     this.socket.on('data', (data) => {
+      // data = decompress(data);
       console.log("received that d2gs hex", data.toString("hex"));
 
       if(data[0] !== 0xaf)

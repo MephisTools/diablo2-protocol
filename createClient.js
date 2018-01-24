@@ -281,6 +281,10 @@ function createClient({username, password, host, port, character, gameName, game
 
         clientD2gs.on('D2GS_NEGOTIATECOMPRESSION',() => {
 
+
+          // TODO : dynamic charname to ascii for D2GS_GAMELOGON
+          // client.character.split('').forEach(ascii => { asciiCharName += ascii.charCodeAt()});
+
           clientD2gs.write('D2GS_GAMELOGON', {
             MCPCookie: client.gameHash,
             gameId: client.gameToken,
@@ -292,38 +296,34 @@ function createClient({username, password, host, port, character, gameName, game
             ],
             locale: 0,
             characterName: [
-              85,
-              114,
-              117,
-              107,
-              117,
-              98,
-              97,
-              108,
-              0,
-              18,
-              5,
-              75,
-              0,
-              0,
-              0,
-              0
+                85,
+                114,
+                117,
+                107,
+                117,
+                98,
+                97,
+                108,
+                0,
+                175,
+                111,
+                75,
+                0,
+                0,
+                0,
+                0
             ]
           });
 
-          clientD2gs.on('D2GS_LOGONRESPONSE',() => {
+          clientD2gs.on('D2GS_LOGONRESPONSE',(data) => {
+              clientD2gs.write('D2GS_PING', {
+                  tickCount: 1
+              });
+
             clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
           });
 
 
-          // https://bnetdocs.org/packet/300/d2gs-entergameenvironment
-
-          /*
-          clientD2gs.write('D2GS_PING', {
-              tickCount: 1
-          });
-
-          */
 
         });
 
