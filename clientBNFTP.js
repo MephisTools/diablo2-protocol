@@ -28,14 +28,14 @@ class Client extends EventEmitter
     });
 
     this.socket.on('data', (data) => {
-      console.log("received that hex client2", data.toString("hex"));
+      console.log("received that hex bnftp", data.toString("hex"));
 
     });
     parser.on('data', (parsed) => {
       this.emit("FILE_TRANSFER_PROTOCOL",parsed);
       console.info("received packet FILE_TRANSFER_PROTOCOL", parsed);
 
-      
+
     });
 
     this.socket.pipe(parser);

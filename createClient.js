@@ -322,12 +322,12 @@ function createClient({username, password, host, port, character, gameName, game
           gameId: client.gameToken,
           characterClass: 1,
           gameVersion: 14,
-          gameConstant: [
-            1049482278, // from https://bnetdocs.org/packet/131/d2gs-gamelogon
-            0113898576
+          gameConstant: 10494822780113898576//[// from https://bnetdocs.org/packet/131/d2gs-gamelogon
+            //1049482278,
+            //0113898576
             //2443516342,
             //3982347344
-          ],
+          ,//],
           locale: 0,
           characterName: asciiCharName
         });
