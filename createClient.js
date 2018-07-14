@@ -9,6 +9,7 @@ const getMpq = require('./getMpq');
 const ClientMCP = require('./clientMCP');
 
 const ClientD2gs = require('./clientD2gs');
+const {compress,decompress, getPacketSize} = require('./compression');
 
 
 function createClient({username, password, host, port, character, gameName, gamePassword}) {
@@ -191,6 +192,7 @@ function createClient({username, password, host, port, character, gameName, game
 
     client.on('SID_CHATEVENT', (data) => {
       console.log(data);
+      console.log("Text : " + String.fromCharCode(data.text));
     });
 
     client.on('SID_ENTERCHAT', (data) => {
@@ -279,52 +281,44 @@ function createClient({username, password, host, port, character, gameName, game
         clientD2gs.connect();
 
 
-        clientD2gs.on('D2GS_NEGOTIATECOMPRESSION',() => {
-
-
-          // TODO : dynamic charname to ascii for D2GS_GAMELOGON
-          // client.character.split('').forEach(ascii => { asciiCharName += ascii.charCodeAt()});
+        clientD2gs.on('D2GS_NEGOTIATECOMPRESSION',(data) => {
+          asciiCharName = []
+          client.character.split('').forEach(ascii => { asciiCharName.push(ascii.charCodeAt())})
+          if(asciiCharName.length < 16)
+            for (i = 1; i < 16 - asciiCharName.length; i++)
+             asciiCharName.push(0) // # Got to fill with 0 to reach length 16
 
           clientD2gs.write('D2GS_GAMELOGON', {
             MCPCookie: client.gameHash,
             gameId: client.gameToken,
             characterClass: 1,
-            gameVersion: 13,
+            gameVersion: 14,
             gameConstant: [
-              2443516342,
-              3982347344
+              1049482278, // from https://bnetdocs.org/packet/131/d2gs-gamelogon
+              0113898576
+              //2443516342,
+              //3982347344
             ],
             locale: 0,
-            characterName: [
-                85,
-                114,
-                117,
-                107,
-                117,
-                98,
-                97,
-                108,
-                0,
-                175,
-                111,
-                75,
-                0,
-                0,
-                0,
-                0
-            ]
+            characterName: asciiCharName
           });
 
+
+
+          // ???
+          /*
           clientD2gs.on('D2GS_LOGONRESPONSE',(data) => {
               clientD2gs.write('D2GS_PING', {
                   tickCount: 1
               });
 
             clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
+          });*/
+
+          clientD2gs.on('D2GS_COMPSTARTGAME',(data) => {
+
+            clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
           });
-
-
-
         });
 
 
@@ -345,7 +339,7 @@ function createClient({username, password, host, port, character, gameName, game
       console.log(data);
         client.write('SID_NOTIFYJOIN', {
             productId: 1, // random
-            productVersion: 13,
+            productVersion: 14,
             gameName: client.gameName,
             gamePassword: client.gamePassword
         });
