@@ -315,22 +315,17 @@ function createClient({username, password, host, port, character, gameName, game
         asciiCharName = []
         clientSid.character.split('').forEach(ascii => { asciiCharName.push(ascii.charCodeAt())})
         if(asciiCharName.length < 16)
-          for (i = 1; i < 16 - asciiCharName.length; i++)
+          for (i = 0; i < 16 - clientSid.character.length; i++)
             asciiCharName.push(0) // # Got to fill with 0 to reach length 16
+
 
         clientD2gs.write('D2GS_GAMELOGON', {
           MCPCookie: clientSid.gameHash,
           gameId: clientSid.gameToken,
           characterClass: 1,
           gameVersion: 14,
-          gameConstant: [// from https://bnetdocs.org/packet/131/d2gs-gamelogon
-            //1710405160,
-            //6235978166
-            1049482278,
-            0113898576
-            //2443516342,
-            //3982347344
-          ],
+          gameConstant: [ 1355570669, 3055134097 ] // from https://bnetdocs.org/packet/131/d2gs-gamelogon
+            ,
           locale: 0,
           characterName: asciiCharName
         });
