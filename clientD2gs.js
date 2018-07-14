@@ -27,8 +27,16 @@ class Client extends EventEmitter
       console.log("sending buffer d2gs "+data.toString("hex"))
       this.socket.write(data)
     })
-    this.splitter.on('data', compressedData => {
-      const data = decompress(compressedData);
+    this.splitter.on('data', dataAfterSize => {
+
+      const compressedData = dataAfterSize.slice(1);
+
+      const uncompressedData = decompress(compressedData);
+
+      const data = Buffer.alloc(1+uncompressedData.length);
+      dataAfterSize.copy(data, 0, 0, 1);
+      uncompressedData.copy(data, 1);
+
       const parsed = protoToClient.parsePacketBuffer("packet",data).data;
 
       const {name,params} = parsed;
@@ -90,7 +98,18 @@ class Client extends EventEmitter
       }
       else {
         console.info("sending compressed packet", packet_name, params);
-        this.framer.write(compress(buffer));
+
+        const bufferAfterId = buffer.slice(1);
+
+        const bufferCompressed = compress(bufferAfterId);
+
+        const correctBuffer = Buffer.alloc(bufferCompressed.length+1);
+
+        buffer.copy(correctBuffer,0, 0, 1);
+
+        bufferCompressed.copy(correctBuffer, 1)
+
+        this.framer.write(bufferCompressed);
       }
     }
     catch (err) {
