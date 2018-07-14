@@ -334,10 +334,6 @@ function createClient({username, password, host, port, character, gameName, game
 
       clientD2gs.on('D2GS_LOGONRESPONSE',(data) => {
         clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
-      });
-
-      clientD2gs.on('D2GS_COMPSTARTGAME',(data) => {
-        clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
         clientD2gs.enableCompression();
 
         clientD2gs.write('D2GS_WALKTOLOCATION', {
@@ -345,6 +341,7 @@ function createClient({username, password, host, port, character, gameName, game
           yCoordinate: 0
         })
       });
+
 
 
       clientD2gs.on('D2GS_PING', ({tickCount}) => {

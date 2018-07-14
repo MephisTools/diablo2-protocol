@@ -3,6 +3,8 @@ const createClient = require('./createClient');
 console.log(process.argv.length);
 
 if (process.argv.length !== 8) {
+  // Game servers list at https://pathofdiablo.com/p/
+  // 21 france, 4 london ...
   console.log('Usage : node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver>')
   process.exit(1)
 }
