@@ -23,7 +23,10 @@ class Client extends EventEmitter
     this.compression = false;
     this.splitter = createSplitter();
     this.framer = createFramer();
-    this.framer.on('data', data => this.socket.write(data))
+    this.framer.on('data', data => {
+      console.log("sending buffer d2gs "+data.toString("hex"))
+      this.socket.write(data)
+    })
     this.splitter.on('data', compressedData => {
       const data = decompress(compressedData);
       const parsed = protoToClient.parsePacketBuffer("packet",data).data;
