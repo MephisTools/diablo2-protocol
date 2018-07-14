@@ -1,4 +1,4 @@
-const Client = require('./client');
+const ClientSid = require('./clientSid');
 
 const fs = require('fs');
 
@@ -6,37 +6,37 @@ const getHash = require('./getHash');
 
 const getMpq = require('./getMpq');
 
-const ClientMCP = require('./clientMCP');
+const ClientMcp = require('./clientMcp');
 
 const ClientD2gs = require('./clientD2gs');
 const {compress,decompress, getPacketSize} = require('./compression');
 
 
 function createClient({username, password, host, port, character, gameName, gamePassword}) {
-  const client = new Client({host, port});
+  const clientSid = new ClientSid({host, port});
   const key1 = fs.readFileSync('./key1');
   const key2 = fs.readFileSync('./key2');
-  client.clientToken = 18226750;
-  client.username = username;
-  client.password = password;
-  client.character = character;
-  client.gameName = gameName;
-  client.gamePassword = gamePassword;
+  clientSid.clientToken = 18226750;
+  clientSid.username = username;
+  clientSid.password = password;
+  clientSid.character = character;
+  clientSid.gameName = gameName;
+  clientSid.gamePassword = gamePassword;
 
-  client.on('connect', () => {
+  clientSid.on('connect', () => {
     //'connect' listener
     console.log('connected to server!');
     //client.write('world!\r\n');
 
-    client.socket.write(Buffer.from("01", "hex")); // Initialises a normal logon conversation
+    clientSid.socket.write(Buffer.from("01", "hex")); // Initialises a normal logon conversation
 
-    client.platformId = 1230518326;
-    client.productId = 1144150096;
+    clientSid.platformId = 1230518326;
+    clientSid.productId = 1144150096;
 
-    client.write('SID_AUTH_INFO', {
+    clientSid.write('SID_AUTH_INFO', {
       protocolId: 0,
-      platformCode: client.platformId,
-      productCode: client.productId,
+      platformCode: clientSid.platformId,
+      productCode: clientSid.productId,
       versionByte: 13,
       languageCode: 1701729619,
       localIp: 587311296,
@@ -49,17 +49,17 @@ function createClient({username, password, host, port, character, gameName, game
   });
 
 
-  client.on('SID_PING', ({pingValue}) => {
+  clientSid.on('SID_PING', ({pingValue}) => {
     console.log("I received a ping of ping", pingValue);
-    client.write('SID_PING', {
+    clientSid.write('SID_PING', {
       pingValue
     })
   });
 
 
   function writeAuthCheck() {
-    client.write("SID_AUTH_CHECK", {
-      "clientToken": client.clientToken,
+    clientSid.write("SID_AUTH_CHECK", {
+      "clientToken": clientSid.clientToken,
       "exeVersion": 16780544,
       "exeHash": 1666909528,
       "numberOfCDKeys": 2,
@@ -86,16 +86,16 @@ function createClient({username, password, host, port, character, gameName, game
   }
 
 
-  client.on("SID_AUTH_INFO", ({logonType, serverToken, udpValue, mpqFiletime, mpqFilename, valuestring}) => {
-    client.serverToken = serverToken;
-    getMpq(host, port, mpqFiletime, mpqFilename, client.platformId, client.productId, writeAuthCheck);
+  clientSid.on("SID_AUTH_INFO", ({logonType, serverToken, udpValue, mpqFiletime, mpqFilename, valuestring}) => {
+    clientSid.serverToken = serverToken;
+    getMpq(host, port, mpqFiletime, mpqFilename, clientSid.platformId, clientSid.productId, writeAuthCheck);
   });
 
 
-  client.on('SID_AUTH_CHECK', ({result, additionalInformation}) => {
+  clientSid.on('SID_AUTH_CHECK', ({result, additionalInformation}) => {
     if (0 === result) {
       console.log("Correct keys");
-      client.write('SID_GETFILETIME', {
+      clientSid.write('SID_GETFILETIME', {
         requestId: 2147483652,
         unknown: 0,
         filename: "bnserver-D2DV.ini"
@@ -103,46 +103,46 @@ function createClient({username, password, host, port, character, gameName, game
     }
   });
 
-  client.on('SID_GETFILETIME', () => {
-    client.write('SID_LOGONRESPONSE2', {
-      clientToken: client.clientToken,
-      serverToken: client.serverToken,
-      passwordHash: getHash(client.clientToken, client.serverToken, client.password),
-      username: client.username
+  clientSid.on('SID_GETFILETIME', () => {
+    clientSid.write('SID_LOGONRESPONSE2', {
+      clientToken: clientSid.clientToken,
+      serverToken: clientSid.serverToken,
+      passwordHash: getHash(clientSid.clientToken, clientSid.serverToken, clientSid.password),
+      username: clientSid.username
     });
   });
 
 
-  client.on('SID_LOGONRESPONSE2', ({status}) => {
+  clientSid.on('SID_LOGONRESPONSE2', ({status}) => {
     console.log(status === 0 ? "Success" : status === 1 ? "Account doesn't exist" : status === 2 ? "Invalid password" : "Account closed");
     if (status === 0) {
-      client.write('SID_QUERYREALMS2', {});
+      clientSid.write('SID_QUERYREALMS2', {});
     }
   });
 
 
-  client.on('SID_QUERYREALMS2', ({realms}) => {
-    client.write('SID_LOGONREALMEX', {
-      clientToken: client.clientToken,
-      hashedRealmPassword: getHash(client.clientToken, client.serverToken, client.password),
+  clientSid.on('SID_QUERYREALMS2', ({realms}) => {
+    clientSid.write('SID_LOGONREALMEX', {
+      clientToken: clientSid.clientToken,
+      hashedRealmPassword: getHash(clientSid.clientToken, clientSid.serverToken, clientSid.password),
       realmTitle: realms[0].realmTitle
     });
   });
 
 
-  client.on('SID_LOGONREALMEX', ({MCPCookie, MCPStatus, MCPChunk1, IP, port, MCPChunk2, battleNetUniqueName}) => {
-    client.MCPCookie = MCPCookie;
+  clientSid.on('SID_LOGONREALMEX', ({MCPCookie, MCPStatus, MCPChunk1, IP, port, MCPChunk2, battleNetUniqueName}) => {
+    clientSid.MCPCookie = MCPCookie;
     host = IP[0] + "." + IP[1] + "." + IP[2] + "." + IP[3];
-    const clientMCP = new ClientMCP({host, port});
+    const clientMcp = new ClientMcp({host, port});
 
 
-    clientMCP.on('connect', () => {
+    clientMcp.on('connect', () => {
       //'connect' listener
       console.log('connected to MCP server!');
 
-      clientMCP.socket.write(Buffer.from("01", "hex")); // This Initialise conversation
+      clientMcp.socket.write(Buffer.from("01", "hex")); // This Initialise conversation
 
-      clientMCP.write('MCP_STARTUP', {
+      clientMcp.write('MCP_STARTUP', {
         MCPCookie: MCPCookie,
         MCPStatus: MCPStatus,
         MCPChunk1: MCPChunk1,
@@ -151,7 +151,7 @@ function createClient({username, password, host, port, character, gameName, game
       });
     });
 
-    clientMCP.on('MCP_STARTUP', ({result}) => {
+    clientMcp.on('MCP_STARTUP', ({result}) => {
       if (result === 0x02 || (result >= 0x0A && result <= 0x0D)) {
         console.log("Realm Unavailable: No Battle.net connection detected.");
       }
@@ -163,47 +163,47 @@ function createClient({username, password, host, port, character, gameName, game
       }
       else {
         console.log("Success!");
-        clientMCP.write('MCP_CHARLIST2', {
+        clientMcp.write('MCP_CHARLIST2', {
           numberOfCharacterToList: 8
         });
       }
     });
 
-    clientMCP.on('MCP_CHARLIST2', ({numbersOfCharactersRequested, numbersOfCharactersInAccount, characters}) => {
+    clientMcp.on('MCP_CHARLIST2', ({numbersOfCharactersRequested, numbersOfCharactersInAccount, characters}) => {
       console.log(numbersOfCharactersRequested, numbersOfCharactersInAccount, characters);
-      client.write('SID_GETCHANNELLIST', {
+      clientSid.write('SID_GETCHANNELLIST', {
         productId: 0
         // In the past this packet returned a product list for the specified Product ID,
         // however, the Product ID field is now ignored -- it does not need to be a valid Product ID,
         // and can be set to zero. The list of channels returned will be for the client's product,
         // as specified during the client's logon.
       });
-      client.write('SID_ENTERCHAT', {
-        characterName: client.character,
+      clientSid.write('SID_ENTERCHAT', {
+        characterName: clientSid.character,
         realm: "Path of Diablo" // TODO: dynamic realm ?
       });
 
     });
 
-    client.on('SID_GETCHANNELLIST', (data) => {
+    clientSid.on('SID_GETCHANNELLIST', (data) => {
       console.log(data);
 
     });
 
-    client.on('SID_CHATEVENT', (data) => {
+    clientSid.on('SID_CHATEVENT', (data) => {
       console.log(data);
       console.log("Text : " + String.fromCharCode(data.text));
     });
 
-    client.on('SID_ENTERCHAT', (data) => {
+    clientSid.on('SID_ENTERCHAT', (data) => {
       console.log(data);
       /*
-      clientMCP.write('SID_NEWS_INFO', {
+      clientMcp.write('SID_NEWS_INFO', {
         newsTimestamp:0
       });
       */ // "disconnected from mcp server" when using this packet
       /*
-    clientMCP.write('SID_CHECKAD', { // useless ?
+    clientMcp.write('SID_CHECKAD', { // useless ?
         platformId: client.platformId,
         productId: client.productId,
         IDOfLastDisplayedBanned: 0,
@@ -220,86 +220,86 @@ function createClient({username, password, host, port, character, gameName, game
     // client -> server SID_DISPLAYAD
     */
 
-      clientMCP.write('MCP_CHARLOGON', {
-        characterName: client.character
+      clientMcp.write('MCP_CHARLOGON', {
+        characterName: clientSid.character
       });
     });
 
 
-    clientMCP.on('MCP_CHARLOGON', (data) => {
+    clientMcp.on('MCP_CHARLOGON', (data) => {
       console.log(data);
-      clientMCP.write('MCP_MOTD', {
-        characterName: client.character
+      clientMcp.write('MCP_MOTD', {
+        characterName: clientSid.character
       });
 
     });
 
-    clientMCP.on('MCP_CHARLOGON', ({MOTD}) => {
+    clientMcp.on('MCP_CHARLOGON', ({MOTD}) => {
       console.log(MOTD);
 
 
-      clientMCP.write('MCP_CREATEGAME', {
+      clientMcp.write('MCP_CREATEGAME', {
         requestId: 2,
         difficulty: 0, // NORMAL, TODO : set diff with args
         unknown: 1,
         levelRestrictionDifference: 99,
         maximumPlayers: 8,
-        gameName: client.gameName,
-        gamePassword: client.gamePassword,
+        gameName: clientSid.gameName,
+        gamePassword: clientSid.gamePassword,
         gameDescription: "gs 21",
       });
 
 
     });
 
-    clientMCP.on('MCP_CREATEGAME', ({requestId, gameToken, unknown, result}) => {
+    clientMcp.on('MCP_CREATEGAME', ({requestId, gameToken, unknown, result}) => {
         console.log(requestId, gameToken, unknown, result);
-        clientMCP.write('MCP_JOINGAME', {
+        clientMcp.write('MCP_JOINGAME', {
             requestId: requestId,
-            gameName: client.gameName,
-            gamePassword: client.gamePassword
+            gameName: clientSid.gameName,
+            gamePassword: clientSid.gamePassword
         });
     });
 
-    clientMCP.on('MCP_JOINGAME', ({requestId, gameToken, unknown, IPOfD2GSServer:IP2, gameHash, result}) => {
-      client.gameToken = gameToken;
-      client.gameHash = gameHash;
-        client.write('SID_STARTADVEX3', {
+    clientMcp.on('MCP_JOINGAME', ({requestId, gameToken, unknown, IPOfD2GSServer:IP2, gameHash, result}) => {
+      clientSid.gameToken = gameToken;
+      clientSid.gameHash = gameHash;
+        clientSid.write('SID_STARTADVEX3', {
             gameStats:1, // private game, TODO: dynamic
             gameUptimeInSeconds:0,
             gameType:0,
             subGameType:0,
             providerVersionConstant:0,
             ladderType:0, // Ladder game, no point in playing non-ladder
-            gameName: client.gameName,
-            gamePassword: client.gamePassword,
+            gameName: clientSid.gameName,
+            gamePassword: clientSid.gamePassword,
             gameStatstring:""
         });
 
-        client.IP2 = IP2;
+        clientSid.IP2 = IP2;
 
 
     });
     // TODO : put all login packets into a function (module programming)
 
 
-    client.on('SID_STARTADVEX3', (data) => {
+    clientSid.on('SID_STARTADVEX3', (data) => {
       console.log(data);
-        client.write('SID_NOTIFYJOIN', {
+        clientSid.write('SID_NOTIFYJOIN', {
             productId: 1, // random
             productVersion: 14,
-            gameName: client.gameName,
-            gamePassword: client.gamePassword
+            gameName: clientSid.gameName,
+            gamePassword: clientSid.gamePassword
         });
 
-        client.write('SID_LEAVECHAT', {});
+        clientSid.write('SID_LEAVECHAT', {});
 
         createD2gs();
     });
 
     function createD2gs()
     {
-      const IP2 = client.IP2;
+      const IP2 = clientSid.IP2;
 
       const clientD2gs = new ClientD2gs({host:IP2[0] + "." + IP2[1] + "." + IP2[2] + "." + IP2[3],port:4000});
 
@@ -312,17 +312,17 @@ function createClient({username, password, host, port, character, gameName, game
 
       clientD2gs.on('D2GS_NEGOTIATECOMPRESSION',(data) => {
         asciiCharName = []
-        client.character.split('').forEach(ascii => { asciiCharName.push(ascii.charCodeAt())})
+        clientSid.character.split('').forEach(ascii => { asciiCharName.push(ascii.charCodeAt())})
         if(asciiCharName.length < 16)
           for (i = 1; i < 16 - asciiCharName.length; i++)
             asciiCharName.push(0) // # Got to fill with 0 to reach length 16
 
         clientD2gs.write('D2GS_GAMELOGON', {
-          MCPCookie: client.gameHash,
-          gameId: client.gameToken,
+          MCPCookie: clientSid.gameHash,
+          gameId: clientSid.gameToken,
           characterClass: 1,
-          gameVersion: 14,
-          gameConstant: 10494822780113898576//[// from https://bnetdocs.org/packet/131/d2gs-gamelogon
+          gameVersion: 13,
+          gameConstant: 17104051606235978166 //[// from https://bnetdocs.org/packet/131/d2gs-gamelogon
             //1049482278,
             //0113898576
             //2443516342,
@@ -361,13 +361,13 @@ function createClient({username, password, host, port, character, gameName, game
       });
     }
 
-    clientMCP.connect();
+    clientMcp.connect();
   });
 
 
-  client.connect();
+  clientSid.connect();
 
-  return client;
+  return clientSid;
 }
 
 module.exports = createClient;

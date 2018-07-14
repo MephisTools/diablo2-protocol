@@ -1,15 +1,15 @@
 const net = require('net');
 
 const ProtoDef = require("protodef").ProtoDef;
-const protocol = require('./data/protocol');
+const sid = require('./data/sid');
 const EventEmitter = require('events').EventEmitter;
 
 const protoToServer = new ProtoDef();
-protoToServer.addProtocol(protocol,["toServer"]);
+protoToServer.addProtocol(sid,["toServer"]);
 
 
 const protoToClient = new ProtoDef();
-protoToClient.addProtocol(protocol,["toClient"]);
+protoToClient.addProtocol(sid,["toClient"]);
 
 class Client extends EventEmitter
 {
@@ -27,7 +27,7 @@ class Client extends EventEmitter
     });
 
     this.socket.on('data', (data) => {
-      console.log("received that hex client", data.toString("hex"));
+      console.log("received that hex sid", data.toString("hex"));
       const parsed = protoToClient.parsePacketBuffer("packet",data).data;
 
       const {name,params} = parsed;
