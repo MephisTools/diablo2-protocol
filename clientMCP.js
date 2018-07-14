@@ -26,11 +26,11 @@ class Client extends EventEmitter
         });
 
         this.socket.on('data', (data) => {
-            console.log("received that hex", data.toString("hex"));
+            console.log("received that hex MCP", data.toString("hex"));
             const parsed = mcpToClient.parsePacketBuffer("packet",data).data;
 
             const {name,params} = parsed;
-            console.info("received packet", name, params);
+            console.info("received packet MCP", name, params);
 
             this.emit(name,params);
         });

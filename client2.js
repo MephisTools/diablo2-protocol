@@ -28,7 +28,7 @@ class Client extends EventEmitter
     });
 
     this.socket.on('data', (data) => {
-      console.log("received that hex", data.toString("hex"));
+      console.log("received that hex client2", data.toString("hex"));
 
     });
     parser.on('data', (parsed) => {

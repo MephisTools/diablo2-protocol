@@ -276,60 +276,8 @@ function createClient({username, password, host, port, character, gameName, game
             gameStatstring:""
         });
 
-        const clientD2gs = new ClientD2gs({host:IP2[0] + "." + IP2[1] + "." + IP2[2] + "." + IP2[3],port:4000});
+        client.IP2 = IP2;
 
-        clientD2gs.connect();
-
-
-        clientD2gs.on('D2GS_NEGOTIATECOMPRESSION',(data) => {
-          asciiCharName = []
-          client.character.split('').forEach(ascii => { asciiCharName.push(ascii.charCodeAt())})
-          if(asciiCharName.length < 16)
-            for (i = 1; i < 16 - asciiCharName.length; i++)
-             asciiCharName.push(0) // # Got to fill with 0 to reach length 16
-
-          clientD2gs.write('D2GS_GAMELOGON', {
-            MCPCookie: client.gameHash,
-            gameId: client.gameToken,
-            characterClass: 1,
-            gameVersion: 14,
-            gameConstant: [
-              1049482278, // from https://bnetdocs.org/packet/131/d2gs-gamelogon
-              0113898576
-              //2443516342,
-              //3982347344
-            ],
-            locale: 0,
-            characterName: asciiCharName
-          });
-
-
-
-          // ???
-          /*
-          clientD2gs.on('D2GS_LOGONRESPONSE',(data) => {
-              clientD2gs.write('D2GS_PING', {
-                  tickCount: 1
-              });
-
-            clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
-          });*/
-
-          clientD2gs.on('D2GS_COMPSTARTGAME',(data) => {
-
-            clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
-          });
-        });
-
-
-
-        clientD2gs.on('D2GS_PING', ({tickCount}) => {
-          console.log(tickCount);
-
-            clientD2gs.write('D2GS_PING', {
-              tickCount: tickCount
-            });
-        });
 
     });
     // TODO : put all login packets into a function (module programming)
@@ -343,7 +291,75 @@ function createClient({username, password, host, port, character, gameName, game
             gameName: client.gameName,
             gamePassword: client.gamePassword
         });
+
+        client.write('SID_LEAVECHAT', {});
+
+        createD2gs();
     });
+
+    function createD2gs()
+    {
+      const IP2 = client.IP2;
+
+      const clientD2gs = new ClientD2gs({host:IP2[0] + "." + IP2[1] + "." + IP2[2] + "." + IP2[3],port:4000});
+
+      clientD2gs.connect();
+
+      clientD2gs.on('connect', () => {
+        console.log("connected to clientD2gs");
+      })
+
+
+      clientD2gs.on('D2GS_NEGOTIATECOMPRESSION',(data) => {
+        asciiCharName = []
+        client.character.split('').forEach(ascii => { asciiCharName.push(ascii.charCodeAt())})
+        if(asciiCharName.length < 16)
+          for (i = 1; i < 16 - asciiCharName.length; i++)
+            asciiCharName.push(0) // # Got to fill with 0 to reach length 16
+
+        clientD2gs.write('D2GS_GAMELOGON', {
+          MCPCookie: client.gameHash,
+          gameId: client.gameToken,
+          characterClass: 1,
+          gameVersion: 14,
+          gameConstant: [
+            1049482278, // from https://bnetdocs.org/packet/131/d2gs-gamelogon
+            0113898576
+            //2443516342,
+            //3982347344
+          ],
+          locale: 0,
+          characterName: asciiCharName
+        });
+
+
+
+        // ???
+        /*
+        clientD2gs.on('D2GS_LOGONRESPONSE',(data) => {
+            clientD2gs.write('D2GS_PING', {
+                tickCount: 1
+            });
+
+          clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
+        });*/
+
+        clientD2gs.on('D2GS_COMPSTARTGAME',(data) => {
+
+          clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
+        });
+      });
+
+
+
+      clientD2gs.on('D2GS_PING', ({tickCount}) => {
+        console.log(tickCount);
+
+        clientD2gs.write('D2GS_PING', {
+          tickCount: tickCount
+        });
+      });
+    }
 
     clientMCP.connect();
   });
