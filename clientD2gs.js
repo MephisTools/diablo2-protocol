@@ -107,7 +107,7 @@ class Client extends EventEmitter
 
         buffer.copy(correctBuffer,0, 0, 1);
 
-        bufferCompressed.copy(correctBuffer, 1)
+        bufferAfterId.copy(correctBuffer, 1)
 
         this.framer.write(bufferCompressed);
       }

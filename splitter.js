@@ -14,7 +14,7 @@ module.exports.createFramer = function () {
 class Framer extends Transform {
   _transform (chunk, enc, cb) {
     const buffer = Buffer.alloc(1 + chunk.length)
-    writeLu8(chunk.length, buffer, 0)
+    writeLu8(chunk.length+1, buffer, 0)
     chunk.copy(buffer, 1)
     this.push(buffer)
     return cb()
@@ -40,12 +40,14 @@ class Splitter extends Transform {
         throw e
       } else { stop = true }
     }
+    size--;
     if (!stop) {
       while (this.buffer.length >= offset + size + value) {
         try {
           this.push(this.buffer.slice(offset + size, offset + size + value))
           offset += size + value;
           ({value, size} = readLu8(this.buffer, offset))
+          size--;
         } catch (e) {
           if (e.partialReadError) {
             break

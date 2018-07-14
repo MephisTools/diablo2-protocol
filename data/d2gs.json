@@ -753,7 +753,7 @@
       "D2GS_LOGONRESPONSE": ["container", [
         {
           "name": "unknown",
-          "type": "lu32"
+          "type": "lu16"
         }
       ]],
       "D2GS_TRADEACTION": ["container", [
