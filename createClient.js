@@ -12,7 +12,7 @@ const ClientD2gs = require('./clientD2gs');
 const {compress,decompress, getPacketSize} = require('./compression');
 
 
-function createClient({username, password, host, port, character, gameName, gamePassword}) {
+function createClient({username, password, host, port, character, gameName, gamePassword, gameServer}) {
   const clientSid = new ClientSid({host, port});
   const key1 = fs.readFileSync('./key1');
   const key2 = fs.readFileSync('./key2');
@@ -22,6 +22,7 @@ function createClient({username, password, host, port, character, gameName, game
   clientSid.character = character;
   clientSid.gameName = gameName;
   clientSid.gamePassword = gamePassword;
+  clientSid.gameServer = gameServer;
 
   clientSid.on('connect', () => {
     //'connect' listener
@@ -37,7 +38,7 @@ function createClient({username, password, host, port, character, gameName, game
       protocolId: 0,
       platformCode: clientSid.platformId,
       productCode: clientSid.productId,
-      versionByte: 13,
+      versionByte: 14,
       languageCode: 1701729619,
       localIp: 587311296,
       timeZoneBias: 4294967236,
@@ -246,7 +247,7 @@ function createClient({username, password, host, port, character, gameName, game
         maximumPlayers: 8,
         gameName: clientSid.gameName,
         gamePassword: clientSid.gamePassword,
-        gameDescription: "gs 21",
+        gameDescription: "gs " + clientSid.gameServer,
       });
 
 
@@ -321,13 +322,15 @@ function createClient({username, password, host, port, character, gameName, game
           MCPCookie: clientSid.gameHash,
           gameId: clientSid.gameToken,
           characterClass: 1,
-          gameVersion: 13,
-          gameConstant: 17104051606235978166 //[// from https://bnetdocs.org/packet/131/d2gs-gamelogon
-            //1049482278,
-            //0113898576
+          gameVersion: 14,
+          gameConstant: [// from https://bnetdocs.org/packet/131/d2gs-gamelogon
+            //1710405160,
+            //6235978166
+            1049482278,
+            0113898576
             //2443516342,
             //3982347344
-          ,//],
+          ],
           locale: 0,
           characterName: asciiCharName
         });
