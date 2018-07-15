@@ -647,7 +647,7 @@
                   "0x5E": "D2GS_PARTY",
                   "0x61": "D2GS_POTIONTOMERCENARY",
                   "0x68": "D2GS_GAMELOGON",
-                  "0x6A": "D2GS_ENTERGAMEENVIRONMENT",
+                  "0x6B": "D2GS_ENTERGAMEENVIRONMENT",
                   "0x6D": "D2GS_PING"
                 }
               }
@@ -814,6 +814,12 @@
           "type": "lu16"
         }
       ]],
+      "D2GS_PING": ["container", [
+        {
+          "name": "tickCount",
+          "type": "lu8"
+        }
+        ]],
       "D2GS_SETBYTEATTR": ["container", [
         {
           "name": "attribute",
@@ -875,6 +881,7 @@
                   "0x1D": "D2GS_SETBYTEATTR",
                   "0x1E": "D2GS_SETWORDATTR",
                   "0x1F": "D2GS_SETDWORDATTR",
+                  "0x20": "D2GS_PING",
                   "0x50": "D2GS_STARTGAME",
                   "0x5C": "D2GS_COMPSTARTGAME",
                   "0x51": "D2GS_WORLDOBJECT",
@@ -898,6 +905,7 @@
                   "D2GS_SETBYTEATTR": "D2GS_SETBYTEATTR",
                   "D2GS_SETWORDATTR": "D2GS_SETWORDATTR",
                   "D2GS_SETDWORDATTR": "D2GS_SETDWORDATTR",
+                  "D2GS_PING": "D2GS_PING",
                   "D2GS_WORLDOBJECT": "D2GS_WORLDOBJECT",
                   "D2GS_STARTGAME": "D2GS_STARTGAME",
                   "D2GS_COMPSTARTGAME": "D2GS_COMPSTARTGAME",

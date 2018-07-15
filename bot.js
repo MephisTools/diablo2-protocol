@@ -9,13 +9,19 @@ if (process.argv.length !== 8) {
   process.exit(1)
 }
 
+var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+var randomGame = ""
+
+for (var i = 0; i < 5; i++)
+    randomGame += possible.charAt(Math.floor(Math.random() * possible.length));
+
 const client = createClient({
     port: 6112,
     host:'176.31.38.228',
     username: process.argv[2],
     password: process.argv[3],
     character: process.argv[4],
-    gameName: process.argv[5],
+    gameName: process.argv[5] == "rand" ? randomGame : process.argv[5],
     gamePassword: process.argv[6],
     gameServer: process.argv[7],
 });
