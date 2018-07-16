@@ -1,9 +1,10 @@
 const net = require('net');
 
 const ProtoDef = require("protodef").ProtoDef;
+const Parser = require('protodef').Parser
 const protocol = require('./data/d2gs');
 const EventEmitter = require('events').EventEmitter;
-const {compress,decompress, getPacketSize} = require('./compression');
+const {compress,decompress} = require('./compression');
 
 const {createSplitter, createFramer} = require('./splitter');
 
@@ -13,6 +14,8 @@ protoToServer.addProtocol(protocol,["toServer"]);
 
 const protoToClient = new ProtoDef();
 protoToClient.addProtocol(protocol,["toClient"]);
+
+const toClientParser = new Parser(protoToClient, 'packet')
 
 class Client extends EventEmitter
 {
@@ -27,23 +30,20 @@ class Client extends EventEmitter
       console.log("sending buffer d2gs "+data.toString("hex"))
       this.socket.write(data)
     })
-    this.splitter.on('data', dataAfterSize => {
+    this.splitter.on('data', data => {
 
-      const compressedData = dataAfterSize.slice(1);
 
-      const uncompressedData = decompress(compressedData);
+      const uncompressedData = decompress(data);
 
-      const data = Buffer.alloc(1+uncompressedData.length);
-      dataAfterSize.copy(data, 0, 0, 1);
-      uncompressedData.copy(data, 1);
+      toClientParser.write(uncompressedData);
+    });
 
-      const parsed = protoToClient.parsePacketBuffer("packet",data).data;
-
-      const {name,params} = parsed;
+    toClientParser.on('data', ({data}) => {
+      const {name,params} = data;
       console.info("received compressed packet", name, params);
 
       this.emit(name,params);
-    });
+    })
   }
 
   enableCompression() {
@@ -92,7 +92,7 @@ class Client extends EventEmitter
         params
       });
 
-      if (!this.compression) {
+      if (!this.compression || true) { // always sent uncompressed
         console.info("sending uncompressed packet", packet_name, params);
         this.socket.write(buffer);
       }

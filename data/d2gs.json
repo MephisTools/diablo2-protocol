@@ -794,6 +794,31 @@
           "type": "lu8"
         }
       ]],
+      "D2GS_CREATECLIENTPLAYER": ["container", [
+        {
+          "name": "guid",
+          "type": "lu32"
+        },
+        {
+          "name": "class",
+          "type": "lu8"
+        },
+        {
+          "name": "szname",
+          "type":  ["array", {
+            "count": 16,
+            "type": "lu8"
+            }]
+        },
+        {
+          "name": "nPosX",
+          "type": "lu16"
+        },
+        {
+          "name": "nPosY",
+          "type": "lu16"
+        }
+      ]],
       "D2GS_SETDWORDATTR": ["container", [
         {
           "name": "attribute",
@@ -885,6 +910,7 @@
                   "0x50": "D2GS_STARTGAME",
                   "0x5C": "D2GS_COMPSTARTGAME",
                   "0x51": "D2GS_WORLDOBJECT",
+                  "0x59": "D2GS_CREATECLIENTPLAYER",
                   "0x77": "D2GS_TRADEACTION",
                   "0x7A": "D2GS_LOGONRESPONSE",
                   "0x89": "D2GS_UNIQUEEVENTS",
@@ -907,6 +933,7 @@
                   "D2GS_SETDWORDATTR": "D2GS_SETDWORDATTR",
                   "D2GS_PING": "D2GS_PING",
                   "D2GS_WORLDOBJECT": "D2GS_WORLDOBJECT",
+                  "D2GS_CREATECLIENTPLAYER": "D2GS_CREATECLIENTPLAYER",
                   "D2GS_STARTGAME": "D2GS_STARTGAME",
                   "D2GS_COMPSTARTGAME": "D2GS_COMPSTARTGAME",
                   "D2GS_TRADEACTION": "D2GS_TRADEACTION",
