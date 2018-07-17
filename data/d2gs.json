@@ -891,6 +891,23 @@
           "type": "lu16"
         }
       ]],
+      "D2GS_STATEADD": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "guid",
+          "type": "lu32"
+        },
+        {
+          "name": "stream",
+          "type":  ["array", {
+            "countType": "lu8",
+            "type": "lu8"
+          }]
+        }
+      ]],
       "packet": [
         "container",
         [
@@ -914,6 +931,7 @@
                   "0x77": "D2GS_TRADEACTION",
                   "0x7A": "D2GS_LOGONRESPONSE",
                   "0x89": "D2GS_UNIQUEEVENTS",
+                  "0xAA": "D2GS_STATEADD",
                   "0xAF": "D2GS_NEGOTIATECOMPRESSION"
                 }
               }
@@ -939,6 +957,7 @@
                   "D2GS_TRADEACTION": "D2GS_TRADEACTION",
                   "D2GS_LOGONRESPONSE": "D2GS_LOGONRESPONSE",
                   "D2GS_UNIQUEEVENTS": "D2GS_UNIQUEEVENTS",
+                  "D2GS_STATEADD": "D2GS_STATEADD",
                   "D2GS_NEGOTIATECOMPRESSION": "D2GS_NEGOTIATECOMPRESSION"
                 }
               }
