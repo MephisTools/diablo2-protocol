@@ -908,6 +908,217 @@
           }]
         }
       ]],
+      "D2GS_GAMELOADING": ["container", []],
+      "D2GS_GAMEFLAGS": ["container", [
+        {
+          "name": "difficulty",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "hardcore",
+          "type": "lu16"
+        },
+        {
+          "name": "expansion",
+          "type": "lu8"
+        },
+        {
+          "name": "ladder",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_LOADSUCCESSFUL": ["container", []],
+      "D2GS_LOADACT": ["container", [
+        {
+          "name": "act",
+          "type": "lu8"
+        },
+        {
+          "name": "mapId",
+          "type": "lu32"
+        },
+        {
+          "name": "areaId",
+          "type": "lu16"
+        },
+        {
+          "name": "unkwown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_LOADCOMPLETE": ["container", []],
+      "D2GS_UNLOADCOMPLETE": ["container", []],
+      "D2GS_GAMEEXITSUCCESSFUL": ["container", []],
+      "D2GS_MAPREVEAL": ["container", [
+        {
+          "name": "tileX",
+          "type": "lu16"
+        },
+        {
+          "name": "tileY",
+          "type": "lu16"
+        },
+        {
+          "name": "areaId",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_MAPHIDE": ["container", [
+        {
+          "name": "tileX",
+          "type": "lu16"
+        },
+        {
+          "name": "tileY",
+          "type": "lu16"
+        },
+        {
+          "name": "areaId",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_ASSIGNLVLWARD": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "warpId",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_REMOVEOBJECT": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_GAMEHANDSHAKE": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_NPCHIT": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "animationId",
+          "type": "lu16"
+        },
+        {
+          "name": "life",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_PLAYERSTOP": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "life",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_OBJECTSTATE": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "unitState",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PLAYERMOVE": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "move",
+          "type": "lu8"
+        },
+        {
+          "name": "targetX",
+          "type": "lu16"
+        },
+        {
+          "name": "targetY",
+          "type": "lu16"
+        },
+        {
+          "name": "currentX",
+          "type": "lu16"
+        },
+        {
+          "name": "currentY",
+          "type": "lu16"
+        }
+      ]],
       "packet": [
         "container",
         [
@@ -918,6 +1129,22 @@
               {
                 "type": "lu8",
                 "mappings": {
+                  "0x00":"D2GS_GAMELOADING",
+                  "0x01":"D2GS_GAMEFLAGS",
+                  "0x02":"D2GS_LOADSUCCESSFUL",
+                  "0x03":"D2GS_LOADACT",
+                  "0x04":"D2GS_LOADCOMPLETE",
+                  "0x05":"D2GS_UNLOADCOMPLETE",
+                  "0x06":"D2GS_GAMEEXITSUCCESSFUL",
+                  "0x07":"D2GS_MAPREVEAL",
+                  "0x08":"D2GS_MAPHIDE",
+                  "0x09":"D2GS_ASSIGNLVLWARP",
+                  "0x0A":"D2GS_REMOVEOBJECT",
+                  "0x0B":"D2GS_GAMEHANDSHAKE",
+                  "0x0C":"D2GS_NPCHIT",
+                  "0x0D":"D2GS_PLAYERSTOP",
+                  "0x0E":"D2GS_OBJECTSTATE",
+                  "0x0F":"D2GS_PLAYERMOVE",
                   "0x10": "D2GS_CHARTOOBJ",
                   "0x19": "D2GS_SMALLGOLDPICKUP",
                   "0x1D": "D2GS_SETBYTEATTR",
@@ -944,6 +1171,22 @@
               {
                 "compareTo": "name",
                 "fields": {
+                  "D2GS_GAMELOADING": "D2GS_GAMELOADING",
+                  "D2GS_GAMEFLAGS": "D2GS_GAMEFLAGS",
+                  "D2GS_LOADSUCCESSFUL": "D2GS_LOADSUCCESSFUL",
+                  "D2GS_LOADACT": "D2GS_LOADACT",
+                  "D2GS_LOADCOMPLETE": "D2GS_LOADCOMPLETE",
+                  "D2GS_UNLOADCOMPLETE": "D2GS_UNLOADCOMPLETE",
+                  "D2GS_GAMEEXITSUCCESSFUL": "D2GS_GAMEEXITSUCCESSFUL",
+                  "D2GS_MAPREVEAL": "D2GS_MAPREVEAL",
+                  "D2GS_MAPHIDE": "D2GS_MAPHIDE",
+                  "D2GS_ASSIGNLVLWARP": "D2GS_ASSIGNLVLWARP",
+                  "D2GS_REMOVEOBJECT": "D2GS_REMOVEOBJECT",
+                  "D2GS_GAMEHANDSHAKE": "D2GS_GAMEHANDSHAKE",
+                  "D2GS_NPCHIT": "D2GS_NPCHIT",
+                  "D2GS_PLAYERSTOP": "D2GS_PLAYERSTOP",
+                  "D2GS_OBJECTSTATE": "D2GS_OBJECTSTATE",
+                  "D2GS_PLAYERMOVE": "D2GS_PLAYERMOVE",
                   "D2GS_CHARTOOBJ": "D2GS_CHARTOOBJ",
                   "D2GS_SMALLGOLDPICKUP": "D2GS_SMALLGOLDPICKUP",
                   "D2GS_SETBYTEATTR": "D2GS_SETBYTEATTR",
