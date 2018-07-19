@@ -5,14 +5,17 @@ const Parser = require('protodef').Parser
 const protocol = require('./data/d2gs');
 const EventEmitter = require('events').EventEmitter;
 const {compress,decompress} = require('./compression');
+const d2gsReader = require('./d2gsSpecialReader');
 
 const {createSplitter, createFramer} = require('./splitter');
 
 const protoToServer = new ProtoDef();
+protoToServer.addTypes(d2gsReader);
 protoToServer.addProtocol(protocol,["toServer"]);
 
 
 const protoToClient = new ProtoDef();
+protoToClient.addTypes(d2gsReader);
 protoToClient.addProtocol(protocol,["toClient"]);
 
 const toClientParser = new Parser(protoToClient, 'packet')

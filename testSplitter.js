@@ -4,10 +4,12 @@ const {compress,decompress} = require('./compression');
 
 const ProtoDef = require('protodef').ProtoDef
 const Parser = require('protodef').Parser
+const d2gsReader = require('./d2gsSpecialReader');
 
 
 const protocol = require('./data/d2gs');
 const protoToClient = new ProtoDef();
+protoToClient.addTypes(d2gsReader);
 protoToClient.addProtocol(protocol,["toClient"]);
 
 
@@ -32,5 +34,6 @@ splitter.on('data', data => {
 
 parser.on('data', packet => {
   console.log('packet', packet)
-  console.log('packet', packet.data.params.szname)
+  if(packet.data.name==="D2GS_STATEADD")
+    console.log('packet the length', packet.data.params.length)
 })

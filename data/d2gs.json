@@ -14,7 +14,8 @@
     "void": "native",
     "array": "native",
     "string": "cstring",
-    "restBuffer": "native"
+    "restBuffer": "native",
+    "subtractor": "native"
   },
   "toServer": {
     "types": {
@@ -897,7 +898,10 @@
         {
           "name": "stream",
           "type":  ["array", {
-            "countType": "lu8",
+            "countType": ["subtractor",{
+              "type": "lu8",
+              "difference": 7
+            }],
             "type": "lu8"
           }]
         }
@@ -2272,7 +2276,7 @@
         },
         {
           "name": "packetLength",
-          "type": "lu8"
+          "type": ["subtractor", {"type":"lu8","difference":"8"}]
         },
         {
           "name": "state",
@@ -2336,13 +2340,12 @@
           "type": "lu8"
         },
         {
-          "name": "packetLength",
-          "type": "lu8"
-        },
-        {
           "name": "stateInfo",
           "type": ["array", {
-            "count": "packetLength",
+            "countType": ["subtractor", {
+              "type": "lu8",
+              "difference": 13
+            }],
             "type": "lu8"
           }]
         }
@@ -2352,13 +2355,9 @@
       ]],
       "D2GS_WARDENREQUEST": ["container", [
         {
-          "name": "packetLengthExcludingHeader",
-          "type": "lu16"
-        },
-        {
           "name": "data",
           "type": ["array", {
-            "count": "packetLength",
+            "countType": "lu16",
             "type": "lu8"
           }]
         }
