@@ -945,7 +945,7 @@
         },
         {
           "name": "unkwown",
-          "type": "lu16"
+          "type": "lu32"
         }
       ]],
       "D2GS_LOADCOMPLETE": ["container", []],
