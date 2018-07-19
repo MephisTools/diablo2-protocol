@@ -1821,8 +1821,7 @@
         {
           "name": "unitLife",
           "type": "lu8"
-        },
-        {"name":"unknown","type" : ["array", {"count": 2, "type": "lu8" } ] }
+        }
       ]],
       "D2GS_UNKNOWN19": ["container", []],
       "D2GS_UNKNOWN20": ["container", []],
@@ -2191,8 +2190,32 @@
           "type": "lu32"
         }
       ]],
-      "D2GS_ITEMACTIONWORLD": ["container", []],
-      "D2GS_ITEMACTIONOWNED": ["container", []],
+      "D2GS_ITEMACTIONWORLD": ["container", [
+        {
+          "name": "unknown1",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown2",
+          "type": ["array",{
+            "type":"lu8",
+            "countType": ["subtractor",{"type":"lu8","difference":"3"}]
+          }]
+        }
+      ]],
+      "D2GS_ITEMACTIONOWNED": ["container", [
+        {
+          "name": "unknown1",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown2",
+          "type": ["array",{
+            "type":"lu8",
+            "countType": ["subtractor",{"type":"lu8","difference":"3"}]
+          }]
+        }
+      ]],
       "D2GS_BMERCATTRIBUTE": ["container", [
         {
           "name": "attribute",
