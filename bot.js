@@ -9,7 +9,7 @@ if (process.argv.length !== 8) {
   process.exit(1)
 }
 
-const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+const possible = "abcdefghijklmnopqrstuvwxyz";
 let randomGame = ""
 
 for (let i = 0; i < 5; i++)
