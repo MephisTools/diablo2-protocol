@@ -335,6 +335,13 @@ function createClient({username, password, host, port, character, gameName, game
       clientD2gs.on('D2GS_LOGONRESPONSE',(data) => {
         clientD2gs.write('D2GS_ENTERGAMEENVIRONMENT', {});
         clientD2gs.enableCompression();
+
+        setTimeout(() => {
+          clientD2gs.write('D2GS_WALKTOLOCATION', {
+            xCoordinate: 5348,
+            yCoordinate: 4257
+          })
+        },10000)
 /*
         clientD2gs.write('D2GS_RIGHTSKILLONLOCATIONEX', {
           xCoordinate: 0,
