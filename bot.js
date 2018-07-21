@@ -25,6 +25,6 @@ const client = createClient({
     password: process.argv[3],
     character: process.argv[4],
     gameName: process.argv[5] === "rand" ? randomGame : process.argv[5],
-    gamePassword: process.argv[6],
+    gamePassword: "", // process.argv[6], // TODO add back when password is fixed
     gameServer: process.argv[7],
 });
