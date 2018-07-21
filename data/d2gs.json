@@ -1294,11 +1294,11 @@
         },
         {
           "name": "charName",
-          "type": "lu8"
+          "type": "cstring"
         },
         {
           "name": "message",
-          "type": "lu8"
+          "type": "cstring"
         }
       ]],
       "D2GS_OVERHEAD": ["container", [
