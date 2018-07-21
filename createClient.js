@@ -304,6 +304,7 @@ function createClient({username, password, host, port, character, gameName, game
 
       const clientD2gs = new ClientD2gs({host:IP2[0] + "." + IP2[1] + "." + IP2[2] + "." + IP2[3],port:4000});
 
+      clientD2gs.initialTime = Date.now();
       clientD2gs.connect();
 
       clientD2gs.on('connect', () => {
@@ -342,31 +343,21 @@ function createClient({username, password, host, port, character, gameName, game
             yCoordinate: 4257
           })
         },10000)
-/*
-        clientD2gs.write('D2GS_RIGHTSKILLONLOCATIONEX', {
-          xCoordinate: 0,
-          yCoordinate: 0
-        })
-
-        clientD2gs.write('D2GS_WAYPOINT', {
-          waypointId: 1,
-          unknown: 0,
-          unknown: 0,
-          levelNumber:1,
-          unknown: 0
-        })*/
       });
 
-      clientD2gs.on('D2GS_COMPSTARTGAME',(data) => {
 
-      });
-
-      clientD2gs.on('D2GS_PING', ({tickCount}) => {
-        console.log(tickCount);
-
-        clientD2gs.write('D2GS_PING', {
-          tickCount: tickCount
+      setInterval(() => {
+        clientD2gs.write('D2GS_PING',{
+          tickCount: Date.now() - clientD2gs.initialTime,
+          delay: clientD2gs.latency,
+          wardenResponse: 0
         });
+        clientD2gs.timeAtLastPing = Date.now();
+      }, 5000);
+
+      clientD2gs.on('D2GS_PONG', () => {
+        clientD2gs.latency = Date.now() - clientD2gs.timeAtLastPing;
+        console.log("latency is "+clientD2gs.latency+"ms")
       });
     }
 

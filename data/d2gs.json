@@ -25,11 +25,11 @@
           "type": "lu32"
         },
         {
-          "name": "null",
+          "name": "delay",
           "type": "lu32"
         },
         {
-          "name": "null",
+          "name": "wardenResponse",
           "type": "lu32"
         }
       ]],
