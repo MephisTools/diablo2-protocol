@@ -1,6 +1,6 @@
 // to get a d2gs.dump filter packet in wireshark with something like ip.src == 185.144.100.123 && ip.dst == 192.168.1.40
 // then right click on first packet, do "follow tcp stream"
-// then select raw as display format
+// then select raw as display format and select only the s->c packets
 // then save as d2gs.dump and use this script
 
 
@@ -27,13 +27,22 @@ const fs = require('fs');
 
 const dumpFile = fs.readFileSync("./d2gs.dump");
 
-let lastOffset=0;
-for(let i=0;i<Math.floor(dumpFile.length/20) && i<500;i+=20) {
-  splitter.write(dumpFile.slice(i,i+20));
-  lastOffset = i+20;
-}
-//splitter.write(dumpFile.slice(lastOffset));
+console.log(dumpFile.slice(0,7));
 
+const cleanedDumpFile = dumpFile.slice(7);
+console.log(cleanedDumpFile.length)
+
+async function load() {
+  let lastOffset=0;
+  for(let i=0;i<Math.floor(cleanedDumpFile.length/20);i+=20) {
+    await Promise.resolve();
+    splitter.write(cleanedDumpFile.slice(i,i+20));
+    lastOffset = i+20;
+  }
+  splitter.write(cleanedDumpFile.slice(lastOffset));
+}
+
+load().catch(err => console.log(err))
 
 splitter.on('data', data => {
 
