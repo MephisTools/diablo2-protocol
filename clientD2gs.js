@@ -38,6 +38,7 @@ class Client extends EventEmitter
 
       const uncompressedData = decompress(data);
 
+      console.log("uncompressed d2gs received hex : "+uncompressedData.toString('hex'));
       toClientParser.write(uncompressedData);
     });
 
