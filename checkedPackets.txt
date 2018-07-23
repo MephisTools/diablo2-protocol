@@ -1,0 +1,5 @@
+Checked on patch 1.14d
+
+S->C
+0x04
+0x10
