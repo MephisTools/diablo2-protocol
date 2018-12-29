@@ -1,6 +1,35 @@
 # Path of bot
 
-Bot for diablo2 implementing the packets in node.js
+Bot for diablo 2 implementing the packets in node.js
+
+Currently in development, almost all packets are implemented but not all packets have been tested
+
+## Installation
+
+```
+git clone https://github.com/louis030195/PathOfBot.git
+cd PathOfBot
+npm install
+```
+
+## Usage
+
+Bot not 100% working atm, it will login and make a game then afk
+```
+node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver>
+```
+
+For example
+
+```
+node bot.js myusername mypassword mycharacter mygamename mygamepassword 4
+```
+
+Sniffer diablo 2 (launch diablo 2 and go online and start sniffing packets ;))
+
+```
+sudo node sniffer.js
+```
 
 ## File organization
 
