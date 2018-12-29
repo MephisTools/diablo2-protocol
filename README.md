@@ -27,13 +27,12 @@ node bot.js myusername mypassword mycharacter mygamename mygamepassword 4
 
 Sniffer diablo 2 (launch diablo 2 and go online and start sniffing packets ;))
 
+Tested on Ubuntu 18.04 (prob doesn't work on Windows)
+
 ```
 sudo node sniffer.js
 ```
 
-Example =>
-
-[![D2Sniffer](https://img.youtube.com/vi/GxhCToiJABk/0.jpg)](https://www.youtube.com/watch?v=GxhCToiJABk)
 
 ## Roadmap
 - [ ] Test all packets

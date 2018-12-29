@@ -34,16 +34,16 @@ class Splitter extends Transform {
     let offset = 0
     let payloadSize, headerSize
     let stop = false
+    console.log('hi');
     if (this.buffer.length < 2 || (this.buffer[0] >= 0xF0 && this.buffer.length < 3))
     {
+      console.log('bye');
       stop = true;
     }
     else {
       ({payloadSize, headerSize} = getPacketSize(this.buffer.slice(offset)));
     }
-    console.log({stop,payloadSize,headerSize, buffer: this.buffer.slice(offset).toString('hex')})
-
-    console.log({bufferLength: this.buffer.length, offset})
+    
     if (!stop) {
       while (this.buffer.length >= offset + payloadSize + headerSize) {
         this.push(this.buffer.slice(offset + headerSize, offset + payloadSize + headerSize))
@@ -56,8 +56,6 @@ class Splitter extends Transform {
         else {
           ({payloadSize, headerSize} = getPacketSize(this.buffer.slice(offset)));
         }
-
-        console.log({offset, stop,payloadSize,headerSize, buffer: this.buffer.slice(offset).toString('hex')})
 
 
       }

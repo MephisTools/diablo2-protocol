@@ -8,63 +8,66 @@ pcap_session.on('packet', function (raw_packet) {
 });
 
 
+const Parser = require('protodef').Parser
 const ProtoDef = require("protodef").ProtoDef;
 
-
-const bnftpProto = require('./data/bnftp');
-
-const bnftp = new ProtoDef();
-bnftp.addProtocol(bnftpProto,["toServer"]);
 
 const d2gsProto = require('./data/d2gs');
 
 const d2gs = new ProtoDef();
-d2gs.addProtocol(d2gsProto,["toServer"]);
+//d2gs.addProtocol(d2gsProto,["toServer"]);
+d2gs.addProtocol(d2gsProto,["toClient"]);
 
-const mcpProto = require('./data/mcp');
+const {createSplitter, createFramer} = require('./splitter');
 
-const mcp = new ProtoDef();
-mcp.addProtocol(mcpProto,["toServer"]);
+const {compress,decompress} = require('./compression');
+const d2gsReader = require('./d2gsSpecialReader');
 
-const sidProto = require('./data/mcp');
+const protoToClient = new ProtoDef();
+protoToClient.addTypes(d2gsReader);
+protoToClient.addProtocol(d2gsProto,["toClient"]);
 
-const sid = new ProtoDef();
-sid.addProtocol(sidProto,["toServer"]);
+const toClientParser = new Parser(protoToClient, 'packet')
+splitter = createSplitter();
 
+splitter.on('data', data => {
+
+
+    const uncompressedData = decompress(data);
+
+    console.log("uncompressed d2gs received hex : "+uncompressedData.toString('hex'));
+    toClientParser.write(uncompressedData);
+});
+
+toClientParser.on('data', ({data}) => {
+    const {name,params} = data;
+    console.info("received compressed packet", name, params);
+})
 
 // tracker emits sessions, and sessions emit data
 tcp_tracker.on("session", function (session) {
-    if((session.src_name.split(':')[1] == '4000' || session.dst_name.split(':')[1] == '4000') ||
-        (session.src_name.split(':')[1] == '6112' || session.dst_name.split(':')[1] == '6112'))
+    if(session.src_name.split(':')[1] == '4000' || session.dst_name.split(':')[1] == '4000')
         console.log("Start of TCP session between " + session.src_name + " and " + session.dst_name);
     session.on("data send", function (session, data) {
-        if((session.src_name.split(':')[1] == '4000' || session.dst_name.split(':')[1] == '4000') ||
-            (session.src_name.split(':')[1] == '6112' || session.dst_name.split(':')[1] == '6112'))
+        if(session.src_name.split(':')[1] == '4000' || session.dst_name.split(':')[1] == '4000')
         {
-            //console.log("data send " + session.send_bytes_payload + " + " + data.length + " bytes");
-
+            console.log('allo');
             try{
-                console.log(JSON.stringify(sid.parsePacketBuffer("packet", data).data, null, 2));
-            }catch(error) {
-                //console.error("Error : " + error);
-            }
 
-            try{
-                console.log(JSON.stringify(bnftp.parsePacketBuffer("packet", data).data, null, 2));
-            }catch(error) {
-                //console.error("Error : " + error);
-            }
+                //x = d2gs.parsePacketBuffer("packet", data).data
+                splitter.write(data);
+                //console.log(JSON.stringify(x, null, 2));
+                /*
+                if(x.name == 'D2GS_RUNTOLOCATION'){
+                    setInterval(
+                        function(){ session.inject(data) },
+                        5000
+                      );
+                }*/
 
-            try{
-                console.log(JSON.stringify(mcp.parsePacketBuffer("packet", data).data, null, 2));
-            }catch(error) {
-                //console.error("Error : " + error);
-            }
 
-            try{
-                console.log(JSON.stringify(d2gs.parsePacketBuffer("packet", data).data, null, 2));
             }catch(error) {
-                //console.error("Error : " + error);
+                console.error("Error : " + error);
             }
         }
     });
