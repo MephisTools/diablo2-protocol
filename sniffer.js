@@ -26,18 +26,46 @@ const mcpProto = require('./data/mcp');
 const mcp = new ProtoDef();
 mcp.addProtocol(mcpProto,["toServer"]);
 
+const sidProto = require('./data/mcp');
+
+const sid = new ProtoDef();
+sid.addProtocol(sidProto,["toServer"]);
+
 
 // tracker emits sessions, and sessions emit data
 tcp_tracker.on("session", function (session) {
-    if(session.src_name.split(':')[1] == '4000' || session.dst_name.split(':')[1] == '4000')
+    if((session.src_name.split(':')[1] == '4000' || session.dst_name.split(':')[1] == '4000') ||
+        (session.src_name.split(':')[1] == '6112' || session.dst_name.split(':')[1] == '6112'))
         console.log("Start of TCP session between " + session.src_name + " and " + session.dst_name);
     session.on("data send", function (session, data) {
-        if(session.src_name.split(':')[1] == '4000' || session.dst_name.split(':')[1] == '4000')
+        if((session.src_name.split(':')[1] == '4000' || session.dst_name.split(':')[1] == '4000') ||
+            (session.src_name.split(':')[1] == '6112' || session.dst_name.split(':')[1] == '6112'))
         {
-            console.log("data send " + session.send_bytes_payload + " + " + data.length + " bytes");
+            //console.log("data send " + session.send_bytes_payload + " + " + data.length + " bytes");
 
+            try{
+                console.log(JSON.stringify(sid.parsePacketBuffer("packet", data).data, null, 2));
+            }catch(error) {
+                //console.error("Error : " + error);
+            }
 
-            console.log(JSON.stringify(d2gs.parsePacketBuffer("packet", data).data, null, 2));
+            try{
+                console.log(JSON.stringify(bnftp.parsePacketBuffer("packet", data).data, null, 2));
+            }catch(error) {
+                //console.error("Error : " + error);
+            }
+
+            try{
+                console.log(JSON.stringify(mcp.parsePacketBuffer("packet", data).data, null, 2));
+            }catch(error) {
+                //console.error("Error : " + error);
+            }
+
+            try{
+                console.log(JSON.stringify(d2gs.parsePacketBuffer("packet", data).data, null, 2));
+            }catch(error) {
+                //console.error("Error : " + error);
+            }
         }
     });
     session.on("data recv", function (session, data) {
@@ -45,7 +73,8 @@ tcp_tracker.on("session", function (session) {
         //    console.log("data received " + session.recv_bytes_payload + " + " + data.length + " bytes");
         });
     session.on("end", function (session) {
-        if(session.src_name.split(':')[1] == '4000' || session.dst_name.split(':')[1] == '4000')
+        if((session.src_name.split(':')[1] == '4000' || session.dst_name.split(':')[1] == '4000') ||
+            (session.src_name.split(':')[1] == '6112' || session.dst_name.split(':')[1] == '6112'))
         {
             console.log("End of TCP session between " + session.src_name + " and " + session.dst_name);
             console.log("Set stats for session: ", session.session_stats());
