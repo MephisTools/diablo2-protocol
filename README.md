@@ -31,6 +31,13 @@ Sniffer diablo 2 (launch diablo 2 and go online and start sniffing packets ;))
 sudo node sniffer.js
 ```
 
+## Roadmap
+- [ ] Test all packets
+- [x] Sniffer
+-[ ] more documentation
+- [ ] Proxy
+- [ ] New repo with this repo as submodule and start making some script (kill andariel idk ...)
+
 ## File organization
 
 * bot.js : the bot
