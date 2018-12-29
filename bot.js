@@ -20,7 +20,7 @@ if(process.argv[5] === 'rand')
 
 const client = createClient({
     port: 6112,
-    host:'176.31.38.228',
+    host:'198.98.54.85',
     username: process.argv[2],
     password: process.argv[3],
     character: process.argv[4],
