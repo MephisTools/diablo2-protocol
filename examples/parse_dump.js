@@ -14,7 +14,7 @@ FF FF 0C 04 00 00 09 04 00 00 46 52 41 00 46 72
 
 */
 
-const bnftpProto = require('./data/bnftp')
+const bnftpProto = require('../data/bnftp')
 
 const bnftp = new ProtoDef()
 bnftp.addProtocol(bnftpProto, ['toServer'])
@@ -44,7 +44,7 @@ console.log(JSON.stringify(protoToServer.parsePacketBuffer("packet",Buffer.from(
    74 00 00`.replace(/[ \n\r\t]/g,""),"hex")).data,null,2));
 */
 
-const d2gsProto = require('./data/d2gs')
+const d2gsProto = require('../data/d2gs')
 
 const d2gs = new ProtoDef()
 d2gs.addProtocol(d2gsProto, ['toServer'])
@@ -58,7 +58,7 @@ console.log(JSON.stringify(d2gs.parsePacketBuffer('packet', Buffer.from(`   68 a
    b6 19 a5 91 00 55 72 75 6b 75 62 61 6c 00 af 6f
    4b 00 00 00 00`.replace(/[ \n\r\t]/g, ''), 'hex')).data, null, 2))
 
-const mcpProto = require('./data/mcp')
+const mcpProto = require('../data/mcp')
 
 const mcp = new ProtoDef()
 mcp.addProtocol(mcpProto, ['toServer'])

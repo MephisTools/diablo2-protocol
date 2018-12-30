@@ -1,4 +1,4 @@
-const { compress, decompress, getPacketSize } = require('./compression')
+const { compress, decompress, getPacketSize } = require('../lib/compression')
 
 let output = compress(Buffer.from([0, 0xa0]))
 console.log('compressed : ' + output.toString('hex'))

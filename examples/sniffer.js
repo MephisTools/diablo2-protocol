@@ -32,7 +32,7 @@ setInterval(function () {
 const Parser = require('protodef').Parser
 const ProtoDef = require('protodef').ProtoDef
 
-const mcp = require('./data/mcp')
+const mcp = require('../data/mcp')
 
 const mcpToServer = new ProtoDef()
 mcpToServer.addProtocol(mcp, ['toServer'])
@@ -40,7 +40,7 @@ mcpToServer.addProtocol(mcp, ['toServer'])
 const mcpToClient = new ProtoDef()
 mcpToClient.addProtocol(mcp, ['toClient'])
 
-const sid = require('./data/sid')
+const sid = require('../data/sid')
 
 const sidToServer = new ProtoDef()
 sidToServer.addProtocol(sid, ['toServer'])
@@ -48,7 +48,7 @@ sidToServer.addProtocol(sid, ['toServer'])
 const sidToClient = new ProtoDef()
 sidToClient.addProtocol(sid, ['toClient'])
 
-const bnftp = require('./data/bnftp')
+const bnftp = require('../data/bnftp')
 
 const bnftpToServer = new ProtoDef()
 bnftpToServer.addProtocol(bnftp, ['toServer'])
@@ -56,13 +56,13 @@ bnftpToServer.addProtocol(bnftp, ['toServer'])
 const bnftpToClient = new ProtoDef()
 bnftpToClient.addProtocol(bnftp, ['toClient'])
 
-const { createSplitter } = require('./splitter')
+const { createSplitter } = require('../lib/splitter')
 
-const { decompress } = require('./compression')
+const { decompress } = require('../lib/compression')
 
-const d2gsProto = require('./data/d2gs')
+const d2gsProto = require('../data/d2gs')
 
-const d2gsReader = require('./d2gsSpecialReader')
+const d2gsReader = require('../lib/d2gsSpecialReader')
 
 const d2gsToClient = new ProtoDef()
 d2gsToClient.addTypes(d2gsReader)

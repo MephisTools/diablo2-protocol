@@ -1,12 +1,12 @@
-const createSplitter = require('./splitter').createSplitter
+const createSplitter = require('../lib/splitter').createSplitter
 
-const { decompress } = require('./compression')
+const { decompress } = require('../lib/compression')
 
 const ProtoDef = require('protodef').ProtoDef
 const Parser = require('protodef').Parser
-const d2gsReader = require('./d2gsSpecialReader')
+const d2gsReader = require('../lib/d2gsSpecialReader')
 
-const protocol = require('./data/d2gs')
+const protocol = require('../data/d2gs')
 const protoToClient = new ProtoDef()
 protoToClient.addTypes(d2gsReader)
 protoToClient.addProtocol(protocol, ['toClient'])
