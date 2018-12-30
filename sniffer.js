@@ -8,14 +8,20 @@ pcap_session.on('packet', function (raw_packet) {
 });
 
 
+tcp_tracker.on('start', function (session) {
+    console.log("Start of TCP session between " + session.src + " and " + session.dst);
+});
+
+setInterval(function () {
+    var stats = pcap_session.stats();
+    if (stats.ps_drop > 0) {
+        console.log("pcap dropped packets: " + util.inspect(stats));
+    }
+}, 5000);
+
 const Parser = require('protodef').Parser
 const ProtoDef = require("protodef").ProtoDef;
 
-
-const d2gsProto = require('./data/d2gs');
-const d2gs = new ProtoDef();
-//d2gs.addProtocol(d2gsProto,["toServer"]);
-d2gs.addProtocol(d2gsProto,["toClient"]);
 
 const mcp = require('./data/mcp');
 
@@ -47,13 +53,19 @@ bnftpToClient.addProtocol(bnftp,["toClient"]);
 const {createSplitter, createFramer} = require('./splitter');
 
 const {compress,decompress} = require('./compression');
+
+const d2gsProto = require('./data/d2gs');
+
 const d2gsReader = require('./d2gsSpecialReader');
 
-const protoToClient = new ProtoDef();
-protoToClient.addTypes(d2gsReader);
-protoToClient.addProtocol(d2gsProto,["toClient"]);
+const d2gsToClient = new ProtoDef();
+d2gsToClient.addTypes(d2gsReader);
+d2gsToClient.addProtocol(d2gsProto,["toClient"]);
 
-const toClientParser = new Parser(protoToClient, 'packet')
+const d2gsToServer = new ProtoDef();
+d2gsToServer.addProtocol(d2gsProto,["toServer"]);
+
+const toClientParser = new Parser(d2gsToClient, 'packet')
 splitter = createSplitter();
 
 splitter.on('data', data => {
@@ -80,7 +92,7 @@ const trackedPorts = new Set(['6112', '4000', '6113'])
 tcp_tracker.on("session", function (session) {
     const srcPort = session.src_name.split(':')[1]
     const dstPort = session.dst_name.split(':')[1]
-    console.log({srcPort, dstPort})
+    console.log("bonjour", {srcPort, dstPort})
     if(!trackedPorts.has(srcPort) && !trackedPorts.has(dstPort)) {
         return
     }
@@ -103,6 +115,7 @@ tcp_tracker.on("session", function (session) {
     session.on("data send", function (session, data) {
         const srcPort = session.src_name.split(':')[1]
         const dstPort = session.dst_name.split(':')[1]
+        console.log("machin", {srcPort, dstPort})
         if(srcPort == '4000')
         {
             console.log('allo')
@@ -112,7 +125,7 @@ tcp_tracker.on("session", function (session) {
                     if(data[0] !== 0xaf)
                         data = data.slice(1);
             
-                    const parsed = protoToClient.parsePacketBuffer("packet",data).data;
+                    const parsed = d2gsToClient.parsePacketBuffer("packet",data).data;
             
                     const {name,params} = parsed;
                     console.info("received uncompressed packet", name, params);
@@ -126,6 +139,16 @@ tcp_tracker.on("session", function (session) {
             } catch (error) {
                 console.log(error)
             }
+        }
+
+        if(dstPort === '4000')
+        {
+            try {
+                console.log("d2gsToServer : ", d2gsToServer.parsePacketBuffer('packet', data))
+            } catch (error) {
+                console.log(error)
+            }
+            
         }
         
         if(dstPort == '6113')

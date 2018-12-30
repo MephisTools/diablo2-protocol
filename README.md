@@ -9,6 +9,7 @@ Currently in development, almost all packets are implemented but not all packets
 ```
 git clone https://github.com/louis030195/PathOfBot.git
 cd PathOfBot
+sudo apt-get install libpcap-dev
 npm install
 ```
 
