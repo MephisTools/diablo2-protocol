@@ -4,7 +4,9 @@
   "description": "Bot for diablo2 implementing the packets in node.js",
   "main": "PathOfBot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard .",
+    "fix": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,8 @@
     "bridge.net": "^1.0.0",
     "pcap": "^2.1.0",
     "protodef": "^1.6.0"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
   }
 }

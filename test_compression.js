@@ -1,23 +1,20 @@
-const {compress,decompress, getPacketSize} = require('./compression');
+const { compress, decompress, getPacketSize } = require('./compression')
 
-let output = compress(Buffer.from([0,0xa0]));
-console.log('compressed : ' + output.toString("hex"));
+let output = compress(Buffer.from([0, 0xa0]))
+console.log('compressed : ' + output.toString('hex'))
 
-let w = decompress(output);
-console.log('decompressed : ' + w.toString("hex"));
+let w = decompress(output)
+console.log('decompressed : ' + w.toString('hex'))
 
-console.log("size of packet :",getPacketSize(Buffer.from("067a092eef5c","hex")));
+console.log('size of packet :', getPacketSize(Buffer.from('067a092eef5c', 'hex')))
 
-console.log("decompressed payload :",decompress(Buffer.from("7a092eef5c","hex")));
+console.log('decompressed payload :', decompress(Buffer.from('7a092eef5c', 'hex')))
 
+console.log('decompressed payload :', decompress(Buffer.from('2080', 'hex')))
 
-console.log("decompressed payload :",decompress(Buffer.from("2080","hex")));
+console.log('decompressed payload :', decompress(Buffer.from('071f7fffffffc0', 'hex'))) // D2GS_COMPSTARTGAME
 
-
-console.log("decompressed payload :",decompress(Buffer.from("071f7fffffffc0","hex"))); // D2GS_COMPSTARTGAME
-
-
-console.log("decompressed payload :",decompress(Buffer.from(`   f1 14 17 5f b9 54 6b 1b 8b 63 71 60 64 3d ff f0
+console.log('decompressed payload :', decompress(Buffer.from(`   f1 14 17 5f b9 54 6b 1b 8b 63 71 60 64 3d ff f0
    43 7e 64 ac 5d 0c cd 9d 0d f7 e0 45 a7 fb af 77
    b8 4b b8 4c b8 4d b8 4e b9 fb 84 27 70 ee e4 9b
    87 96 84 0b 80 0b 93 2d 08 d4 62 3d c4 8b 42 75
@@ -34,15 +31,12 @@ console.log("decompressed payload :",decompress(Buffer.from(`   f1 14 17 5f b9 5
    00 dc d1 7e 69 5b 19 64 30 88 12 0d 8f ae 62 c0
    3e 90 0c 10 c3 b8 15 40 74 68 7f 9a 56 c6 58 42
    11 02 40 90 7c 79 0b 40 34 14 8e 21 80 8c 90 29
-   97 41 d0 ee`.split(' ').join(''),"hex")));
+   97 41 d0 ee`.split(' ').join(''), 'hex')))
 
-console.log("decompressed payload :",decompress(Buffer.from("0c 52 83 b8 50 4c 29 9b 3d 10 b3 60".split(' ').join(''),"hex")));
+console.log('decompressed payload :', decompress(Buffer.from('0c 52 83 b8 50 4c 29 9b 3d 10 b3 60'.split(' ').join(''), 'hex')))
 
+console.log('decompressed payload :', decompress(Buffer.from('09 58 87 80 23 51 51 32 d0'.split(' ').join(''), 'hex'))) // ping ?
 
-console.log("decompressed payload :",decompress(Buffer.from("09 58 87 80 23 51 51 32 d0".split(' ').join(''),"hex"))); // ping ?
+console.log('decompressed payload :', decompress(Buffer.from('06 1d e5 ab f7 80'.split(' ').join(''), 'hex'))) // ping ?
 
-console.log("decompressed payload :",decompress(Buffer.from("06 1d e5 ab f7 80".split(' ').join(''),"hex"))); // ping ?
-
-console.log("decompressed payload :",decompress(Buffer.from("05 04 0e fd 70".split(' ').join(''),"hex"))); // ping ?
-
-
+console.log('decompressed payload :', decompress(Buffer.from('05 04 0e fd 70'.split(' ').join(''), 'hex'))) // ping ?

@@ -1,9 +1,11 @@
-const Bridge = require('bridge.net');
+/* globals System, BattleNet */
 
-Bridge.assembly("Demo", function ($asm, globals) {
-  "use strict";
+const Bridge = require('bridge.net')
 
-  Bridge.define("BattleNet.Huffman", {
+Bridge.assembly('Demo', function ($asm, globals) {
+  'use strict'
+
+  Bridge.define('BattleNet.Huffman', {
     statics: {
       fields: {
         IndexTable: null,
@@ -270,7 +272,7 @@ Bridge.assembly("Demo", function ($asm, globals) {
             0,
             0,
             0
-          ], System.UInt32);
+          ], System.UInt32)
           this.CharacterTable = System.Array.init([
             0,
             0,
@@ -872,7 +874,7 @@ Bridge.assembly("Demo", function ($asm, globals) {
             11,
             133,
             11
-          ], System.Byte);
+          ], System.Byte)
           this.BitMasks = System.Array.init([
             0,
             1,
@@ -890,7 +892,7 @@ Bridge.assembly("Demo", function ($asm, globals) {
             8191,
             16383,
             32767
-          ], System.UInt32);
+          ], System.UInt32)
           this.CompressionTable = System.Array.init([
             2147549184,
             1879310336,
@@ -1148,160 +1150,157 @@ Bridge.assembly("Demo", function ($asm, globals) {
             218628866,
             218628867,
             1812332544
-          ], System.UInt32);
+          ], System.UInt32)
         }
       },
       methods: {
         Decompress: function (input, output) {
           if (input == null) {
-            throw new System.ArgumentNullException("input");
+            throw new System.ArgumentNullException('input')
           }
 
-          var size = input.length;
+          var size = input.length
 
-          var result = { v : System.Array.init(1024, 0, System.Byte) };
+          var result = { v: System.Array.init(1024, 0, System.Byte) }
 
-          var b = 0;
+          var b = 0
 
-          var i = 0;
-          var max = (result.v.length) >>> 0;
-          var j = 0;
-          var count = 32;
+          var i = 0
+          var max = (result.v.length) >>> 0
+          var j = 0
+          var count = 32
 
           while (true) {
-            var a;
+            var a
             if (count >= 8) {
               while (size > 0 && count >= 8) {
-                count = (count - 8) >>> 0;
-                size = (size - 1) | 0;
-                a = (input[System.Array.index(Bridge.identity(i, (i = (i + 1) >>> 0)), input)] << (count | 0)) >>> 0;
-                b = (b | a) >>> 0;
+                count = (count - 8) >>> 0
+                size = (size - 1) | 0
+                a = (input[System.Array.index(Bridge.identity(i, (i = (i + 1) >>> 0)), input)] << (count | 0)) >>> 0
+                b = (b | a) >>> 0
               }
             }
 
-            var index = BattleNet.Huffman.IndexTable[System.Array.index(b >>> 24, BattleNet.Huffman.IndexTable)];
-            a = BattleNet.Huffman.CharacterTable[System.Array.index(index, BattleNet.Huffman.CharacterTable)];
-            var d = ((b >>> (((((24 - a) >>> 0))) | 0)) & BattleNet.Huffman.BitMasks[System.Array.index(a, BattleNet.Huffman.BitMasks)]) >>> 0;
-            var c = BattleNet.Huffman.CharacterTable[System.Array.index(((((index + Bridge.Int.umul(2, d)) >>> 0) + 2) >>> 0), BattleNet.Huffman.CharacterTable)];
+            var index = BattleNet.Huffman.IndexTable[System.Array.index(b >>> 24, BattleNet.Huffman.IndexTable)]
+            a = BattleNet.Huffman.CharacterTable[System.Array.index(index, BattleNet.Huffman.CharacterTable)]
+            var d = ((b >>> (((((24 - a) >>> 0))) | 0)) & BattleNet.Huffman.BitMasks[System.Array.index(a, BattleNet.Huffman.BitMasks)]) >>> 0
+            var c = BattleNet.Huffman.CharacterTable[System.Array.index(((((index + Bridge.Int.umul(2, d)) >>> 0) + 2) >>> 0), BattleNet.Huffman.CharacterTable)]
 
-            count = (count + c) >>> 0;
+            count = (count + c) >>> 0
             if (count > 32) {
-              var actual = (((result.v.length) >>> 0) - max) >>> 0;
-              output.v = System.Array.init(actual, 0, System.Byte);
-              System.Array.copy(result.v, 0, output.v, 0, (actual | 0));
-              return;
+              var actual = (((result.v.length) >>> 0) - max) >>> 0
+              output.v = System.Array.init(actual, 0, System.Byte)
+              System.Array.copy(result.v, 0, output.v, 0, (actual | 0))
+              return
             }
 
-            max = (max - 1) >>> 0;
+            max = (max - 1) >>> 0
             if (max === 0) {
-              System.Array.resize(result, Bridge.Int.mul(result.v.length, 2), 0);
+              System.Array.resize(result, Bridge.Int.mul(result.v.length, 2), 0)
             }
 
-            a = BattleNet.Huffman.CharacterTable[System.Array.index(((((index + Bridge.Int.umul(2, d)) >>> 0) + 1) >>> 0), BattleNet.Huffman.CharacterTable)];
-            result.v[System.Array.index(Bridge.identity(j, (j = (j + 1) | 0)), result.v)] = a & 255;
+            a = BattleNet.Huffman.CharacterTable[System.Array.index(((((index + Bridge.Int.umul(2, d)) >>> 0) + 1) >>> 0), BattleNet.Huffman.CharacterTable)]
+            result.v[System.Array.index(Bridge.identity(j, (j = (j + 1) | 0)), result.v)] = a & 255
 
-            b = (b << (c & 255)) >>> 0;
+            b = (b << (c & 255)) >>> 0
           }
         },
         Compress: function (input, output) {
           if (input == null) {
-            throw new System.ArgumentNullException("input");
+            throw new System.ArgumentNullException('input')
           }
 
-          var bufferValue = 0;
-          var count = 0;
-          var i = input.length, x = 0;
-          var j = 0;
-          output.v = System.Array.init(input.length, 0, System.Byte);
+          var bufferValue = 0
+          var count = 0
+          var i = input.length; var x = 0
+          var j = 0
+          output.v = System.Array.init(input.length, 0, System.Byte)
 
           while (i !== 0) {
-            var a = BattleNet.Huffman.CompressionTable[System.Array.index(input[System.Array.index(Bridge.identity(x, (x = (x + 1) | 0)), input)], BattleNet.Huffman.CompressionTable)];
-            i = (i - 1) | 0;
-            var e = (((a & 65280) >>> 0)) >>> 8;
+            var a = BattleNet.Huffman.CompressionTable[System.Array.index(input[System.Array.index(Bridge.identity(x, (x = (x + 1) | 0)), input)], BattleNet.Huffman.CompressionTable)]
+            i = (i - 1) | 0
+            var e = (((a & 65280) >>> 0)) >>> 8
 
-            bufferValue = (bufferValue | ((((a >>> 24) << (((24 - count) | 0))) >>> 0))) >>> 0;
-            count = (count + ((((((a & 16711680) >>> 0)) >>> 16) | 0))) | 0;
+            bufferValue = (bufferValue | ((((a >>> 24) << (((24 - count) | 0))) >>> 0))) >>> 0
+            count = (count + ((((((a & 16711680) >>> 0)) >>> 16) | 0))) | 0
 
             if (e !== 0) {
-              bufferValue = (bufferValue | (((((((((a & 255) >>> 0)) << (((((8 - e) >>> 0))) | 0)) >>> 0)) << (((24 - count) | 0))) >>> 0))) >>> 0;
-              count = (count + (e | 0)) | 0;
+              bufferValue = (bufferValue | (((((((((a & 255) >>> 0)) << (((((8 - e) >>> 0))) | 0)) >>> 0)) << (((24 - count) | 0))) >>> 0))) >>> 0
+              count = (count + (e | 0)) | 0
             }
 
             while (count > 8) {
-              output.v[System.Array.index(Bridge.identity(j, (j = (j + 1) | 0)), output.v)] = (bufferValue >>> 24) & 255;
-              count = (count - 8) | 0;
-              bufferValue = (bufferValue << 8) >>> 0;
+              output.v[System.Array.index(Bridge.identity(j, (j = (j + 1) | 0)), output.v)] = (bufferValue >>> 24) & 255
+              count = (count - 8) | 0
+              bufferValue = (bufferValue << 8) >>> 0
             }
           }
 
           while (count > 0) {
-            output.v[System.Array.index(Bridge.identity(j, (j = (j + 1) | 0)), output.v)] = (bufferValue >>> 24) & 255;
-            bufferValue = (bufferValue << 8) >>> 0;
-            count = (count - 8) | 0;
+            output.v[System.Array.index(Bridge.identity(j, (j = (j + 1) | 0)), output.v)] = (bufferValue >>> 24) & 255
+            bufferValue = (bufferValue << 8) >>> 0
+            count = (count - 8) | 0
           }
 
-          return (j >>> 0);
+          return (j >>> 0)
         },
         GetPacketSize: function (buffer, headerSize) {
           if (buffer[0] < 240) {
-            headerSize.v = 1;
-            return ((buffer[0] - 1) | 0);
+            headerSize.v = 1
+            return ((buffer[0] - 1) | 0)
           }
 
-          headerSize.v = 2;
-          return ((((((buffer[0] & 15) << 8) + buffer[1]) | 0) - 2) | 0);
+          headerSize.v = 2
+          return ((((((buffer[0] & 15) << 8) + buffer[1]) | 0) - 2) | 0)
         }
       }
     }
-  });
-});
+  })
+})
 
-
-
-function compress(input) {
-  let result;
-  Bridge.assembly("Demo", function ($asm, globals) {
-    "use strict";
+function compress (input) {
+  let result
+  Bridge.assembly('Demo', function ($asm, globals) {
+    'use strict'
 
     Bridge.init(function () {
-      let output = {};
+      let output = {}
 
-      BattleNet.Huffman.Compress(input,output);
-      result = new Buffer(output.v);
-    });
-  });
-  return result;
+      BattleNet.Huffman.Compress(input, output)
+      result = Buffer.from(output.v)
+    })
+  })
+  return result
 }
 
-
-function decompress(input) {
-  let result;
-  Bridge.assembly("Demo", function ($asm, globals) {
-    "use strict";
+function decompress (input) {
+  let result
+  Bridge.assembly('Demo', function ($asm, globals) {
+    'use strict'
 
     Bridge.init(function () {
-      let output = {};
+      let output = {}
 
-      BattleNet.Huffman.Decompress(input,output);
-      result = new Buffer(output.v);
-    });
-  });
-  return result;
+      BattleNet.Huffman.Decompress(input, output)
+      result = Buffer.from(output.v)
+    })
+  })
+  return result
 }
 
-function getPacketSize(input) {
-  let result;
-  Bridge.assembly("Demo", function ($asm, globals) {
-    "use strict";
+function getPacketSize (input) {
+  let result
+  Bridge.assembly('Demo', function ($asm, globals) {
+    'use strict'
 
     Bridge.init(function () {
-      let output = {};
+      let output = {}
 
-      let payloadSize = BattleNet.Huffman.GetPacketSize(input,output);
-      result = {payloadSize, headerSize: output.v};
-    });
-  });
-  return result;
+      let payloadSize = BattleNet.Huffman.GetPacketSize(input, output)
+      result = { payloadSize, headerSize: output.v }
+    })
+  })
+  return result
 }
 
-module.exports = {compress, decompress, getPacketSize};
+module.exports = { compress, decompress, getPacketSize }

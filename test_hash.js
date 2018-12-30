@@ -1,10 +1,10 @@
-const getHash = require('./getHash');
+const getHash = require('./getHash')
 
-const clientToken=18226750;
-const serverToken=1515471831;
-const passwd="bzkl12";
+const clientToken = 18226750
+const serverToken = 1515471831
+const passwd = 'bzkl12'
 
-const expectedPasswordHash = new Buffer([
+const expectedPasswordHash = Buffer.from([
   209,
   191,
   200,
@@ -25,8 +25,7 @@ const expectedPasswordHash = new Buffer([
   95,
   94,
   84
-]);
+])
 
-
-console.log(getHash(clientToken,serverToken,passwd).toString("hex"));
-console.log(expectedPasswordHash.toString("hex"));
+console.log(getHash(clientToken, serverToken, passwd).toString('hex'))
+console.log(expectedPasswordHash.toString('hex'))
