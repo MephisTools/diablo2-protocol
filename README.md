@@ -1,5 +1,5 @@
 # Path of bot
-[![NPM version](https://img.shields.io/npm/v/pathofbot.svg)](http://npmjs.com/package/prismarine-nbt)
+[![NPM version](https://img.shields.io/npm/v/pathofbot.svg)](http://npmjs.com/package/pathofbot)
 [![Build Status](https://img.shields.io/circleci/project/louis030195/PathOfBot/master.svg)](https://circleci.com/gh/louis030195/PathOfBot)
 
 
