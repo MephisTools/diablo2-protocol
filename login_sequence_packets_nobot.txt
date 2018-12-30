@@ -1,0 +1,298 @@
+bonjour { srcPort: '49838', dstPort: '443' }
+bonjour { srcPort: '36710', dstPort: '443' }
+bonjour { srcPort: '43586', dstPort: '6112' }
+truc { srcPort: '43586', dstPort: '6112' }
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+{ PartialReadError: Read error for name : undefined
+    at new ExtendableError (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/utils.js:62:11)
+    at new PartialReadError (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/utils.js:68:5)
+    at ProtoDef.reader (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/numeric.js:61:48)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:110:29)
+    at ProtoDef.readMapper (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/utils.js:21:32)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:110:29)
+    at tryDoc (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:45:32)
+    at tryCatch (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/utils.js:50:16)
+    at tryDoc (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/utils.js:54:10)
+    at typeArgs.forEach (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:44:5)
+  name: 'PartialReadError',
+  message: 'Read error for name : undefined',
+  partialReadError: true,
+  field: 'name' }
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data:
+   { ff: 255,
+     name: 'SID_AUTH_INFO',
+     size: 58,
+     params:
+      { protocolId: 0,
+        platformCode: 1230518326,
+        productCode: 1144150096,
+        versionByte: 13,
+        languageCode: 1701729619,
+        localIp: 251789322,
+        timeZoneBias: 4294967236,
+        mpqLocaleId: 1033,
+        userLanguageId: 1033,
+        countryAbreviation: 'USA',
+        country: 'United States' } },
+  metadata: { size: 58 },
+  buffer:
+   <Buffer ff 50 3a 00 00 00 00 00 36 38 58 49 50 58 32 44 0d 00 00 00 53 55 6e 65 0a 00 02 0f c4 ff ff ff 09 04 00 00 09 04 00 00 55 53 41 00 55 6e 69 74 65 64 ... > } null 2
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data:
+   { ff: 255,
+     name: 'SID_PING',
+     size: 8,
+     params: { pingValue: 7730353 } },
+  metadata: { size: 8 },
+  buffer: <Buffer ff 25 08 00 b1 f4 75 00> } null 2
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data:
+   { ff: 255,
+     name: 'SID_AUTH_CHECK',
+     size: 138,
+     params:
+      { clientToken: 3098072066,
+        exeVersion: 16780544,
+        exeHash: 1666909528,
+        numberOfCDKeys: 2,
+        spawnKey: 0,
+        cdKeys: [Array],
+        exeInformation: 'Game.exe 10/18/11 21:48:14 65536',
+        keyOwnerName: 'sonlight' } },
+  metadata: { size: 138 },
+  buffer:
+   <Buffer ff 51 8a 00 02 d4 a8 b8 00 0d 00 01 58 05 5b 63 02 00 00 00 00 00 00 00 1a 00 00 00 18 00 00 00 76 92 a6 00 00 00 00 00 b4 31 a6 64 8c dd 46 f8 5f 5b ... > } null 2
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data:
+   { ff: 255,
+     name: 'SID_GETFILETIME',
+     size: 30,
+     params:
+      { requestId: 2147483652,
+        unknown: 0,
+        filename: 'bnserver-D2DV.ini' } },
+  metadata: { size: 30 },
+  buffer:
+   <Buffer ff 33 1e 00 04 00 00 80 00 00 00 00 62 6e 73 65 72 76 65 72 2d 44 32 44 56 2e 69 6e 69 00> } null 2
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data:
+   { ff: 255,
+     name: 'SID_LOGONRESPONSE2',
+     size: 39,
+     params:
+      { clientToken: 2996921,
+        serverToken: 1508236633,
+        passwordHash:
+         <Buffer 09 90 fa 46 35 fd 6e 8c 7f cb 51 28 33 3d 44 09 c3 d3 dd 70>,
+        username: 'ogagal' } },
+  metadata: { size: 39 },
+  buffer:
+   <Buffer ff 3a 27 00 b9 ba 2d 00 59 dd e5 59 09 90 fa 46 35 fd 6e 8c 7f cb 51 28 33 3d 44 09 c3 d3 dd 70 6f 67 61 67 61 6c 00> } null 2
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data: { ff: 255, name: 'SID_QUERYREALMS2', size: 4, params: {} },
+  metadata: { size: 4 },
+  buffer: <Buffer ff 40 04 00> } null 2
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data:
+   { ff: 255,
+     name: 'SID_LOGONREALMEX',
+     size: 43,
+     params:
+      { clientToken: 3,
+        hashedRealmPassword:
+         <Buffer c5 79 b7 61 da a1 71 4b 9d 27 b7 6e 28 2d 53 a9 c1 d7 37 ca>,
+        realmTitle: 'Path of Diablo' } },
+  metadata: { size: 43 },
+  buffer:
+   <Buffer ff 3e 2b 00 03 00 00 00 c5 79 b7 61 da a1 71 4b 9d 27 b7 6e 28 2d 53 a9 c1 d7 37 ca 50 61 74 68 20 6f 66 20 44 69 61 62 6c 6f 00> } null 2
+bonjour { srcPort: '57810', dstPort: '6113' }
+truc { srcPort: '57810', dstPort: '6113' }
+machin { srcPort: '57810', dstPort: '6113' }
+machin { srcPort: '57810', dstPort: '6113' }
+mcpToServer :  { data:
+   { size: 74,
+     name: 'MCP_STARTUP',
+     params:
+      { MCPCookie: 3,
+        MCPStatus: 0,
+        MCPChunk1: [Array],
+        MCPChunk2: [Array],
+        battleNetUniqueName: 'Ogagal' } },
+  metadata: { size: 74 },
+  buffer:
+   <Buffer 4a 00 01 03 00 00 00 00 00 00 00 00 00 00 00 35 02 00 00 59 dd e5 59 00 00 00 00 00 00 00 00 50 58 32 44 0d 00 00 00 00 00 00 00 00 00 00 00 ef cd a7 ... > }
+bonjour { srcPort: '56878', dstPort: '443' }
+machin { srcPort: '57810', dstPort: '6113' }
+mcpToServer :  { data:
+   { size: 7,
+     name: 'MCP_CHARLIST2',
+     params: { numberOfCharacterToList: 8 } },
+  metadata: { size: 7 },
+  buffer: <Buffer 07 00 19 08 00 00 00> }
+machin { srcPort: '57810', dstPort: '6113' }
+mcpToServer :  { data:
+   { size: 10,
+     name: 'MCP_CHARLOGON',
+     params: { characterName: 'Oculus' } },
+  metadata: { size: 10 },
+  buffer: <Buffer 0a 00 07 4f 63 75 6c 75 73 00> }
+bonjour { srcPort: '39886', dstPort: '443' }
+bonjour { srcPort: '35330', dstPort: '443' }
+machin { srcPort: '57810', dstPort: '6113' }
+mcpToServer :  { data: { size: 3, name: 'MCP_MOTD', params: {} },
+  metadata: { size: 3 },
+  buffer: <Buffer 03 00 12> }
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data:
+   { ff: 255,
+     name: 'SID_GETCHANNELLIST',
+     size: 8,
+     params: { productId: 1144150096 } },
+  metadata: { size: 8 },
+  buffer: <Buffer ff 0b 08 00 50 58 32 44> } null 2
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data:
+   { ff: 255,
+     name: 'SID_ENTERCHAT',
+     size: 33,
+     params: { characterName: 'Oculus', realm: 'Path of Diablo,Oculus' } },
+  metadata: { size: 33 },
+  buffer:
+   <Buffer ff 0a 21 00 4f 63 75 6c 75 73 00 50 61 74 68 20 6f 66 20 44 69 61 62 6c 6f 2c 4f 63 75 6c 75 73 00> } null 2
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+{ Error: Read error for name : 70 is not in the mappings value
+    at ProtoDef.readMapper (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/utils.js:30:34)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:110:29)
+    at tryDoc (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:45:32)
+    at tryCatch (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/utils.js:50:16)
+    at tryDoc (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/utils.js:54:10)
+    at typeArgs.forEach (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:44:5)
+    at Array.forEach (<anonymous>)
+    at ProtoDef.readContainer (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:43:12)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:36:25)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:110:29) field: 'name' }
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+{ Error: Read error for name : 21 is not in the mappings value
+    at ProtoDef.readMapper (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/utils.js:30:34)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:110:29)
+    at tryDoc (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:45:32)
+    at tryCatch (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/utils.js:50:16)
+    at tryDoc (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/utils.js:54:10)
+    at typeArgs.forEach (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:44:5)
+    at Array.forEach (<anonymous>)
+    at ProtoDef.readContainer (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:43:12)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:36:25)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:110:29) field: 'name' }
+machin { srcPort: '57810', dstPort: '6113' }
+mcpToServer :  { data:
+   { size: 28,
+     name: 'MCP_CREATEGAME',
+     params:
+      { requestId: 7,
+        difficulty: 0,
+        unknown: 1,
+        levelRestrictionDifference: 4,
+        maximumPlayers: 4,
+        gameName: 'Azaza',
+        gamePassword: 'Zzz',
+        gameDescription: 'gs 17' } },
+  metadata: { size: 28 },
+  buffer:
+   <Buffer 1c 00 03 07 00 00 00 00 00 01 04 04 41 7a 61 7a 61 00 5a 7a 7a 00 67 73 20 31 37 00> }
+machin { srcPort: '57810', dstPort: '6113' }
+mcpToServer :  { data:
+   { size: 15,
+     name: 'MCP_JOINGAME',
+     params: { requestId: 8, gameName: 'Azaza', gamePassword: 'Zzz' } },
+  metadata: { size: 15 },
+  buffer: <Buffer 0f 00 04 08 00 41 7a 61 7a 61 00 5a 7a 7a 00> }
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data:
+   { ff: 255,
+     name: 'SID_STARTADVEX3',
+     size: 35,
+     params:
+      { gameStats: 1,
+        gameUptimeInSeconds: 0,
+        gameType: 0,
+        subGameType: 0,
+        providerVersionConstant: 0,
+        ladderType: 0,
+        gameName: 'Azaza',
+        gamePassword: 'Zzz',
+        gameStatstring: '' } },
+  metadata: { size: 35 },
+  buffer:
+   <Buffer ff 1c 23 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 41 7a 61 7a 61 00 5a 7a 7a 00 00> } null 2
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data:
+   { ff: 255,
+     name: 'SID_NOTIFYJOIN',
+     size: 22,
+     params:
+      { productId: 1144150096,
+        productVersion: 13,
+        gameName: 'Azaza',
+        gamePassword: 'Zzz' } },
+  metadata: { size: 22 },
+  buffer:
+   <Buffer ff 22 16 00 50 58 32 44 0d 00 00 00 41 7a 61 7a 61 00 5a 7a 7a 00> } null 2
+machin { srcPort: '43586', dstPort: '6112' }
+{ src: '43586', dst: '6112' }
+sidToServer :  { data: { ff: 255, name: 'SID_LEAVECHAT', size: 4, params: {} },
+  metadata: { size: 4 },
+  buffer: <Buffer ff 10 04 00> } null 2
+bonjour { srcPort: '44590', dstPort: '4000' }
+truc { srcPort: '44590', dstPort: '4000' }
+machin { srcPort: '44590', dstPort: '4000' }
+d2gsToServer :  { data:
+   { name: 'D2GS_GAMELOGON',
+     params:
+      { MCPCookie: 1321586288,
+        gameId: 112,
+        characterClass: 1,
+        gameVersion: 13,
+        gameConstant: [Array],
+        locale: 0,
+        characterName: [Array] } },
+  metadata: { size: 37 },
+  buffer:
+   <Buffer 68 70 ce c5 4e 70 00 01 0d 00 00 00 50 cc 5d ed b6 19 a5 91 00 4f 63 75 6c 75 73 00 6a 39 af 6f 4b 00 00 00 00> }
+machin { srcPort: '44590', dstPort: '4000' }
+d2gsToServer :  { data:
+   { name: 'D2GS_PING',
+     params: { tickCount: 3005359, delay: 0, wardenResponse: 0 } },
+  metadata: { size: 13 },
+  buffer: <Buffer 6d af db 2d 00 00 00 00 00 00 00 00 00> }
+machin { srcPort: '44590', dstPort: '4000' }
+d2gsToServer :  { data: { name: 'D2GS_ENTERGAMEENVIRONMENT', params: {} },
+  metadata: { size: 1 },
+  buffer: <Buffer 6b> }
+machin { srcPort: '44590', dstPort: '4000' }
+{ Error: Read error for name : 43 is not in the mappings value
+    at ProtoDef.readMapper (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/utils.js:30:34)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:110:29)
+    at tryDoc (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:45:32)
+    at tryCatch (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/utils.js:50:16)
+    at tryDoc (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/utils.js:54:10)
+    at typeArgs.forEach (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:44:5)
+    at Array.forEach (<anonymous>)
+    at ProtoDef.readContainer (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/datatypes/structures.js:43:12)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:36:25)
+    at ProtoDef.read (/mnt/sdb/dev/PathOfBot/node_modules/protodef/src/protodef.js:110:29) field: 'name' }
+

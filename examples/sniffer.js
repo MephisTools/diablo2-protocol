@@ -143,14 +143,18 @@ tcpTracker.on('session', function (session) {
 
     if (dstPort === '4000') {
       try {
-        console.log('d2gsToServer : ', d2gsToServer.parsePacketBuffer('packet', data))
+        console.log('d2gsToServer : ', JSON.stringify(d2gsToServer.parsePacketBuffer('packet', data)))
       } catch (error) {
         console.log(error)
       }
     }
 
     if (dstPort === '6113') {
-      if (data.toString('hex') !== '01') { console.log('mcpToServer : ', mcpToServer.parsePacketBuffer('packet', data)) }
+      try {
+        if (data.toString('hex') !== '01') { console.log('mcpToServer : ', mcpToServer.parsePacketBuffer('packet', data)) }
+      } catch (error) {
+        console.log(error)
+      }
     }
 
     if (srcPort === '6113') {
