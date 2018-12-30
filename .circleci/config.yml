@@ -9,6 +9,7 @@ jobs:
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
+      - run: sudo apt-get install libpcap-dev
       - run: npm i
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
