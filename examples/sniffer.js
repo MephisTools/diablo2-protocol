@@ -69,7 +69,7 @@ splitter.on('data', data => {
 
 toClientParser.on('data', ({ data }) => {
   const { name, params } = data
-  console.info('d2gsToClient (compressed): ', name, JSON.stringify(params))
+  console.info('d2gsToClient : ', name, JSON.stringify(params))
 })
 
 let clientPortSid = null
@@ -105,7 +105,8 @@ function displayD2gsToClient (data) {
 
 function displayD2gsToServer (data) {
   try {
-    console.log('d2gsToServer : ', JSON.stringify(d2gsToServer.parsePacketBuffer('packet', data)))
+    const { name, params } = d2gsToServer.parsePacketBuffer('packet', data).data
+    console.log('d2gsToServer : ', name, JSON.stringify(params))
   } catch (error) {
     console.log('d2gsToServer : ', error)
   }
