@@ -69,7 +69,7 @@ splitter.on('data', data => {
 
 toClientParser.on('data', ({ data }) => {
   const { name, params } = data
-  console.info('d2gsToClient (compressed): ', name, params)
+  console.info('d2gsToClient (compressed): ', name, JSON.stringify(params))
 })
 
 let clientPortSid = null
@@ -91,7 +91,7 @@ function displayD2gsToClient (data) {
       const parsed = d2gsToClient.parsePacketBuffer('packet', data).data
 
       const { name, params } = parsed
-      console.info('d2gsToClient (uncompressed): ', name, params)
+      console.info('d2gsToClient (uncompressed): ', name, JSON.stringify(params))
       if (name === 'D2GS_NEGOTIATECOMPRESSION' && params.compressionMode !== 0) {
         compression = true
       }
