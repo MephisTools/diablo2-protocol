@@ -18,6 +18,8 @@ npm install
 
 ## Usage
 
+See docs/API.md
+
 Bot not 100% working atm, it will login and make a game then afk
 ```
 node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver>
