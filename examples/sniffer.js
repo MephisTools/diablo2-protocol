@@ -5,8 +5,6 @@ if (process.argv.length !== 3) {
 
 const networkInterface = process.argv[2]
 
-const util = require('util')
-
 const pcap = require('pcap')
 
 const tcpTracker = new pcap.TCPTracker()
@@ -17,17 +15,6 @@ pcapSession.on('packet', function (rawPacket) {
   const packet = pcap.decode.packet(rawPacket)
   tcpTracker.track_packet(packet)
 })
-
-tcpTracker.on('start', function (session) {
-  console.log('Start of TCP session between ' + session.src + ' and ' + session.dst)
-})
-
-setInterval(function () {
-  const stats = pcapSession.stats()
-  if (stats.ps_drop > 0) {
-    console.log('pcap dropped packets: ' + util.inspect(stats))
-  }
-}, 5000)
 
 const Parser = require('protodef').Parser
 const ProtoDef = require('protodef').ProtoDef
@@ -77,123 +64,211 @@ const splitter = createSplitter()
 splitter.on('data', data => {
   const uncompressedData = decompress(data)
 
-  console.log('uncompressed d2gs received hex : ' + uncompressedData.toString('hex'))
   toClientParser.write(uncompressedData)
 })
 
 toClientParser.on('data', ({ data }) => {
   const { name, params } = data
-  console.info('received compressed packet', name, params)
+  console.info('d2gsToClient (compressed): ', name, params)
 })
 
 let clientPortSid = null
 let clientPortBnFtp = null
 let compression = true
 
-const trackedPorts = new Set(['6112', '4000', '6113'])
+// server ports
+const sidPort = '6112'
+const d2gsPort = '4000'
+const mcpPort = '6113'
+
+const trackedPorts = new Set([sidPort, d2gsPort, mcpPort])
+
+function displayD2gsToClient (data) {
+  try {
+    if (!compression) {
+      if (data[0] !== 0xaf) { data = data.slice(1) }
+
+      const parsed = d2gsToClient.parsePacketBuffer('packet', data).data
+
+      const { name, params } = parsed
+      console.info('d2gsToClient (uncompressed): ', name, params)
+      if (name === 'D2GS_NEGOTIATECOMPRESSION' && params.compressionMode !== 0) {
+        compression = true
+      }
+    } else {
+      splitter.write(data)
+    }
+  } catch (error) {
+    console.log('d2gsToClient : ', error)
+  }
+}
+
+function displayD2gsToServer (data) {
+  try {
+    console.log('d2gsToServer : ', JSON.stringify(d2gsToServer.parsePacketBuffer('packet', data)))
+  } catch (error) {
+    console.log('d2gsToServer : ', error)
+  }
+}
+
+function displayMcpToServer (data) {
+  try {
+    if (data.toString('hex') !== '01') { console.log('mcpToServer : ', mcpToServer.parsePacketBuffer('packet', data)) }
+  } catch (error) {
+    console.log('mcpToServer : ', error)
+  }
+}
+
+function displayMcpToClient (data) {
+  try {
+    console.log('mcpToClient : ', mcpToClient.parsePacketBuffer('packet', data))
+  } catch (error) {
+    console.log('mcpToClient : ', error)
+  }
+}
+
+function displaySidToServer (data) {
+  try {
+    console.log('sidToServer : ', sidToServer.parsePacketBuffer('packet', data), null, 2)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+function displaySidToClient (data) {
+  try {
+    console.log('sidToClient : ', sidToClient.parsePacketBuffer('packet', data))
+  } catch (error) {
+    console.log('sidToClient : ', error)
+  }
+}
+
+function displayBnftpToClient (data) {
+  try {
+    console.log('bnftpToClient : ', bnftpToClient.parsePacketBuffer('packet', data))
+  } catch (error) {
+    console.log('bnftpToClient : ', error)
+  }
+}
+
+function displayBnftpToServer (data) {
+  try {
+    console.log('bnftpToServer : ', bnftpToServer.parsePacketBuffer('packet', data))
+  } catch (error) {
+    console.log('bnftpToServer : ', error)
+  }
+}
 
 // tracker emits sessions, and sessions emit data
 tcpTracker.on('session', function (session) {
   const srcPort = session.src_name.split(':')[1]
   const dstPort = session.dst_name.split(':')[1]
-  console.log('bonjour', { srcPort, dstPort })
   if (!trackedPorts.has(srcPort) && !trackedPorts.has(dstPort)) {
     return
   }
-  console.log('truc', { srcPort, dstPort })
 
-  if (dstPort === '6112') {
+  if (dstPort === sidPort) {
     if (clientPortSid === null) {
       clientPortSid = srcPort
     } else {
       clientPortBnFtp = srcPort
     }
   }
-  if (srcPort === '6112') {
+  if (srcPort === sidPort) {
     if (clientPortSid === null) {
       clientPortSid = dstPort
     } else {
       clientPortBnFtp = dstPort
     }
   }
+
+  session.on('start', function () {
+    if (srcPort === d2gsPort || dstPort === d2gsPort) {
+      console.log('Start of d2gs session')
+    }
+    if (srcPort === mcpPort || dstPort === mcpPort) {
+      console.log('Start of mcp session')
+    }
+    if (srcPort === sidPort || dstPort === sidPort) {
+      console.log('Start of sid session')
+    }
+  })
   session.on('data send', function (session, data) {
-    const srcPort = session.src_name.split(':')[1]
-    const dstPort = session.dst_name.split(':')[1]
-    console.log('machin', { srcPort, dstPort })
-    if (srcPort === '4000') {
-      console.log('allo')
-      try {
-        if (!compression) {
-          if (data[0] !== 0xaf) { data = data.slice(1) }
-
-          const parsed = d2gsToClient.parsePacketBuffer('packet', data).data
-
-          const { name, params } = parsed
-          console.info('received uncompressed packet', name, params)
-          if (name === 'D2GS_NEGOTIATECOMPRESSION' && params.compressionMode !== 0) {
-            compression = true
-          }
-        } else {
-          splitter.write(data)
-        }
-      } catch (error) {
-        console.log(error)
-      }
+    if (srcPort === d2gsPort) {
+      displayD2gsToClient(data)
     }
 
-    if (dstPort === '4000') {
-      try {
-        console.log('d2gsToServer : ', JSON.stringify(d2gsToServer.parsePacketBuffer('packet', data)))
-      } catch (error) {
-        console.log(error)
-      }
+    if (dstPort === d2gsPort) {
+      displayD2gsToServer(data)
     }
 
-    if (dstPort === '6113') {
-      try {
-        if (data.toString('hex') !== '01') { console.log('mcpToServer : ', mcpToServer.parsePacketBuffer('packet', data)) }
-      } catch (error) {
-        console.log(error)
-      }
+    if (srcPort === mcpPort) {
+      displayMcpToClient(data)
     }
 
-    if (srcPort === '6113') {
-      console.log('mcpToClient : ', mcpToClient.parsePacketBuffer('packet', data))
+    if (dstPort === mcpPort) {
+      displayMcpToServer(data)
     }
 
-    if (dstPort === '6112' || srcPort === '6112') {
-      console.log({ src: srcPort, dst: dstPort })
+    if (srcPort === sidPort && dstPort === clientPortSid) {
+      displaySidToClient(data)
     }
 
-    if (dstPort === '6112' && srcPort === clientPortSid) {
-      try {
-        console.log('sidToServer : ', sidToServer.parsePacketBuffer('packet', data), null, 2)
-      } catch (err) {
-        console.log(err)
-      }
+    if (dstPort === sidPort && srcPort === clientPortSid) {
+      displaySidToServer(data)
     }
 
-    if (srcPort === '6112' && dstPort === clientPortSid) {
-      console.log('sidToClient : ', sidToClient.parsePacketBuffer('packet', data))
+    if (srcPort === sidPort && dstPort === clientPortBnFtp) {
+      displayBnftpToClient(data)
     }
 
-    if (dstPort === '6113' && srcPort === clientPortBnFtp) {
-      console.log('bnftpToServer : ', bnftpToServer.parsePacketBuffer('packet', data))
-    }
-
-    if (srcPort === '6113' && dstPort === clientPortBnFtp) {
-      console.log('bnftpToClient : ', bnftpToClient.parsePacketBuffer('packet', data))
+    if (dstPort === sidPort && srcPort === clientPortBnFtp) {
+      displayBnftpToServer(data)
     }
   })
-  session.on('data recv', function (session, data) {
-    // if(srcPort === '4000' || dstPort === '4000')
-    //    console.log("data received " + session.recv_bytes_payload + " + " + data.length + " bytes");
+  session.on('data recv', function (session_, data) {
+    if (srcPort === d2gsPort) {
+      displayD2gsToServer(data)
+    }
+
+    if (dstPort === d2gsPort) {
+      displayD2gsToClient(data)
+    }
+
+    if (srcPort === mcpPort) {
+      displayMcpToServer(data)
+    }
+
+    if (dstPort === mcpPort) {
+      displayMcpToClient(data)
+    }
+
+    if (srcPort === sidPort && dstPort === clientPortSid) {
+      displaySidToServer(data)
+    }
+
+    if (dstPort === sidPort && srcPort === clientPortSid) {
+      displaySidToClient(data)
+    }
+
+    if (srcPort === sidPort && dstPort === clientPortBnFtp) {
+      displayBnftpToServer(data)
+    }
+
+    if (dstPort === sidPort && srcPort === clientPortBnFtp) {
+      displayBnftpToClient(data)
+    }
   })
-  session.on('end', function (session) {
-    if ((srcPort === '4000' || dstPort === '4000') ||
-            (srcPort === '6112' || dstPort === '6112')) {
-      console.log('End of TCP session between ' + session.src_name + ' and ' + session.dst_name)
-      console.log('Set stats for session: ', session.session_stats())
+
+  session.on('end', function () {
+    if (srcPort === d2gsPort || dstPort === d2gsPort) {
+      console.log('End of d2gs session')
+    }
+    if (srcPort === mcpPort || dstPort === mcpPort) {
+      console.log('End of mcp session')
+    }
+    if (srcPort === sidPort || dstPort === sidPort) {
+      console.log('End of sid session')
     }
   })
 })
