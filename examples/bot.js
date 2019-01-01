@@ -1,4 +1,4 @@
-const createClient = require('../lib/createClient')
+const createClientDiablo = require('../lib/createClientDiablo')
 
 if (process.argv.length !== 8) {
   // Game servers list at https://pathofdiablo.com/p/
@@ -14,13 +14,32 @@ for (let i = 0; i < 5; i++) { randomGame += possible.charAt(Math.floor(Math.rand
 
 if (process.argv[5] === 'rand') { console.log('connecting to randomGame ' + randomGame) }
 
-createClient({
-  port: 6112,
+const character = process.argv[4]
+const gameName = process.argv[5] === 'rand' ? randomGame : process.argv[5]
+const gamePassword = '' // process.argv[6], // TODO add back when password is fixed
+const gameServer = process.argv[7]
+
+createClientDiablo({
   host: '198.98.54.85',
   username: process.argv[2],
-  password: process.argv[3],
-  character: process.argv[4],
-  gameName: process.argv[5] === 'rand' ? randomGame : process.argv[5],
-  gamePassword: '', // process.argv[6], // TODO add back when password is fixed
-  gameServer: process.argv[7]
+  password: process.argv[3]
 })
+  .then(async (clientDiablo) => {
+    await clientDiablo.selectCharacter(character)
+    await clientDiablo.createGame(gameName, gamePassword, gameServer, 0)
+    console.log('Has joined the game')
+    /*
+    clientD2gs.on('D2GS_GAMECHAT', (data) => {
+      console.log(data)
+      if(data.message === 'bonjour')
+      { clientD2gs.write('')}
+    })
+    */
+    clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
+      console.log('machinnnn')
+      clientDiablo.write('D2GS_WALKTOLOCATION', {
+        xCoordinate: targetX,
+        yCoordinate: targetY
+      })
+    })
+  })
