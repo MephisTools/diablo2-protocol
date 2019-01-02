@@ -67,52 +67,6 @@
         }
       ]],
       "MCP_MOTD": ["container", []],
-      "SID_DISPLAYAD": ["container",[
-        {
-          "name": "platformId",
-          "type": "lu32"
-        },
-        {
-          "name": "productId",
-          "type": "lu32"
-        },
-        {
-          "name": "adId",
-          "type": "lu32"
-        },
-        {
-          "name": "filename",
-          "type": "string"
-        },
-        {
-          "name": "URL",
-          "type": "string"
-        }
-      ]],
-      "SID_CHECKAD": ["container",[
-        {
-          "name": "platformId",
-          "type": "lu32"
-        },
-        {
-          "name": "productId",
-          "type": "lu32"
-        },
-        {
-          "name": "idOfLastDisplayedBanner",
-          "type": "lu32"
-        },
-        {
-          "name": "currentTime",
-          "type": "lu32"
-        }
-      ]],
-      "SID_NEWS_INFO": ["container",[
-        {
-          "name": "newsTimestamp",
-          "type": "lu32"
-        }
-      ]],
       "MCP_STARTUP": [
         "container",
         [
@@ -168,6 +122,36 @@
           }
         ]
       ],
+      "MCP_GAMELIST": [
+        "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu16"
+          },
+          {
+            "name": "unknown",
+            "type": "lu32"
+          },
+          {
+            "name": "searchString",
+            "type": "string"
+          }
+        ]
+      ],
+      "MCP_GAMEINFO": [
+        "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu16"
+          },
+          {
+            "name": "gameName",
+            "type": "string"
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -185,12 +169,11 @@
                   "0x01": "MCP_STARTUP",
                   "0x03": "MCP_CREATEGAME",
                   "0x04": "MCP_JOINGAME",
+                  "0x05": "MCP_GAMELIST",
+                  "0x06": "MCP_GAMEINFO",
                   "0x07": "MCP_CHARLOGON",
                   "0x12": "MCP_MOTD",
-                  "0x15": "SID_CHECKAD",
-                  "0x19": "MCP_CHARLIST2",
-                  "0x21": "SID_DISPLAYAD",
-                  "0x46": "SID_NEWS_INFO"
+                  "0x19": "MCP_CHARLIST2"
                 }
               }
             ]
@@ -205,12 +188,11 @@
                   "MCP_STARTUP": "MCP_STARTUP",
                   "MCP_CHARLOGON": "MCP_CHARLOGON",
                   "MCP_CHARLIST2": "MCP_CHARLIST2",
-                  "SID_NEWS_INFO": "SID_NEWS_INFO",
-                  "SID_CHECKAD": "SID_CHECKAD",
-                  "SID_DISPLAYAD": "SID_DISPLAYAD",
                   "MCP_MOTD": "MCP_MOTD",
                   "MCP_CREATEGAME": "MCP_CREATEGAME",
-                  "MCP_JOINGAME": "MCP_JOINGAME"
+                  "MCP_JOINGAME": "MCP_JOINGAME",
+                  "MCP_GAMELIST": "MCP_GAMELIST",
+                  "MCP_GAMEINFO": "MCP_GAMEINFO"
                 }
               }
             ]
@@ -278,67 +260,6 @@
           "type": "string"
         }
       ]],
-      "SID_CHECKAD": ["container",[
-        {
-          "name": "adId",
-          "type": "lu32"
-        },
-        {
-          "name": "fileExtension",
-          "type": "lu32"
-        },
-        {
-          "name": "localFileTime",
-          "type": "lu64"
-        },
-        {
-          "name": "filename",
-          "type": "string"
-        },
-        {
-          "name": "linkURL",
-          "type": "string"
-        }
-      ]],
-      "SID_NEWS_INFO": ["container",[
-        {
-          "name": "numberOfEntries",
-          "type": "lu8"
-        },
-        {
-          "name": "lastLogonTimestamp",
-          "type": "lu32"
-        },
-        {
-          "name": "oldestNewsTimestamp",
-          "type": "lu32"
-        },
-        {
-          "name": "newestNewsTimestamp",
-          "type": "lu32"
-        },
-        {
-          "name": "entries",
-          "type": ["array",
-            {
-              "count": "numberOfEntries",
-              "type": [
-                "container",
-                [
-                  {
-                    "name": "timestamp",
-                    "type": "lu32"
-                  },
-                  {
-                    "name": "news",
-                    "type": "string"
-                  }
-                ]
-              ]
-            }
-          ]
-        }
-      ]],
       "MCP_CHARLOGON": [
         "container",
         [
@@ -390,6 +311,89 @@
           }
         ]
       ],
+      "MCP_GAMELIST": [
+        "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu16"
+          },
+          {
+            "name": "index",
+            "type": "lu32"
+          },
+          {
+            "name": "numberOfPlayersInGame",
+            "type": "lu8"
+          },
+          {
+            "name": "status",
+            "type": "lu32"
+          },
+          {
+            "name": "gameName",
+            "type": "string"
+          },
+          {
+            "name": "gameDescription",
+            "type": "string"
+          }
+        ]
+      ],
+      "MCP_GAMEINFO": [
+        "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu16"
+          },
+          {
+            "name": "status",
+            "type": "lu32"
+          },
+          {
+            "name": "gameUptime",
+            "type": "lu32"
+          },
+          {
+            "name": "unknown",
+            "type": "lu16"
+          },
+          {
+            "name": "maximumPlayersAllowed",
+            "type": "lu8"
+          },
+          {
+            "name": "nbCharacters",
+            "type": "lu8"
+          },
+          {
+            "name": "classes",
+            "type": ["array",{
+              "count": "nbCharacters",
+              "type": "lu8"
+            }]
+          },
+          {
+            "name": "levels",
+            "type": ["array",{
+              "count": "nbCharacters",
+              "type": "lu8"
+            }]
+          },
+          {
+            "name": "gameDescription",
+            "type": "string"
+          },
+          {
+            "name": "names",
+            "type": ["array",{
+              "count": "nbCharacters",
+              "type": "string"
+            }]
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -407,11 +411,11 @@
                   "0x01": "MCP_STARTUP",
                   "0x03": "MCP_CREATEGAME",
                   "0x04": "MCP_JOINGAME",
+                  "0x05": "MCP_GAMELIST",
+                  "0x06": "MCP_GAMEINFO",
                   "0x07": "MCP_CHARLOGON",
                   "0x12": "MCP_MOTD",
-                  "0x15": "SID_CHECKAD",
-                  "0x19": "MCP_CHARLIST2",
-                  "0x46": "SID_NEWS_INFO"
+                  "0x19": "MCP_CHARLIST2"
                 }
               }
             ]
@@ -426,11 +430,11 @@
                   "MCP_STARTUP": "MCP_STARTUP",
                   "MCP_CHARLOGON": "MCP_CHARLOGON",
                   "MCP_CHARLIST2": "MCP_CHARLIST2",
-                  "SID_NEWS_INFO": "SID_NEWS_INFO",
-                  "SID_CHECKAD": "SID_CHECKAD",
                   "MCP_MOTD": "MCP_MOTD",
                   "MCP_CREATEGAME": "MCP_CREATEGAME",
-                  "MCP_JOINGAME": "MCP_JOINGAME"
+                  "MCP_JOINGAME": "MCP_JOINGAME",
+                  "MCP_GAMELIST": "MCP_GAMELIST",
+                  "MCP_GAMEINFO": "MCP_GAMEINFO"
                 }
               }
             ]

@@ -99,54 +99,42 @@ function displayD2gsToClient (data) {
       splitter.write(data)
     }
   } catch (error) {
-    console.log('d2gsToClient : ', error)
+    console.log('d2gsToClient : ', error.message)
+  }
+}
+
+function displayParsed (proto, protoName, data) {
+  try {
+    const { name, params } = proto.parsePacketBuffer('packet', data).data
+    console.log(protoName, ':', name, JSON.stringify(params))
+  } catch (error) {
+    console.log(protoName, ':', error.message)
   }
 }
 
 function displayD2gsToServer (data) {
-  try {
-    const { name, params } = d2gsToServer.parsePacketBuffer('packet', data).data
-    console.log('d2gsToServer : ', name, JSON.stringify(params))
-  } catch (error) {
-    console.log('d2gsToServer : ', error)
-  }
+  displayParsed(d2gsToServer, 'd2gsToServer', data)
 }
 
 function displayMcpToServer (data) {
-  try {
-    if (data.toString('hex') !== '01') { console.log('mcpToServer : ', mcpToServer.parsePacketBuffer('packet', data)) }
-  } catch (error) {
-    console.log('mcpToServer : ', error)
-  }
+  displayParsed(mcpToServer, 'mcpToServer', data)
 }
 
 function displayMcpToClient (data) {
-  try {
-    console.log('mcpToClient : ', mcpToClient.parsePacketBuffer('packet', data))
-  } catch (error) {
-    console.log('mcpToClient : ', error)
-  }
+  displayParsed(mcpToClient, 'mcpToClient', data)
 }
 
 function displaySidToServer (data) {
-  try {
-    console.log('sidToServer : ', sidToServer.parsePacketBuffer('packet', data), null, 2)
-  } catch (err) {
-    console.log(err)
-  }
+  displayParsed(sidToServer, 'sidToServer', data)
 }
 
 function displaySidToClient (data) {
-  try {
-    console.log('sidToClient : ', sidToClient.parsePacketBuffer('packet', data))
-  } catch (error) {
-    console.log('sidToClient : ', error)
-  }
+  displayParsed(sidToClient, 'sidToClient', data)
 }
 
 function displayBnftpToClient (data) {
   try {
-    console.log('bnftpToClient : ', bnftpToClient.parsePacketBuffer('packet', data))
+    console.log('bnftpToClient : ', JSON.stringify(bnftpToClient.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
   } catch (error) {
     console.log('bnftpToClient : ', error)
   }
@@ -154,7 +142,7 @@ function displayBnftpToClient (data) {
 
 function displayBnftpToServer (data) {
   try {
-    console.log('bnftpToServer : ', bnftpToServer.parsePacketBuffer('packet', data))
+    console.log('bnftpToServer : ', JSON.stringify(bnftpToServer.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
   } catch (error) {
     console.log('bnftpToServer : ', error)
   }

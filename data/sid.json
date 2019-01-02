@@ -18,6 +18,52 @@
   },
   "toServer": {
     "types": {
+      "SID_DISPLAYAD": ["container",[
+        {
+          "name": "platformId",
+          "type": "lu32"
+        },
+        {
+          "name": "productId",
+          "type": "lu32"
+        },
+        {
+          "name": "adId",
+          "type": "lu32"
+        },
+        {
+          "name": "filename",
+          "type": "string"
+        },
+        {
+          "name": "URL",
+          "type": "string"
+        }
+      ]],
+      "SID_NEWS_INFO": ["container",[
+        {
+          "name": "newsTimestamp",
+          "type": "lu32"
+        }
+      ]],
+      "SID_CHECKAD": ["container",[
+        {
+          "name": "platformId",
+          "type": "lu32"
+        },
+        {
+          "name": "productId",
+          "type": "lu32"
+        },
+        {
+          "name": "idOfLastDisplayedBanner",
+          "type": "lu32"
+        },
+        {
+          "name": "currentTime",
+          "type": "lu32"
+        }
+      ]],
       "SID_LEAVECHAT": ["container",[]],
       "SID_NOTIFYJOIN": ["container", [
         {
@@ -286,7 +332,9 @@
                 "type": "lu8",
                 "mappings": {
                   "0x10": "SID_LEAVECHAT",
+                  "0x15": "SID_CHECKAD",
                   "0x1C": "SID_STARTADVEX3",
+                  "0x21": "SID_DISPLAYAD",
                   "0x22": "SID_NOTIFYJOIN",
                   "0x25": "SID_PING",
                   "0x50": "SID_AUTH_INFO",
@@ -295,6 +343,7 @@
                   "0x3A": "SID_LOGONRESPONSE2",
                   "0x40": "SID_QUERYREALMS2",
                   "0x3E": "SID_LOGONREALMEX",
+                  "0x46": "SID_NEWS_INFO",
                   "0x0B": "SID_GETCHANNELLIST",
                   "0x0A": "SID_ENTERCHAT"
                 }
@@ -323,7 +372,10 @@
                   "SID_ENTERCHAT": "SID_ENTERCHAT",
                   "SID_STARTADVEX3": "SID_STARTADVEX3",
                   "SID_NOTIFYJOIN": "SID_NOTIFYJOIN",
-                  "SID_LEAVECHAT": "SID_LEAVECHAT"
+                  "SID_LEAVECHAT": "SID_LEAVECHAT",
+                  "SID_CHECKAD": "SID_CHECKAD",
+                  "SID_NEWS_INFO": "SID_NEWS_INFO",
+                  "SID_DISPLAYAD": "SID_DISPLAYAD"
                 }
               }
             ]
@@ -334,6 +386,45 @@
   },
   "toClient": {
     "types": {
+      "SID_NEWS_INFO": ["container",[
+        {
+          "name": "numberOfEntries",
+          "type": "lu8"
+        },
+        {
+          "name": "lastLogonTimestamp",
+          "type": "lu32"
+        },
+        {
+          "name": "oldestNewsTimestamp",
+          "type": "lu32"
+        },
+        {
+          "name": "newestNewsTimestamp",
+          "type": "lu32"
+        },
+        {
+          "name": "entries",
+          "type": ["array",
+            {
+              "count": "numberOfEntries",
+              "type": [
+                "container",
+                [
+                  {
+                    "name": "timestamp",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "news",
+                    "type": "string"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]],
       "SID_CHATEVENT": ["container", [
         {
           "name": "eventId",
@@ -547,6 +638,28 @@
           }
         ]
       ],
+      "SID_CHECKAD": ["container",[
+        {
+          "name": "adId",
+          "type": "lu32"
+        },
+        {
+          "name": "fileExtension",
+          "type": "lu32"
+        },
+        {
+          "name": "localFileTime",
+          "type": "lu64"
+        },
+        {
+          "name": "filename",
+          "type": "string"
+        },
+        {
+          "name": "linkURL",
+          "type": "string"
+        }
+      ]],
       "packet": [
         "container",
         [
@@ -561,6 +674,7 @@
               {
                 "type": "lu8",
                 "mappings": {
+                  "0x15": "SID_CHECKAD",
                   "0x25": "SID_PING",
                   "0x1C": "SID_STARTADVEX3",
                   "0x50": "SID_AUTH_INFO",
@@ -568,6 +682,7 @@
                   "0x33": "SID_GETFILETIME",
                   "0x3A": "SID_LOGONRESPONSE2",
                   "0x40": "SID_QUERYREALMS2",
+                  "0x46": "SID_NEWS_INFO",
                   "0x3E": "SID_LOGONREALMEX",
                   "0x0B": "SID_GETCHANNELLIST",
                   "0x0A": "SID_ENTERCHAT",
@@ -597,7 +712,9 @@
                   "SID_GETCHANNELLIST": "SID_GETCHANNELLIST",
                   "SID_ENTERCHAT": "SID_ENTERCHAT",
                   "SID_STARTADVEX3": "SID_STARTADVEX3",
-                  "SID_CHATEVENT": "SID_CHATEVENT"
+                  "SID_CHATEVENT": "SID_CHATEVENT",
+                  "SID_CHECKAD": "SID_CHECKAD",
+                  "SID_NEWS_INFO": "SID_NEWS_INFO"
                 }
               }
             ]
