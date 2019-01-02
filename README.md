@@ -18,8 +18,6 @@ clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
 })  
 ```
 
-<img src="images/followbot.gif" width="600" height="300">
-
 ## Installation
 
 ```

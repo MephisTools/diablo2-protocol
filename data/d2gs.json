@@ -19,6 +19,7 @@
   },
   "toServer": {
     "types": {
+      "D2GS_UNKNOWN2": ["container", []],
       "D2GS_PING": ["container", [
         {
           "name": "tickCount",
@@ -588,6 +589,289 @@
           "type": "lu16"
         }
       ]],
+      "D2GS_SWITCHSKILL": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        },
+        {
+          "name": "unk2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SKILLUNK1": ["container", []],
+      "D2GS_SKILLUNK2": ["container", []],
+      "D2GS_CHATMESSAGE": ["container", [
+        {
+          "name": "type",
+          "type": "lu8"
+        },
+        {
+          "name": "unk1",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_SWITCHBODYITEM2": ["container", [
+        {
+          "name": "id",
+          "type": "lu32"
+        },
+        {
+          "name": "location",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_IDENTIFYITEM": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_CHATUNK1": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_QUESTMESSAGE": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        },
+        {
+          "name": "unk2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_CAINIDENTIFY": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_REPAIR": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        },
+        {
+          "name": "id3",
+          "type": "lu32"
+        },
+        {
+          "name": "id4",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_HIRE": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_GAMBLED": ["container", [
+        {
+          "name": "id",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_BUYHEALTH": ["container", [
+        {
+          "name": "type",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_STATPOINT": ["container", [
+        {
+          "name": "type",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_SKILLPOINT": ["container", [
+        {
+          "name": "type",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_CLOSEDOOR": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UPDATEITEMSTAT": ["container", [
+        {
+          "name": "id",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_QUESTLOG": ["container", []],
+      "D2GS_RESPAWN": ["container", []],
+      "D2GS_UNK2": ["container", []],
+      "D2GS_PUTSLOT": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        },
+        {
+          "name": "id3",
+          "type": "lu32"
+        },
+        {
+          "name": "id4",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_CHANGETP": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        },
+        {
+          "name": "id3",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_MERCINTER": ["container", [
+        {
+          "name": "mercId",
+          "type": "lu32"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "type",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_MOVEMERC": ["container", [
+        {
+          "name": "mercId",
+          "type": "lu32"
+        },
+        {
+          "name": "x",
+          "type": "lu32"
+        },
+        {
+          "name": "y",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_REASSIGN": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_DISAPPEARITEM": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNKNOWN1": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_ASSIGNMENT": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        },
+        {
+          "name": "unk2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_STAON": ["container", []],
+      "D2GS_STAOFF": ["container", []],
+      "D2GS_CLOSEQUEST": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_TOWNFOLK": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        },
+        {
+          "name": "unk2",
+          "type": "lu32"
+        },
+        {
+          "name": "unk3",
+          "type": "lu32"
+        },
+        {
+          "name": "unk4",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RELATION": ["container", [
+        {
+          "name": "id",
+          "type": "lu8"
+        },
+        {
+          "name": "type",
+          "type": "lu8"
+        },
+        {
+          "name": "player",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UPDATEPOSITION": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RESURRECTMERC": ["container", [
+        {
+          "name": "id",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SWITCHEQUIP": ["container", []],
+      "D2GS_INVENTORYTOBELT": ["container", [
+        {
+          "name": "id",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_GAMEEXIT": ["container", []],
       "packet": [
         "container",
         [
@@ -608,14 +892,17 @@
                   "0x08": "D2GS_LEFTSKILLONLOCATIONEX",
                   "0x09": "D2GS_LEFTSKILLONENTITYEX2",
                   "0x0A": "D2GS_LEFTSKILLONENTITYEX3",
+                  "0x0B": "D2GS_SKILLUNK1",
                   "0x0C": "D2GS_RIGHTSKILLONLOCATION",
                   "0x0D": "D2GS_RIGHTSKILLONENTITY",
                   "0x0E": "D2GS_RIGHTSKILLONENTITYEX",
                   "0x0F": "D2GS_RIGHTSKILLONLOCATIONEX",
                   "0x10": "D2GS_RIGHTSKILLONENTITYEX2",
                   "0x11": "D2GS_RIGHTSKILLONENTITYEX3",
+                  "0x12": "D2GS_SKILLUNK2",
                   "0x13": "D2GS_INTERACTWITHENTITY",
                   "0x14": "D2GS_OVERHEADMESSAGE",
+                  "0x15": "D2GS_CHATMESSAGE",
                   "0x16": "D2GS_PICKUPITEM",
                   "0x17": "D2GS_DROPITEM",
                   "0x18": "D2GS_ITEMTOBUFFER",
@@ -624,6 +911,7 @@
                   "0x1B": "D2GS_SWAP2HANDEDITEM",
                   "0x1C": "D2GS_PICKUPBODYITEM",
                   "0x1D": "D2GS_SWITCHBODYITEM",
+                  "0x1E": "D2GS_SWITCHBODYITEM2",
                   "0x1F": "D2GS_SWITCHINVENTORYITEM",
                   "0x20": "D2GS_USEITEM",
                   "0x21": "D2GS_STACKITEM",
@@ -632,22 +920,56 @@
                   "0x24": "D2GS_REMOVEBELTITEM",
                   "0x25": "D2GS_SWITCHBELTITEM",
                   "0x26": "D2GS_USEBELTITEM",
+                  "0x27": "D2GS_IDENTIFYITEM",
                   "0x28": "D2GS_INSERTSOCKETITEM",
                   "0x29": "D2GS_SCROLLTOTOME",
                   "0x2A": "D2GS_ITEMTOCUBE",
                   "0x2D": "D2GS_UNSELECTOBJ",
+                  "0x2E": "D2GS_CHATUNK1",
                   "0x2F": "D2GS_NPCINIT",
                   "0x30": "D2GS_NPCCANCEL",
+                  "0x31": "D2GS_QUESTMESSAGE",
                   "0x32": "D2GS_NPCBUY",
                   "0x33": "D2GS_NPCSELL",
+                  "0x34": "D2GS_CAINIDENTIFY",
+                  "0x35": "D2GS_REPAIR",
+                  "0x36": "D2GS_HIRE",
+                  "0x37": "D2GS_GAMBLED",
                   "0x38": "D2GS_NPCTRADE",
+                  "0x39": "D2GS_BUYHEALTH",
+                  "0x3A": "D2GS_STATPOINT",
+                  "0x3B": "D2GS_SKILLPOINT",
+                  "0x3C": "D2GS_SWITCHSKILL",
+                  "0x3D": "D2GS_CLOSEDOOR",
+                  "0x3E": "D2GS_UPDATEITEMSTAT",
                   "0x3F": "D2GS_CHARACTERPHRASE",
+                  "0x40": "D2GS_QUESTLOG",
+                  "0x41": "D2GS_RESPAWN",
+                  "0x44": "D2GS_PUTSLOT",
+                  "0x45": "D2GS_CHANGETP",
+                  "0x46": "D2GS_MERCINTER",
+                  "0x47": "D2GS_MOVEMERC",
+                  "0x48": "D2GS_UNKNOWN2",
                   "0x49": "D2GS_WAYPOINT",
+                  "0x4B": "D2GS_REASSIGN",
+                  "0x4C": "D2GS_DISAPPEARITEM",
+                  "0x4D": "D2GS_UNKNOWN1",
                   "0x4F": "D2GS_TRADE",
                   "0x50": "D2GS_DROPGOLD",
+                  "0x51": "D2GS_ASSIGNMENT",
+                  "0x53": "D2GS_STAON",
+                  "0x54": "D2GS_STAOFF",
+                  "0x58": "D2GS_CLOSEQUEST",
+                  "0x59": "D2GS_TOWNFOLK",
+                  "0x5D": "D2GS_RELATION",
                   "0x5E": "D2GS_PARTY",
+                  "0x5F": "D2GS_UPDATEPOSITION",
+                  "0x60": "D2GS_SWITCHEQUIP",
                   "0x61": "D2GS_POTIONTOMERCENARY",
+                  "0x62": "D2GS_RESURRECTMERC",
+                  "0x63": "D2GS_INVENTORYTOBELT",
                   "0x68": "D2GS_GAMELOGON",
+                  "0x69": "D2GS_GAMEEXIT",
                   "0x6B": "D2GS_ENTERGAMEENVIRONMENT",
                   "0x6D": "D2GS_PING"
                 }
@@ -712,7 +1034,45 @@
                   "D2GS_POTIONTOMERCENARY": "D2GS_POTIONTOMERCENARY",
                   "D2GS_GAMELOGON": "D2GS_GAMELOGON",
                   "D2GS_ENTERGAMEENVIRONMENT": "D2GS_ENTERGAMEENVIRONMENT",
-                  "D2GS_PING": "D2GS_PING"
+                  "D2GS_PING": "D2GS_PING",
+                  "D2GS_SWITCHSKILL": "D2GS_SWITCHSKILL",
+                  "D2GS_SKILLUNK1": "D2GS_SKILLUNK1",
+                  "D2GS_SKILLUNK2": "D2GS_SKILLUNK2",
+                  "D2GS_CHATMESSAGE": "D2GS_CHATMESSAGE",
+                  "D2GS_SWITCHBODYITEM2": "D2GS_SWITCHBODYITEM2",
+                  "D2GS_IDENTIFYITEM": "D2GS_IDENTIFYITEM",
+                  "D2GS_CHATUNK1": "D2GS_CHATUNK1",
+                  "D2GS_QUESTMESSAGE": "D2GS_QUESTMESSAGE",
+                  "D2GS_CAINIDENTIFY": "D2GS_CAINIDENTIFY",
+                  "D2GS_REPAIR": "D2GS_REPAIR",
+                  "D2GS_HIRE": "D2GS_HIRE",
+                  "D2GS_GAMBLED": "D2GS_GAMBLED",
+                  "D2GS_BUYHEALTH": "D2GS_BUYHEALTH",
+                  "D2GS_STATPOINT": "D2GS_STATPOINT",
+                  "D2GS_SKILLPOINT": "D2GS_SKILLPOINT",
+                  "D2GS_CLOSEDOOR": "D2GS_CLOSEDOOR",
+                  "D2GS_UPDATEITEMSTAT": "D2GS_UPDATEITEMSTAT",
+                  "D2GS_QUESTLOG": "D2GS_QUESTLOG",
+                  "D2GS_RESPAWN": "D2GS_RESPAWN",
+                  "D2GS_UNKNOWN2": "D2GS_UNKNOWN2",
+                  "D2GS_PUTSLOT": "D2GS_PUTSLOT",
+                  "D2GS_CHANGETP": "D2GS_CHANGETP",
+                  "D2GS_MERCINTER": "D2GS_MERCINTER",
+                  "D2GS_MOVEMERC": "D2GS_MOVEMERC",
+                  "D2GS_REASSIGN": "D2GS_REASSIGN",
+                  "D2GS_DISAPPEARITEM": "D2GS_DISAPPEARITEM",
+                  "D2GS_UNKNOWN1": "D2GS_UNKNOWN1",
+                  "D2GS_ASSIGNMENT": "D2GS_ASSIGNMENT",
+                  "D2GS_STAON": "D2GS_STAON",
+                  "D2GS_STAOFF": "D2GS_STAOFF",
+                  "D2GS_CLOSEQUEST": "D2GS_CLOSEQUEST",
+                  "D2GS_TOWNFOLK": "D2GS_TOWNFOLK",
+                  "D2GS_RELATION": "D2GS_RELATION",
+                  "D2GS_UPDATEPOSITION": "D2GS_UPDATEPOSITION",
+                  "D2GS_SWITCHEQUIP": "D2GS_SWITCHEQUIP",
+                  "D2GS_RESURRECTMERC": "D2GS_RESURRECTMERC",
+                  "D2GS_INVENTORYTOBELT": "D2GS_INVENTORYTOBELT",
+                  "D2GS_GAMEEXIT": "D2GS_GAMEEXIT"
                 }
               }
             ]
