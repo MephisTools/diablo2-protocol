@@ -1,8 +1,8 @@
 {
   "name": "pathofbot",
   "version": "1.0.0",
-  "description": "Bot for diablo2 implementing the packets in node.js",
-  "main": "PathOfBot.js",
+  "description": "diablo 2 packets parsing and serialization, and login sequence implementation to build clients and servers",
+  "main": "index.js",
   "scripts": {
     "test": "npm run lint",
     "lint": "standard .",
@@ -26,7 +26,6 @@
   "dependencies": {
     "bridge.net": "^1.0.0",
     "once-promise": "^2.0.0",
-    "pcap": "^2.1.0",
     "protodef": "^1.6.9"
   },
   "devDependencies": {

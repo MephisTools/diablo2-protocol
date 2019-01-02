@@ -1,19 +1,24 @@
 # API
 
-## diablo.createClient(options)
+## diablo.createClientDiablo(options)
 
-Returns a `ClientDiablo` instance and connect to diablo
+Connect to diablo and returns a promise resolving to a `ClientDiablo` instance
 
 `options` is an object containing the properties :
  * username : username of the account
  * password : password of the account
  * host : sid host : diablo server host
- * character : character name
- * gameName : game name
- * gamePassword : game password
- * gameServer : game server
+ 
 
 ## diablo.ClientDiablo
+
+### selectCharacter(character)
+
+select a character and returns a promise
+
+### createGame(gameName, gamePassword, gameServer, difficulty)
+
+create and join the specified game and returns a promise
 
 ### "packetName" (params)
 

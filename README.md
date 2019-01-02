@@ -7,7 +7,7 @@ Network protocol for diablo 2.
 
 Currently in development, almost all packets are implemented but not all packets have been tested
 
-Follow bot in 4 lines of code
+Follow bot in 6 lines of code
 
 ```
 clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
@@ -32,10 +32,6 @@ npm install
 
 See docs/API.md
 
-```
-node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver>
-```
-
 Follow bot example
 
 ```
@@ -45,7 +41,9 @@ node example/bot.js myusername mypassword mycharacter mygamename mygamepassword 
 Sniffer (Linux / MacOS only)
 
 ```
-sudo node example/sniffer.js
+cd example/sniffer
+npm install
+sudo node sniffer.js
 ```
 
 

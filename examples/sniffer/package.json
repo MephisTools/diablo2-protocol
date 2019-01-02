@@ -1,0 +1,9 @@
+{
+  "name": "sniffer",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "pcap": "^2.1.0"
+  },
+  "description": "A sniffer example"
+}
