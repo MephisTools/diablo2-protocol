@@ -16,7 +16,7 @@ pcapSession.on('packet', function (rawPacket) {
   tcpTracker.track_packet(packet)
 })
 
-const Parser = require('protodef').Parser
+const FullPacketParser = require('protodef').FullPacketParser
 const ProtoDef = require('protodef').ProtoDef
 
 const mcp = require('../data/mcp')
@@ -58,7 +58,7 @@ d2gsToClient.addProtocol(d2gsProto, ['toClient'])
 const d2gsToServer = new ProtoDef()
 d2gsToServer.addProtocol(d2gsProto, ['toServer'])
 
-const toClientParser = new Parser(d2gsToClient, 'packet')
+const toClientParser = new FullPacketParser(d2gsToClient, 'packet')
 const splitter = createSplitter()
 
 splitter.on('data', data => {
