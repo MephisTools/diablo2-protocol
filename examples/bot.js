@@ -29,7 +29,7 @@ createClientDiablo({
     await clientDiablo.createGame(gameName, gamePassword, gameServer, 0)
     console.log('Has joined the game')
     clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
-      clientDiablo.write('D2GS_WALKTOLOCATION', {
+      clientDiablo.write('D2GS_RUNTOLOCATION', {
         xCoordinate: targetX,
         yCoordinate: targetY
       })
