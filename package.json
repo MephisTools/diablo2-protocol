@@ -25,6 +25,7 @@
   "homepage": "https://github.com/louis030195/PathOfBot#readme",
   "dependencies": {
     "bridge.net": "^1.0.0",
+    "once-promise": "^2.0.0",
     "pcap": "^2.1.0",
     "protodef": "^1.6.9"
   },

@@ -28,15 +28,7 @@ createClientDiablo({
     await clientDiablo.selectCharacter(character)
     await clientDiablo.createGame(gameName, gamePassword, gameServer, 0)
     console.log('Has joined the game')
-    /*
-    clientD2gs.on('D2GS_GAMECHAT', (data) => {
-      console.log(data)
-      if(data.message === 'bonjour')
-      { clientD2gs.write('')}
-    })
-    */
     clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
-      console.log('machinnnn')
       clientDiablo.write('D2GS_WALKTOLOCATION', {
         xCoordinate: targetX,
         yCoordinate: targetY

@@ -3,15 +3,29 @@
 [![Build Status](https://img.shields.io/circleci/project/louis030195/PathOfBot/master.svg)](https://circleci.com/gh/louis030195/PathOfBot)
 
 
-Bot for diablo 2 implementing the packets in node.js
+Network protocol for diablo 2.
 
 Currently in development, almost all packets are implemented but not all packets have been tested
+
+Follow bot in 4 lines of code
+
+```
+clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
+    clientDiablo.write('D2GS_WALKTOLOCATION', {
+    xCoordinate: targetX,
+    yCoordinate: targetY
+    })
+})  
+```
+
+<img src="images/followbot.gif" width="600" height="300">
 
 ## Installation
 
 ```
 git clone https://github.com/louis030195/PathOfBot.git
 cd PathOfBot
+// Skip libpcap installtion if you don't wanna use sniffer / aren't on Linux
 sudo apt-get install libpcap-dev
 npm install
 ```
@@ -20,23 +34,20 @@ npm install
 
 See docs/API.md
 
-Bot not 100% working atm, it will login and make a game then afk
 ```
 node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver>
 ```
 
-For example
+Follow bot example
 
 ```
-node bot.js myusername mypassword mycharacter mygamename mygamepassword 4
+node example/bot.js myusername mypassword mycharacter mygamename mygamepassword 4
 ```
 
-Sniffer diablo 2 (launch diablo 2 and go online and start sniffing packets ;))
-
-Tested on Ubuntu 18.04 (prob doesn't work on Windows)
+Sniffer (Linux / MacOS only)
 
 ```
-sudo node sniffer.js
+sudo node example/sniffer.js
 ```
 
 
@@ -44,16 +55,9 @@ sudo node sniffer.js
 - [ ] Test all packets
 - [x] Sniffer
 - [ ] more documentation
-- [ ] Proxy
-- [ ] New repo with this repo as submodule and start making some script (kill andariel idk ...)
-
-## File organization
-
-* bot.js : the bot
-* createClient.js : do the login sequence
-* client.js : low level network implementation with node and protodef
-
-* parse_dump.js : to parse some packet dumps using protodef
+- [ ] Proxy ?
+- [ ] More examples
+- [ ] Web / mobile interface
 
 ## Docs
 
@@ -71,3 +75,4 @@ sudo node sniffer.js
 * node basic client implementation https://nodejs.org/api/net.html#net_net_createconnection_options_connectlistener
 * protodef js implementation doc https://github.com/ProtoDef-io/node-protodef https://github.com/ProtoDef-io/node-protodef/blob/master/doc/api.md and https://github.com/ProtoDef-io/node-protodef/blob/master/example.js
 * protodef types https://github.com/ProtoDef-io/ProtoDef/blob/master/doc/datatypes.md
+* nodepcap for sniffing https://github.com/node-pcap/node_pcap
