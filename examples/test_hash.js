@@ -1,4 +1,4 @@
-const getHash = require('../lib/getHash')
+const { getHash } = require('..')
 
 const clientToken = 18226750
 const serverToken = 1515471831

@@ -19,44 +19,40 @@ pcapSession.on('packet', function (rawPacket) {
 const FullPacketParser = require('protodef').FullPacketParser
 const ProtoDef = require('protodef').ProtoDef
 
-const mcp = require('../data/mcp')
+const {
+  mcpProtocol,
+  sidProtocol,
+  bnftpProtocol,
+  createSplitter,
+  decompress,
+  d2gsProtocol,
+  d2gsReader
+} = require('../..')
 
 const mcpToServer = new ProtoDef()
-mcpToServer.addProtocol(mcp, ['toServer'])
+mcpToServer.addProtocol(mcpProtocol, ['toServer'])
 
 const mcpToClient = new ProtoDef()
-mcpToClient.addProtocol(mcp, ['toClient'])
-
-const sid = require('../data/sid')
+mcpToClient.addProtocol(mcpProtocol, ['toClient'])
 
 const sidToServer = new ProtoDef()
-sidToServer.addProtocol(sid, ['toServer'])
+sidToServer.addProtocol(sidProtocol, ['toServer'])
 
 const sidToClient = new ProtoDef()
-sidToClient.addProtocol(sid, ['toClient'])
-
-const bnftp = require('../data/bnftp')
+sidToClient.addProtocol(sidProtocol, ['toClient'])
 
 const bnftpToServer = new ProtoDef()
-bnftpToServer.addProtocol(bnftp, ['toServer'])
+bnftpToServer.addProtocol(bnftpProtocol, ['toServer'])
 
 const bnftpToClient = new ProtoDef()
-bnftpToClient.addProtocol(bnftp, ['toClient'])
-
-const { createSplitter } = require('../lib/splitter')
-
-const { decompress } = require('../lib/compression')
-
-const d2gsProto = require('../data/d2gs')
-
-const d2gsReader = require('../lib/d2gsSpecialReader')
+bnftpToClient.addProtocol(bnftpProtocol, ['toClient'])
 
 const d2gsToClient = new ProtoDef()
 d2gsToClient.addTypes(d2gsReader)
-d2gsToClient.addProtocol(d2gsProto, ['toClient'])
+d2gsToClient.addProtocol(d2gsProtocol, ['toClient'])
 
 const d2gsToServer = new ProtoDef()
-d2gsToServer.addProtocol(d2gsProto, ['toServer'])
+d2gsToServer.addProtocol(d2gsProtocol, ['toServer'])
 
 const toClientParser = new FullPacketParser(d2gsToClient, 'packet')
 const splitter = createSplitter()

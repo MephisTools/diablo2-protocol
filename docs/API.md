@@ -1,6 +1,6 @@
 # API
 
-## diablo.createClient(options)
+## diablo.createClientDiablo(options)
 
 Returns a `ClientDiablo` instance and connect to diablo
 

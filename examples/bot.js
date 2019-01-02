@@ -1,4 +1,4 @@
-const createClientDiablo = require('../lib/createClientDiablo')
+const { createClientDiablo } = require('..')
 
 if (process.argv.length !== 8) {
   // Game servers list at https://pathofdiablo.com/p/
