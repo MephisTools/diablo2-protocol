@@ -9,7 +9,7 @@ Currently in development, almost all packets are implemented but not all packets
 
 Follow bot in 6 lines of code
 
-```
+```js
 clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
     clientDiablo.write('D2GS_WALKTOLOCATION', {
     xCoordinate: targetX,
@@ -21,11 +21,7 @@ clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
 ## Installation
 
 ```
-git clone https://github.com/louis030195/PathOfBot.git
-cd PathOfBot
-// Skip libpcap installtion if you don't wanna use sniffer / aren't on Linux
-sudo apt-get install libpcap-dev
-npm install
+npm install diablo2-protocol
 ```
 
 ## Usage
