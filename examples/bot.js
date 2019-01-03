@@ -25,25 +25,109 @@ createClientDiablo({
   password: process.argv[3]
 })
   .then(async (clientDiablo) => {
+    clientDiablo.master = null
+    clientDiablo.playerList = []
+    clientDiablo.follow = false
+
+    clientDiablo.on('D2GS_PLAYERJOINED', ({ playerId, charName }) => {
+      clientDiablo.playerList.push({ id: playerId, name: Buffer.from(charName).toString() })
+    })
+
+    clientDiablo.on('D2GS_PLAYERLEFT', (playerId) => {
+      const index = clientDiablo.playerList.findIndex(e => e.playerId === playerId)
+      clientDiablo.playerList.splice(index, 1)
+    })
+
+    clientDiablo.run = (x, y) =>
+      clientDiablo.write('D2GS_RUNTOLOCATION', {
+        xCoordinate: x,
+        yCoordinate: y
+      })
+
+    clientDiablo.castSkill = (x, y, skill) => {
+      clientDiablo.write('D2GS_SWITCHSKILL', {
+        skill: skill,
+        unk1: 0,
+        hand: 0, // 0 = right, 128 = left
+        unknown: [255, 255, 255, 255, 255]
+      })
+      clientDiablo.write('D2GS_RIGHTSKILLONLOCATION', {
+        xCoordinate: x,
+        yCoordinate: y
+      })
+    }
+
+    clientDiablo.on('D2GS_GAMECHAT', ({ charName, message }) => {
+      if (message === '.master') {
+        if (clientDiablo.master === null) {
+          /*
+          clientDiablo.write('D2GS_CHATMESSAGE', {
+            type: 1,
+            unk1: 0,
+            message: charName + ' is now master'
+          })
+          */
+          clientDiablo.master = charName
+        } else {
+          /*
+          clientDiablo.write('D2GS_CHATMESSAGE', {
+            type: 1,
+            unk1: 0,
+            message: clientDiablo.master + ' is already master'
+          })
+          */
+        }
+      }
+
+      if (message === '.follow' && charName === clientDiablo.master) {
+        clientDiablo.follow = !clientDiablo.follow
+        /*
+        clientDiablo.write('D2GS_CHATMESSAGE', {
+          type: 1,
+          unk1: 0,
+          message: 'follow ' + clientDiablo.follow ? 'ON' : 'OFF'
+        })
+        */
+
+        if (!clientDiablo.follow) {
+          clientDiablo.removeAllListeners('D2GS_PLAYERMOVE')
+        } else {
+          clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
+            clientDiablo.run(targetX, targetY)
+          })
+        }
+      }
+
+      if (message === '.autokill' && charName === clientDiablo.master) {
+        clientDiablo.autokill = !clientDiablo.autokill
+        /*
+        clientDiablo.write('D2GS_CHATMESSAGE', {
+          type: 1,
+          unk1: 0,
+          message: 'autokill ' + clientDiablo.autokill ? 'ON' : 'OFF'
+        })
+        */
+
+        // TODO: FIX this
+        if (!clientDiablo.autokill) {
+          clientDiablo.removeAllListeners('D2GS_NPCMOVE')
+          clientDiablo.removeAllListeners('D2GS_NPCMOVETOTARGET')
+          clientDiablo.removeAllListeners('D2GS_NPCATTACK')
+        } else {
+          clientDiablo.on('D2GS_NPCMOVE', ({ x, y }) => {
+            clientDiablo.castSkill(x, y, 49)
+          })
+          clientDiablo.on('D2GS_NPCMOVETOTARGET', ({ x, y }) => {
+            clientDiablo.castSkill(x, y, 49)
+          })
+          clientDiablo.on('D2GS_NPCATTACK', ({ x, y }) => {
+            clientDiablo.castSkill(x, y, 49)
+          })
+        }
+      }
+    })
+
     await clientDiablo.selectCharacter(character)
     await clientDiablo.createGame(gameName, gamePassword, gameServer, 0)
     console.log('Has joined the game')
-    clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
-      clientDiablo.write('D2GS_RUNTOLOCATION', {
-        xCoordinate: targetX,
-        yCoordinate: targetY
-      })
-    })
-    clientDiablo.on('D2GS_NPCMOVE', ({ x, y }) => {
-      clientDiablo.write('D2GS_LEFTSKILLONLOCATION', {
-        xCoordinate: x,
-        yCoordinate: y
-      })
-    })
-    clientDiablo.on('D2GS_NPCMOVETOTARGET', ({ x, y }) => {
-      clientDiablo.write('D2GS_LEFTSKILLONLOCATION', {
-        xCoordinate: x,
-        yCoordinate: y
-      })
-    })
   })

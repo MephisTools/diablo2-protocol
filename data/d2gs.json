@@ -591,13 +591,18 @@
       ]],
       "D2GS_SWITCHSKILL": ["container", [
         {
-          "name": "unk1",
-          "type": "lu32"
+          "name": "skill",
+          "type": "lu8"
         },
         {
-          "name": "unk2",
-          "type": "lu32"
-        }
+          "name": "unk1",
+          "type": "lu16"
+        },
+        {
+          "name": "hand",
+          "type": "lu8"
+        },
+        {"name":"unknown","type" : ["array", {"count": 4, "type": "lu8" } ] }
       ]],
       "D2GS_SKILLUNK1": ["container", []],
       "D2GS_SKILLUNK2": ["container", []],
@@ -609,6 +614,10 @@
         {
           "name": "unk1",
           "type": "lu8"
+        },
+        {
+          "name": "message",
+          "type": "string"
         }
       ]],
       "D2GS_SWITCHBODYITEM2": ["container", [
@@ -1124,7 +1133,12 @@
         }
       ]],
       "D2GS_STARTGAME": ["container", []],
-      "D2GS_COMPSTARTGAME": ["container", []],
+      "D2GS_PLAYERLEFT": ["container", [
+        {
+          "name": "playerId",
+          "type": "lu32"
+        }
+      ]],
       "D2GS_WORLDOBJECT": ["container", [
         {
           "name": "objectType",
@@ -1922,7 +1936,7 @@
       "D2GS_EVENTMESSAGES": ["container", [
         {"name":"unknown","type" : ["array", {"count": 39, "type": "lu8" } ] }
       ]],
-      "D2GS_PLAYERINGAME": ["container", [
+      "D2GS_PLAYERJOINED": ["container", [
         {
           "name": "packetLength",
           "type": "lu16"
@@ -1944,10 +1958,6 @@
         },
         {
           "name": "charLvl",
-          "type": "lu16"
-        },
-        {
-          "name": "partyId",
           "type": "lu16"
         },
         {
@@ -2861,8 +2871,8 @@
                   "0x58": "D2GS_UNKNOWN12",
                   "0x59": "D2GS_CREATECLIENTPLAYER",
                   "0x5A": "D2GS_EVENTMESSAGES",
-                  "0x5B": "D2GS_PLAYERINGAME",
-                  "0x5C": "D2GS_COMPSTARTGAME",
+                  "0x5B": "D2GS_PLAYERJOINED",
+                  "0x5C": "D2GS_PLAYERLEFT",
                   "0x5D": "D2GS_QUESTITEMSTATE",
                   "0x5E": "D2GS_UNKNOWN13",
                   "0x5F": "D2GS_UNKNOWN14",
@@ -3055,8 +3065,8 @@
                   "D2GS_UNKNOWN12": "D2GS_UNKNOWN12",
                   "D2GS_CREATECLIENTPLAYER": "D2GS_CREATECLIENTPLAYER",
                   "D2GS_EVENTMESSAGES": "D2GS_EVENTMESSAGES",
-                  "D2GS_PLAYERINGAME": "D2GS_PLAYERINGAME",
-                  "D2GS_COMPSTARTGAME": "D2GS_COMPSTARTGAME",
+                  "D2GS_PLAYERJOINED": "D2GS_PLAYERJOINED",
+                  "D2GS_PLAYERLEFT": "D2GS_PLAYERLEFT",
                   "D2GS_QUESTITEMSTATE": "D2GS_QUESTITEMSTATE",
                   "D2GS_UNKNOWN13": "D2GS_UNKNOWN13",
                   "D2GS_UNKNOWN14": "D2GS_UNKNOWN14",
