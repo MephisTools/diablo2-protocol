@@ -1,5 +1,5 @@
 {
-  "name": "pathofbot",
+  "name": "diablo2-protocol",
   "version": "1.0.0",
   "description": "diablo 2 packets parsing and serialization, and login sequence implementation to build clients and servers",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/louis030195/PathOfBot.git"
+    "url": "git+https://github.com/louis030195/diablo2-protocol.git"
   },
   "keywords": [
     "bot",
@@ -20,9 +20,9 @@
   "author": "Louis Beaumont",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/louis030195/PathOfBot/issues"
+    "url": "https://github.com/louis030195/diablo2-protocol/issues"
   },
-  "homepage": "https://github.com/louis030195/PathOfBot#readme",
+  "homepage": "https://github.com/louis030195/diablo2-protocol#readme",
   "dependencies": {
     "bridge.net": "^1.0.0",
     "once-promise": "^2.0.0",
