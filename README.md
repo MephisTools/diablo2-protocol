@@ -1,4 +1,4 @@
-# Path of bot
+# diablo2-protocol
 [![NPM version](https://img.shields.io/npm/v/pathofbot.svg)](http://npmjs.com/package/pathofbot)
 [![Build Status](https://img.shields.io/circleci/project/louis030195/PathOfBot/master.svg)](https://circleci.com/gh/louis030195/PathOfBot)
 
