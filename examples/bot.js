@@ -34,4 +34,16 @@ createClientDiablo({
         yCoordinate: targetY
       })
     })
+    clientDiablo.on('D2GS_NPCMOVE', ({ x, y }) => {
+      clientDiablo.write('D2GS_LEFTSKILLONLOCATION', {
+        xCoordinate: x,
+        yCoordinate: y
+      })
+    })
+    clientDiablo.on('D2GS_NPCMOVETOTARGET', ({ x, y }) => {
+      clientDiablo.write('D2GS_LEFTSKILLONLOCATION', {
+        xCoordinate: x,
+        yCoordinate: y
+      })
+    })
   })

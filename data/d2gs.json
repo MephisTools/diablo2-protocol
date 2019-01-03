@@ -1519,6 +1519,10 @@
           "type": "lu16"
         },
         {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
           "name": "currentX",
           "type": "lu16"
         },
