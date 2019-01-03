@@ -19,6 +19,8 @@ protoToClient.addProtocol(d2gsProtocol, ['toClient'])
 
 const parser = new FullPacketParser(protoToClient, 'packet')
 
+parser.on('error', err => console.log('d2gsToClient error : ', err.message))
+
 const splitter = createSplitter()
 
 const fs = require('fs')

@@ -68,6 +68,8 @@ toClientParser.on('data', ({ data }) => {
   console.info('d2gsToClient : ', name, JSON.stringify(params))
 })
 
+toClientParser.on('error', err => console.log('d2gsToClient error : ', err.message))
+
 let clientPortSid = null
 let clientPortBnFtp = null
 let compression = true
