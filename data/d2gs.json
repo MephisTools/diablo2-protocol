@@ -2238,9 +2238,8 @@
         },
         {
           "name": "unitId",
-          "type": "lu8"
-        },
-        {"name":"unknown","type" : ["array", {"count": 3, "type": "lu8" } ] }
+          "type": "lu32"
+        }
       ]],
       "D2GS_TRADEACCEPTED": ["container", [
         {
