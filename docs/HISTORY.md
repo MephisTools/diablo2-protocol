@@ -1,3 +1,7 @@
+## 1.0.1
+* update the readme
+* fix protodef usage
+
 ## 1.0.0
 
 * the client works
