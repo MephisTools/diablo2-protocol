@@ -2809,7 +2809,6 @@
                   "0x24": "D2GS_UNKNOWN6",
                   "0x25": "D2GS_UNKNOWN7",
                   "0x26": "D2GS_GAMECHAT",
-                  "0xB5": "D2GS_OVERHEAD",
                   "0x27": "D2GS_NPCINFO",
                   "0x28": "D2GS_QUESTINFO",
                   "0x29": "D2GS_GAMEQUESTINFO",
@@ -2951,7 +2950,8 @@
                   "0xB1": "D2GS_UNKNOWN36",
                   "0xB2": "D2GS_UNKNOWN37",
                   "0xB3": "D2GS_IPBAN",
-                  "0xB4": "D2GS_UNKNOWN38"
+                  "0xB4": "D2GS_UNKNOWN38",
+                  "0xB5": "D2GS_OVERHEAD"
                 }
               }
             ]
