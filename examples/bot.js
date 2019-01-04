@@ -29,6 +29,15 @@ createClientDiablo({
     clientDiablo.playerList = []
     clientDiablo.follow = false
 
+    process.on('SIGINT', () => {
+      clientDiablo.write('D2GS_GAMEEXIT', {})
+      clientDiablo.write('SID_LEAVEGAME', {})
+
+      process.exit()
+      // clientDiablo.on('D2GS_GAMECONNECTIONTERMINATED', () => {
+      // })
+    })
+
     clientDiablo.on('D2GS_PLAYERJOINED', ({ playerId, charName }) => {
       clientDiablo.playerList.push({ id: playerId, name: Buffer.from(charName).toString() })
     })

@@ -317,6 +317,7 @@
           }
         ]
       ],
+      "SID_LEAVEGAME": ["container",[]],
       "packet": [
         "container",
         [
@@ -334,6 +335,7 @@
                   "0x10": "SID_LEAVECHAT",
                   "0x15": "SID_CHECKAD",
                   "0x1C": "SID_STARTADVEX3",
+                  "0x1F": "SID_LEAVEGAME",
                   "0x21": "SID_DISPLAYAD",
                   "0x22": "SID_NOTIFYJOIN",
                   "0x25": "SID_PING",
@@ -375,7 +377,8 @@
                   "SID_LEAVECHAT": "SID_LEAVECHAT",
                   "SID_CHECKAD": "SID_CHECKAD",
                   "SID_NEWS_INFO": "SID_NEWS_INFO",
-                  "SID_DISPLAYAD": "SID_DISPLAYAD"
+                  "SID_DISPLAYAD": "SID_DISPLAYAD",
+                  "SID_LEAVEGAME": "SID_LEAVEGAME"
                 }
               }
             ]
