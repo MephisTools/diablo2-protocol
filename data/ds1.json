@@ -1,0 +1,94 @@
+{
+    "types": {
+      "cstring": "native",
+      "lu16": "native",
+      "lu8": "native",
+      "lu64": "native",
+      "lu32": "native",
+      "bool": "native",
+      "lf32": "native",
+      "lf64": "native",
+      "option": "native",
+      "container": "native",
+      "switch": "native",
+      "void": "native",
+      "array": "native",
+      "string": "cstring",
+      "ds1": ["container",[
+        {
+            "name": "version",
+            "type": "lu32"
+        },
+        {
+            "name": "width",
+            "type": "lu32"
+        },
+        {
+            "name": "height",
+            "type": "lu32"
+        },
+        {
+            "name": "act",
+            "type": [
+                "switch",
+                {
+                  "compareTo": "version",
+                  "fields": {
+                    "3": "void"
+                    },
+                  "default": "lu32"  
+                 }
+              ]
+        },
+        {
+            "name": "tagType",
+            "type": [
+                "switch",
+                {
+                  "compareTo": "version",
+                  "fields": {
+                    "3": "void",
+                    "8": "void"
+                    },
+                  "default": "lu32"  
+                 }
+              ]
+        },
+        {
+            "name": "dt1Files",
+            "type": ["array", {
+                "countType": "lu32",
+                "type": "cstring"
+            }]
+        },
+        {
+            "name": "unknown",
+            "type": [
+                "switch",
+                {
+                  "compareTo": "version",
+                  "fields": {
+                    "12": "lu64",
+                    "13": "lu64"
+                    },
+                  "default": "void"  
+                 }
+              ]
+        },
+        {
+            "name": "wallLayerCount",
+            "type": [
+                "switch",
+                {
+                  "compareTo": "version",
+                  "fields": {
+                    "3": "lu64",
+                    "13": "lu64"
+                    },
+                  "default": "void"  
+                 }
+              ]
+        }
+      ]]
+    }
+  }
