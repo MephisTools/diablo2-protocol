@@ -1,5 +1,5 @@
 const fs = require('fs')
-const Dt1 = require('dt1ManualReader')
+const Dt1 = require('./dt1ManualReader')
 
 const dirLookup = [
   0x00, 0x01, 0x02, 0x01, 0x02, 0x03, 0x03, 0x05, 0x05, 0x06,
@@ -43,7 +43,7 @@ class Ds1 {
       const { dt1Files, length } = Ds1.readDependencies(bytes, offset)
       offset += length
       ds1.dt1Files = dt1Files
-      ds1.tileSampler = new Dt1.Sampler()
+      ds1.tileSampler = []
       ds1.dt1Files.forEach(dt1Filename => {
         const dt1 = Dt1.load(dt1Filename)
         ds1.tileSampler.push(dt1.tiles)
@@ -118,8 +118,8 @@ class Ds1 {
         offset += 4
       }
 
-      info.preset = SpawnPreset.Find(act, type, id)
-      ds1.objects[i] = info
+      // info.preset = SpawnPreset.Find(act, type, id)
+      // ds1.objects[i] = info
     }
     return offset
   }
@@ -247,23 +247,25 @@ class Ds1 {
   }
 
   static readDependencies (bytes, offset) {
-    const fileCount = bytes.readInt32LE()
+    const fileCount = bytes.readInt32LE(offset)
+    offset += 4
     const filenames = []
 
     for (let i = 0; i < fileCount; i++) {
       let dependency = ''
       let c
-      while ((c = bytes.readInt8()) !== 0) {
-        dependency += c
+      while ((c = bytes.readInt8(offset)) !== 0) {
+        dependency += String.fromCharCode(c)
         offset += 1
       }
-      dependency = dependency.toLower()
+      dependency = dependency.toLowerCase()
       dependency = dependency.replace('.tg1', '.dt1')
       dependency = dependency.replace('c:\\d2\\', '')
       dependency = dependency.replace('\\d2\\', '')
-      filenames[i] = dependency
+      filenames.push(dependency)
     }
-
-    return filenames
+    return { dt1Files: filenames, length: offset }
   }
 }
+
+console.log(Ds1.loadFile('/mnt/sdb/vms/share/archivemaphack/data/global/tiles/ACT1/BARRACKS/barE.ds1'))

@@ -1,5 +1,74 @@
 const fs = require('fs')
 
+class Dt1 {
+  static readTiles (dt1, bytes, offset) {
+    const tileCount = bytes.readInt32LE()
+    offset += 4
+    bytes.readInt32LE() //  Pointer in file to Tile Headers (= 276)
+    offset += 4
+    dt1.tiles = {}
+
+    for (let i = 0; i < tileCount; ++i) {
+      dt1.tiles[i].read(bytes, offset)
+    }
+
+    for (let i = 0; i < tileCount; ++i) {
+      var tile = dt1.tiles[i]
+
+      if (tile.width === 0 || tile.height === 0) {
+        continue
+      }
+
+      if ((tile.orientation === 0 || tile.orientation === 15) && tile.height !== 0) {
+        // floor or roof
+        tile.height = -79
+      }
+
+      dt1.tiles[i] = tile
+
+      offset += tile.blockHeaderPointer
+      for (let block = 0; block < tile.blockCount; ++block) {
+        bytes.readInt16LE() // x
+        offset += 2
+        bytes.readInt16LE() // y
+        offset += 2
+        bytes.readInt8(2) // zeros
+        offset += 2
+        bytes.readInt8() // gridX
+        offset += 1
+        bytes.readInt8() // gridY
+        offset += 1
+        bytes.readInt16LE() // format
+        offset += 2
+        bytes.readInt32LE() // length
+        offset += 4
+        bytes.readInt8(2) // zeros
+        offset += 2
+        bytes.readInt32LE() // fileOffset
+        offset += 4
+      }
+    }
+  }
+
+  static load (filename, mpq = true) {
+    const lowerFilename = filename.toLower()
+    let offset = 0
+    const bytes = fs.readFileSync(lowerFilename)
+    const dt1 = {}
+    dt1.filename = filename
+
+    const version1 = bytes.readInt32LE()
+    const version2 = bytes.readInt32LE()
+    if (version1 !== 7 || version2 !== 6) {
+      return dt1
+    }
+
+    offset += 260
+    Dt1.readTiles(dt1, bytes, offset)
+    return dt1
+  }
+}
+
 class BlockFlags {
   constructor () {
     this.walk = 1 // both player and mercenary
@@ -116,74 +185,5 @@ class Tile {
 
   static index (mainIndex, subIndex, orientation) {
     return (((mainIndex << 6) + subIndex) << 5) + orientation
-  }
-}
-
-class Dt1 {
-  static readTiles (dt1, bytes, offset) {
-    const tileCount = bytes.readInt32LE()
-    offset += 4
-    bytes.readInt32LE() //  Pointer in file to Tile Headers (= 276)
-    offset += 4
-    dt1.tiles = {}
-
-    for (let i = 0; i < tileCount; ++i) {
-      dt1.tiles[i].read(bytes, offset)
-    }
-
-    for (let i = 0; i < tileCount; ++i) {
-      var tile = dt1.tiles[i]
-
-      if (tile.width === 0 || tile.height === 0) {
-        continue
-      }
-
-      if ((tile.orientation === 0 || tile.orientation === 15) && tile.height !== 0) {
-        // floor or roof
-        tile.height = -79
-      }
-
-      dt1.tiles[i] = tile
-
-      offset += tile.blockHeaderPointer
-      for (let block = 0; block < tile.blockCount; ++block) {
-        bytes.readInt16LE() // x
-        offset += 2
-        bytes.readInt16LE() // y
-        offset += 2
-        bytes.readInt8(2) // zeros
-        offset += 2
-        bytes.readInt8() // gridX
-        offset += 1
-        bytes.readInt8() // gridY
-        offset += 1
-        bytes.readInt16LE() // format
-        offset += 2
-        bytes.readInt32LE() // length
-        offset += 4
-        bytes.readInt8(2) // zeros
-        offset += 2
-        bytes.readInt32LE() // fileOffset
-        offset += 4
-      }
-    }
-  }
-
-  static load (filename, mpq = true) {
-    const lowerFilename = filename.toLower()
-    let offset = 0
-    const bytes = fs.readFileSync(lowerFilename)
-    const dt1 = {}
-    dt1.filename = filename
-
-    const version1 = bytes.readInt32LE()
-    const version2 = bytes.readInt32LE()
-    if (version1 !== 7 || version2 !== 6) {
-      return dt1
-    }
-
-    offset += 260
-    Dt1.readTiles(dt1, bytes, offset)
-    return dt1
   }
 }
