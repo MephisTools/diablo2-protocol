@@ -10,7 +10,7 @@ class Dt1 {
 
     for (let i = 0; i < tileCount; ++i) {
       dt1.tiles[i] = new Tile()
-      dt1.tiles[i].read(bytes, offset)
+      offset = dt1.tiles[i].read(bytes, offset)
     }
 
     for (let i = 0; i < tileCount; ++i) {
@@ -27,7 +27,7 @@ class Dt1 {
 
       dt1.tiles[i] = tile
 
-      offset += tile.blockHeaderPointer
+      offset = tile.blockHeaderPointer
       for (let block = 0; block < tile.blockCount; ++block) {
         bytes.readInt16LE(offset) // x
         offset += 2
@@ -181,12 +181,12 @@ class Tile {
     offset += 4
     bytes.slice(offset, offset + 12) // zeros
     offset += 12
-    this.index = Tile.index(this.mainIndex, this.subIndex, this.orientation)
+    this.index = Tile.Index(this.mainIndex, this.subIndex, this.orientation)
 
     return offset
   }
 
-  static index (mainIndex, subIndex, orientation) {
+  static Index (mainIndex, subIndex, orientation) {
     return (((mainIndex << 6) + subIndex) << 5) + orientation
   }
 }

@@ -98,7 +98,7 @@ class Ds1 {
 
   static readObjects (ds1, bytes, offset, act) {
     if (ds1.version < 2) {
-      return
+      return offset
     }
     const objectCount = bytes.readInt32LE(offset)
     offset += 4
