@@ -51,8 +51,8 @@ class Dt1 {
     }
   }
 
-  static load (filename) {
-    const lowerFilename = '/mnt/sdb/vms/share/archivemaphack/' + filename.toLowerCase()
+  static load (basePath, filename) {
+    const lowerFilename = basePath + '/' + filename.toLowerCase()
     let offset = 0
     const bytes = fs.readFileSync(lowerFilename)
     const dt1 = new Dt1()

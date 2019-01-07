@@ -8,14 +8,14 @@ const dirLookup = [
 ]
 
 class Ds1 {
-  static loadFile (filename) {
-    const bytes = fs.readFileSync(filename)
-    const ds1 = Ds1.loadBytes(bytes)
-    ds1.filename = filename
+  static loadFile (basePath, filename) {
+    const bytes = fs.readFileSync(basePath + '/' + filename)
+    const ds1 = Ds1.loadBytes(basePath, bytes)
+    ds1.filename = basePath + '/' + filename
     return ds1
   }
 
-  static loadBytes (bytes) {
+  static loadBytes (basePath, bytes) {
     let offset = 0
     const ds1 = new Ds1()
     ds1.version = bytes.readInt32LE(offset)
@@ -46,7 +46,7 @@ class Ds1 {
       ds1.tileSampler = new Sampler()
       ds1.dt1Files.forEach(dt1Filename => {
         if (dt1Filename !== '') {
-          const dt1 = Dt1.load(dt1Filename)
+          const dt1 = Dt1.load(basePath, dt1Filename)
           ds1.tileSampler.add(dt1.tiles)
         }
       })
@@ -265,4 +265,11 @@ class Ds1 {
   }
 }
 
-console.log(Ds1.loadFile('/mnt/sdb/vms/share/archivemaphack/data/global/tiles/act1/barracks/bare.ds1'))
+if (process.argv.length !== 3) {
+  console.log('Usage : node ds1ManualReader.js <basePath>')
+  process.exit(1)
+}
+
+const basePath = process.argv[2]
+
+console.log(Ds1.loadFile(basePath, 'data/global/tiles/act1/barracks/bare.ds1'))
