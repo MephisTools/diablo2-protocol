@@ -270,4 +270,9 @@ if (process.argv.length !== 3) {
 
 const basePath = process.argv[2]
 
-console.log(JSON.stringify(Ds1.loadFile(basePath, 'data/global/tiles/act1/town/townew.ds1'), null, 2))
+const ds1 = Ds1.loadFile(basePath, 'data/global/tiles/act1/town/townew.ds1')
+
+console.log(JSON.stringify(ds1, null, 2))
+
+// first layer;  y = 3; x=2
+console.log(ds1.walls[0][2 * ds1.width + 1])
