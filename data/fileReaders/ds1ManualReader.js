@@ -20,9 +20,9 @@ class Ds1 {
     const ds1 = new Ds1()
     ds1.version = bytes.readInt32LE(offset)
     offset += 4
-    ds1.width = bytes.readInt32LE(offset)
+    ds1.width = bytes.readInt32LE(offset) + 1
     offset += 4
-    ds1.height = bytes.readInt32LE(offset)
+    ds1.height = bytes.readInt32LE(offset) + 1
     offset += 4
 
     let act = 0
@@ -45,17 +45,14 @@ class Ds1 {
       ds1.dt1Files = dt1Files
       ds1.tileSampler = new Sampler()
       ds1.dt1Files.forEach(dt1Filename => {
-        if (dt1Filename !== '') {
-          const dt1 = Dt1.load(basePath, dt1Filename)
-          ds1.tileSampler.add(dt1.tiles)
-        }
+        const dt1 = Dt1.load(basePath, dt1Filename)
+        ds1.tileSampler.add(dt1.tiles)
       })
     }
 
     if ((ds1.version >= 9) && (ds1.version <= 13)) {
       offset += 8
     }
-    console.log(ds1)
     offset = Ds1.readLayers(ds1, bytes, offset, tagType)
     offset = Ds1.readObjects(ds1, bytes, offset, act)
     Ds1.readGroups(ds1, bytes, offset, tagType)
@@ -75,7 +72,7 @@ class Ds1 {
     }
     const groupCount = bytes.readInt32LE(offset)
     offset += 4
-    ds1.groups = []
+    ds1.groups = new Array(groupCount)
 
     for (let i = 0; i < groupCount; i++) {
       const group = {}
@@ -102,7 +99,7 @@ class Ds1 {
     }
     const objectCount = bytes.readInt32LE(offset)
     offset += 4
-    ds1.objects = []
+    ds1.objects = new Array(objectCount)
 
     for (let i = 0; i < objectCount; i++) {
       const info = {}
@@ -132,11 +129,11 @@ class Ds1 {
     let shadowLayerCount = 1
     let tagLayerCount = 0
     if (ds1.version >= 4) {
-      wallLayerCount = bytes.readInt32LE(offset) // fix this broken
+      wallLayerCount = bytes.readInt32LE(offset)
       offset += 4
 
       if (ds1.version >= 16) {
-        floorLayerCount = bytes.readInt32LE(offset) // fix this broken
+        floorLayerCount = bytes.readInt32LE(offset)
         offset += 4
       }
     } else {
@@ -145,15 +142,14 @@ class Ds1 {
     if ((tagType === 1) || (tagType === 2)) {
       tagLayerCount = 1
     }
-    console.log(wallLayerCount, floorLayerCount)
-    ds1.floors = []
+    ds1.floors = new Array(floorLayerCount)
     for (let i = 0; i < floorLayerCount; ++i) {
-      ds1.floors[i] = []
+      ds1.floors[i] = new Array(ds1.width * ds1.height)
     }
 
-    ds1.walls = []
+    ds1.walls = new Array(wallLayerCount)
     for (let i = 0; i < wallLayerCount; ++i) {
-      ds1.walls[i] = []
+      ds1.walls[i] = new Array(ds1.width * ds1.height)
     }
     if (ds1.version < 4) {
       offset = Ds1.readCells(ds1.walls[0], bytes, offset)
@@ -246,7 +242,7 @@ class Ds1 {
   static readDependencies (bytes, offset) {
     const fileCount = bytes.readInt32LE(offset)
     offset += 4
-    const filenames = []
+    const filenames = new Array(fileCount)
 
     for (let i = 0; i < fileCount; i++) {
       let dependency = ''
@@ -272,4 +268,4 @@ if (process.argv.length !== 3) {
 
 const basePath = process.argv[2]
 
-console.log(Ds1.loadFile(basePath, 'data/global/tiles/act1/barracks/bare.ds1'))
+console.log(JSON.stringify(Ds1.loadFile(basePath, 'data/global/tiles/act1/barracks/bare.ds1'), null, 2))

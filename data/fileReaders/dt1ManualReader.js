@@ -6,7 +6,7 @@ class Dt1 {
     offset += 4
     bytes.readInt32LE(offset) //  Pointer in file to Tile Headers (= 276)
     offset += 4
-    dt1.tiles = []
+    dt1.tiles = new Array(tileCount)
 
     for (let i = 0; i < tileCount; ++i) {
       dt1.tiles[i] = new Tile()
@@ -14,7 +14,7 @@ class Dt1 {
     }
 
     for (let i = 0; i < tileCount; ++i) {
-      var tile = dt1.tiles[i]
+      const tile = dt1.tiles[i]
 
       if (tile.width === 0 || tile.height === 0) {
         continue
