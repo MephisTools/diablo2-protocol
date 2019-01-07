@@ -251,7 +251,7 @@ class Ds1 {
     for (let i = 0; i < fileCount; i++) {
       let dependency = ''
       let c
-      while ((c = bytes.readInt8(offset)) !== 0) {
+      while ((c = bytes.readInt8(offset++)) !== 0) {
         dependency += String.fromCharCode(c)
         offset += 1
       }
