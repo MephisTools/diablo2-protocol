@@ -253,7 +253,6 @@ class Ds1 {
       let c
       while ((c = bytes.readInt8(offset++)) !== 0) {
         dependency += String.fromCharCode(c)
-        offset += 1
       }
       dependency = dependency.toLowerCase()
       dependency = dependency.replace('.tg1', '.dt1')
