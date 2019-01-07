@@ -2,13 +2,14 @@ const fs = require('fs')
 
 class Dt1 {
   static readTiles (dt1, bytes, offset) {
-    const tileCount = bytes.readInt32LE()
+    const tileCount = bytes.readInt32LE(offset)
     offset += 4
-    bytes.readInt32LE() //  Pointer in file to Tile Headers (= 276)
+    bytes.readInt32LE(offset) //  Pointer in file to Tile Headers (= 276)
     offset += 4
-    dt1.tiles = {}
+    dt1.tiles = []
 
     for (let i = 0; i < tileCount; ++i) {
+      dt1.tiles[i] = new Tile()
       dt1.tiles[i].read(bytes, offset)
     }
 
@@ -28,37 +29,39 @@ class Dt1 {
 
       offset += tile.blockHeaderPointer
       for (let block = 0; block < tile.blockCount; ++block) {
-        bytes.readInt16LE() // x
+        bytes.readInt16LE(offset) // x
         offset += 2
-        bytes.readInt16LE() // y
+        bytes.readInt16LE(offset) // y
         offset += 2
-        bytes.readInt8(2) // zeros
+        bytes.readInt16LE(offset) // zeros
         offset += 2
-        bytes.readInt8() // gridX
+        bytes.readInt8(offset) // gridX
         offset += 1
-        bytes.readInt8() // gridY
+        bytes.readInt8(offset) // gridY
         offset += 1
-        bytes.readInt16LE() // format
+        bytes.readInt16LE(offset) // format
         offset += 2
-        bytes.readInt32LE() // length
+        bytes.readInt32LE(offset) // length
         offset += 4
-        bytes.readInt8(2) // zeros
+        bytes.readInt32LE(offset) // zeros
         offset += 2
-        bytes.readInt32LE() // fileOffset
+        bytes.readInt32LE(offset) // fileOffset
         offset += 4
       }
     }
   }
 
-  static load (filename, mpq = true) {
-    const lowerFilename = filename.toLower()
+  static load (filename) {
+    const lowerFilename = '/mnt/sdb/vms/share/archivemaphack/' + filename.toLowerCase()
     let offset = 0
     const bytes = fs.readFileSync(lowerFilename)
-    const dt1 = {}
+    const dt1 = new Dt1()
     dt1.filename = filename
 
-    const version1 = bytes.readInt32LE()
-    const version2 = bytes.readInt32LE()
+    const version1 = bytes.readInt32LE(offset)
+    offset += 4
+    const version2 = bytes.readInt32LE(offset)
+    offset += 4
     if (version1 !== 7 || version2 !== 6) {
       return dt1
     }
@@ -142,41 +145,41 @@ class Sampler {
 
 class Tile {
   read (bytes, offset) {
-    this.direction = bytes.readInt32LE()
+    this.direction = bytes.readInt32LE(offset)
     offset += 4
-    this.roofHeight = bytes.readInt16LE()
+    this.roofHeight = bytes.readInt16LE(offset)
     offset += 2
-    this.soundIndex = bytes.readInt8()
+    this.soundIndex = bytes.readInt8(offset)
     offset += 1
-    this.animated = bytes.readInt8()
+    this.animated = bytes.readInt8(offset)
     offset += 1
-    this.height = bytes.readInt32LE()
+    this.height = bytes.readInt32LE(offset)
     offset += 4
-    this.width = bytes.readInt32LE()
+    this.width = bytes.readInt32LE(offset)
     offset += 4
-    bytes.readInt8(4) // zeros
+    bytes.readInt32LE(offset) // zeros
     offset += 4
-    this.orientation = bytes.readInt32LE()
+    this.orientation = bytes.readInt32LE(offset)
     offset += 4
-    this.mainIndex = bytes.readInt32LE()
+    this.mainIndex = bytes.readInt32LE(offset)
     offset += 4
-    this.subIndex = bytes.readInt32LE()
+    this.subIndex = bytes.readInt32LE(offset)
     offset += 4
-    this.rarity = bytes.readInt32LE()
+    this.rarity = bytes.readInt32LE(offset)
     offset += 4
-    bytes.readInt8(4) // unknown
+    bytes.readInt32LE(offset) // unknown
     offset += 4
-    this.flags = bytes.readInt8(25) // Left to Right, and Bottom to Up
+    this.flags = bytes.slice(offset, offset + 25) // Left to Right, and Bottom to Up
     offset += 25
-    bytes.readInt8(7) // unused
+    bytes.slice(offset, offset + 7) // unused
     offset += 7
-    this.this.blockHeaderPointer = bytes.readInt32LE()
+    this.blockHeaderPointer = bytes.readInt32LE(offset)
     offset += 4
-    this.blockDatasLength = bytes.readInt32LE()
+    this.blockDatasLength = bytes.readInt32LE(offset)
     offset += 4
-    this.blockCount = bytes.readInt32LE()
+    this.blockCount = bytes.readInt32LE(offset)
     offset += 4
-    bytes.readInt8(12) // zeros
+    bytes.slice(offset, offset + 12) // zeros
     offset += 12
     this.index = Tile.index(this.mainIndex, this.subIndex, this.orientation)
 
@@ -186,4 +189,9 @@ class Tile {
   static index (mainIndex, subIndex, orientation) {
     return (((mainIndex << 6) + subIndex) << 5) + orientation
   }
+}
+
+module.exports = {
+  Sampler,
+  Dt1
 }

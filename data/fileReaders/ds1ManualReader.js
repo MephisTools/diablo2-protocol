@@ -1,5 +1,5 @@
+const { Sampler, Dt1 } = require('./dt1ManualReader')
 const fs = require('fs')
-const Dt1 = require('./dt1ManualReader')
 
 const dirLookup = [
   0x00, 0x01, 0x02, 0x01, 0x02, 0x03, 0x03, 0x05, 0x05, 0x06,
@@ -43,17 +43,19 @@ class Ds1 {
       const { dt1Files, length } = Ds1.readDependencies(bytes, offset)
       offset += length
       ds1.dt1Files = dt1Files
-      ds1.tileSampler = []
+      ds1.tileSampler = new Sampler()
       ds1.dt1Files.forEach(dt1Filename => {
-        const dt1 = Dt1.load(dt1Filename)
-        ds1.tileSampler.push(dt1.tiles)
+        if (dt1Filename !== '') {
+          const dt1 = Dt1.load(dt1Filename)
+          ds1.tileSampler.add(dt1.tiles)
+        }
       })
     }
 
     if ((ds1.version >= 9) && (ds1.version <= 13)) {
       offset += 8
     }
-
+    console.log(ds1)
     offset = Ds1.readLayers(ds1, bytes, offset, tagType)
     offset = Ds1.readObjects(ds1, bytes, offset, act)
     Ds1.readGroups(ds1, bytes, offset, tagType)
@@ -129,23 +131,21 @@ class Ds1 {
     let floorLayerCount = 1
     let shadowLayerCount = 1
     let tagLayerCount = 0
-
     if (ds1.version >= 4) {
-      wallLayerCount = bytes.readInt32LE(offset)
+      wallLayerCount = bytes.readInt32LE(offset) // fix this broken
       offset += 4
 
       if (ds1.version >= 16) {
-        floorLayerCount = bytes.readInt32LE(offset)
+        floorLayerCount = bytes.readInt32LE(offset) // fix this broken
         offset += 4
       }
     } else {
       tagLayerCount = 1
     }
-
     if ((tagType === 1) || (tagType === 2)) {
       tagLayerCount = 1
     }
-
+    console.log(wallLayerCount, floorLayerCount)
     ds1.floors = []
     for (let i = 0; i < floorLayerCount; ++i) {
       ds1.floors[i] = []
@@ -155,7 +155,6 @@ class Ds1 {
     for (let i = 0; i < wallLayerCount; ++i) {
       ds1.walls[i] = []
     }
-
     if (ds1.version < 4) {
       offset = Ds1.readCells(ds1.walls[0], bytes, offset)
       offset = Ds1.readCells(ds1.floors[0], bytes, offset)
@@ -177,14 +176,13 @@ class Ds1 {
         offset += 4 * ds1.width * ds1.height // tag
       }
     }
-
     for (let w = 0; w < wallLayerCount; w++) {
       const cells = ds1.walls[w]
       let i = 0
       for (let y = 0; y < ds1.height; y++) {
         for (let x = 0; x < ds1.width; x++, i++) {
           const cell = cells[i]
-          if (cell.prop1 === 0) {
+          if (cell === undefined || cell.prop1 === 0) {
             continue
           }
 
@@ -232,8 +230,7 @@ class Ds1 {
       cell.prop4 = bytes.readInt8(offset)
       offset += 1
     })
-
-    offset += 4 * cells.Length
+    offset += 4 * cells.length
     return offset
   }
 
@@ -242,7 +239,7 @@ class Ds1 {
       cell.orientation = bytes.readInt8(offset)
       offset += 4
     })
-    offset += 4 * cells.Length
+    offset += 4 * cells.length
     return offset
   }
 
@@ -262,10 +259,11 @@ class Ds1 {
       dependency = dependency.replace('.tg1', '.dt1')
       dependency = dependency.replace('c:\\d2\\', '')
       dependency = dependency.replace('\\d2\\', '')
+      dependency = dependency.replace(/\\/g, '/')
       filenames.push(dependency)
     }
     return { dt1Files: filenames, length: offset }
   }
 }
 
-console.log(Ds1.loadFile('/mnt/sdb/vms/share/archivemaphack/data/global/tiles/ACT1/BARRACKS/barE.ds1'))
+console.log(Ds1.loadFile('/mnt/sdb/vms/share/archivemaphack/data/global/tiles/act1/barracks/bare.ds1'))
