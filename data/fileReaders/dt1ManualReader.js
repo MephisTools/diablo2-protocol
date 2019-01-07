@@ -193,5 +193,6 @@ class Tile {
 
 module.exports = {
   Sampler,
-  Dt1
+  Dt1,
+  Tile
 }

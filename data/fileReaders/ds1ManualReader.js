@@ -1,4 +1,4 @@
-const { Sampler, Dt1 } = require('./dt1ManualReader')
+const { Sampler, Dt1, Tile } = require('./dt1ManualReader')
 const fs = require('fs')
 
 const dirLookup = [
@@ -40,8 +40,8 @@ class Ds1 {
 
     if (ds1.version >= 3) {
       // Palette.LoadPalette(act);
-      const { dt1Files, length } = Ds1.readDependencies(bytes, offset)
-      offset += length
+      let dt1Files
+      ({ dt1Files, offset } = Ds1.readDependencies(bytes, offset))
       ds1.dt1Files = dt1Files
       ds1.tileSampler = new Sampler()
       ds1.dt1Files.forEach(dt1Filename => {
@@ -188,7 +188,7 @@ class Ds1 {
 
           cell.mainIndex = (cell.prop3 >> 4) + ((cell.prop4 & 0x03) << 4)
           cell.subIndex = cell.prop2
-          cell.tileIndex = Dt1.Tile.Index(cell.mainIndex, cell.subIndex, cell.orientation)
+          cell.tileIndex = Tile.Index(cell.mainIndex, cell.subIndex, cell.orientation)
 
           cells[i] = cell
         }
@@ -216,7 +216,9 @@ class Ds1 {
   }
 
   static readCells (cells, bytes, offset) {
-    cells.forEach(cell => {
+    for (let i = 0; i < cells.length; i++) {
+      const cell = {}
+      cells[i] = cell
       cell.prop1 = bytes.readInt8(offset)
       offset += 1
       cell.prop2 = bytes.readInt8(offset)
@@ -225,17 +227,17 @@ class Ds1 {
       offset += 1
       cell.prop4 = bytes.readInt8(offset)
       offset += 1
-    })
-    offset += 4 * cells.length
+    }
     return offset
   }
 
   static readOrientations (cells, bytes, offset) {
-    cells.forEach(cell => {
+    for (let i = 0; i < cells.length; i++) {
+      const cell = {}
+      cells[i] = cell
       cell.orientation = bytes.readInt8(offset)
       offset += 4
-    })
-    offset += 4 * cells.length
+    }
     return offset
   }
 
@@ -257,7 +259,7 @@ class Ds1 {
       dependency = dependency.replace(/\\/g, '/')
       filenames.push(dependency)
     }
-    return { dt1Files: filenames, length: offset }
+    return { dt1Files: filenames, offset }
   }
 }
 
@@ -268,4 +270,4 @@ if (process.argv.length !== 3) {
 
 const basePath = process.argv[2]
 
-console.log(JSON.stringify(Ds1.loadFile(basePath, 'data/global/tiles/act1/barracks/bare.ds1'), null, 2))
+console.log(JSON.stringify(Ds1.loadFile(basePath, 'data/global/tiles/act1/town/townew.ds1'), null, 2))
