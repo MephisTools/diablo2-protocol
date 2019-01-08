@@ -16,7 +16,7 @@ pcapSession.on('packet', function (rawPacket) {
   tcpTracker.track_packet(packet)
 })
 
-const FullPacketParser = require('protodef').FullPacketParser
+const FullPacketParser = require('protodef').Parser
 const ProtoDef = require('protodef').ProtoDef
 
 const {
@@ -67,8 +67,6 @@ toClientParser.on('data', ({ data }) => {
   const { name, params } = data
   console.info('d2gsToClient : ', name, JSON.stringify(params))
 })
-
-toClientParser.on('error', err => console.log('d2gsToClient error : ', err.message))
 
 let clientPortSid = null
 let clientPortBnFtp = null
