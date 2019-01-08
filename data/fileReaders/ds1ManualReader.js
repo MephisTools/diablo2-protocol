@@ -1,5 +1,6 @@
 const { Sampler, Dt1, Tile } = require('./dt1ManualReader')
 const fs = require('fs')
+const csv = require('csvtojson')
 
 const dirLookup = [
   0x00, 0x01, 0x02, 0x01, 0x02, 0x03, 0x03, 0x05, 0x05, 0x06,
@@ -93,13 +94,28 @@ class Ds1 {
     return offset
   }
 
-  static readObjects (ds1, bytes, offset, act) {
+  static async readObjects (ds1, bytes, offset, act) {
     if (ds1.version < 2) {
       return offset
     }
     const objectCount = bytes.readInt32LE(offset)
     offset += 4
     ds1.objects = new Array(objectCount)
+
+    /*
+    let json
+    csv()
+      .fromFile(basePath + '/objects.txt')
+      .then((jsonObj) => {
+        json = jsonObj
+      })
+      */
+    /*
+    const json = await csv({
+      delimiter: '\t'
+    }).fromFile(basePath + '/data/global/excel/objects.txt')
+    */
+    // console.log(json)
 
     for (let i = 0; i < objectCount; i++) {
       const info = {}
@@ -116,9 +132,15 @@ class Ds1 {
         bytes.readInt32LE(offset) // flags
         offset += 4
       }
-
       // info.preset = SpawnPreset.Find(act, type, id)
       // ds1.objects[i] = info
+      /*
+      console.log(json[i])
+      info.preset = {}
+      info.preset.act = json[i]['Act']
+      info.preset = json[i]
+      ds1.objects[i] = info
+      */
     }
     return offset
   }
@@ -263,16 +285,4 @@ class Ds1 {
   }
 }
 
-if (process.argv.length !== 3) {
-  console.log('Usage : node ds1ManualReader.js <basePath>')
-  process.exit(1)
-}
-
-const basePath = process.argv[2]
-
-const ds1 = Ds1.loadFile(basePath, 'data/global/tiles/act1/town/townew.ds1')
-
-console.log(JSON.stringify(ds1, null, 2))
-
-// first layer;  y = 3; x=2
-console.log(ds1.walls[0][2 * ds1.width + 1])
+module.exports = Ds1
