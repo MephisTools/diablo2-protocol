@@ -16,7 +16,7 @@ pcapSession.on('packet', function (rawPacket) {
   tcpTracker.track_packet(packet)
 })
 
-const FullPacketParser = require('protodef').FullPacketParser
+const FullPacketParser = require('protodef').Parser
 const ProtoDef = require('protodef').ProtoDef
 
 const {
