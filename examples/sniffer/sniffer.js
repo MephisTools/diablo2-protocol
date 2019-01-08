@@ -16,7 +16,7 @@ pcapSession.on('packet', function (rawPacket) {
   tcpTracker.track_packet(packet)
 })
 
-const FullPacketParser = require('protodef').Parser
+const FullPacketParser = require('protodef').FullPacketParser
 const ProtoDef = require('protodef').ProtoDef
 
 const {
@@ -56,6 +56,7 @@ d2gsToServer.addProtocol(d2gsProtocol, ['toServer'])
 
 const toClientParser = new FullPacketParser(d2gsToClient, 'packet')
 const splitter = createSplitter()
+splitter.sloppyMode = true
 
 splitter.on('data', data => {
   const uncompressedData = decompress(data)
