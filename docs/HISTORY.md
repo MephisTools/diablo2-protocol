@@ -1,3 +1,9 @@
+## 1.1.0
+
+* various fixes for the client
+* clean up the readme
+* begin server implementation
+
 ## 1.0.1
 * update the readme
 * fix protodef usage
