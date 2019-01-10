@@ -1,5 +1,5 @@
 package-lock.json
 node_modules
-lib/key1
-lib/key2
+lib/client/key1
+lib/client/key2
 .idea

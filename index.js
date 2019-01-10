@@ -1,4 +1,4 @@
-const createClientDiablo = require('./lib/createClientDiablo')
+const createClientDiablo = require('./lib/client/createClientDiablo')
 const mcpProtocol = require('./data/mcp')
 const sidProtocol = require('./data/sid')
 const bnftpProtocol = require('./data/bnftp')
