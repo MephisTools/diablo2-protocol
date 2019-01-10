@@ -36,7 +36,21 @@ createClientDiablo({
       process.exit()
       // clientDiablo.on('D2GS_GAMECONNECTIONTERMINATED', () => {
       // })
+      /*
+      from sniffer
+      d2gsToServer : D2GS_GAMEEXIT {}
+      d2gsToClient :  D2GS_GAMECONNECTIONTERMINATED {}
+      d2gsToClient :  D2GS_UNLOADCOMPLETE {}
+      d2gsToClient :  D2GS_GAMEEXITSUCCESSFUL {}
+      */
     })
+    /*
+    take body d2gsToServer : D2GS_INTERACTWITHENTITY {"entityType":0,"entityId":3}
+    d2gsToClient :  D2GS_CORPSEASSIGN {"assign":0,"ownerId":2,"corpseId":3}
+    d2gsToClient :  D2GS_REMOVEOBJECT {"unitType":0,"unitId":3}
+    d2gsToClient :  D2GS_ITEMACTIONOWNED {"unknown1":6,"unknown2":[5,98,2,0,0,0,2,0,0,0,17,0,130,0,101,132,8,128,22,134,7,130,128,160,146,226,63]}
+    d2gsToClient :  D2GS_ITEMACTIONOWNED {"unknown1":6,"unknown2":[6,99,2,0,0,0,2,0,0,0,17,0,130,0,101,164,10,128,22,134,7,130,128,160,114,226,63]}
+    */
 
     clientDiablo.on('D2GS_PLAYERJOINED', ({ playerId, charName }) => {
       clientDiablo.playerList.push({ id: playerId, name: Buffer.from(charName).toString() })
@@ -65,6 +79,22 @@ createClientDiablo({
         yCoordinate: y
       })
     }
+    
+
+    /*
+    clientDiablo.castSkill = (type, id, skill) => {
+      clientDiablo.write('D2GS_SWITCHSKILL', {
+        skill: skill,
+        unk1: 0,
+        hand: 0, // 0 = right, 128 = left
+        unknown: [255, 255, 255, 255, 255]
+      })
+      clientDiablo.write('D2GS_RIGHTSKILLONENTITYEX3', {
+        entityType: type,
+        entityId: id
+      })
+    }
+    */
 
     clientDiablo.on('D2GS_GAMECHAT', ({ charName, message }) => {
       if (message === '.master') {
@@ -76,6 +106,11 @@ createClientDiablo({
             message: charName + ' is now master'
           })
           */
+          // Works but stay short time ??
+          clientDiablo.write('D2GS_OVERHEADMESSAGE', {
+            message: charName + ' is now master'
+          })
+
           clientDiablo.master = charName
         } else {
           /*
@@ -85,6 +120,9 @@ createClientDiablo({
             message: clientDiablo.master + ' is already master'
           })
           */
+          clientDiablo.write('D2GS_OVERHEADMESSAGE', {
+            message: clientDiablo.master + ' is already master'
+          })
         }
       }
 
@@ -97,12 +135,18 @@ createClientDiablo({
           message: 'follow ' + clientDiablo.follow ? 'ON' : 'OFF'
         })
         */
+        clientDiablo.write('D2GS_OVERHEADMESSAGE', {
+          message: 'follow ' + clientDiablo.follow ? 'ON' : 'OFF'
+        })
 
         if (!clientDiablo.follow) {
           clientDiablo.removeAllListeners('D2GS_PLAYERMOVE')
         } else {
           clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
             clientDiablo.run(targetX, targetY)
+            // TODO: Maybe use walkverify or other stuff to get my own pos
+            clientDiablo.x = targetX
+            clientDiablo.y = targetY
           })
         }
       }
@@ -116,24 +160,47 @@ createClientDiablo({
           message: 'autokill ' + clientDiablo.autokill ? 'ON' : 'OFF'
         })
         */
-
+        clientDiablo.write('D2GS_OVERHEADMESSAGE', {
+          message: 'autokill ' + clientDiablo.autokill ? 'ON' : 'OFF'
+        })
         // TODO: FIX this
         if (!clientDiablo.autokill) {
           clientDiablo.removeAllListeners('D2GS_NPCMOVE')
           clientDiablo.removeAllListeners('D2GS_NPCMOVETOTARGET')
-          clientDiablo.removeAllListeners('D2GS_NPCATTACK')
+          //clientDiablo.removeAllListeners('D2GS_NPCATTACK')
         } else {
-          clientDiablo.on('D2GS_NPCMOVE', ({ x, y }) => {
+          // Doesn't work if target too far
+          clientDiablo.on('D2GS_NPCMOVE', ({ unitId, type, x, y }) => {
             clientDiablo.castSkill(x, y, 49)
+            // clientDiablo.castSkill(unitId, type, 49)
           })
-          clientDiablo.on('D2GS_NPCMOVETOTARGET', ({ x, y }) => {
+          clientDiablo.on('D2GS_NPCMOVETOTARGET', ({ unitId, type, x, y }) => {
             clientDiablo.castSkill(x, y, 49)
+            // clientDiablo.castSkill(unitId, type, 49)
           })
+          /*
           clientDiablo.on('D2GS_NPCATTACK', ({ x, y }) => {
             clientDiablo.castSkill(x, y, 49)
           })
+          */
         }
       }
+      /*
+      // Doesnt work :D
+      if (message === '.yolo' && charName === clientDiablo.master) {
+        clientDiablo.write('D2GS_INTERACTWITHENTITY', {
+          entityType: 2,
+          entityId: 49
+        })
+        clientDiablo.on('D2GS_WAYPOINTMENU', () => {
+          clientDiablo.write('D2GS_WAYPOINT', {
+            waypointId: 49,
+            unknown: 0,
+            levelNumber: 129
+          })
+        })
+      }
+      */
     })
 
     await clientDiablo.selectCharacter(character)
