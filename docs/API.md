@@ -25,10 +25,20 @@ create and join the specified game and returns a promise
 for each diablo2 packet (see data/d2gs.json, data/mcp.json, data/bnftp.json, data/sid.json)
 emit an event when a packet is received
 
+### "packet" (name, params)
+
+emit an event with `name` and `params`
+
 ### write(name, params)
 
 sends the packet `name` with `params` to the corresponding server
 
+## createServerDiablo()
 
+Make a diablo server, returns a `ServerDiablo` instance
 
+## diablo.ServerDiablo
 
+### "connection" (clientDiablo)
+
+emits an event with a `ClientDiablo`. See above for doc

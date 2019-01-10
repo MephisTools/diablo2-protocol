@@ -3,20 +3,8 @@
 [![Build Status](https://img.shields.io/circleci/project/louis030195/diablo2-protocol/master.svg)](https://circleci.com/gh/louis030195/diablo2-protocol)
 
 
-Network protocol for diablo 2.
+Network protocol for diablo 2 : create client and servers for diablo 1.13.
 
-Currently in development, almost all packets are implemented but not all packets have been tested
-
-Follow bot in 6 lines of code
-
-```js
-clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
-    clientDiablo.write('D2GS_WALKTOLOCATION', {
-    xCoordinate: targetX,
-    yCoordinate: targetY
-    })
-})  
-```
 
 ## Installation
 
@@ -26,12 +14,39 @@ npm install diablo2-protocol
 
 ## Usage
 
+Follow bot in a few lines
+
+```js
+const { createClientDiablo } = require('diablo2-protocol')
+
+async function start () {
+  const clientDiablo = await createClientDiablo({
+    host: '198.98.54.85',
+    username: 'myuser',
+    password: 'mypassword'
+  })
+  clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
+    clientDiablo.write('D2GS_RUNTOLOCATION', {
+      xCoordinate: targetX,
+      yCoordinate: targetY
+    })
+  })
+
+  await clientDiablo.selectCharacter('mycharacter')
+  await clientDiablo.createGame('mygame', '', '21', 0)
+  console.log('Has joined the game')
+}
+
+start()
+
+```
+
 See docs/API.md
 
 Follow bot example
 
 ```
-node example/bot.js myusername mypassword mycharacter mygamename mygamepassword 4
+node example/simpleBot.js myusername mypassword mycharacter mygamename mygamepassword 4
 ```
 
 Sniffer (Linux / MacOS only)
@@ -46,7 +61,7 @@ sudo node sniffer.js
 ## Roadmap
 - [ ] Test all packets
 - [x] Sniffer
-- [ ] more documentation
+- [x] more documentation
 - [ ] Proxy ?
 - [ ] More examples
 - [ ] Web / mobile interface
