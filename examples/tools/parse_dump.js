@@ -5,7 +5,7 @@ const {
   sidProtocol,
   bnftpProtocol,
   d2gsProtocol
-} = require('..')
+} = require('../../index')
 
 const protoToServer = new ProtoDef()
 

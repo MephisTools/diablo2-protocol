@@ -1,4 +1,4 @@
-const { createSplitter, decompress, d2gsReader, d2gsProtocol } = require('..')
+const { createSplitter, decompress, d2gsReader, d2gsProtocol } = require('../../index')
 
 const ProtoDef = require('protodef').ProtoDef
 const Parser = require('protodef').Parser

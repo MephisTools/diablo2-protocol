@@ -8,7 +8,7 @@ const {
   decompress,
   d2gsProtocol,
   d2gsReader
-} = require('..')
+} = require('../..')
 
 const ProtoDef = require('protodef').ProtoDef
 const FullPacketParser = require('protodef').FullPacketParser

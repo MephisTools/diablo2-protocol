@@ -1,4 +1,4 @@
-const { getHash } = require('..')
+const { getHash } = require('../../index')
 
 const clientToken = 18226750
 const serverToken = 1515471831
