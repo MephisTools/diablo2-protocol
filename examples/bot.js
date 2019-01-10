@@ -79,7 +79,6 @@ createClientDiablo({
         yCoordinate: y
       })
     }
-    
 
     /*
     clientDiablo.castSkill = (type, id, skill) => {
@@ -167,7 +166,7 @@ createClientDiablo({
         if (!clientDiablo.autokill) {
           clientDiablo.removeAllListeners('D2GS_NPCMOVE')
           clientDiablo.removeAllListeners('D2GS_NPCMOVETOTARGET')
-          //clientDiablo.removeAllListeners('D2GS_NPCATTACK')
+          // clientDiablo.removeAllListeners('D2GS_NPCATTACK')
         } else {
           // Doesn't work if target too far
           clientDiablo.on('D2GS_NPCMOVE', ({ unitId, type, x, y }) => {
