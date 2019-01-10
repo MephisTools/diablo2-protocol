@@ -7,6 +7,7 @@ const { decompress, compress, getPacketSize } = require('./lib/compression')
 const d2gsProtocol = require('./data/d2gs')
 const d2gsReader = require('./lib/d2gsSpecialReader')
 const getHash = require('./lib/getHash')
+const createServerDiablo = require('./lib/server/createServerDiablo')
 
 module.exports = {
   createClientDiablo,
@@ -19,5 +20,6 @@ module.exports = {
   getPacketSize,
   d2gsProtocol,
   d2gsReader,
-  getHash
+  getHash,
+  createServerDiablo
 }
