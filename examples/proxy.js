@@ -40,11 +40,12 @@ function createServerD2gs (host) {
     })
     clientDiablo.on('clientD2gsReady', clientD2gsClient => {
       clientD2gsClient.socket.on('data', data => clientD2gsServer.socket.write(data))
-      clientD2gsServer.socket.on('data', data => clientD2gsClient.socket.write(data))
     })
 
     await clientDiablo.selectCharacter(character)
     await clientDiablo.createGame(gameName, gamePassword, gameServer, 0)
+
+    clientD2gsServer.socket.on('data', data => clientDiablo.clientD2gs.socket.write(data))
     console.log('Has joined the game')
   })
   return serverD2gs
