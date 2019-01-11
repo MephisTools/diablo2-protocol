@@ -8,6 +8,10 @@ const d2gsProtocol = require('./data/d2gs')
 const d2gsReader = require('./lib/utils/d2gsSpecialReader')
 const getHash = require('./lib/utils/getHash')
 const createServerDiablo = require('./lib/server/createServerDiablo')
+const ServerDiablo = require('./lib/server/serverDiablo')
+const createServerSid = require('./lib/server/createServerSid')
+const createServerMcp = require('./lib/server/createServerMcp')
+const ServerD2gs = require('./lib/server/serverD2gs')
 
 module.exports = {
   createClientDiablo,
@@ -21,5 +25,9 @@ module.exports = {
   d2gsProtocol,
   d2gsReader,
   getHash,
-  createServerDiablo
+  createServerDiablo,
+  createServerSid,
+  createServerMcp,
+  ServerD2gs,
+  ServerDiablo
 }
