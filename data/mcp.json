@@ -152,6 +152,23 @@
           }
         ]
       ],
+      "MCP_CHARCREATE": [
+        "container",
+        [
+          {
+            "name": "characterClass",
+            "type": "lu32"
+          },
+          {
+            "name": "characterFlags",
+            "type": "lu16"
+          },
+          {
+            "name": "characterName",
+            "type": "string"
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -167,6 +184,7 @@
                 "type": "lu8",
                 "mappings": {
                   "0x01": "MCP_STARTUP",
+                  "0x02": "MCP_CHARCREATE",
                   "0x03": "MCP_CREATEGAME",
                   "0x04": "MCP_JOINGAME",
                   "0x05": "MCP_GAMELIST",
@@ -192,7 +210,8 @@
                   "MCP_CREATEGAME": "MCP_CREATEGAME",
                   "MCP_JOINGAME": "MCP_JOINGAME",
                   "MCP_GAMELIST": "MCP_GAMELIST",
-                  "MCP_GAMEINFO": "MCP_GAMEINFO"
+                  "MCP_GAMEINFO": "MCP_GAMEINFO",
+                  "MCP_CHARCREATE": "MCP_CHARCREATE"
                 }
               }
             ]
@@ -394,6 +413,24 @@
           }
         ]
       ],
+      "MCP_CHARCREATE": [
+        "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "MCP_CREATEQUEUE": [
+        "container",
+        [
+          {
+            "name": "position",
+            "type": "lu32"
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -409,12 +446,14 @@
                 "type": "lu8",
                 "mappings": {
                   "0x01": "MCP_STARTUP",
+                  "0x02": "MCP_CHARCREATE",
                   "0x03": "MCP_CREATEGAME",
                   "0x04": "MCP_JOINGAME",
                   "0x05": "MCP_GAMELIST",
                   "0x06": "MCP_GAMEINFO",
                   "0x07": "MCP_CHARLOGON",
                   "0x12": "MCP_MOTD",
+                  "0x14": "MCP_CREATEQUEUE",
                   "0x19": "MCP_CHARLIST2"
                 }
               }
@@ -434,7 +473,9 @@
                   "MCP_CREATEGAME": "MCP_CREATEGAME",
                   "MCP_JOINGAME": "MCP_JOINGAME",
                   "MCP_GAMELIST": "MCP_GAMELIST",
-                  "MCP_GAMEINFO": "MCP_GAMEINFO"
+                  "MCP_GAMEINFO": "MCP_GAMEINFO",
+                  "MCP_CHARCREATE": "MCP_CHARCREATE",
+                  "MCP_CREATEQUEUE": "MCP_CREATEQUEUE"
                 }
               }
             ]

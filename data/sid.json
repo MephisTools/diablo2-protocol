@@ -318,6 +318,56 @@
         ]
       ],
       "SID_LEAVEGAME": ["container",[]],
+      "SID_GETADVLISTEX": ["container",[
+        {
+          "name": "gameType",
+          "type": "lu16"
+        },
+        {
+          "name": "subGameType",
+          "type": "lu16"
+        },
+        {
+          "name": "viewingFilter",
+          "type": "lu32"
+        },
+        {
+          "name": "reserved",
+          "type": "lu32"
+        },
+        {
+          "name": "numberOfGames",
+          "type": "lu32"
+        },
+        {
+          "name": "gameName",
+          "type": "string"
+        },
+        {
+          "name": "gamePassword",
+          "type": "string"
+        },
+        {
+          "name": "gameStatstring",
+          "type": "string"
+        }
+      ]],
+      "SID_CREATEACCOUNT": [
+        "container",
+        [
+          {
+            "name": "hashedPassword",
+            "type": ["array", {
+              "count": 5,
+              "type": "lu32"
+            }]
+          },
+          {
+            "name": "username",
+            "type": "string"
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -332,6 +382,7 @@
               {
                 "type": "lu8",
                 "mappings": {
+                  "0x09": "SID_GETADVLISTEX",
                   "0x10": "SID_LEAVECHAT",
                   "0x15": "SID_CHECKAD",
                   "0x1C": "SID_STARTADVEX3",
@@ -347,7 +398,8 @@
                   "0x3E": "SID_LOGONREALMEX",
                   "0x46": "SID_NEWS_INFO",
                   "0x0B": "SID_GETCHANNELLIST",
-                  "0x0A": "SID_ENTERCHAT"
+                  "0x0A": "SID_ENTERCHAT",
+                  "0x2A": "SID_CREATEACCOUNT"
                 }
               }
             ]
@@ -378,7 +430,9 @@
                   "SID_CHECKAD": "SID_CHECKAD",
                   "SID_NEWS_INFO": "SID_NEWS_INFO",
                   "SID_DISPLAYAD": "SID_DISPLAYAD",
-                  "SID_LEAVEGAME": "SID_LEAVEGAME"
+                  "SID_LEAVEGAME": "SID_LEAVEGAME",
+                  "SID_GETADVLISTEX": "SID_GETADVLISTEX",
+                  "SID_CREATEACCOUNT": "SID_CREATEACCOUNT"
                 }
               }
             ]
@@ -663,6 +717,88 @@
           "type": "string"
         }
       ]],
+      "SID_GETADVLISTEX": ["container", [
+        {
+          "name": "numberOfGames",
+          "type": "lu32"
+        },
+        {
+          "name": "games",
+          "type": ["array",
+            {
+              "count":"numberOfGames",
+              "type": ["container",[
+                {
+                  "name": "gameSettings",
+                  "type": "lu32"
+                },
+                {
+                  "name": "languageId",
+                  "type": "lu32"
+                },
+                {
+                  "name": "addressFamily",
+                  "type": "lu16"
+                },
+                {
+                  "name": "port",
+                  "type": "lu16"
+                },
+                {
+                  "name": "hostIp",
+                  "type": "lu32"
+                },
+                {
+                  "name": "zero1",
+                  "type": "lu32"
+                },
+                {
+                  "name": "zero2",
+                  "type": "lu32"
+                },
+                {
+                  "name": "gameStatus",
+                  "type": "lu32"
+                },
+                {
+                  "name": "elapsedTime",
+                  "type": "lu32"
+                },
+                {
+                  "name": "gameName",
+                  "type": "string"
+                },
+                {
+                  "name": "gamePassword",
+                  "type": "string"
+                },
+                {
+                  "name": "gameStatstring",
+                  "type": "string"
+                }
+              ]]
+            }
+          ]
+        }
+      ]],
+      "SID_CREATEACCOUNT": [
+        "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "SID_AUTH_ACCOUNTCREATE": [
+        "container",
+        [
+          {
+            "name": "status",
+            "type": "lu32"
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -677,6 +813,7 @@
               {
                 "type": "lu8",
                 "mappings": {
+                  "0x09": "SID_GETADVLISTEX",
                   "0x15": "SID_CHECKAD",
                   "0x25": "SID_PING",
                   "0x1C": "SID_STARTADVEX3",
@@ -689,7 +826,9 @@
                   "0x3E": "SID_LOGONREALMEX",
                   "0x0B": "SID_GETCHANNELLIST",
                   "0x0A": "SID_ENTERCHAT",
-                  "0x0F": "SID_CHATEVENT"
+                  "0x0F": "SID_CHATEVENT",
+                  "0x2A": "SID_CREATEACCOUNT",
+                  "0x52": "SID_AUTH_ACCOUNTCREATE"
                 }
               }
             ]
@@ -717,7 +856,10 @@
                   "SID_STARTADVEX3": "SID_STARTADVEX3",
                   "SID_CHATEVENT": "SID_CHATEVENT",
                   "SID_CHECKAD": "SID_CHECKAD",
-                  "SID_NEWS_INFO": "SID_NEWS_INFO"
+                  "SID_NEWS_INFO": "SID_NEWS_INFO",
+                  "SID_GETADVLISTEX": "SID_GETADVLISTEX",
+                  "SID_CREATEACCOUNT": "SID_CREATEACCOUNT",
+                  "SID_AUTH_ACCOUNTCREATE": "SID_AUTH_ACCOUNTCREATE"
                 }
               }
             ]
