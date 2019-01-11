@@ -1,3 +1,7 @@
+## 1.1.1
+
+* fix connect calls for client
+
 ## 1.1.0
 
 * various fixes for the client
