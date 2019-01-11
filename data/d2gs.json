@@ -618,6 +618,10 @@
         {
           "name": "message",
           "type": "string"
+        },
+        {
+          "name": "unk2",
+          "type": "lu16"
         }
       ]],
       "D2GS_SWITCHBODYITEM2": ["container", [
