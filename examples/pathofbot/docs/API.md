@@ -45,15 +45,19 @@ cast given skill on this location
 
 contains the player list
 
-### "packetName" (params)
+### bot._client
+
+bot._client is the low level API and should be avoided if possible
+
+#### bot._client.on("packetName", params)
 
 for each diablo2 packet (see data/d2gs.json, data/mcp.json, data/bnftp.json, data/sid.json)
 emit an event when a packet is received
 
-### "packet" (name, params)
+#### bot._client.on("packet", name, params)
 
 emit an event with `name` and `params`
 
-### write(name, params)
+#### bot._client.write(name, params)
 
 sends the packet `name` with `params` to the corresponding server

@@ -1,7 +1,7 @@
 function inject (bot) {
   process.on('SIGINT', () => {
-    bot.write('D2GS_GAMEEXIT', {})
-    bot.write('SID_LEAVEGAME', {})
+    bot._client.write('D2GS_GAMEEXIT', {})
+    bot._client.write('SID_LEAVEGAME', {})
 
     process.exit()
   })

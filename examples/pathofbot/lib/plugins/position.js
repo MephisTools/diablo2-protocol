@@ -1,11 +1,11 @@
 function inject (bot) {
   bot.warps = []
-  bot.on('D2GS_ASSIGNLVLWARP', ({ unitId, x, y, warpId }) => {
+  bot._client.on('D2GS_ASSIGNLVLWARP', ({ unitId, x, y, warpId }) => {
     bot.warps.push({ unitId, x, y, warpId })
   })
 
   bot.run = (x, y) => {
-    bot.write('D2GS_RUNTOLOCATION', {
+    bot._client.write('D2GS_RUNTOLOCATION', {
       xCoordinate: x,
       yCoordinate: y
     })
@@ -27,7 +27,7 @@ function inject (bot) {
     try {
       bot.run(bot.warps[bot.warps.length - 1].x, bot.warps[bot.warps.length - 1].y)
       bot.say(`Heading for the last warp`)
-      bot.removeAllListeners('D2GS_PLAYERMOVE')
+      bot._client.removeAllListeners('D2GS_PLAYERMOVE')
       bot.follow = false
       bot.say(`Follow off`)
     } catch (error) {

@@ -1,16 +1,16 @@
 function inject (bot) {
   bot.pickupItems = () => { // TODO: queue pickup list to catch'em all
     bot.inventory = []
-    bot.on('D2GS_ITEMACTIONWORLD', ({ unknown2 }) => {
-      bot.write('D2GS_RUNTOENTITY', {
+    bot._client.on('D2GS_ITEMACTIONWORLD', ({ unknown2 }) => {
+      bot._client.write('D2GS_RUNTOENTITY', {
         entityType: 4,
         entityId: unknown2[1] // 2nd element seems to be the id
       })
-      bot.write('D2GS_PICKUPITEM', { // Possible action IDs: 0x00 - Move item to inventory 0x01 - Move item to cursor buffer
+      bot._client.write('D2GS_PICKUPITEM', { // Possible action IDs: 0x00 - Move item to inventory 0x01 - Move item to cursor buffer
         unitType: 4,
         unitId: unknown2[1]
       })
-      bot.once('D2GS_REMOVEOBJECT', ({ unitType, unitId }) => { // Maybe its not optimal ? (not sure it's me who picked it)
+      bot._client.once('D2GS_REMOVEOBJECT', ({ unitType, unitId }) => { // Maybe its not optimal ? (not sure it's me who picked it)
         bot.inventory.push({ unitType, unitId })
       })
       /*

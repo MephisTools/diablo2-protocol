@@ -3,7 +3,7 @@ function inject (bot) {
   bot.playerList = []
   bot.follow = false
 
-  bot.on('D2GS_GAMECHAT', ({ charName, message }) => {
+  bot._client.on('D2GS_GAMECHAT', ({ charName, message }) => {
     if (message === '.master') {
       if (bot.master === null) {
         bot.say(`${charName} is now master`)
@@ -18,9 +18,9 @@ function inject (bot) {
       bot.say(`Follow  ${bot.follow ? 'on' : 'off'}`)
 
       if (!bot.follow) {
-        bot.removeAllListeners('D2GS_PLAYERMOVE')
+        bot._client.removeAllListeners('D2GS_PLAYERMOVE')
       } else {
-        bot.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
+        bot._client.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
           bot.run(targetX, targetY)
         })
       }
@@ -30,12 +30,12 @@ function inject (bot) {
       bot.autokill = !bot.autokill
       bot.say(`Autokill  ${bot.autokill ? 'on' : 'off'}`)
       if (!bot.autokill) {
-        bot.removeAllListeners('D2GS_NPCMOVE')
-        bot.removeAllListeners('D2GS_NPCMOVETOTARGET')
+        bot._client.removeAllListeners('D2GS_NPCMOVE')
+        bot._client.removeAllListeners('D2GS_NPCMOVETOTARGET')
         // bot.removeAllListeners('D2GS_NPCATTACK')
       } else {
         // Doesn't work if target too far
-        bot.on('D2GS_NPCMOVE', ({ unitId, type, x, y }) => {
+        bot._client.on('D2GS_NPCMOVE', ({ unitId, type, x, y }) => {
           let a = (x - bot.x)
           let b = (y - bot.y)
 
@@ -47,7 +47,7 @@ function inject (bot) {
           }
           // bot.castSkill(unitId, type, 49)
         })
-        bot.on('D2GS_NPCMOVETOTARGET', ({ unitId, type, x, y }) => {
+        bot._client.on('D2GS_NPCMOVETOTARGET', ({ unitId, type, x, y }) => {
           let a = (x - bot.x)
           let b = (y - bot.y)
 
@@ -59,7 +59,7 @@ function inject (bot) {
           // bot.castSkill(unitId, type, 49)
         })
         /*
-        bot.on('D2GS_NPCATTACK', ({ x, y }) => {
+        bot._client.on('D2GS_NPCATTACK', ({ x, y }) => {
           bot.castSkill(x, y, 49)
         })
         */
@@ -70,7 +70,7 @@ function inject (bot) {
       bot.pickup = !bot.pickup
       bot.say(`pickup  ${bot.pickup ? 'ON' : 'OFF'}`)
       if (!bot.pickup) {
-        bot.removeAllListeners('D2GS_ITEMACTIONWORLD')
+        bot._client.removeAllListeners('D2GS_ITEMACTIONWORLD')
       } else {
         bot.pickupItems()
       }
@@ -82,12 +82,12 @@ function inject (bot) {
     /*
     // Doesnt work :D
     if (message === '.yolo' && charName === bot.master) {
-      bot.write('D2GS_INTERACTWITHENTITY', {
+      bot._client.write('D2GS_INTERACTWITHENTITY', {
         entityType: 2,
         entityId: 49
       })
-      bot.on('D2GS_WAYPOINTMENU', () => {
-        bot.write('D2GS_WAYPOINT', {
+      bot._client.on('D2GS_WAYPOINTMENU', () => {
+        bot._client.write('D2GS_WAYPOINT', {
           waypointId: 49,
           unknown: 0,
           levelNumber: 129
