@@ -1,0 +1,101 @@
+function inject (bot) {
+  bot.master = null
+  bot.playerList = []
+  bot.follow = false
+
+  bot.on('D2GS_GAMECHAT', ({ charName, message }) => {
+    if (message === '.master') {
+      if (bot.master === null) {
+        bot.say(`${charName} is now master`)
+        bot.master = charName
+      } else {
+        bot.say(`${bot.master} is already master`)
+      }
+    }
+
+    if (message === '.follow' && charName === bot.master) {
+      bot.follow = !bot.follow
+      bot.say(`Follow  ${bot.follow ? 'on' : 'off'}`)
+
+      if (!bot.follow) {
+        bot.removeAllListeners('D2GS_PLAYERMOVE')
+      } else {
+        bot.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
+          bot.run(targetX, targetY)
+        })
+      }
+    }
+
+    if (message === '.autokill' && charName === bot.master) {
+      bot.autokill = !bot.autokill
+      bot.say(`Autokill  ${bot.autokill ? 'on' : 'off'}`)
+      if (!bot.autokill) {
+        bot.removeAllListeners('D2GS_NPCMOVE')
+        bot.removeAllListeners('D2GS_NPCMOVETOTARGET')
+        // bot.removeAllListeners('D2GS_NPCATTACK')
+      } else {
+        // Doesn't work if target too far
+        bot.on('D2GS_NPCMOVE', ({ unitId, type, x, y }) => {
+          let a = (x - bot.x)
+          let b = (y - bot.y)
+
+          if (Math.sqrt(a * a + b * b) < 10) { // Euclidean distance
+            bot.target = unitId
+            // bot.run(x, y)
+            // bot.castSkillOnEntity(type, unitId, 1)
+            bot.castSkillOnLocation(x, y, 0)
+          }
+          // bot.castSkill(unitId, type, 49)
+        })
+        bot.on('D2GS_NPCMOVETOTARGET', ({ unitId, type, x, y }) => {
+          let a = (x - bot.x)
+          let b = (y - bot.y)
+
+          if (Math.sqrt(a * a + b * b) < 10) { // Euclidean distance
+            // bot.run(x, y)
+            // bot.castSkillOnEntity(type, unitId, 1)
+            bot.castSkillOnLocation(x, y, 0)
+          }
+          // bot.castSkill(unitId, type, 49)
+        })
+        /*
+        bot.on('D2GS_NPCATTACK', ({ x, y }) => {
+          bot.castSkill(x, y, 49)
+        })
+        */
+      }
+    }
+
+    if (message === '.pickup' && charName === bot.master) {
+      bot.pickup = !bot.pickup
+      bot.say(`pickup  ${bot.pickup ? 'ON' : 'OFF'}`)
+      if (!bot.pickup) {
+        bot.removeAllListeners('D2GS_ITEMACTIONWORLD')
+      } else {
+        bot.pickupItems()
+      }
+    }
+
+    if (message === '.warp' && charName === bot.master) {
+      bot.findWarp()
+    }
+    /*
+    // Doesnt work :D
+    if (message === '.yolo' && charName === bot.master) {
+      bot.write('D2GS_INTERACTWITHENTITY', {
+        entityType: 2,
+        entityId: 49
+      })
+      bot.on('D2GS_WAYPOINTMENU', () => {
+        bot.write('D2GS_WAYPOINT', {
+          waypointId: 49,
+          unknown: 0,
+          levelNumber: 129
+        })
+      })
+    }
+    */
+  })
+}
+
+module.exports = inject
