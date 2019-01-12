@@ -2569,7 +2569,7 @@
       ]],
       "D2GS_ITEMACTIONWORLD": ["container", [
         {
-          "name": "unknown1",
+          "name": "entityType",
           "type": "lu8"
         },
         {

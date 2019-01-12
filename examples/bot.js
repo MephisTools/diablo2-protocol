@@ -61,13 +61,62 @@ createClientDiablo({
       clientDiablo.playerList.splice(index, 1)
     })
 
-    clientDiablo.run = (x, y) =>
+    clientDiablo.warps = []
+    clientDiablo.on('D2GS_ASSIGNLVLWARP', ({ unitId, x, y, warpId }) => {
+      clientDiablo.warps.push({ unitId, x, y, warpId })
+    })
+    clientDiablo.findWarp = () => {
+      /*
+      let warpDistance = 9999999
+      let currentDistance = 0
+      for (let i = 0; i < clientDiablo.warps.length; i++) {
+        currentDistance = Math.sqrt(Math.pow(clientDiablo.warps[i].x - clientDiablo.x) + Math.pow(clientDiablo.warps[i].y - clientDiablo.y))
+        if (currentDistance < warpDistance) {
+          warpDistance = currentDistance
+        }
+      }
+      */
+
+      clientDiablo.run(clientDiablo.warps[clientDiablo.warps.length - 1])
+      // D2GS_ASSIGNLVLWARP {"unitType":5,"unitId":11,"x":59907,"y":21265,"warpId":44053}
+    }
+
+    clientDiablo.pickupItems = () => { // TODO: queue pickup list to catch'em all
+      clientDiablo.inventory = []
+      clientDiablo.on('D2GS_ITEMACTIONWORLD', ({ unknown2 }) => {
+        clientDiablo.write('D2GS_RUNTOENTITY', {
+          entityType: 4,
+          entityId: unknown2[1] // 2nd element seems to be the id
+        })
+        clientDiablo.write('D2GS_PICKUPITEM', { // Possible action IDs: 0x00 - Move item to inventory 0x01 - Move item to cursor buffer
+          unitType: 4,
+          unitId: unknown2[1]
+        })
+        clientDiablo.once('D2GS_REMOVEOBJECT', ({ unitType, unitId }) => { // Maybe its not optimal ? (not sure it's me who picked it)
+          clientDiablo.inventory.push({ unitType, unitId })
+        })
+        /*
+          D2GS_PICKUPITEM {"unitType":4,"unitId":52,"actionId":0}
+          d2gsToClient :  D2GS_REMOVEOBJECT {"unitType":4,"unitId":52}
+          d2gsToClient :  D2GS_ITEMACTIONWORLD {"entityType":4,"unknown2":[5,52,0,0,0,16,0,128,0,101,0,82,242,6,199,6,130,128,32,16,128,192,127]}
+          */
+      })
+
+      // toclient D2GS_ITEMACTIONWORLD {"unknown1":0,"unknown2":[16,86,0,0,0,16,32,160,0,101,204,101,2,8,227,140,141,12,196,0,0]}
+      // toserver D22GS_RUNTOENTITY {"entityType":4,"entityId":86}
+      // toserver D2GS_PICKUPITEM {"unitType":4,"unitId":86,"actionId":0}
+    }
+
+    clientDiablo.run = (x, y) => {
       clientDiablo.write('D2GS_RUNTOLOCATION', {
         xCoordinate: x,
         yCoordinate: y
       })
+      clientDiablo.x = x
+      clientDiablo.y = y
+    }
 
-    clientDiablo.castSkill = (x, y, skill) => {
+    clientDiablo.castSkillOnLocation = (x, y, skill) => {
       clientDiablo.write('D2GS_SWITCHSKILL', {
         skill: skill,
         unk1: 0,
@@ -80,46 +129,35 @@ createClientDiablo({
       })
     }
 
-    /*
-    clientDiablo.castSkill = (type, id, skill) => {
+    clientDiablo.castSkillOnEntity = (type, id, skill) => {
+      /*
       clientDiablo.write('D2GS_SWITCHSKILL', {
         skill: skill,
         unk1: 0,
         hand: 0, // 0 = right, 128 = left
         unknown: [255, 255, 255, 255, 255]
       })
+      */
       clientDiablo.write('D2GS_RIGHTSKILLONENTITYEX3', {
         entityType: type,
         entityId: id
       })
     }
-    */
 
     clientDiablo.on('D2GS_GAMECHAT', ({ charName, message }) => {
       if (message === '.master') {
         if (clientDiablo.master === null) {
-          /*
           clientDiablo.write('D2GS_CHATMESSAGE', {
             type: 1,
             unk1: 0,
-            message: charName + ' is now master'
-          })
-          */
-          // Works but stay short time ??
-          clientDiablo.write('D2GS_OVERHEADMESSAGE', {
             message: charName + ' is now master'
           })
 
           clientDiablo.master = charName
         } else {
-          /*
           clientDiablo.write('D2GS_CHATMESSAGE', {
             type: 1,
             unk1: 0,
-            message: clientDiablo.master + ' is already master'
-          })
-          */
-          clientDiablo.write('D2GS_OVERHEADMESSAGE', {
             message: clientDiablo.master + ' is already master'
           })
         }
@@ -127,14 +165,9 @@ createClientDiablo({
 
       if (message === '.follow' && charName === clientDiablo.master) {
         clientDiablo.follow = !clientDiablo.follow
-        /*
         clientDiablo.write('D2GS_CHATMESSAGE', {
           type: 1,
           unk1: 0,
-          message: 'follow ' + clientDiablo.follow ? 'ON' : 'OFF'
-        })
-        */
-        clientDiablo.write('D2GS_OVERHEADMESSAGE', {
           message: 'follow ' + clientDiablo.follow ? 'ON' : 'OFF'
         })
 
@@ -143,25 +176,18 @@ createClientDiablo({
         } else {
           clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
             clientDiablo.run(targetX, targetY)
-            // TODO: Maybe use walkverify or other stuff to get my own pos
-            clientDiablo.x = targetX
-            clientDiablo.y = targetY
           })
         }
       }
 
       if (message === '.autokill' && charName === clientDiablo.master) {
         clientDiablo.autokill = !clientDiablo.autokill
-        /*
         clientDiablo.write('D2GS_CHATMESSAGE', {
           type: 1,
           unk1: 0,
           message: 'autokill ' + clientDiablo.autokill ? 'ON' : 'OFF'
         })
-        */
-        clientDiablo.write('D2GS_OVERHEADMESSAGE', {
-          message: 'autokill ' + clientDiablo.autokill ? 'ON' : 'OFF'
-        })
+
         // TODO: FIX this
         if (!clientDiablo.autokill) {
           clientDiablo.removeAllListeners('D2GS_NPCMOVE')
@@ -170,11 +196,26 @@ createClientDiablo({
         } else {
           // Doesn't work if target too far
           clientDiablo.on('D2GS_NPCMOVE', ({ unitId, type, x, y }) => {
-            clientDiablo.castSkill(x, y, 49)
+            let a = (x - clientDiablo.x)
+            let b = (y - clientDiablo.y)
+
+            if (Math.sqrt(a * a + b * b) < 10) { // Euclidean distance
+              clientDiablo.target = unitId
+              // clientDiablo.run(x, y)
+              // clientDiablo.castSkillOnEntity(type, unitId, 1)
+              clientDiablo.castSkillOnLocation(x, y, 0)
+            }
             // clientDiablo.castSkill(unitId, type, 49)
           })
           clientDiablo.on('D2GS_NPCMOVETOTARGET', ({ unitId, type, x, y }) => {
-            clientDiablo.castSkill(x, y, 49)
+            let a = (x - clientDiablo.x)
+            let b = (y - clientDiablo.y)
+
+            if (Math.sqrt(a * a + b * b) < 10) { // Euclidean distance
+              // clientDiablo.run(x, y)
+              // clientDiablo.castSkillOnEntity(type, unitId, 1)
+              clientDiablo.castSkillOnLocation(x, y, 0)
+            }
             // clientDiablo.castSkill(unitId, type, 49)
           })
           /*
@@ -183,6 +224,30 @@ createClientDiablo({
           })
           */
         }
+      }
+
+      if (message === '.pickup' && charName === clientDiablo.master) {
+        clientDiablo.pickup = !clientDiablo.pickup
+        clientDiablo.write('D2GS_CHATMESSAGE', {
+          type: 1,
+          unk1: 0,
+          message: `pickup  ${clientDiablo.pickup ? 'ON' : 'OFF'}`
+        })
+
+        if (!clientDiablo.pickup) {
+          clientDiablo.removeAllListeners('D2GS_ITEMACTIONWORLD')
+        } else {
+          clientDiablo.pickupItems()
+        }
+      }
+
+      if (message === '.warp' && charName === clientDiablo.master) {
+        clientDiablo.findWarp()
+        clientDiablo.write('D2GS_CHATMESSAGE', {
+          type: 1,
+          unk1: 0,
+          message: `heading for the last warp`
+        })
       }
       /*
       // Doesnt work :D

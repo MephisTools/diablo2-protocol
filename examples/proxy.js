@@ -42,6 +42,18 @@ function createServerD2gs (host) {
       clientD2gsClient.socket.on('data', data => clientD2gsServer.socket.write(data))
     })
 
+
+    clientDiablo.on('D2GS_GAMECHAT', ({ charName, message }) => {
+      if (message === '.tp') {
+        clientDiablo.write('D2GS_WAYPOINT', {
+          waypointId: 86,
+          unknown: 0,
+          levelNumber: 129
+        })
+      }
+
+    })
+
     await clientDiablo.selectCharacter(character)
     await clientDiablo.createGame(gameName, gamePassword, gameServer, 0)
 

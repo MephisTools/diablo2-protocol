@@ -86,7 +86,7 @@ function displayD2gsToClient (data) {
       if (data[0] !== 0xaf) { data = data.slice(1) }
 
       const parsed = d2gsToClient.parsePacketBuffer('packet', data).data
-
+      
       const { name, params } = parsed
       console.info('d2gsToClient (uncompressed): ', name, JSON.stringify(params))
       if (name === 'D2GS_NEGOTIATECOMPRESSION' && params.compressionMode !== 0) {
