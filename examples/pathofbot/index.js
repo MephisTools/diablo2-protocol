@@ -20,4 +20,4 @@ async function createBot (options) {
   return bot
 }
 
-module.exports = {createBot}
+module.exports = { createBot }
