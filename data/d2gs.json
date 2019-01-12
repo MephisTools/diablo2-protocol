@@ -1371,6 +1371,10 @@
           "type": "lu32"
         },
         {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
           "name": "x",
           "type": "lu16"
         },
@@ -1380,7 +1384,7 @@
         },
         {
           "name": "warpId",
-          "type": "lu16"
+          "type": "lu8"
         }
       ]],
       "D2GS_REMOVEOBJECT": ["container", [
