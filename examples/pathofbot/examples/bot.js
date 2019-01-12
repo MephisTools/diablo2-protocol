@@ -1,4 +1,4 @@
-const { createBot } = require('.')
+const { createBot } = require('../index')
 
 if (process.argv.length !== 8) {
   // Game servers list at https://pathofdiablo.com/p/
