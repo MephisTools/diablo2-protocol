@@ -867,8 +867,12 @@
       ]],
       "D2GS_UPDATEPOSITION": ["container", [
         {
-          "name": "unk1",
-          "type": "lu32"
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
         }
       ]],
       "D2GS_RESURRECTMERC": ["container", [
