@@ -5,6 +5,9 @@
 
 Network protocol for diablo 2 : create client and servers for diablo 1.13.
 
+[Usage example](https://www.youtube.com/watch?v=KYPTijLiwMI&feature=youtu.be)
+
+
 
 ## Installation
 
