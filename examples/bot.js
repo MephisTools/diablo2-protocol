@@ -65,6 +65,16 @@ createClientDiablo({
     clientDiablo.on('D2GS_ASSIGNLVLWARP', ({ unitId, x, y, warpId }) => {
       clientDiablo.warps.push({ unitId, x, y, warpId })
     })
+
+    clientDiablo.say = (message) => { // TODO: Maybe an option to whisper the master
+      clientDiablo.write('D2GS_CHATMESSAGE', {
+        type: 1,
+        unk1: 0,
+        unk2: 0,
+        message: message
+      })
+    }
+
     clientDiablo.findWarp = () => {
       /*
       let warpDistance = 9999999
@@ -76,9 +86,15 @@ createClientDiablo({
         }
       }
       */
-
-      clientDiablo.run(clientDiablo.warps[clientDiablo.warps.length - 1])
-      // D2GS_ASSIGNLVLWARP {"unitType":5,"unitId":11,"x":59907,"y":21265,"warpId":44053}
+      try {
+        clientDiablo.run(clientDiablo.warps[clientDiablo.warps.length - 1].x, clientDiablo.warps[clientDiablo.warps.length - 1].y)
+        clientDiablo.say(`Heading for the last warp`)
+        clientDiablo.removeAllListeners('D2GS_PLAYERMOVE')
+        clientDiablo.follow = false
+        clientDiablo.say(`Follow off`)
+      } catch (error) {
+        clientDiablo.say('Can\'t find any warp')
+      }
     }
 
     clientDiablo.pickupItems = () => { // TODO: queue pickup list to catch'em all
@@ -147,29 +163,16 @@ createClientDiablo({
     clientDiablo.on('D2GS_GAMECHAT', ({ charName, message }) => {
       if (message === '.master') {
         if (clientDiablo.master === null) {
-          clientDiablo.write('D2GS_CHATMESSAGE', {
-            type: 1,
-            unk1: 0,
-            message: charName + ' is now master'
-          })
-
+          clientDiablo.say(`${charName} is now master`)
           clientDiablo.master = charName
         } else {
-          clientDiablo.write('D2GS_CHATMESSAGE', {
-            type: 1,
-            unk1: 0,
-            message: clientDiablo.master + ' is already master'
-          })
+          clientDiablo.say(`${clientDiablo.master} is already master`)
         }
       }
 
       if (message === '.follow' && charName === clientDiablo.master) {
         clientDiablo.follow = !clientDiablo.follow
-        clientDiablo.write('D2GS_CHATMESSAGE', {
-          type: 1,
-          unk1: 0,
-          message: 'follow ' + clientDiablo.follow ? 'ON' : 'OFF'
-        })
+        clientDiablo.say(`Follow  ${clientDiablo.follow ? 'on' : 'off'}`)
 
         if (!clientDiablo.follow) {
           clientDiablo.removeAllListeners('D2GS_PLAYERMOVE')
@@ -182,13 +185,7 @@ createClientDiablo({
 
       if (message === '.autokill' && charName === clientDiablo.master) {
         clientDiablo.autokill = !clientDiablo.autokill
-        clientDiablo.write('D2GS_CHATMESSAGE', {
-          type: 1,
-          unk1: 0,
-          message: 'autokill ' + clientDiablo.autokill ? 'ON' : 'OFF'
-        })
-
-        // TODO: FIX this
+        clientDiablo.say(`Autokill  ${clientDiablo.autokill ? 'on' : 'off'}`)
         if (!clientDiablo.autokill) {
           clientDiablo.removeAllListeners('D2GS_NPCMOVE')
           clientDiablo.removeAllListeners('D2GS_NPCMOVETOTARGET')
@@ -228,12 +225,7 @@ createClientDiablo({
 
       if (message === '.pickup' && charName === clientDiablo.master) {
         clientDiablo.pickup = !clientDiablo.pickup
-        clientDiablo.write('D2GS_CHATMESSAGE', {
-          type: 1,
-          unk1: 0,
-          message: `pickup  ${clientDiablo.pickup ? 'ON' : 'OFF'}`
-        })
-
+        clientDiablo.say(`pickup  ${clientDiablo.pickup ? 'ON' : 'OFF'}`)
         if (!clientDiablo.pickup) {
           clientDiablo.removeAllListeners('D2GS_ITEMACTIONWORLD')
         } else {
@@ -243,11 +235,6 @@ createClientDiablo({
 
       if (message === '.warp' && charName === clientDiablo.master) {
         clientDiablo.findWarp()
-        clientDiablo.write('D2GS_CHATMESSAGE', {
-          type: 1,
-          unk1: 0,
-          message: `heading for the last warp`
-        })
       }
       /*
       // Doesnt work :D
