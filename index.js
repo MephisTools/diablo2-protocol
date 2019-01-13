@@ -12,6 +12,7 @@ const ServerDiablo = require('./lib/server/serverDiablo')
 const createServerSid = require('./lib/server/createServerSid')
 const createServerMcp = require('./lib/server/createServerMcp')
 const ServerD2gs = require('./lib/server/serverD2gs')
+const itemParser = require('./lib/utils/itemParser')
 
 module.exports = {
   createClientDiablo,
@@ -29,5 +30,6 @@ module.exports = {
   createServerSid,
   createServerMcp,
   ServerD2gs,
-  ServerDiablo
+  ServerDiablo,
+  itemParser
 }

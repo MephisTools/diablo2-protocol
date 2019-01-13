@@ -26,7 +26,8 @@ const {
   createSplitter,
   decompress,
   d2gsProtocol,
-  d2gsReader
+  d2gsReader,
+  itemParser
 } = require('../..')
 
 const mcpToServer = new ProtoDef()
@@ -64,9 +65,12 @@ splitter.on('data', data => {
   toClientParser.write(uncompressedData)
 })
 
-toClientParser.on('data', (a) => {
-  // console.log('toclient', a.data.name, a.buffer.toString('hex'))
-  const { name, params } = a.data
+toClientParser.on('data', ({ data, buffer }) => {
+  let { name, params } = data
+
+  if (name === 'D2GS_ITEMACTIONWORLD' || name === 'D2GS_ITEMACTIONOWNED') {
+    params = itemParser(buffer)
+  }
   console.info('d2gsToClient : ', name, JSON.stringify(params))
 })
 
