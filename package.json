@@ -4,7 +4,7 @@
   "description": "diablo 2 packets parsing and serialization, and login sequence implementation to build clients and servers",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && npm run validateProtocols",
+    "test": "npm run lint && npm run validateProtocols && mocha",
     "lint": "standard",
     "fix": "standard --fix",
     "validateProtocols": "protodef-validator data/d2gs.json && protodef-validator data/mcp.json && protodef-validator data/sid.json && protodef-validator data/bnftp.json"
@@ -32,6 +32,7 @@
     "protodef": "^1.6.9"
   },
   "devDependencies": {
+    "mocha": "^5.2.0",
     "protodef-validator": "^1.2.2",
     "standard": "^12.0.1"
   }
