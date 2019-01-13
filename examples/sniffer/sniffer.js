@@ -31,7 +31,8 @@ const {
   decompress,
   d2gsProtocol,
   d2gsReader,
-  itemParser
+  itemParser,
+  bitfieldLE
 } = require('../..')
 
 const mcpToServer = new ProtoDef(false)
@@ -54,6 +55,7 @@ bnftpToClient.addProtocol(bnftpProtocol, ['toClient'])
 
 const d2gsToClient = new ProtoDef(false)
 d2gsToClient.addTypes(d2gsReader)
+d2gsToClient.addTypes(bitfieldLE)
 d2gsToClient.addProtocol(d2gsProtocol, ['toClient'])
 
 const d2gsToServer = new ProtoDef(false)
@@ -79,6 +81,7 @@ toClientParser.on('data', ({ data, buffer }) => {
       params = itemParser(buffer)
     }
     console.info('d2gsToClient : ', name, JSON.stringify(params))
+    // console.log('raw', 'd2gsToClient', name, buffer)
     messagesToClient.push(`d2gsToClient : ${name} ${JSON.stringify(params)}`)
   } catch (err) {
     console.log(err)

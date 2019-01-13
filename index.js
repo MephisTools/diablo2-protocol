@@ -13,6 +13,7 @@ const createServerSid = require('./lib/server/createServerSid')
 const createServerMcp = require('./lib/server/createServerMcp')
 const ServerD2gs = require('./lib/server/serverD2gs')
 const itemParser = require('./lib/utils/itemParser')
+const bitfieldLE = require('./lib/utils/bitfieldLE')
 
 module.exports = {
   createClientDiablo,
@@ -31,5 +32,6 @@ module.exports = {
   createServerMcp,
   ServerD2gs,
   ServerDiablo,
-  itemParser
+  itemParser,
+  bitfieldLE
 }

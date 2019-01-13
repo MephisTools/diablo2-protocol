@@ -2537,22 +2537,31 @@
           "type": "lu16"
         }
       ]],
-      "D2GS_WALKVERIFY": ["container", [
+      "D2GS_WALKVERIFY": ["bitfieldLE", [
         {
           "name": "stamina",
-          "type": "lu16"
+          "size": 15,
+          "signed": false
         },
         {
           "name": "x",
-          "type": "lu16"
+          "size": 15,
+          "signed": false
+        },
+        {
+          "name": "unknown1",
+          "size": 1,
+          "signed": false
         },
         {
           "name": "y",
-          "type": "lu16"
+          "size": 15,
+          "signed": false
         },
         {
-          "name": "state",
-          "type": "lu16"
+          "name": "unknown2",
+          "size": 18,
+          "signed": false
         }
       ]],
       "D2GS_WEAPONSWITCH": ["container", []],
