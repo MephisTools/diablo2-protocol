@@ -1,0 +1,296 @@
+{
+  "restBuffer": "native",
+  "generic_info": ["container",[
+    {
+      "name": "packet",
+      "type": "lu8"
+    },
+    {
+      "name": "action",
+      "type": "lu8"
+    },
+    {
+      "name": "category",
+      "type": "lu8"
+    },
+    {
+      "name": "validSize",
+      "type": "lu8"
+    },
+    {
+      "name": "id",
+      "type": "lu32"
+    },
+    {
+      "name": "unknown",
+      "type": [
+        "array",
+        {
+          "count": 5,
+          "type": "lu8"
+        }
+      ]
+    }
+  ]],
+  "status_info": [
+    "bitfield",
+    [
+      {
+        "name": "equipped",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk1",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk2",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "inSocket",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "identified",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk3",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "switchedIn",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "switchedOut",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "broken",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk4",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "potion",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "hasSockets",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk5",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "inStore",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "notInASocket",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk6",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "ear",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "startItem",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk7",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk8",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk9",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "simpleItem",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "ethereal",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk10",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "personalised",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "gambling",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "runeWord",
+        "size": 1,
+        "signed": false
+      },
+      {
+        "name": "unk11",
+        "size": 5,
+        "signed": false
+      },
+      {
+        "name": "version",
+        "size": 8,
+        "signed": false
+      },
+      {
+        "name": "unk12",
+        "size": 2,
+        "signed": false
+      }
+    ]
+  ],
+  "location": [ "container", [
+    {
+      "anon": true,
+      "type":[
+        "bitfield",
+        [
+          {
+            "name": "ground",
+            "size": 3,
+            "signed": false
+          }
+        ]
+      ]
+    },
+    {
+      "name": "location",
+      "type": [
+        "switch",
+        {
+          "compareTo": "ground",
+          "fields": {
+            "3": [
+              "container",
+              [
+                {
+                  "name": "x",
+                  "type": "lu16"
+                },
+                {
+                  "name": "y",
+                  "type": "lu16"
+                }
+              ]
+            ]
+          },
+          "default": [
+            "bitfield",
+            [
+              {
+                "name": "directory",
+                "size": 4,
+                "signed": false
+              },
+              {
+                "name": "x",
+                "size": 4,
+                "signed": false
+              },
+              {
+                "name": "y",
+                "size": 3,
+                "signed": false
+              },
+              {
+                "name": "container",
+                "size": 4,
+                "signed": false
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]],
+  "D2GS_ITEMACTIONOWNED": [
+    "container",
+    [
+      {
+        "name": "genericInfo",
+        "type": "generic_info"
+      },
+      {
+        "name": "statusInfo",
+        "type": "status_info"
+      },
+      {
+        "name": "location",
+        "type": "location"
+      },
+      {
+        "name": "details",
+        "type": "restBuffer"
+      }
+    ]
+  ],
+  "ear": ["container",[
+    {
+      "anon": true,
+      "type": ["bitfield",[
+        {
+          "name": "unknown",
+          "size": 3,
+          "signed": false
+        },
+        {
+          "name": "earLevel",
+          "size": 7,
+          "signed": false
+        }
+      ]]
+    },
+    {
+      "name": "unknown2",
+      "type": "lu8"
+    }
+  ]]
+}
