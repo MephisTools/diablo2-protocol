@@ -12,12 +12,10 @@ function inject (bot) {
   })
 
   // We stop this behaviour after having saved all our inventory
-  /*
   setTimeout(() => {
     bot._client.removeAllListeners('D2GS_ITEMACTIONOWNED')
     bot._client.removeAllListeners('D2GS_ITEMACTIONWORLD')
   }, 5000)
-  */
 
   bot.pickupItems = () => { // TODO: improve this ...
     bot._client.on('D2GS_ITEMACTIONWORLD', ({ id, type, name, x, y, width, height, container }) => {
