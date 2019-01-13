@@ -68,7 +68,7 @@ function inject (bot) {
 
     if (message === '.pickup' && charName === bot.master) {
       bot.pickup = !bot.pickup
-      bot.say(`pickup  ${bot.pickup ? 'ON' : 'OFF'}`)
+      bot.say(`pickup  ${bot.pickup ? 'on' : 'off'}`)
       if (!bot.pickup) {
         bot._client.removeAllListeners('D2GS_ITEMACTIONWORLD')
       } else {
@@ -77,7 +77,7 @@ function inject (bot) {
     }
 
     if (message === '.warp' && charName === bot.master) {
-      bot.findWarp()
+      bot.runToWarp()
     }
     /*
     // Doesnt work :D

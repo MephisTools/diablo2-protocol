@@ -26,6 +26,10 @@ function inject (bot) {
       entityId: id
     })
   }
+
+  // Handle leveling up skills
+  bot.autoSkill = () => {
+  }
 }
 
 module.exports = inject

@@ -2598,9 +2598,9 @@
           "type": ["array",{
             "type":"lu8",
             "countType": ["subtractor",{"type":"lu8","difference":"3"}]
-          }]
-        }
-      ]],
+            }]
+          }
+        ]],
       "D2GS_BMERCATTRIBUTE": ["container", [
         {
           "name": "attribute",

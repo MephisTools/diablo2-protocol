@@ -13,7 +13,7 @@ function inject (bot) {
     bot.y = y
   }
 
-  bot.findWarp = () => {
+  bot.runToWarp = () => {
     /*
     let warpDistance = 9999999
     let currentDistance = 0

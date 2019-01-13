@@ -24,6 +24,10 @@ function inject (bot) {
     // toserver D22GS_RUNTOENTITY {"entityType":4,"entityId":86}
     // toserver D2GS_PICKUPITEM {"unitType":4,"unitId":86,"actionId":0}
   }
+
+  // Health ? health : mana
+  bot.dropPot = (health) => {
+  }
 }
 
 module.exports = inject
