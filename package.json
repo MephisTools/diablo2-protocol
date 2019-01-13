@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/louis030195/diablo2-protocol#readme",
   "dependencies": {
+    "bit-buffer": "^0.2.4",
+    "bitset-reader": "^1.0.1",
     "bridge.net": "^1.0.0",
     "csvtojson": "^2.0.8",
     "once-promise": "^2.0.0",

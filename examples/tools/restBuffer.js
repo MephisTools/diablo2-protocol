@@ -1,5 +1,5 @@
 module.exports = {
-  'restBuffer': [readRestBuffer, writeRestBuffer, sizeOfRestBuffer],
+  'restBuffer': [readRestBuffer, writeRestBuffer, sizeOfRestBuffer]
 }
 
 function readRestBuffer (buffer, offset) {
