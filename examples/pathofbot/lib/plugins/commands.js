@@ -87,6 +87,10 @@ function inject (bot) {
     if (message.startsWith('.pot') && charName === bot.master && message.split(' ').length > 1) {
       bot.dropPot(message.split(' ')[1] === 'hp')
     }
+
+    if (message.startsWith('.wp') && charName === bot.master && message.split(' ').length > 1) {
+      bot.takeWaypoint(message.split(' ')[1])
+    }
     /*
     // Doesnt work :D
     if (message === '.yolo' && charName === bot.master) {

@@ -34,6 +34,22 @@ function inject (bot) {
       bot.say('Can\'t find any warp')
     }
   }
+
+  bot.takeWaypoint = (waypoint) => {
+    bot._client.write('D2GS_RUNTOENTITY', {
+      entityType: 2,
+      entityId: waypoint
+    })
+    bot._client.write('D2GS_INTERACTWITHENTITY', {
+      entityType: 2,
+      entityId: waypoint
+    })
+    bot._client.write('D2GS_WAYPOINT', {
+      waypointId: waypoint,
+      unknown: 0,
+      levelNumber: 75
+    })
+  }
 }
 
 module.exports = inject
