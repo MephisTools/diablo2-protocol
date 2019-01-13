@@ -1,0 +1,12 @@
+html
+  head
+    title= title
+  body
+    table
+      tr
+        th packets
+          for m in message
+            tr
+            th= m
+  script
+    include ./autoRefresh.js

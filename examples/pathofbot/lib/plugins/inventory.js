@@ -1,4 +1,12 @@
 function inject (bot) {
+
+  // Idk what name should it has
+  // When joining a game you get D2GS_ITEMACTIONOWNED for each items you have equipped, 
+  // D2GS_ITEMACTIONWORLD for each item in your inventory / stash
+  // Just save in array our items
+  bot.myItems = () => {
+  }
+
   bot.pickupItems = () => { // TODO: queue pickup list to catch'em all
     bot.inventory = []
     bot._client.on('D2GS_ITEMACTIONWORLD', ({ unknown2 }) => {
@@ -27,6 +35,10 @@ function inject (bot) {
 
   // Health ? health : mana
   bot.dropPot = (health) => {
+  }
+
+  // Do i have this item ?
+  bot.hasItem = (name) => {
   }
 }
 

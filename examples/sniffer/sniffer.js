@@ -19,6 +19,10 @@ pcapSession.on('packet', function (rawPacket) {
 const FullPacketParser = require('protodef').Parser
 const ProtoDef = require('protodef').ProtoDef
 
+const express = require('express')
+const app = express()
+// app.use(express.static(`${__dirname}/public`))
+
 const {
   mcpProtocol,
   sidProtocol,
@@ -58,6 +62,7 @@ d2gsToServer.addProtocol(d2gsProtocol, ['toServer'])
 const toClientParser = new FullPacketParser(d2gsToClient, 'packet')
 const splitter = createSplitter()
 splitter.sloppyMode = true
+let messages = []
 
 splitter.on('data', data => {
   const uncompressedData = decompress(data)
@@ -73,6 +78,7 @@ toClientParser.on('data', ({ data, buffer }) => {
       params = itemParser(buffer)
     }
     console.info('d2gsToClient : ', name, JSON.stringify(params))
+    messages.push(`d2gsToClient : ${name} ${JSON.stringify(params)}`)
   } catch (err) {
     console.log(err)
   }
@@ -113,6 +119,7 @@ function displayParsed (proto, protoName, data) {
   try {
     const { name, params } = proto.parsePacketBuffer('packet', data).data
     console.log(protoName, ':', name, JSON.stringify(params))
+    messages.push(`${protoName}:${name} ${JSON.stringify(params)}`)
   } catch (error) {
     console.log(protoName, ':', error.message)
   }
@@ -161,7 +168,6 @@ tcpTracker.on('session', function (session) {
   if (!trackedPorts.has(srcPort) && !trackedPorts.has(dstPort)) {
     return
   }
-
   if (dstPort === sidPort) {
     if (clientPortSid === null) {
       clientPortSid = srcPort
@@ -268,4 +274,10 @@ tcpTracker.on('session', function (session) {
   })
 })
 
-console.log('loaded')
+// Set view engine to use, in this case 'pug'
+app.set('view engine', 'pug')
+
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Sniffer', message: messages })
+})
+app.listen(process.env.PORT || 3000)
