@@ -1,13 +1,28 @@
-const BitReader = require('bitset-reader')
+const { BitStream: BitReader } = require('bit-buffer')
+
+function toArrayBuffer (buf) {
+  const ab = new ArrayBuffer(buf.length)
+  const view = new Uint8Array(ab)
+  for (let i = 0; i < buf.length; ++i) {
+    view[i] = buf[i]
+  }
+  return ab
+}
+
+BitReader.prototype.read = BitReader.prototype.readBits
+BitReader.prototype.readBit = function () {
+  return this.read(1)
+}
+
 const Item = require('./item')
 const dataReader = require('./dataReader')
 
 BitReader.prototype.readString = function () {
   let output = ''
   for (let i = 0; i < 16; i++) {
-    let letter = String.fromCharCode(this.read(7))
-    if (letter === 0) { return output }
-    output += letter
+    const c = this.read(7)
+    if (c === 0) { return output }
+    output += String.fromCharCode(c)
   }
   return output
 }
@@ -107,17 +122,18 @@ function earInfo (reader, item) {
 // gets the 3 letter item code
 function getItemType (reader, item) {
   item.type = ''
-  for (let i = 0; i < 4; i++) { item.type += String.fromCharCode(reader.read(8)) }
+  for (let i = 0; i < 3; i++) { item.type += String.fromCharCode(reader.read(8)) }
+  reader.read(8) // padding char
 
-  const entry = dataReader.items[item.type]
+  const entry = dataReader.itemByCode[item.type]
   if (entry === undefined) {
     console.log('Failed to look up item in item data table')
     return true
   }
 
-  item.name = entry.Name
-  item.width = entry.Width
-  item.height = entry.Height
+  item.name = entry.name
+  item.width = entry.width
+  item.height = entry.height
 
   item.is_armor = Item.isArmor(entry.classification_string)
   item.is_weapon = Item.isWeapon(entry.classification_string)
@@ -135,7 +151,7 @@ function getLevelQuality (reader, item) {
   item.quality = Item.QualityType.normal
   if (item.simple_item || item.gambling) { return false }
   item.level = reader.read(7)
-  item.quality = (Item.QualityType)(reader.read(4))
+  item.quality = (reader.read(4))
   return true
 }
 
@@ -154,7 +170,7 @@ function getIdentifiedInfo (reader, item) {
         item.prefix = reader.read(3)
         break
       case Item.QualityType.superior:
-        item.superiority = (Item.SuperiorItemClassType)(reader.read(3))
+        item.superiority = (reader.read(3))
         break
       case Item.QualityType.magical:
         item.prefix = reader.read(11)
@@ -186,7 +202,6 @@ function getIdentifiedInfo (reader, item) {
   if (item.rune_word) {
     item.runeword_id = reader.read(12)
     item.runeword_parameter = reader.read(4)
-    // std::cout << "runeword_id: " << item.runeword_id << ", parameter: " << item.runeword_parameter << std::endl
   }
 
   if (item.personalised) {
@@ -207,7 +222,7 @@ function getIdentifiedInfo (reader, item) {
 
 function parse (packet) {
   const item = {}
-  const reader = new BitReader(packet)
+  const reader = new BitReader(toArrayBuffer(packet))
   genericInfo(reader, item)
   statusInfo(reader, item)
   getLocation(reader, item)

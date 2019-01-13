@@ -71,4 +71,9 @@ const items = lines.map(line => {
   return { name, code, classification_string: classificationMap[classificationString], width, height, stackable, usable, throwable }
 })
 
-module.exports = { items }
+const itemByCode = items.reduce((acc, item) => {
+  acc[item.code] = item
+  return acc
+}, {})
+
+module.exports = { items, itemByCode }
