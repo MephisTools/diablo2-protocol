@@ -120,6 +120,7 @@ function displayParsed (proto, protoName, data) {
   try {
     const { name, params } = proto.parsePacketBuffer('packet', data).data
     console.log(protoName, ':', name, JSON.stringify(params))
+    // console.log('raw', protoName, name, data)
     messagesToServer.push(`${protoName}:${name} ${JSON.stringify(params)}`)
   } catch (error) {
     console.log(protoName, ':', error.message)
@@ -274,6 +275,8 @@ tcpTracker.on('session', function (session) {
     }
   })
 })
+
+console.log('loaded')
 
 // Set view engine to use, in this case 'pug'
 app.set('view engine', 'pug')

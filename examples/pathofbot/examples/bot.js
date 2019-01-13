@@ -16,7 +16,7 @@ if (process.argv[5] === 'rand') { console.log('connecting to randomGame ' + rand
 
 const character = process.argv[4]
 const gameName = process.argv[5] === 'rand' ? randomGame : process.argv[5]
-const gamePassword = '' // process.argv[6], // TODO add back when password is fixed
+const gamePassword = process.argv[6] === 'none' ? '' : process.argv[6]
 const gameServer = process.argv[7]
 
 async function start () {
