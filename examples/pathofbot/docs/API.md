@@ -33,7 +33,7 @@ starts picking up close by items
 
 run to this position
 
-### findWrap()
+### runToWrap()
 
 returns the closest wrap
 

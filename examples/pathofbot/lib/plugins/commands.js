@@ -79,6 +79,14 @@ function inject (bot) {
     if (message === '.warp' && charName === bot.master) {
       bot.runToWarp()
     }
+
+    if (message.startsWith('.item') && charName === bot.master && message.split(' ').length > 1) {
+      bot.hasItem(message.split(' ')[1])
+    }
+
+    if (message.startsWith('.pot') && charName === bot.master && message.split(' ').length > 1) {
+      bot.dropPot(message.split(' ')[1] === 'hp')
+    }
     /*
     // Doesnt work :D
     if (message === '.yolo' && charName === bot.master) {
