@@ -3,7 +3,7 @@ const { createSplitter, decompress, d2gsReader, d2gsProtocol } = require('../../
 const ProtoDef = require('protodef').ProtoDef
 const Parser = require('protodef').Parser
 
-const protoToClient = new ProtoDef()
+const protoToClient = new ProtoDef(false)
 protoToClient.addTypes(d2gsReader)
 protoToClient.addProtocol(d2gsProtocol, ['toClient'])
 

@@ -7,7 +7,7 @@ const {
   d2gsProtocol
 } = require('../../index')
 
-const protoToServer = new ProtoDef()
+const protoToServer = new ProtoDef(false)
 
 protoToServer.addProtocol(sidProtocol, ['toServer'])
 
@@ -19,7 +19,7 @@ FF FF 0C 04 00 00 09 04 00 00 46 52 41 00 46 72
 
 */
 
-const bnftp = new ProtoDef()
+const bnftp = new ProtoDef(false)
 bnftp.addProtocol(bnftpProtocol, ['toServer'])
 
 /*
@@ -47,7 +47,7 @@ console.log(JSON.stringify(protoToServer.parsePacketBuffer("packet",Buffer.from(
    74 00 00`.replace(/[ \n\r\t]/g,""),"hex")).data,null,2));
 */
 
-const d2gs = new ProtoDef()
+const d2gs = new ProtoDef(false)
 d2gs.addProtocol(d2gsProtocol, ['toServer'])
 /*
 console.log(JSON.stringify(d2gs.parsePacketBuffer("packet",Buffer.from(`68 A5 81 60 5A 01 00 01 0D 00 00 00 50 CC
@@ -59,7 +59,7 @@ console.log(JSON.stringify(d2gs.parsePacketBuffer('packet', Buffer.from(`   68 a
    b6 19 a5 91 00 55 72 75 6b 75 62 61 6c 00 af 6f
    4b 00 00 00 00`.replace(/[ \n\r\t]/g, ''), 'hex')).data, null, 2))
 
-const mcp = new ProtoDef()
+const mcp = new ProtoDef(false)
 mcp.addProtocol(mcpProtocol, ['toServer'])
 
 /*

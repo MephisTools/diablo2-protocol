@@ -34,29 +34,29 @@ const {
   itemParser
 } = require('../..')
 
-const mcpToServer = new ProtoDef()
+const mcpToServer = new ProtoDef(false)
 mcpToServer.addProtocol(mcpProtocol, ['toServer'])
 
-const mcpToClient = new ProtoDef()
+const mcpToClient = new ProtoDef(false)
 mcpToClient.addProtocol(mcpProtocol, ['toClient'])
 
-const sidToServer = new ProtoDef()
+const sidToServer = new ProtoDef(false)
 sidToServer.addProtocol(sidProtocol, ['toServer'])
 
-const sidToClient = new ProtoDef()
+const sidToClient = new ProtoDef(false)
 sidToClient.addProtocol(sidProtocol, ['toClient'])
 
-const bnftpToServer = new ProtoDef()
+const bnftpToServer = new ProtoDef(false)
 bnftpToServer.addProtocol(bnftpProtocol, ['toServer'])
 
-const bnftpToClient = new ProtoDef()
+const bnftpToClient = new ProtoDef(false)
 bnftpToClient.addProtocol(bnftpProtocol, ['toClient'])
 
-const d2gsToClient = new ProtoDef()
+const d2gsToClient = new ProtoDef(false)
 d2gsToClient.addTypes(d2gsReader)
 d2gsToClient.addProtocol(d2gsProtocol, ['toClient'])
 
-const d2gsToServer = new ProtoDef()
+const d2gsToServer = new ProtoDef(false)
 d2gsToServer.addProtocol(d2gsProtocol, ['toServer'])
 
 const toClientParser = new FullPacketParser(d2gsToClient, 'packet')

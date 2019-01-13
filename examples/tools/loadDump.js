@@ -13,7 +13,7 @@ const {
 const ProtoDef = require('protodef').ProtoDef
 const FullPacketParser = require('protodef').FullPacketParser
 
-const protoToClient = new ProtoDef()
+const protoToClient = new ProtoDef(false)
 protoToClient.addTypes(d2gsReader)
 protoToClient.addProtocol(d2gsProtocol, ['toClient'])
 
