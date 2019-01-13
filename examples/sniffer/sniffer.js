@@ -64,8 +64,9 @@ splitter.on('data', data => {
   toClientParser.write(uncompressedData)
 })
 
-toClientParser.on('data', ({ data }) => {
-  const { name, params } = data
+toClientParser.on('data', (a) => {
+  // console.log('toclient', a.data.name, a.buffer.toString('hex'))
+  const { name, params } = a.data
   console.info('d2gsToClient : ', name, JSON.stringify(params))
 })
 
