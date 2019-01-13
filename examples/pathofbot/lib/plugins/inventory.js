@@ -4,11 +4,11 @@ function inject (bot) {
   // D2GS_ITEMACTIONWORLD for each item in your inventory / stash
   // Save our items in arrays
   bot.inventory = []
-  bot._client.on('D2GS_ITEMACTIONOWNED', ({ id, type, name, x, y, width, height }) => {
-    bot.inventory.push({ id, type, name, x, y, width, height })
+  bot._client.on('D2GS_ITEMACTIONOWNED', ({ id, type, name, x, y, width, height, container }) => {
+    bot.inventory.push({ id, type, name, x, y, width, height, container })
   })
-  bot._client.on('D2GS_ITEMACTIONWORLD', ({ id, type, name, x, y, width, height }) => {
-    bot.inventory.push({ id, type, name, x, y, width, height })
+  bot._client.on('D2GS_ITEMACTIONWORLD', ({ id, type, name, x, y, width, height, container }) => {
+    bot.inventory.push({ id, type, name, x, y, width, height, container })
   })
 
   // We stop this behaviour after having saved all our inventory
@@ -20,7 +20,7 @@ function inject (bot) {
   */
 
   bot.pickupItems = () => { // TODO: improve this ...
-    bot._client.on('D2GS_ITEMACTIONWORLD', ({ id, type, name, x, y, width, height }) => {
+    bot._client.on('D2GS_ITEMACTIONWORLD', ({ id, type, name, x, y, width, height, container }) => {
       bot._client.write('D2GS_RUNTOENTITY', {
         entityType: 4,
         entityId: id // 2nd element seems to be the id
@@ -30,7 +30,7 @@ function inject (bot) {
         unitId: id
       })
       bot._client.once('D2GS_REMOVEOBJECT', ({ unitType, unitId }) => { // Maybe its not optimal ? (not sure it's me who picked it)
-        bot.inventory.push({ id, type, name, x, y, width, height })
+        bot.inventory.push({ id, type, name, x, y, width, height, container })
       })
       /*
         D2GS_PICKUPITEM {"unitType":4,"unitId":52,"actionId":0}
@@ -47,19 +47,18 @@ function inject (bot) {
   // Drop a potion of health ? health : mana
   bot.dropPot = (health) => {
     try {
-      bot.inventory.forEach(item => console.log(item['id']))
       const potion = bot.inventory.find(item => { return item['type'].includes(health ? 'hp' : 'mp') })
-      console('found potion', potion)
-      if (potion['container'] === 2) { // 2 = inventory
-        bot._client.write('D2GS_DROPITEM', {
-          itemId: potion['id']
-        })
-      }
-      if (potion['container'] === 0) { // 0 = belt
-        bot._client.write('D2GS_REMOVEBELTITEM', {
-          itemId: potion['id']
-        })
-      }
+      console.log('found potion', potion)
+      // if (potion['container'] === 2) { // 2 = inventory
+      bot._client.write('D2GS_DROPITEM', {
+        itemId: potion['id']
+      })
+      // }
+      // if (potion['container'] === 0) { // 0 = belt
+      bot._client.write('D2GS_REMOVEBELTITEM', {
+        itemId: potion['id']
+      })
+      // }
     } catch (error) {
       console.log(error)
     }
