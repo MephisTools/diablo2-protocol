@@ -1,4 +1,3 @@
-const itemParser = require('../../../../lib/utils/itemParser')
 function inject (bot) {
   // Idk what name should it has
   // When joining a game you get D2GS_ITEMACTIONOWNED for each items you have equipped,
@@ -6,10 +5,10 @@ function inject (bot) {
   // Save our items in arrays
   bot.inventory = []
   bot._client.on('D2GS_ITEMACTIONOWNED', ({ id, type, name, x, y, width, height }) => {
-    bot.inventory.push(itemParser({ id, type, name, x, y, width, height }))
+    bot.inventory.push({ id, type, name, x, y, width, height })
   })
   bot._client.on('D2GS_ITEMACTIONWORLD', ({ id, type, name, x, y, width, height }) => {
-    bot.inventory.push(itemParser({ id, type, name, x, y, width, height }))
+    bot.inventory.push({ id, type, name, x, y, width, height })
   })
 
   // We stop this behaviour after having saved all our inventory
@@ -48,7 +47,7 @@ function inject (bot) {
   // Drop a potion of health ? health : mana
   bot.dropPot = (health) => {
     try {
-      bot.inventory.forEach(item => console.log(item['name']))
+      bot.inventory.forEach(item => console.log(item['id']))
       const potion = bot.inventory.find(item => { return item['type'].includes(health ? 'hp' : 'mp') })
       console('found potion', potion)
       if (potion['container'] === 2) { // 2 = inventory
