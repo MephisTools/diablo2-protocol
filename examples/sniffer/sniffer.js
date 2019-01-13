@@ -66,12 +66,16 @@ splitter.on('data', data => {
 })
 
 toClientParser.on('data', ({ data, buffer }) => {
-  let { name, params } = data
+  try {
+    let { name, params } = data
 
-  if (name === 'D2GS_ITEMACTIONWORLD' || name === 'D2GS_ITEMACTIONOWNED') {
-    params = itemParser(buffer)
+    if (name === 'D2GS_ITEMACTIONWORLD' || name === 'D2GS_ITEMACTIONOWNED') {
+      params = itemParser(buffer)
+    }
+    console.info('d2gsToClient : ', name, JSON.stringify(params))
+  } catch (err) {
+    console.log(err)
   }
-  console.info('d2gsToClient : ', name, JSON.stringify(params))
 })
 
 let clientPortSid = null
@@ -263,3 +267,5 @@ tcpTracker.on('session', function (session) {
     }
   })
 })
+
+console.log('loaded')

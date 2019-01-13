@@ -181,37 +181,37 @@ Attack Rating Against Monster Type|9|10|0
 Damage To Monster Type|9|10|0
 Fade|3|0|0
 Armor Override Percent|0|0|0
-Unused|183|0|0|0
-Unused|184|0|0|0
-Unused|185|0|0|0
-Unused|186|0|0|0
-Unused|187|0|0|0
+Unused 183|0|0|0
+Unused 184|0|0|0
+Unused 185|0|0|0
+Unused 186|0|0|0
+Unused 187|0|0|0
 Skill Tab|3|16|0
-Unused|189|0|0|0
-Unused|190|0|0|0
-Unused|191|0|0|0
-Unused|192|0|0|0
-Unused|193|0|0|0
+Unused 189|0|0|0
+Unused 190|0|0|0
+Unused 191|0|0|0
+Unused 192|0|0|0
+Unused 193|0|0|0
 Socket Count|4|0|0
 Skill On Striking|7|16|0
 Skill On Kill|7|16|0
 Skill On Death|7|16|0
 Skill On Hit|7|16|0
 Skill On Level Up|7|16|0
-Unused|200|0|0|0
+Unused 200|0|0|0
 Skill When Struck|7|16|0
-Unused|202|0|0|0
-Unused|203|0|0|0
+Unused 202|0|0|0
+Unused 203|0|0|0
 Charged|16|16|0
-Unused|204|0|0|0
-Unused|205|0|0|0
-Unused|206|0|0|0
-Unused|207|0|0|0
-Unused|208|0|0|0
-Unused|209|0|0|0
-Unused|210|0|0|0
-Unused|211|0|0|0
-Unused|212|0|0|0
+Unused 204|0|0|0
+Unused 205|0|0|0
+Unused 206|0|0|0
+Unused 207|0|0|0
+Unused 208|0|0|0
+Unused 209|0|0|0
+Unused 210|0|0|0
+Unused 211|0|0|0
+Unused 212|0|0|0
 Defense Per Level|6|0|0
 Enhanced Defense Per Level|6|0|0
 Life Per Level|6|0|0

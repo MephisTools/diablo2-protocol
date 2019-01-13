@@ -69,11 +69,12 @@ d2gsToClient :  D2GS_ITEMACTIONOWNED {"unknown1":19,"unknown2":[16,60,0,0,0,4,57
 
 const { itemParser } = require('../..')
 
-// const buffer = Buffer.from('9d1319103c00000004390000001800a0006518042007730302', 'hex')
-// const buffer = Buffer.from('9d0630103700000000010000001100800065440410d6560782eb0d88005012a024a034a074822905d30aa6164c7ff41f', 'hex')
-// const buffer = Buffer.from('9d063410250000000001000000110080006504118026c606029fb14ad72b2d72122533332c808101c28d15372d789e54e237fc07', 'hex')
-const buffer = Buffer.from('9d06420538000000000100000011008000658408f026160682ebc111323202d006d02050881023c609a314462b8c5a1841b19c92492353544816d42073f67fb4f90f', 'hex')
+const buffer1 = Buffer.from('9d1319103c00000004390000001800a0006518042007730302', 'hex')
+const buffer2 = Buffer.from('9d0630103700000000010000001100800065440410d6560782eb0d88005012a024a034a074822905d30aa6164c7ff41f', 'hex')
+const buffer3 = Buffer.from('9d063410250000000001000000110080006504118026c606029fb14ad72b2d72122533332c808101c28d15372d789e54e237fc07', 'hex')
+const buffer4 = Buffer.from('9d06420538000000000100000011008000658408f026160682ebc111323202d006d02050881023c609a314462b8c5a1841b19c92492353544816d42073f67fb4f90f', 'hex')
 
-const parsedItem = itemParser(buffer)
-
-console.log(JSON.stringify(parsedItem, null, 2))
+console.log(JSON.stringify(itemParser(buffer1), null, 2))
+console.log(JSON.stringify(itemParser(buffer2), null, 2))
+console.log(JSON.stringify(itemParser(buffer3), null, 2))
+console.log(JSON.stringify(itemParser(buffer4), null, 2))
