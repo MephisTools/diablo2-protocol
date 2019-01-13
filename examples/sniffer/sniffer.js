@@ -62,7 +62,8 @@ d2gsToServer.addProtocol(d2gsProtocol, ['toServer'])
 const toClientParser = new FullPacketParser(d2gsToClient, 'packet')
 const splitter = createSplitter()
 splitter.sloppyMode = true
-let messages = []
+let messagesToClient = []
+let messagesToServer = []
 
 splitter.on('data', data => {
   const uncompressedData = decompress(data)
@@ -78,7 +79,7 @@ toClientParser.on('data', ({ data, buffer }) => {
       params = itemParser(buffer)
     }
     console.info('d2gsToClient : ', name, JSON.stringify(params))
-    messages.push(`d2gsToClient : ${name} ${JSON.stringify(params)}`)
+    messagesToClient.push(`d2gsToClient : ${name} ${JSON.stringify(params)}`)
   } catch (err) {
     console.log(err)
   }
@@ -119,7 +120,7 @@ function displayParsed (proto, protoName, data) {
   try {
     const { name, params } = proto.parsePacketBuffer('packet', data).data
     console.log(protoName, ':', name, JSON.stringify(params))
-    messages.push(`${protoName}:${name} ${JSON.stringify(params)}`)
+    messagesToServer.push(`${protoName}:${name} ${JSON.stringify(params)}`)
   } catch (error) {
     console.log(protoName, ':', error.message)
   }
@@ -278,6 +279,6 @@ tcpTracker.on('session', function (session) {
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Sniffer', message: messages })
+  res.render('index', { title: 'Sniffer', messagesToClient: messagesToClient, messagesToServer: messagesToServer })
 })
 app.listen(process.env.PORT || 3000)
