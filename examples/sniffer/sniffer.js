@@ -3,11 +3,31 @@ if (process.argv.length !== 3) {
   process.exit(1)
 }
 
+/*
+in a new chrome tab press f12 then do this :
+const ws = new WebSocket('ws://localhost:8080')
+
+ws.onmessage = (message) => console.log(message.data)
+ */
+
 const networkInterface = process.argv[2]
 
 const pcap = require('pcap')
 
 const tcpTracker = new pcap.TCPTracker()
+
+const WebSocket = require('ws')
+
+const wss = new WebSocket.Server({ port: 8080 })
+
+// Broadcast to all.
+wss.broadcast = function broadcast (data) {
+  wss.clients.forEach(function each (client) {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(data)
+    }
+  })
+}
 
 const pcapSession = pcap.createSession(networkInterface, 'ip proto \\tcp')
 
@@ -80,6 +100,7 @@ toClientParser.on('data', ({ data, buffer }) => {
     if (name === 'D2GS_ITEMACTIONWORLD' || name === 'D2GS_ITEMACTIONOWNED') {
       params = itemParser(buffer)
     }
+    wss.broadcast(JSON.stringify({ protocol: 'd2gsToClient', name, params }))
     console.info('d2gsToClient : ', name, JSON.stringify(params))
     // console.log('raw', 'd2gsToClient', name, buffer)
     messagesToClient.push(`d2gsToClient : ${name} ${JSON.stringify(params)}`)
@@ -107,6 +128,7 @@ function displayD2gsToClient (data) {
       const parsed = d2gsToClient.parsePacketBuffer('packet', data).data
 
       const { name, params } = parsed
+      wss.broadcast(JSON.stringify({ protocol: 'd2gsToClient', name, params }))
       console.info('d2gsToClient (uncompressed): ', name, JSON.stringify(params))
       if (name === 'D2GS_NEGOTIATECOMPRESSION' && params.compressionMode !== 0) {
         compression = true
@@ -123,6 +145,7 @@ function displayParsed (proto, protoName, data) {
   try {
     const { name, params } = proto.parsePacketBuffer('packet', data).data
     console.log(protoName, ':', name, JSON.stringify(params))
+    wss.broadcast(JSON.stringify({ protocol: protoName, name, params }))
     // console.log('raw', protoName, name, data)
     messagesToServer.push(`${protoName}:${name} ${JSON.stringify(params)}`)
   } catch (error) {
@@ -287,4 +310,4 @@ app.set('view engine', 'pug')
 app.get('/', (req, res) => {
   res.render('index', { title: 'Sniffer', messagesToClient: messagesToClient, messagesToServer: messagesToServer })
 })
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3001)
