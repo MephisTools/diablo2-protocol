@@ -14,6 +14,9 @@ function inject (bot) {
     }
 
     if (message === '.follow' && charName === bot.master) {
+      // TODO: implement following in portals, warps etc ...
+      // D2GS_CHARTOOBJ {"unknown":0,"playerId":2,"movementType":24,"destinationType":2,"objectId":28,"xCoordinate":5154,"yCoordinate":5055}
+      // We seems to receive this when someone take a warp / portal
       bot.follow = !bot.follow
       bot.say(`Follow  ${bot.follow ? 'on' : 'off'}`)
 
@@ -88,8 +91,11 @@ function inject (bot) {
       bot.dropPot(message.split(' ')[1] === 'hp')
     }
 
-    if (message.startsWith('.wp') && charName === bot.master && message.split(' ').length > 1) {
-      bot.takeWaypoint(message.split(' ')[1])
+    if (message.startsWith('.wp') && charName === bot.master && message.split(' ').length > 2) {
+      bot.takeWaypoint(message.split(' ')[1], message.split(' ')[2])
+    }
+    if (message === '.pf' && charName === bot.master) {
+      bot.pathFind()
     }
     /*
     // Doesnt work :D

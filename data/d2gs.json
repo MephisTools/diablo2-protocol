@@ -2021,10 +2021,7 @@
         },
         {
           "name": "availableWaypoints",
-          "type":  ["array", {
-            "countType": "lu8",
-            "type": "lu8"
-          }]
+          "type":  "lu64"
         }
       ]],
       "D2GS_UNUSED29": ["container", []],
