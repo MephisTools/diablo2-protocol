@@ -2428,7 +2428,7 @@
         },
         {
           "name": "partyId",
-          "type": "lu8"
+          "type": "lu16"
         }
       ]],
       "D2GS_CORPSEASSIGN": ["container", [
