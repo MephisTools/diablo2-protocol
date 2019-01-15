@@ -78,7 +78,7 @@
       "D2GS_PARTY": ["container", [
         {
           "name": "actionId",
-          "type": "lu8"
+          "type": "lu16"
         },
         {
           "name": "playerId",
