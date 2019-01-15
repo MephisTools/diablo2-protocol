@@ -1,3 +1,6 @@
+const levelPreset = require('../../../../lib/map/level')
+const aStar = require('a-star')
+
 function inject (bot) {
   bot.warps = []
   bot.npcs = []
@@ -15,6 +18,7 @@ function inject (bot) {
   })
   bot._client.on('D2GS_LOADACT ', ({ areaId }) => {
     bot.area = areaId
+    // bot.objects = levelPreset('/home/louis/Desktop/d2datamerged', areaId)
   })
 
   bot.run = (x, y) => {
@@ -25,6 +29,19 @@ function inject (bot) {
     bot.x = x
     bot.y = y
   }
+
+  /*
+  bot.aStar = () => {
+    var path = aStar({
+      start: { x: bot.x, y: bot.y },
+      isEnd: () => { bot.warps.find(warp => { return warp.warpId === bot.area + 1 }) },
+      neighbor: bot.objects,
+      distance: (a, b) => { return Math.pow(a.x - b.x) + Math.pow(a.y - b.y) },
+      heuristic:,
+    })
+    console.log(path)
+  }
+  */
 
   bot.runToWarp = () => {
     /*
