@@ -2508,30 +2508,36 @@
           ]
         }
       ]],
-      "D2GS_LIFEANDMANAUPDATE": ["container", [
+      "D2GS_LIFEANDMANAUPDATE": ["bitfieldLE", [
         {
-          "name": "unitLife",
-          "type": "lu16"
+          "name": "life",
+          "size": 15,
+          "signed": false
         },
         {
-          "name": "unitMana",
-          "type": "lu16"
+          "name": "mana",
+          "size": 15,
+          "signed": false
         },
         {
-          "name": "unitStamina",
-          "type": "lu16"
+          "name": "stamina",
+          "size": 15,
+          "signed": false
         },
         {
           "name": "x",
-          "type": "lu16"
+          "size": 16,
+          "signed": false
         },
         {
           "name": "y",
-          "type": "lu16"
+          "size": 16,
+          "signed": false
         },
         {
           "name": "unknown",
-          "type": "lu16"
+          "size": 16,
+          "signed": false
         }
       ]],
       "D2GS_WALKVERIFY": ["bitfieldLE", [

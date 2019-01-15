@@ -17,6 +17,14 @@ function inject (bot) {
       // TODO: implement following in portals, warps etc ...
       // D2GS_CHARTOOBJ {"unknown":0,"playerId":2,"movementType":24,"destinationType":2,"objectId":28,"xCoordinate":5154,"yCoordinate":5055}
       // We seems to receive this when someone take a warp / portal
+      // For portals
+      /* received compressed packet D2GS_TOWNPORTALSTATE {"state":3,"areaId":83,"unitId":236}
+          received compressed packet D2GS_PORTALOWNERSHIP {"ownerId":1,"ownerName":[99,104,101,97,112,0,0,0,22,37,2,236,0,0,0,124],"localId":236,"remoteId":235}
+          received compressed packet D2GS_OBJECTSTATE {"unitType":2,"unitId":236,"unknown":3,"unitState":513}
+          received compressed packet D2GS_GAMELOADING {}
+          received compressed packet D2GS_TOWNPORTALSTATE {"state":3,"areaId":83,"unitId":236}
+          */
+
       bot.follow = !bot.follow
       bot.say(`Follow  ${bot.follow ? 'on' : 'off'}`)
 
