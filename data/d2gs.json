@@ -15,7 +15,8 @@
     "array": "native",
     "string": "cstring",
     "restBuffer": "native",
-    "subtractor": "native"
+    "subtractor": "native",
+    "bitfieldLE": "native"
   },
   "toServer": {
     "types": {
