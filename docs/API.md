@@ -12,6 +12,10 @@ Connect to diablo and returns a promise resolving to a `ClientDiablo` instance
 
 ## diablo.ClientDiablo
 
+### connect()
+
+connect to battlenet, returns a promise
+
 ### selectCharacter(character)
 
 select a character and returns a promise

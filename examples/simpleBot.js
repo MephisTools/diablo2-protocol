@@ -11,7 +11,7 @@ const gamePassword = ''
 const gameServer = process.argv[7]
 
 async function start () {
-  const clientDiablo = await createClientDiablo({
+  const clientDiablo = createClientDiablo({
     host: '198.98.54.85',
     username: process.argv[2],
     password: process.argv[3]
@@ -23,6 +23,7 @@ async function start () {
     })
   })
 
+  await clientDiablo.connect()
   await clientDiablo.selectCharacter(character)
   await clientDiablo.createGame(gameName, gamePassword, gameServer, 0)
   console.log('Has joined the game')

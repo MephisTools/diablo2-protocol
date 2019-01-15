@@ -6,6 +6,7 @@ const inventory = require('./lib/plugins/inventory')
 const players = require('./lib/plugins/players')
 const position = require('./lib/plugins/position')
 const skills = require('./lib/plugins/skills')
+const websocketApi = require('./lib/plugins/websocketApi')
 const EventEmitter = require('events').EventEmitter
 
 class Bot extends EventEmitter {
@@ -15,7 +16,8 @@ class Bot extends EventEmitter {
   }
 
   async connect (options) {
-    this._client = await createClientDiablo(options)
+    this._client = createClientDiablo(options)
+    await this._client.connect()
     this.username = this._client.username
     this._client.on('connect', () => {
       this.emit('connect')
@@ -39,7 +41,7 @@ class Bot extends EventEmitter {
 async function createBot (options) {
   const bot = new Bot()
 
-  await bot.connect(options)
+  const p = bot.connect(options)
 
   chat(bot, options)
   commands(bot, options)
@@ -48,6 +50,9 @@ async function createBot (options) {
   players(bot, options)
   position(bot, options)
   skills(bot, options)
+  websocketApi(bot, options)
+
+  await p
 
   return bot
 }

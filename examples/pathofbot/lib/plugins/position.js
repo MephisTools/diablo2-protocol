@@ -1,5 +1,5 @@
-const levelPreset = require('../../../../lib/map/level')
-const aStar = require('a-star')
+// const levelPreset = require('../../../../lib/map/level')
+// const aStar = require('a-star')
 
 function inject (bot) {
   bot.warps = []
