@@ -5,10 +5,10 @@ function inject (bot) {
   // Save our items in arrays
   bot.inventory = []
   bot._client.on('D2GS_ITEMACTIONOWNED', ({ id, type, name, x, y, width, height, container }) => {
-    bot.inventory.push({ id, type, name, x, y, width, height, container })
+    bot.inventory.push({ id: id, type: type, name: name, x: x, y: y, width: width, height: height, container: container })
   })
   bot._client.on('D2GS_ITEMACTIONWORLD', ({ id, type, name, x, y, width, height, container }) => {
-    bot.inventory.push({ id, type, name, x, y, width, height, container })
+    bot.inventory.push({ id: id, type: type, name: name, x: x, y: y, width: width, height: height, container: container })
   })
 
   // We stop this behaviour after having saved all our inventory

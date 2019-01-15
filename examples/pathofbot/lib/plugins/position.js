@@ -1,5 +1,15 @@
 function inject (bot) {
   bot.warps = []
+  bot.npcs = []
+
+  // Maybe we could also listen to the npcmove stuff but honestly they don't go too far
+  // We can reach them easy with runtoentity
+  bot._client.on('D2GS_ASSIGNNPC', ({ unitId, unitCode, x, y, unitLife, stateInfo }) => {
+    // If we ain't already got the npc in the list
+    if (bot.npcs.find(npc => { return npc.id === unitId }) === null) {
+      bot.npcs.push({ id: unitId, code: unitCode, x: x, y: y })
+    }
+  })
   bot._client.on('D2GS_ASSIGNLVLWARP', ({ unitId, x, y, warpId }) => {
     bot.warps.push({ unitId, x, y, warpId })
   })
@@ -54,6 +64,23 @@ function inject (bot) {
       waypointId: waypoint,
       unknown: 0,
       levelNumber: level
+    })
+  }
+
+  bot.base = () => {
+    bot._client.once('D2GS_PORTALOWNERSHIP', ({ ownerId, ownerName, localId, remoteId }) => {
+      bot._client.write('D2GS_RUNTOENTITY', {
+        entityType: 2,
+        entityId: localId
+      })
+      bot._client.write('D2GS_INTERACTWITHENTITY', {
+        entityType: 2,
+        entityId: localId
+      })
+    })
+    bot._client.write('D2GS_USESCROLL', {
+      type: 4,
+      itemId: 1
     })
   }
 

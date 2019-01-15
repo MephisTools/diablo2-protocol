@@ -1,6 +1,6 @@
 function inject (bot) {
   // Just leave the game, not tested
-  bot.exit = () => {
+  bot.exit = () => { // Clear all variables?
     bot._client.write('D2GS_GAMEEXIT', {})
   }
 
