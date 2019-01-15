@@ -28,7 +28,7 @@ function inject (bot) {
         unitId: id
       })
       bot._client.once('D2GS_REMOVEOBJECT', ({ unitType, unitId }) => { // Maybe its not optimal ? (not sure it's me who picked it)
-        bot.inventory.push({ id, type, name, x, y, width, height, container })
+        bot.inventory.push({ id: id, type: type, name: name, x: x, y: y, width: width, height: height, container: container })
       })
       /*
         D2GS_PICKUPITEM {"unitType":4,"unitId":52,"actionId":0}
@@ -45,16 +45,16 @@ function inject (bot) {
   // Drop a potion of health ? health : mana
   bot.dropPot = (health) => {
     try {
-      const potion = bot.inventory.find(item => { return item['type'].includes(health ? 'hp' : 'mp') })
+      const potion = bot.inventory.find(item => { return item.type.includes(health ? 'hp' : 'mp') })
       console.log('found potion', potion)
       // if (potion['container'] === 2) { // 2 = inventory
       bot._client.write('D2GS_DROPITEM', {
-        itemId: potion['id']
+        itemId: potion.id
       })
       // }
       // if (potion['container'] === 0) { // 0 = belt
       bot._client.write('D2GS_REMOVEBELTITEM', {
-        itemId: potion['id']
+        itemId: potion.id
       })
       // }
     } catch (error) {
@@ -65,7 +65,7 @@ function inject (bot) {
   // Do i have this item ?
   bot.hasItem = (name) => {
     try {
-      bot.say(bot.inventory.find(item => item['name'].includes(name)) ? `I have ${name}` : `I don't have ${name}`)
+      bot.say(bot.inventory.find(item => item.name.includes(name)) ? `I have ${name}` : `I don't have ${name}`)
     } catch (error) {
       console.log(error)
     }

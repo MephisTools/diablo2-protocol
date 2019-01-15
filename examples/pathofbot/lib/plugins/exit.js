@@ -1,4 +1,9 @@
 function inject (bot) {
+  // Just leave the game, not tested
+  bot.exit = () => {
+    bot._client.write('D2GS_GAMEEXIT', {})
+  }
+
   process.on('SIGINT', () => {
     bot._client.write('D2GS_GAMEEXIT', {})
     bot._client.write('SID_LEAVEGAME', {})

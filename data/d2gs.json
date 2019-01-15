@@ -77,7 +77,7 @@
       "D2GS_PARTY": ["container", [
         {
           "name": "actionId",
-          "type": "lu16"
+          "type": "lu8"
         },
         {
           "name": "playerId",
@@ -1188,7 +1188,7 @@
         },
         {
           "name": "szname",
-          "type":  ["array", {
+          "type": ["array", {
             "count": 16,
             "type": "lu8"
             }]
@@ -1966,7 +1966,7 @@
           "type": ["array", {
             "count": 16,
             "type": "lu8"
-          }]
+            }]
         },
         {
           "name": "charLvl",
@@ -2266,7 +2266,7 @@
           "type": ["array", {
             "count": 16,
             "type": "lu8"
-          }]
+            }]
         },
         {
           "name": "unitId",
@@ -2369,7 +2369,7 @@
           "type": ["array", {
             "count": 16,
             "type": "lu8"
-          }]
+            }]
         },
         {
           "name": "localId",
@@ -2427,7 +2427,7 @@
         },
         {
           "name": "partyId",
-          "type": "lu16"
+          "type": "lu8"
         }
       ]],
       "D2GS_CORPSEASSIGN": ["container", [

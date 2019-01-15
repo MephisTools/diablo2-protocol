@@ -3,6 +3,9 @@ function inject (bot) {
   bot._client.on('D2GS_ASSIGNLVLWARP', ({ unitId, x, y, warpId }) => {
     bot.warps.push({ unitId, x, y, warpId })
   })
+  bot._client.on('D2GS_LOADACT ', ({ areaId }) => {
+    bot.area = areaId
+  })
 
   bot.run = (x, y) => {
     bot._client.write('D2GS_RUNTOLOCATION', {
@@ -25,8 +28,11 @@ function inject (bot) {
     }
     */
     try {
-      bot.run(bot.warps[bot.warps.length - 1].x, bot.warps[bot.warps.length - 1].y)
-      bot.say(`Heading for the last warp`)
+      const nextArea = bot.warps.find(warp => {
+        return warp.warpId === bot.area + 1
+      })
+      bot.run(nextArea.x, nextArea.y)
+      bot.say(`Heading for the next area`)
       bot._client.removeAllListeners('D2GS_PLAYERMOVE')
       bot.follow = false
       bot.say(`Follow off`)
@@ -48,9 +54,6 @@ function inject (bot) {
       waypointId: waypoint,
       unknown: 0,
       levelNumber: level
-    })
-    bot._client.once('D2GS_MAPREVEAL', ({ tileX, tileY, areaId }) => {
-      bot.area = areaId
     })
   }
 
