@@ -60,6 +60,10 @@ npm install
 sudo node sniffer.js
 ```
 
+## Projects using diablo-protocol
+
+* [diablo2-live-viewer](https://github.com/rom1504/diablo2-live-viewer) displaying a live diablo map and live packets table
+
 
 ## Roadmap
 - [ ] Test all packets
