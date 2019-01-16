@@ -8,10 +8,13 @@ function inject (bot) {
       if (bot.master === null) {
         bot.say(`${charName} is now master`)
         bot.master = { id: bot.playerList.find(player => { return player.name === charName }).id, name: charName }
+        
+        // TODO: fix this
         bot._client.write('D2GS_PARTY', {
           actionId: 6, // TODO: what is it ? 6 invite, 7 cancel ?
           playerId: bot.playerList.find(player => { return player.name === charName }).id
         })
+        
       } else {
         bot.say(`${bot.master} is already master`)
       }
@@ -50,7 +53,6 @@ function inject (bot) {
             }
           })
           // Master opens a portal
-          /*
           bot._client.on('D2GS_PORTALOWNERSHIP', ({ ownerId, ownerName, localId, remoteId }) => { // TODO: Why is this looping ?
             // bot.say(`${Buffer.from(ownerName).toString().replace(/\0.*$/g, '')}:${ownerId}:masterId:${bot.master.id} opened a portal close to me`)
             // bot.say(bot.master.id === ownerId ? `He is my master, incoming` : `He isn't my master i stay here !`)
@@ -78,7 +80,6 @@ function inject (bot) {
               })
             }
           })
-          */
         }
       }
 
@@ -132,10 +133,6 @@ function inject (bot) {
         }
       }
 
-      if (message === '.warp' && charName === bot.master.name) {
-        bot.runToWarp()
-      }
-
       if (message.startsWith('.item') && charName === bot.master.name && message.split(' ').length > 1) {
         bot.hasItem(message.split(' ')[1])
       }
@@ -146,9 +143,6 @@ function inject (bot) {
 
       if (message.startsWith('.wp') && charName === bot.master.name && message.split(' ').length > 2) {
         bot.takeWaypoint(message.split(' ')[1], message.split(' ')[2])
-      }
-      if (message === '.pf' && charName === bot.master.name) {
-        bot.pathFind()
       }
 
       // Debug stuff
@@ -165,7 +159,19 @@ function inject (bot) {
           case '0':
             bot.tp()
             break
+          case '1':
+            bot.pathFind()
+            break
+          case '2':
+            bot.runToWarp()
+            break
+          case '3':
+            bot.moveTo(false, bot.npcs[0].x, bot.npcs[0].y)
         }
+      }
+
+      if (message.startsWith('.move') && charName === bot.master.name && message.split(' ').length > 3) {
+        bot.moveTo(message.split(' ')[1] === 'tp', bot.x + parseInt(message.split(' ')[2], 10), bot.y + parseInt(message.split(' ')[3], 10))
       }
       /*
       // Doesnt work :D
