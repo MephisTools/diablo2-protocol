@@ -102,7 +102,7 @@ function inject (bot) {
   }
 
   bot.tp = () => {
-    bot.castSkillOnLocation(bot.master.x, bot.master.y, 53)
+    bot.castSkillOnLocation(bot.x + 10, bot.y, 53)
   }
 
   // Tentative to do pathfinding by exploring all 4 corners of the map

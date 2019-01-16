@@ -38,16 +38,22 @@ function createServerD2gs (host) {
       username,
       password
     })
+
+    let posX = 0
+    let posY = 0
     clientDiablo.on('clientD2gsReady', clientD2gsClient => {
       clientD2gsClient.socket.on('data', data => clientD2gsServer.socket.write(data))
     })
 
+    clientDiablo.on('D2GS_REASSIGNPLAYER', ({ x, y }) => {
+      posX = x
+      posY = y
+    })
     clientDiablo.on('D2GS_GAMECHAT', ({ charName, message }) => {
       if (message === '.tp') {
-        clientDiablo.write('D2GS_WAYPOINT', {
-          waypointId: 86,
-          unknown: 0,
-          levelNumber: 129
+        clientDiablo.write('D2GS_RIGHTSKILLONLOCATION', {
+          xCoordinate: posX,
+          yCoordinate: posY
         })
       }
     })

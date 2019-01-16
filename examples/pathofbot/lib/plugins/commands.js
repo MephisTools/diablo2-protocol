@@ -46,12 +46,11 @@ function inject (bot) {
         } else {
           bot._client.on('D2GS_PLAYERMOVE', ({ targetX, targetY, unitId }) => {
             if (unitId === bot.master.id) {
-              bot.master.x = targetX
-              bot.master.y = targetY
               bot.run(targetX, targetY) // Maybe use currentX, Y ?
             }
           })
           // Master opens a portal
+          /*
           bot._client.on('D2GS_PORTALOWNERSHIP', ({ ownerId, ownerName, localId, remoteId }) => { // TODO: Why is this looping ?
             // bot.say(`${Buffer.from(ownerName).toString().replace(/\0.*$/g, '')}:${ownerId}:masterId:${bot.master.id} opened a portal close to me`)
             // bot.say(bot.master.id === ownerId ? `He is my master, incoming` : `He isn't my master i stay here !`)
@@ -79,6 +78,7 @@ function inject (bot) {
               })
             }
           })
+          */
         }
       }
 
@@ -152,7 +152,7 @@ function inject (bot) {
       }
 
       // Debug stuff
-      if (message.startsWith('.write') && message.split(' ').length > 1) {
+      if (message.startsWith('.write') && charName === bot.master.name && message.split(' ').length > 1) {
         try {
           bot._client.write(message.split(' ')[1])
         } catch (error) {
@@ -160,7 +160,7 @@ function inject (bot) {
         }
       }
 
-      if (message.startsWith('.do') && message.split(' ').length > 1) {
+      if (message.startsWith('.do') && charName === bot.master.name && message.split(' ').length > 1) {
         switch (message.split(' ')[1]) {
           case '0':
             bot.tp()

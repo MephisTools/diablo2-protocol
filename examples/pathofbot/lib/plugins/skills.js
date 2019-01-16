@@ -1,11 +1,13 @@
 function inject (bot) {
   bot.castSkillOnLocation = (x, y, skill) => {
+    /*
     bot._client.write('D2GS_SWITCHSKILL', {
       skill: skill,
       unk1: 0,
       hand: 0, // 0 = right, 128 = left
       unknown: [255, 255, 255, 255, 255]
     })
+    */
     bot._client.write('D2GS_RIGHTSKILLONLOCATION', {
       xCoordinate: x,
       yCoordinate: y
