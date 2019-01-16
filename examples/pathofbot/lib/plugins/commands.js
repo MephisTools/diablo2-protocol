@@ -46,6 +46,8 @@ function inject (bot) {
         } else {
           bot._client.on('D2GS_PLAYERMOVE', ({ targetX, targetY, unitId }) => {
             if (unitId === bot.master.id) {
+              bot.master.x = targetX
+              bot.master.y = targetY
               bot.run(targetX, targetY) // Maybe use currentX, Y ?
             }
           })
@@ -158,9 +160,12 @@ function inject (bot) {
         }
       }
 
-      if (message.startsWith('.bot')) {
-        bot.say(`Life ${bot.life} / ${bot.maxLife}`)
-        bot.say(`Mana ${bot.mana} / ${bot.maxMana}`)
+      if (message.startsWith('.do') && message.split(' ').length > 1) {
+        switch (message.split(' ')[1]) {
+          case '0':
+            bot.tp()
+            break
+        }
       }
       /*
       // Doesnt work :D

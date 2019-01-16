@@ -101,6 +101,10 @@ function inject (bot) {
     })
   }
 
+  bot.tp = () => {
+    bot.castSkillOnLocation(bot.master.x, bot.master.y, 53)
+  }
+
   // Tentative to do pathfinding by exploring all 4 corners of the map
   // The bot should stop when receiving assignlvlwarp from the next area
   const DirectionsEnum = Object.freeze({ 'left': 1, 'top': 2, 'right': 3, 'bottom': 4 })
