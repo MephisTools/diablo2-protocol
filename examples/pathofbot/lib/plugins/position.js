@@ -42,16 +42,25 @@ function inject (bot) {
 
   async function pf (teleportation, x, y) {
     const start = +new Date()
-
+    let stuck = 0
     bot.say(`My position ${bot.x} - ${bot.y}`)
     bot.say(`Heading to ${x} - ${y} by ${teleportation ? 'teleporting' : 'walking'}`)
     bot.say(`Calculated distance ${Math.sqrt((bot.x - x) * (bot.x - x) + (bot.y - y) * (bot.y - y))}`)
     bot.say(`Direction ${degreeBetweenTwoPoints({ x: bot.x, y: bot.y }, { x: x, y: y })}`)
     // We'll continue till arrived at destination
     while (Math.sqrt((bot.x - x) * (bot.x - x) + (bot.y - y) * (bot.y - y)) > 20 || +new Date() < start + 20000) { // timeout
-      let dest = coordFromDistanceAndAngle({ x: bot.x, y: bot.y }, 20, degreeBetweenTwoPoints({ x: bot.x, y: bot.y }, { x: x, y: y }) + getRandomInt(-30, 30))
+      let previousPosition = { x: bot.x, y: bot.y }
+      let degree = degreeBetweenTwoPoints({ x: bot.x, y: bot.y }, { x: x, y: y })
+      let dest = coordFromDistanceAndAngle({ x: bot.x, y: bot.y }, 20, degree)
       bot.say(`Movement to ${dest.x} - ${dest.y}`)
       await movement(teleportation, dest.x, dest.y)
+      if (previousPosition.x === bot.x && previousPosition.y === bot.y) { // If the bot is stuck
+        bot.say('Stuck')
+        stuck += 0.1
+        degree *= (2 + stuck)
+      } else {
+        stuck = 0
+      }
     }
     bot.say(`Arrived at destination`)
   }
@@ -66,11 +75,17 @@ function inject (bot) {
   async function movement (teleportation, destX, destY) {
     return new Promise(resolve => {
       if (!teleportation) {
-        bot._client.once('D2GS_WALKVERIFY', ({ x, y }) => {
+        const callback = ({ x, y }) => {
           bot.say(`endOfMovement at ${x};${y}`)
+          clearTimeout(timeOut)
           resolve()
-        })
+        }
+        bot._client.once('D2GS_WALKVERIFY', callback)
         bot.run(destX, destY)
+        const timeOut = setTimeout(() => { // in case we run in a wall
+          bot._client.removeListener('D2GS_WALKVERIFY', callback)
+          resolve()
+        }, 2000)
       } else {
         bot._client.once('D2GS_REASSIGNPLAYER', ({ x, y }) => {
           bot.say(`endOfMovement at ${x};${y}`)

@@ -7,14 +7,16 @@ function inject (bot) {
     if (message === '.master') {
       if (bot.master === null) {
         bot.say(`${charName} is now master`)
-        bot.master = { id: bot.playerList.find(player => { return player.name === charName }).id, name: charName }
-        
+        try {
+          bot.master = { id: bot.playerList.find(player => { return player.name === charName }).id, name: charName }
+        } catch (error) {
+          bot.say(`I don't have his id !`)
+        }
         // TODO: fix this
         bot._client.write('D2GS_PARTY', {
           actionId: 6, // TODO: what is it ? 6 invite, 7 cancel ?
           playerId: bot.playerList.find(player => { return player.name === charName }).id
         })
-        
       } else {
         bot.say(`${bot.master} is already master`)
       }
@@ -49,7 +51,7 @@ function inject (bot) {
         } else {
           bot._client.on('D2GS_PLAYERMOVE', ({ targetX, targetY, unitId }) => {
             if (unitId === bot.master.id) {
-              bot.run(targetX, targetY) // Maybe use currentX, Y ?
+              bot.run(targetX, targetY) // Maybe use currentX, Y ? and runtoentity ?
             }
           })
           // Master opens a portal
