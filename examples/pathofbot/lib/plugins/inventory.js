@@ -17,7 +17,7 @@ function inject (bot) {
     bot._client.removeAllListeners('D2GS_ITEMACTIONWORLD')
   }, 5000)
 
-  bot.pickupItems = () => { // TODO: improve this ...
+  bot.pickupEveryItems = () => {
     bot._client.on('D2GS_ITEMACTIONWORLD', ({ id, type, name, x, y, width, height, container }) => {
       bot._client.write('D2GS_RUNTOENTITY', {
         entityType: 4,
@@ -40,6 +40,10 @@ function inject (bot) {
     // toclient D2GS_ITEMACTIONWORLD {"unknown1":0,"unknown2":[16,86,0,0,0,16,32,160,0,101,204,101,2,8,227,140,141,12,196,0,0]}
     // toserver D22GS_RUNTOENTITY {"entityType":4,"entityId":86}
     // toserver D2GS_PICKUPITEM {"unitType":4,"unitId":86,"actionId":0}
+  }
+
+  // TODO: handle pickit
+  bot.pickit = (config) => {
   }
 
   // Drop a potion of health ? health : mana

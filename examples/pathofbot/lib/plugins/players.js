@@ -4,14 +4,13 @@ function inject (bot) {
   })
 
   bot._client.on('D2GS_PLAYERLEFT', (playerId) => {
+    // If the master leave, we leave the game too
+    if (bot.master !== null && bot.master.id === playerId) {
+      bot.exit()
+    }
     const index = bot.playerList.findIndex(e => e.playerId === playerId)
     bot.playerList.splice(index, 1)
   })
-
-  bot._client.on('D2GS_GAMEEXIT', () => {
-    bot.playerList = []
-  })
-
   /*
   // Doesnt work yet
   bot._client.on('D2GS_PLAYERRELATIONSHIP', ({ unitId, state }) => { // AutoParty

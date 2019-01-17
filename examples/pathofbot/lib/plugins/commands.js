@@ -12,7 +12,6 @@ function inject (bot) {
         } catch (error) {
           bot.say(`I don't have his id !`)
         }
-        // TODO: fix this
         bot._client.write('D2GS_PARTY', {
           actionId: 6, // TODO: what is it ? 6 invite, 7 cancel ?
           playerId: bot.playerList.find(player => { return player.name === charName }).id
@@ -24,8 +23,6 @@ function inject (bot) {
 
     if (bot.master !== null) { // Just a security
       if (message === '.follow' && charName === bot.master.name) {
-        // TODO: implement following in portals, warps etc ...
-        // D2GS_CHARTOOBJ {"unknown":0,"playerId":2,"movementType":24,"destinationType":2,"objectId":28,"xCoordinate":5154,"yCoordinate":5055}
         // We seems to receive this when someone take a warp / portal
         // For portals
         /* received compressed packet D2GS_TOWNPORTALSTATE {"state":3,"areaId":83,"unitId":236}
@@ -131,7 +128,7 @@ function inject (bot) {
         if (!bot.pickup) {
           bot._client.removeAllListeners('D2GS_ITEMACTIONWORLD')
         } else {
-          bot.pickupItems()
+          bot.pickupEveryItems()
         }
       }
 
