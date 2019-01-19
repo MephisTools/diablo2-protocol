@@ -3,16 +3,7 @@
 
 function inject (bot) {
   bot.warps = []
-  bot.npcs = []
 
-  // Maybe we could also listen to the npcmove stuff but honestly they don't go too far
-  // We can reach them easy with runtoentity
-  bot._client.on('D2GS_ASSIGNNPC', ({ unitId, unitCode, x, y, unitLife, stateInfo }) => {
-    // If we ain't already got the npc in the list
-    // if (bot.npcs.find(npc => npc.id !== unitId)) {
-    bot.npcs.push({ id: unitId, code: unitCode, x: x, y: y })
-    // }
-  })
   bot._client.on('D2GS_ASSIGNLVLWARP', ({ unitId, x, y, warpId }) => {
     bot.warps.push({ unitId, x, y, warpId })
   })
@@ -123,13 +114,9 @@ function inject (bot) {
   // I noticed sometihng, everytime you take a wp, (only tested with the same act3 camp to durance lvl 2) in the same game,
   // The id increment, here it was from 28 to 94 idk if its linear or not
   bot.takeWaypoint = (waypoint, level) => {
-    bot._client.once('D2GS_REASSIGNPLAYER', ({ unitType, unitId, x, y, value }) => {
-      bot.x = y
-      bot.y = y
-    })
     bot._client.once('D2GS_WAYPOINTMENU', ({ unitId, availableWaypoints }) => {
       bot._client.write('D2GS_WAYPOINT', { // TODO: Handle the case where the bot aint got the wp
-        waypointId: waypoint,
+        waypointId: unitId,
         unknown: 0,
         levelNumber: level
       })
@@ -161,10 +148,7 @@ function inject (bot) {
     })
   }
 
-  bot.tp = () => {
-    bot.castSkillOnLocation(bot.x + 10, bot.y, 53)
-  }
-
+  /*
   // Tentative to do pathfinding by exploring all 4 corners of the map
   // The bot should stop when receiving assignlvlwarp from the next area
   const DirectionsEnum = Object.freeze({ 'left': 1, 'top': 2, 'right': 3, 'bottom': 4 })
@@ -181,7 +165,7 @@ function inject (bot) {
 
   // TODO: Return the path used, to get optimized latter
   async function reachedWarp (x, y, direction = DirectionsEnum.left) {
-    if (bot.warps.find(warp => { warp.id === bot.area + 1 })) {
+    if (bot.warps.find(warp => warp.id === bot.area + 1)) {
       // Just checking if we got to the next area ...
       return { x, y, warpId, id }
     }
@@ -204,7 +188,7 @@ function inject (bot) {
       if (direction === DirectionsEnum.top) {
         nextPos = { x: bot.x - 20, y: bot.y }
       }
-      previousPos = { x: bot.x, y: bot.y }
+      const previousPos = { x: bot.x, y: bot.y }
       bot.say(`castSkillOnLocation at ${nextPos.x};${nextPos.y}`)
       bot.castSkillOnLocation(nextPos.x, nextPos.y, 53)
       reachedCorner = await reachedPosition(previousPos)
@@ -218,6 +202,7 @@ function inject (bot) {
     const success = reachedWarp(bot.x, bot.y)
     bot.say(success ? 'Found the next level' : 'Could\'nt find the next level')
   }
+  */
 }
 
 module.exports = inject

@@ -1,8 +1,32 @@
-// Look https://github.com/kolton/d2bot-with-kolbot/blob/24f9a406831ae24cd72b2783c539936379cfa0d9/d2bs/kolbot/libs/common/Town.js
+const fs = require('fs')
 
-// We should have the list of town's NPCs with the id associated so we can init stuff with them
 function inject (bot) {
-  bot.npcShop = []
+  const NpcActionEnum = Object.freeze({ 'heal': 1, 'repair': 2, 'gamble': 3, 'quest': 4, 'merc': 5 }) // Maybe add more actions
+  bot.npcShop = [] // Contains the items inside the npc shop
+  bot.npcs = [] // Contains the informations about this game npcs
+  bot.npcsNames = fs.readFileSync('../../../../data/monster_names.txt', 'utf8').split('\n')
+  bot.areaNames = fs.readFileSync('../../../../data/areas.txt', 'utf8').split('\n')
+
+  // Maybe we could also listen to the npcmove stuff but honestly they don't go too far
+  // We can reach them easy with runtoentity
+  bot._client.on('D2GS_ASSIGNNPC', ({ unitId, unitCode, x, y, unitLife, stateInfo }) => {
+    // If we ain't already got the npc in the list
+    // if (bot.npcs.find(npc => npc.id !== unitId)) {
+    bot.npcs.push({ id: unitId, code: unitCode, x: x, y: y })
+    // }
+  })
+
+  // This method will check if i have to to go npc trader / healer / repairer / hire / gambler
+  // If yes go to npc and buy stuffs
+  bot.needToGoToNpc = () => {
+    // Work in progress, not tested / working
+    const potions = bot.checkPotions()
+    const tomes = bot.checkTomes()
+    const repair = bot.checkRepair()
+    const merc = bot.checkMerc()
+    console.log(potions, tomes, repair, merc)
+  }
+
   bot.tradeNpc = (npcId) => {
     /*
       d2gsToServer : D2GS_RUNTOENTITY {"entityType":1,"entityId":12}
@@ -45,8 +69,23 @@ function inject (bot) {
       bot.npcShop.push({ npcId: npcId, id: id, type: type, name: name, x: x, y: y, width: width, height: height, container: container })
     })
   }
+
+  bot.checkPotions = () => {
+    let healthPotions = 0
+    let manaPotions = 0
+    bot.inventory.forEach(item => {
+      if (item.type.include('hp')) {
+        healthPotions++
+      }
+      if (item.type.include('mp')) {
+        healthPotions++
+      }
+    })
+    return { hp: healthPotions, mp: manaPotions }
+  }
+
   // Check if i have enough pots in my belt (have a config where we say what kind of potions we want the bot to always have)
-  bot.buyPotions = (npcId) => {
+  bot.buyPotions = (npcId, hp, mp) => {
     /*
       d2gsToServer : D2GS_NPCBUY {"npcId":12,"itemId":93,"bufferType":0,"cost":27}
       d2gsToClient :  D2GS_NPCTRANSACTION {"tradeType":4,"result":0,"unknown":256,"merchandiseId":95,"goldInInventory":0}
@@ -57,25 +96,13 @@ function inject (bot) {
       d2gsToClient :  D2GS_SETBYTEATTR {"attribute":14,"amount":0}
     */
     if (bot.gold > 10000) { // TODO: config treshold
-      bot.tradeNpc(npcId)
-      let healthPotions = 0
-      let manaPotions = 0
-      bot.inventory.forEach(item => {
-        if (item.type.include('hp')) {
-          healthPotions++
-        }
-        if (item.type.include('mp')) {
-          healthPotions++
-        }
-      })
-
-      while (healthPotions < 4) {
+      while (hp < 4) {
         bot._client.once('D2GS_ITEMACTIONWORLD', ({ id, type, name, x, y, width, height, container }) => {
           bot.inventory.push({ id: id, type: type, name: name, x: x, y: y, width: width, height: height, container: container })
         })
         bot._client.once('D2GS_NPCTRANSACTION', ({ tradeType, result, unknown, merchandiseId, goldInInventory }) => {
           if (result === 0) {
-            healthPotions++
+            hp++
           } else {
             console.log('Exception: Failed transaction')
           }
@@ -88,13 +115,13 @@ function inject (bot) {
         })
       }
 
-      while (manaPotions < 4) {
+      while (mp < 4) {
         bot._client.once('D2GS_ITEMACTIONWORLD', ({ id, type, name, x, y, width, height, container }) => {
           bot.inventory.push({ id: id, type: type, name: name, x: x, y: y, width: width, height: height, container: container })
         })
         bot._client.once('D2GS_NPCTRANSACTION', ({ tradeType, result, unknown, merchandiseId, goldInInventory }) => {
           if (result === 0) {
-            manaPotions++
+            mp++
           } else {
             console.log('Exception: Failed transaction')
           }
@@ -106,10 +133,6 @@ function inject (bot) {
           cost: 0
         })
       }
-      bot._client.write('D2GS_NPCCANCEL', {
-        entityType: 1,
-        npcId: npcId
-      })
     } else {
       bot.say(`I can't afford potions`)
     }
@@ -119,29 +142,89 @@ function inject (bot) {
   // Optmized version wouldn't close then reopen between buys like potions then tome ...
   bot.fillTome = (npcId) => {
     if (bot.gold > 1000) { // TODO: config treshold
-      bot.tradeNpc(npcId)
-      bot._client.write('D2GS_NPCCANCEL', {
-        entityType: 1,
-        npcId: npcId
-      })
+      // Do buy tome
     }
   }
 
-  bot.buyKeys = () => {
+  // This will return which npc i have to go to do an action (repair, heal ...) at a specific act
+  // Because npcs are differents every act
+  bot.whichNpc = (action, areaName) => {
+    let id
+    switch (areaName) {
+      case 'LEVEL_ROGUE_ENCAMPMENT':
+        if (action === NpcActionEnum.heal) {
+          id = bot.npcsNames.findIndex(npcName => npcName === 'Akara')
+        }
+        if (action === NpcActionEnum.repair) {
+          id = bot.npcsNames.findIndex(npcName => npcName === 'Charsi')
+        }
+        break
+      case 'LEVEL_LUT_GHOLEIN':
+        if (action === NpcActionEnum.heal || action === NpcActionEnum.repair) {
+          id = bot.npcsNames.findIndex(npcName => npcName === 'Fara')
+        }
+        break
+      case 'LEVEL_KURAST_DOCKTOWN':
+        if (action === NpcActionEnum.heal) {
+          id = bot.npcsNames.findIndex(npcName => npcName === 'Ormus')
+        }
+        if (action === NpcActionEnum.repair) {
+          id = bot.npcsNames.findIndex(npcName => npcName === 'Hratli')
+        }
+        break
+      case 'LEVEL_THE_PANDEMONIUM_FORTRESS':
+        if (action === NpcActionEnum.heal) {
+          id = bot.npcsNames.findIndex(npcName => npcName === 'Jamella')
+        }
+        if (action === NpcActionEnum.repair) {
+          id = bot.npcsNames.findIndex(npcName => npcName === 'Halbu')
+        }
+        break
+      case 'LEVEL_HARROGATH':
+        if (action === NpcActionEnum.heal) {
+          id = bot.npcsNames.findIndex(npcName => npcName === 'Malah')
+        }
+        if (action === NpcActionEnum.repair) {
+          id = bot.npcsNames.findIndex(npcName => npcName === 'Larzuk')
+        }
+        break
+    }
+    return id
   }
 
+  bot.identify = (cain = true) => {
+    if (cain) {
+      const npc = bot.npcs.find(npc => npc.code === bot.npcsNames.findIndex(npcName => npcName === 'Cain'))
+      bot.moveTo(false, npc.x, npc.y)
+    } // Else ??
+  }
+
+  bot.reachNpc = (action) => {
+    const areaName = bot.areaNames.find(areaName => { return areaName.split(',')[1] === bot.area })
+    const npc = bot.npcs.find(npc => npc.code === bot.whichNpc(action, areaName))
+    bot.moveTo(false, npc.x, npc.y)
+    bot.tradeNpc(npc.id)
+  }
+
+  bot.buyKeys = () => {
+    // Do buy key
+  }
+
+  // Maybe we could refactor these
   // In diablo 2, only some NPC (1 per act) can heal, for example act 1 : Akara
   bot.heal = () => {
-  }
-
-  bot.identify = () => {
+    bot.reachNpc(NpcActionEnum.heal)
   }
 
   // Check if i have items to repair (have a treshold of durability ex : 50% dura ... parameter in config to say when i have to repair items)
   bot.repair = (treshold) => {
+    bot.reachNpc(NpcActionEnum.repair)
+    // Do repair stuff
   }
 
   bot.reviveMerc = () => {
+    bot.reachNpc(NpcActionEnum.merc)
+    // Do revive stuff
   }
 
   // Put everything in the stash except the required stuff (set a parameter for things we wanna always keep such as book scroll, charms ...)

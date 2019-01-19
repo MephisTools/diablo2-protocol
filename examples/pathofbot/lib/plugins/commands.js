@@ -9,13 +9,13 @@ function inject (bot) {
         bot.say(`${charName} is now master`)
         try {
           bot.master = { id: bot.playerList.find(player => { return player.name === charName }).id, name: charName }
+          bot._client.write('D2GS_PARTY', {
+            actionId: 6, // TODO: what is it ? 6 invite, 7 cancel ?
+            playerId: bot.playerList.find(player => { return player.name === charName }).id
+          })
         } catch (error) {
           bot.say(`I don't have his id !`)
         }
-        bot._client.write('D2GS_PARTY', {
-          actionId: 6, // TODO: what is it ? 6 invite, 7 cancel ?
-          playerId: bot.playerList.find(player => { return player.name === charName }).id
-        })
       } else {
         bot.say(`${bot.master} is already master`)
       }
@@ -155,9 +155,6 @@ function inject (bot) {
 
       if (message.startsWith('.do') && charName === bot.master.name && message.split(' ').length > 1) {
         switch (message.split(' ')[1]) {
-          case '0':
-            bot.tp()
-            break
           case '1':
             bot.pathFind()
             break

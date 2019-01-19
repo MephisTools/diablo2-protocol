@@ -6,6 +6,8 @@ const inventory = require('./lib/plugins/inventory')
 const players = require('./lib/plugins/players')
 const position = require('./lib/plugins/position')
 const skills = require('./lib/plugins/skills')
+const stats = require('./lib/plugins/stats')
+const town = require('./lib/plugins/town')
 const websocketApi = require('./lib/plugins/websocketApi')
 const EventEmitter = require('events').EventEmitter
 
@@ -49,6 +51,8 @@ async function createBot (options) {
   players(bot, options)
   position(bot, options)
   skills(bot, options)
+  stats(bot, options)
+  town(bot, options)
   websocketApi(bot, options)
 
   await p
