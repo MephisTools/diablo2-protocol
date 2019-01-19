@@ -42,7 +42,6 @@ async function createBot (options) {
   const bot = new Bot()
 
   const p = bot.connect(options)
-
   chat(bot, options)
   commands(bot, options)
   exit(bot, options)
