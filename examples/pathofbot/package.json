@@ -1,9 +1,0 @@
-{
-  "name": "pathofbot",
-  "version": "0.0.0",
-  "private": true,
-  "dependencies": {
-    "ws": "^6.1.2"
-  },
-  "description": "Create Diablo2 bots with a powerful, stable, and high level JavaScript API"
-}

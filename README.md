@@ -62,7 +62,8 @@ sudo node sniffer.js
 
 ## Projects using diablo-protocol
 
-* [diablo2-live-viewer](https://github.com/rom1504/diablo2-live-viewer) displaying a live diablo map and live packets table
+* [diablo2-live-viewer](https://github.com/MephisTools/diablo2-live-viewer) displaying a live diablo map and live packets table
+* [PathOfBot](https://github.com/MephisTools/PathOfBot) Create Diablo2 bots with a powerful, stable, and high level JavaScript API.
 
 
 ## Roadmap
