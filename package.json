@@ -29,7 +29,8 @@
     "bridge.net": "^1.0.0",
     "csvtojson": "^2.0.8",
     "once-promise": "^2.0.0",
-    "protodef": "^1.6.9"
+    "protodef": "^1.6.9",
+    "diablo2-data": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
