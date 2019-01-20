@@ -79,7 +79,7 @@ function inject (bot) {
   // Belts in diablo 2 have different sizes
   // For example 4 x, 2 y, another belt 4 x, 4 y (only y change), max is 5 i think ?
   bot.checkPotions = () => {
-    const belt = bot.inventory.find(item => { return item['directory'] === '8' }) // 8 is belt
+    // const belt = bot.inventory.find(item => { return item['directory'] === '8' }) // 8 is belt
     // Find data file saying which belt can have that much y ....
     let healthPotions = 0 // Here we have to init with maximum y of the belt we have equipped
     let manaPotions = 0
