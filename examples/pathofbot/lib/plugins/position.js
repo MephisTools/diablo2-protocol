@@ -56,11 +56,11 @@ function inject (bot) {
     bot.say(`Arrived at destination`)
   }
 
-  function getRandomInt (min, max) {
+  /* function getRandomInt (min, max) {
     min = Math.ceil(min)
     max = Math.floor(max)
     return Math.floor(Math.random() * (max - min + 1)) + min
-  }
+  } */
 
   // This will return when the movement is done
   async function movement (teleportation, destX, destY) {
