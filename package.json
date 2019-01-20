@@ -1,6 +1,6 @@
 {
   "name": "diablo2-protocol",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "diablo 2 packets parsing and serialization, and login sequence implementation to build clients and servers",
   "main": "index.js",
   "scripts": {

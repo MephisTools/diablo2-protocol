@@ -1,3 +1,12 @@
+## 1.2.0
+
+* implement servers
+* implement proxy
+* packets fixes
+* item properties
+* map reading
+* pathofbot improvements
+
 ## 1.1.1
 
 * fix connect calls for client
