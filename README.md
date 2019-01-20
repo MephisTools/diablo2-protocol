@@ -78,6 +78,7 @@ sudo node sniffer.js
 
 ### Diablo
 
+* doc of diablo2 implementations https://github.com/MephisTools/diablo2-protocol/wiki/Diablo-2-implementations-and-docs
 * packets general description http://www.blizzhackers.cc/viewtopic.php?f=182&t=444264
 * dump of a normal connection sequence http://www.blizzhackers.cc/viewtopic.php?t=406445
 * index of packets https://bnetdocs.org/packet/index
