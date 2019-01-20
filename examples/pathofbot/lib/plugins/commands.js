@@ -169,22 +169,23 @@ function inject (bot) {
       if (message.startsWith('.move') && charName === bot.master.name && message.split(' ').length > 3) {
         bot.moveTo(message.split(' ')[1] === 'tp', bot.x + parseInt(message.split(' ')[2], 10), bot.y + parseInt(message.split(' ')[3], 10))
       }
-      /*
-      // Doesnt work :D
-      if (message === '.yolo' && charName === bot.master.name) {
-        bot._client.write('D2GS_INTERACTWITHENTITY', {
-          entityType: 2,
-          entityId: 49
-        })
-        bot._client.on('D2GS_WAYPOINTMENU', () => {
-          bot._client.write('D2GS_WAYPOINT', {
-            waypointId: 49,
-            unknown: 0,
-            levelNumber: 129
-          })
-        })
+
+      if (message.startsWith('.npc') && charName === bot.master.name && message.split(' ').length > 1) {
+        switch (message.split(' ')[1]) {
+          case 'heal':
+            bot.reachNpc(1)
+            break
+          case 'repair':
+            bot.reachNpc(2)
+            break
+          case 'gamble':
+            bot.reachNpc(3)
+            break
+          case 'quest':
+            bot.reachNpc(4)
+            break
+        }
       }
-      */
     }
   })
 }

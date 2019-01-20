@@ -7,9 +7,17 @@ function inject (bot) {
   bot._client.on('D2GS_ASSIGNLVLWARP', ({ unitId, x, y, warpId }) => {
     bot.warps.push({ unitId, x, y, warpId })
   })
-  bot._client.on('D2GS_LOADACT ', ({ areaId }) => {
+  bot._client.on('D2GS_LOADACT', ({ areaId }) => {
+    if (bot.area !== areaId) {
+      bot.say(`My area ${areaId}`)
+    }
     bot.area = areaId
-    // bot.objects = levelPreset('/home/louis/Desktop/d2datamerged', areaId)
+  })
+  bot._client.on('D2GS_MAPREVEAL', ({ areaId }) => {
+    if (bot.area !== areaId) {
+      bot.say(`My area ${areaId}`)
+    }
+    bot.area = areaId
   })
   bot._client.on('D2GS_REASSIGNPLAYER', ({ x, y }) => {
     bot.x = x
@@ -20,6 +28,7 @@ function inject (bot) {
     bot.y = y
   })
 
+  // Maybe remove this
   bot.run = (x, y) => {
     bot._client.write('D2GS_RUNTOLOCATION', {
       xCoordinate: x,
@@ -31,15 +40,30 @@ function inject (bot) {
     pf(teleportation, x, y)
   }
 
+  // TODO: test, make it works for all type of entity
+  bot.moveTo = (teleportation, entityId) => {
+    let entity = bot.npcs.find(npc => { return npc.id === entityId })
+    let type = 1
+    if (entity === undefined) {
+      entity = bot.warps.find(warp => { return warp.id === entityId })
+      type = 2
+    }
+    pf(teleportation, entity.x, entity.y)
+    bot._client.write('D2GS_RUNTOENTITY', {
+      entityType: type, // 1 seems to be npc, 2 portal ...
+      entityId: entityId
+    })
+  }
+
   async function pf (teleportation, x, y) {
     const start = +new Date()
     let stuck = 0
     bot.say(`My position ${bot.x} - ${bot.y}`)
     bot.say(`Heading to ${x} - ${y} by ${teleportation ? 'teleporting' : 'walking'}`)
-    bot.say(`Calculated distance ${Math.sqrt((bot.x - x) * (bot.x - x) + (bot.y - y) * (bot.y - y))}`)
     bot.say(`Direction ${degreeBetweenTwoPoints({ x: bot.x, y: bot.y }, { x: x, y: y })}`)
     // We'll continue till arrived at destination
-    while (Math.sqrt((bot.x - x) * (bot.x - x) + (bot.y - y) * (bot.y - y)) > 20 || +new Date() < start + 20000) { // timeout
+    while (parseInt(Math.sqrt((bot.x - x) * (bot.x - x) + (bot.y - y) * (bot.y - y))) > 15 || +new Date() < start + 20000) { // timeout
+      bot.say(`Calculated distance ${Math.sqrt((bot.x - x) * (bot.x - x) + (bot.y - y) * (bot.y - y))}`)
       let previousPosition = { x: bot.x, y: bot.y }
       let degree = degreeBetweenTwoPoints({ x: bot.x, y: bot.y }, { x: x, y: y })
       let dest = coordFromDistanceAndAngle({ x: bot.x, y: bot.y }, 20, degree)
@@ -56,18 +80,20 @@ function inject (bot) {
     bot.say(`Arrived at destination`)
   }
 
-  /* function getRandomInt (min, max) {
+  /*
+  function getRandomInt (min, max) {
     min = Math.ceil(min)
     max = Math.floor(max)
     return Math.floor(Math.random() * (max - min + 1)) + min
-  } */
+  }
+  */
 
   // This will return when the movement is done
   async function movement (teleportation, destX, destY) {
     return new Promise(resolve => {
       if (!teleportation) {
         const callback = ({ x, y }) => {
-          bot.say(`endOfMovement at ${x};${y}`)
+          // bot.say(`endOfMovement at ${x};${y}`)
           clearTimeout(timeOut)
           resolve()
         }
@@ -101,7 +127,7 @@ function inject (bot) {
       const nextArea = bot.warps.find(warp => {
         return warp.warpId === bot.area + 1
       })
-      bot.run(nextArea.x, nextArea.y)
+      bot.moveTo(false, nextArea.x, nextArea.y)
       bot.say(`Heading for the next area`)
       bot._client.removeAllListeners('D2GS_PLAYERMOVE')
       bot.follow = false
@@ -111,14 +137,13 @@ function inject (bot) {
     }
   }
 
-  // I noticed sometihng, everytime you take a wp, (only tested with the same act3 camp to durance lvl 2) in the same game,
-  // The id increment, here it was from 28 to 94 idk if its linear or not
   bot.takeWaypoint = (waypoint, level) => {
+    const idArea = bot.areaNames.findIndex(areaName => { return areaName.split('')[0].includes(level) })
     bot._client.once('D2GS_WAYPOINTMENU', ({ unitId, availableWaypoints }) => {
       bot._client.write('D2GS_WAYPOINT', { // TODO: Handle the case where the bot aint got the wp
         waypointId: unitId,
         unknown: 0,
-        levelNumber: level
+        levelNumber: idArea
       })
     })
     bot._client.write('D2GS_RUNTOENTITY', {
@@ -142,67 +167,15 @@ function inject (bot) {
         entityId: localId
       })
     })
-    bot._client.write('D2GS_USESCROLL', { // TODO: finish this
-      type: 4,
-      itemId: 1
-    })
-  }
-
-  /*
-  // Tentative to do pathfinding by exploring all 4 corners of the map
-  // The bot should stop when receiving assignlvlwarp from the next area
-  const DirectionsEnum = Object.freeze({ 'left': 1, 'top': 2, 'right': 3, 'bottom': 4 })
-
-  // This will return when the teleportation is done
-  async function reachedPosition (previousPos) {
-    return new Promise(resolve => {
-      bot.say(`arrived at ${bot.x};${bot.y}`)
-      bot.say(`previousPos difference ${Math.abs(bot.x - previousPos.x)};${Math.abs(bot.y - previousPos.y)}`)
-      // We check if we moved
-      resolve(Math.abs(bot.x - previousPos.x) > 5 || Math.abs(bot.y - previousPos.y) > 5) // Means we hit a corner
-    })
-  }
-
-  // TODO: Return the path used, to get optimized latter
-  async function reachedWarp (x, y, direction = DirectionsEnum.left) {
-    if (bot.warps.find(warp => warp.id === bot.area + 1)) {
-      // Just checking if we got to the next area ...
-      return { x, y, warpId, id }
+    if (bot.checkTomes(true) > 0) {
+      bot.castSkillOnLocation(bot.x, bot.y, 220) // Must have a tome of portal
+    } else {
+      bot._client.write('D2GS_USESCROLL', {
+        type: 4,
+        itemId: 1
+      })
     }
-    // Reset the direction
-    if (direction === DirectionsEnum.bottom) {
-      direction = DirectionsEnum.left
-    }
-    let reachedCorner = false
-    let nextPos = { x: bot.x, y: bot.y }
-    while (!reachedCorner) {
-      if (direction === DirectionsEnum.left) {
-        nextPos = { x: bot.x, y: bot.y + 20 }
-      }
-      if (direction === DirectionsEnum.top) {
-        nextPos = { x: bot.x + 20, y: bot.y }
-      }
-      if (direction === DirectionsEnum.right) {
-        nextPos = { x: bot.x, y: bot.y - 20 }
-      }
-      if (direction === DirectionsEnum.top) {
-        nextPos = { x: bot.x - 20, y: bot.y }
-      }
-      const previousPos = { x: bot.x, y: bot.y }
-      bot.say(`castSkillOnLocation at ${nextPos.x};${nextPos.y}`)
-      bot.castSkillOnLocation(nextPos.x, nextPos.y, 53)
-      reachedCorner = await reachedPosition(previousPos)
-    }
-    bot.say(`Going ${direction}`)
-    reachedWarp(bot.x, bot.y, direction++)
   }
-
-  bot.pathFind = () => {
-    bot.say('Looking for the next level !')
-    const success = reachedWarp(bot.x, bot.y)
-    bot.say(success ? 'Found the next level' : 'Could\'nt find the next level')
-  }
-  */
 }
 
 module.exports = inject
