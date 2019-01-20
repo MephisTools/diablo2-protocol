@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/louis030195/diablo2-protocol.git"
+    "url": "git+https://github.com/MephisTools/diablo2-protocol.git"
   },
   "keywords": [
     "bot",
@@ -21,11 +21,10 @@
   "author": "Louis Beaumont",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/louis030195/diablo2-protocol/issues"
+    "url": "https://github.com/MephisTools/diablo2-protocol/issues"
   },
-  "homepage": "https://github.com/louis030195/diablo2-protocol#readme",
+  "homepage": "https://github.com/MephisTools/diablo2-protocol#readme",
   "dependencies": {
-    "a-star": "^0.2.0",
     "bit-buffer": "^0.2.4",
     "bridge.net": "^1.0.0",
     "csvtojson": "^2.0.8",
