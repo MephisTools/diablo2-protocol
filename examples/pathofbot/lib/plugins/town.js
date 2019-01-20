@@ -1,11 +1,12 @@
 const fs = require('fs')
+const path = require('path')
 
 function inject (bot) {
   const NpcActionEnum = Object.freeze({ 'heal': 1, 'repair': 2, 'gamble': 3, 'quest': 4, 'merc': 5 }) // Maybe add more actions
   bot.npcShop = [] // Contains the items inside the npc shop
   bot.npcs = [] // Contains the informations about this game npcs
-  bot.npcsNames = fs.readFileSync('../../../../data/monster_names.txt', 'utf8').split('\n')
-  bot.areaNames = fs.readFileSync('../../../../data/areas.txt', 'utf8').split('\n')
+  bot.npcsNames = fs.readFileSync(path.join(__dirname, '../../../../data/game/monster_names.txt'), 'utf8').split('\n')
+  bot.areaNames = fs.readFileSync(path.join(__dirname, '../../../../data/game/areas.txt'), 'utf8').split('\n')
 
   // Maybe we could also listen to the npcmove stuff but honestly they don't go too far
   // We can reach them easy with runtoentity
