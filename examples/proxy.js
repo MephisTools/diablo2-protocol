@@ -52,8 +52,8 @@ function createServerD2gs (host) {
     clientDiablo.on('D2GS_GAMECHAT', ({ charName, message }) => {
       if (message === '.tp') {
         clientDiablo.write('D2GS_RIGHTSKILLONLOCATION', {
-          xCoordinate: posX,
-          yCoordinate: posY
+          x: posX,
+          y: posY
         })
       }
     })

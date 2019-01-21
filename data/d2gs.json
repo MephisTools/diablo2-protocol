@@ -296,11 +296,11 @@
           "type": "lu32"
         },
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu32"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu32"
         }
       ]],
@@ -314,11 +314,11 @@
           "type": "lu32"
         },
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu32"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu32"
         }
       ]],
@@ -370,11 +370,11 @@
           "type": "lu32"
         },
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu32"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu32"
         },
         {
@@ -452,11 +452,11 @@
       ]],
       "D2GS_RIGHTSKILLONLOCATIONEX": ["container",[
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu16"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu16"
         }
       ]],
@@ -482,11 +482,11 @@
       ]],
       "D2GS_RIGHTSKILLONLOCATION": ["container",[
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu16"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu16"
         }
       ]],
@@ -512,11 +512,11 @@
       ]],
       "D2GS_LEFTSKILLONLOCATIONEX": ["container",[
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu16"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu16"
         }
       ]],
@@ -542,11 +542,11 @@
       ]],
       "D2GS_LEFTSKILLONLOCATION": ["container", [
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu16"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu16"
         }
       ]],
@@ -562,11 +562,11 @@
       ]],
       "D2GS_RUNTOLOCATION": ["container", [
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu16"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu16"
         }
       ]],
@@ -582,11 +582,11 @@
       ]],
       "D2GS_WALKTOLOCATION": ["container",[
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu16"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu16"
         }
       ]],
@@ -1162,11 +1162,11 @@
           "type": "lu16"
         },
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu16"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu16"
         },
         {
@@ -1261,11 +1261,11 @@
           "type": "lu32"
         },
         {
-          "name": "xCoordinate",
+          "name": "x",
           "type": "lu16"
         },
         {
-          "name": "yCoordinate",
+          "name": "y",
           "type": "lu16"
         }
       ]],

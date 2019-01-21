@@ -18,8 +18,8 @@ async function start () {
   })
   clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
     clientDiablo.write('D2GS_RUNTOLOCATION', {
-      xCoordinate: targetX,
-      yCoordinate: targetY
+      x: targetX,
+      y: targetY
     })
   })
 
