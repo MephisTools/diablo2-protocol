@@ -1,3 +1,6 @@
+## 1.3.1
+* Fix D2GS_WAYPOINT
+
 ## 1.3.0
  * Standardization of coordinate to be all named x, y
 

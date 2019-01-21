@@ -108,23 +108,11 @@
       "D2GS_WAYPOINT": ["container", [
         {
           "name": "waypointId",
-          "type": "lu8"
-        },
-        {
-          "name": "unknown",
-          "type": "lu8"
-        },
-        {
-          "name": "unknown",
-          "type": "lu16"
+          "type": "lu32"
         },
         {
           "name": "levelNumber",
-          "type": "lu8"
-        },
-        {
-          "name": "unknown",
-          "type": "lu16"
+          "type": "lu32"
         }
       ]],
       "D2GS_CHARACTERPHRASE": ["container", [
