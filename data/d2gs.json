@@ -1195,11 +1195,11 @@
             }]
         },
         {
-          "name": "nPosX",
+          "name": "x",
           "type": "lu16"
         },
         {
-          "name": "nPosY",
+          "name": "y",
           "type": "lu16"
         }
       ]],
@@ -2460,11 +2460,11 @@
           "type": "lu32"
         },
         {
-          "name": "playerX",
+          "name": "x",
           "type": "lu32"
         },
         {
-          "name": "playerY",
+          "name": "y",
           "type": "lu32"
         }
       ]],

@@ -1,3 +1,6 @@
+## 1.3.0
+ * Standardization of coordinate to be all named x, y
+
 ## 1.2.0
 
 * implement servers
