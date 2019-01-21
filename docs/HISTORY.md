@@ -1,3 +1,6 @@
+## 1.3.2
+* fix toCamelCase for empty strings : fix no password games
+
 ## 1.3.1
 * Fix D2GS_WAYPOINT
 
