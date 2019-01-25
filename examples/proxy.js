@@ -1,7 +1,7 @@
 const { createClientDiablo, ServerDiablo, createServerSid, createServerMcp, ServerD2gs } = require('..')
 
-if (process.argv.length !== 9) {
-  console.log('Usage : node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver> <externalHost>')
+if (process.argv.length !== 10) {
+  console.log('Usage : node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver> <externalHost> <sidServer>')
   process.exit(1)
 }
 
@@ -12,6 +12,7 @@ const gameName = process.argv[5]
 const gamePassword = ''
 const gameServer = process.argv[7]
 const externalHost = process.argv[8]
+const sidServer = process.argv[9]
 
 const host = '127.0.0.1'
 
@@ -34,7 +35,7 @@ function createServerD2gs (host) {
     console.log('new client d2gs', clientD2gsServer.socket.address())
 
     const clientDiablo = await createClientDiablo({
-      host: '198.98.54.85',
+      host: sidServer,
       username,
       password
     })

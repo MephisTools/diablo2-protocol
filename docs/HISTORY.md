@@ -14,7 +14,7 @@
 * packets fixes
 * item properties
 * map reading
-* pathofbot improvements
+* autotathamet improvements
 
 ## 1.1.1
 
