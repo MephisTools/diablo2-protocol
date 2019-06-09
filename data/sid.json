@@ -368,6 +368,58 @@
           }
         ]
       ],
+      "SID_EXTRAWORK": [
+        "container",
+        [
+          {
+            "name": "gameType",
+            "type": "lu16"
+          },
+          {
+            "name": "length",
+            "type": "lu16"
+          },
+          {
+            "name": "data",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_CREATEACCOUNT2": [
+        "container",
+        [
+          {
+            "name": "passwordHash",
+            "type": ["array", {
+              "count": 5,
+              "type": "lu32"
+            }]
+          },
+          {
+            "name": "userName",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_SETEMAIL": [
+        "container",
+        [
+          {
+            "name": "emailAddress",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_NULL": ["container",[]],
+      "SID_CHATCOMMAND": [
+        "container",
+        [
+          {
+            "name": "text",
+            "type": "string"
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -382,7 +434,11 @@
               {
                 "type": "lu8",
                 "mappings": {
+                  "0x00": "SID_NULL",
                   "0x09": "SID_GETADVLISTEX",
+                  "0x0A": "SID_ENTERCHAT",
+                  "0x0B": "SID_GETCHANNELLIST",
+                  "0x0E": "SID_CHATCOMMAND",
                   "0x10": "SID_LEAVECHAT",
                   "0x15": "SID_CHECKAD",
                   "0x1C": "SID_STARTADVEX3",
@@ -390,16 +446,17 @@
                   "0x21": "SID_DISPLAYAD",
                   "0x22": "SID_NOTIFYJOIN",
                   "0x25": "SID_PING",
-                  "0x50": "SID_AUTH_INFO",
-                  "0x51": "SID_AUTH_CHECK",
+                  "0x2A": "SID_CREATEACCOUNT",
                   "0x33": "SID_GETFILETIME",
                   "0x3A": "SID_LOGONRESPONSE2",
-                  "0x40": "SID_QUERYREALMS2",
+                  "0x3D": "SID_CREATEACCOUNT2",
                   "0x3E": "SID_LOGONREALMEX",
+                  "0x40": "SID_QUERYREALMS2",
                   "0x46": "SID_NEWS_INFO",
-                  "0x0B": "SID_GETCHANNELLIST",
-                  "0x0A": "SID_ENTERCHAT",
-                  "0x2A": "SID_CREATEACCOUNT"
+                  "0x4B": "SID_EXTRAWORK",
+                  "0x50": "SID_AUTH_INFO",
+                  "0x51": "SID_AUTH_CHECK",
+                  "0x59": "SID_SETEMAIL"
                 }
               }
             ]
@@ -432,7 +489,12 @@
                   "SID_DISPLAYAD": "SID_DISPLAYAD",
                   "SID_LEAVEGAME": "SID_LEAVEGAME",
                   "SID_GETADVLISTEX": "SID_GETADVLISTEX",
-                  "SID_CREATEACCOUNT": "SID_CREATEACCOUNT"
+                  "SID_CREATEACCOUNT": "SID_CREATEACCOUNT",
+                  "SID_EXTRAWORK": "SID_EXTRAWORK",
+                  "SID_CREATEACCOUNT2": "SID_CREATEACCOUNT2",
+                  "SID_SETEMAIL": "SID_SETEMAIL",
+                  "SID_NULL": "SID_NULL",
+                  "SID_CHATCOMMAND": "SID_CHATCOMMAND"
                 }
               }
             ]
@@ -799,6 +861,77 @@
           }
         ]
       ],
+      "SID_REQUIREDWORK": [
+        "container",
+        [
+          {
+            "name": "fileName",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_CREATEACCOUNT2": [
+        "container",
+        [
+          {
+            "name": "status",
+            "type": "lu32"
+          },
+          {
+            "name": "accountName",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_SETEMAIL": ["container",[]],
+      "SID_NULL": ["container",[]],
+      "SID_FRIENDSADD": [
+        "container",
+        [
+          {
+            "name": "account",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": "lu8"
+          },
+          {
+            "name": "locatrionId",
+            "type": "lu8"
+          },
+          {
+            "name": "productId",
+            "type": "lu32"
+          },
+          {
+            "name": "locationName",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_FRIENDSREMOVE": [
+        "container",
+        [
+          {
+            "name": "number",
+            "type": "lu8"
+          }
+        ]
+      ],
+      "SID_FRIENDSPOSITION": [
+        "container",
+        [
+          {
+            "name": "number",
+            "type": "lu8"
+          },
+          {
+            "name": "newPosition",
+            "type": "lu8"
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -813,22 +946,29 @@
               {
                 "type": "lu8",
                 "mappings": {
+                  "0x00": "SID_NULL",
                   "0x09": "SID_GETADVLISTEX",
+                  "0x0A": "SID_ENTERCHAT",
+                  "0x0B": "SID_GETCHANNELLIST",
+                  "0x0F": "SID_CHATEVENT",
                   "0x15": "SID_CHECKAD",
-                  "0x25": "SID_PING",
                   "0x1C": "SID_STARTADVEX3",
-                  "0x50": "SID_AUTH_INFO",
-                  "0x51": "SID_AUTH_CHECK",
+                  "0x25": "SID_PING",
+                  "0x2A": "SID_CREATEACCOUNT",
                   "0x33": "SID_GETFILETIME",
                   "0x3A": "SID_LOGONRESPONSE2",
+                  "0x3E": "SID_LOGONREALMEX",
+                  "0x3D": "SID_CREATEACCOUNT2",
                   "0x40": "SID_QUERYREALMS2",
                   "0x46": "SID_NEWS_INFO",
-                  "0x3E": "SID_LOGONREALMEX",
-                  "0x0B": "SID_GETCHANNELLIST",
-                  "0x0A": "SID_ENTERCHAT",
-                  "0x0F": "SID_CHATEVENT",
-                  "0x2A": "SID_CREATEACCOUNT",
-                  "0x52": "SID_AUTH_ACCOUNTCREATE"
+                  "0x4C": "SID_REQUIREDWORK",
+                  "0x50": "SID_AUTH_INFO",
+                  "0x51": "SID_AUTH_CHECK",
+                  "0x52": "SID_AUTH_ACCOUNTCREATE",
+                  "0x59": "SID_SETEMAIL",
+                  "0x67": "SID_FRIENDSADD",
+                  "0x68": "SID_FRIENDSREMOVE",
+                  "0x69": "SID_FRIENDSPOSITION"
                 }
               }
             ]
@@ -859,7 +999,14 @@
                   "SID_NEWS_INFO": "SID_NEWS_INFO",
                   "SID_GETADVLISTEX": "SID_GETADVLISTEX",
                   "SID_CREATEACCOUNT": "SID_CREATEACCOUNT",
-                  "SID_AUTH_ACCOUNTCREATE": "SID_AUTH_ACCOUNTCREATE"
+                  "SID_AUTH_ACCOUNTCREATE": "SID_AUTH_ACCOUNTCREATE",
+                  "SID_REQUIREDWORK": "SID_REQUIREDWORK",
+                  "SID_CREATEACCOUNT2": "SID_CREATEACCOUNT2",
+                  "SID_SETEMAIL": "SID_SETEMAIL",
+                  "SID_NULL": "SID_NULL",
+                  "SID_FRIENDSADD": "SID_FRIENDSADD",
+                  "SID_FRIENDSREMOVE": "SID_FRIENDSREMOVE",
+                  "SID_FRIENDSPOSITION": "SID_FRIENDSPOSITION"
                 }
               }
             ]

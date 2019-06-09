@@ -1,3 +1,12 @@
+
+## 1.4.0
+* Start option for different versions of diablo
+* Add some account creation && chat related packets (SID)
+* Fix few docs / example
+
+## 1.3.2
+* fix toCamelCase for empty strings : fix no password games
+
 ## 1.3.1
 * Fix D2GS_WAYPOINT
 
@@ -11,7 +20,7 @@
 * packets fixes
 * item properties
 * map reading
-* pathofbot improvements
+* autotathamet improvements
 
 ## 1.1.1
 

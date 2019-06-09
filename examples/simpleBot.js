@@ -1,18 +1,19 @@
 const { createClientDiablo } = require('..')
 
-if (process.argv.length !== 8) {
-  console.log('Usage : node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver>')
+if (process.argv.length !== 9) {
+  console.log('Usage : node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver> <sidserver>')
   process.exit(1)
 }
 
 const character = process.argv[4]
 const gameName = process.argv[5]
-const gamePassword = ''
+const gamePassword = process.argv[6]
 const gameServer = process.argv[7]
+const sidserver = process.argv[8]
 
 async function start () {
   const clientDiablo = createClientDiablo({
-    host: '198.98.54.85',
+    host: sidserver,
     username: process.argv[2],
     password: process.argv[3]
   })
