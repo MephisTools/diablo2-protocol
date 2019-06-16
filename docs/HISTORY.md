@@ -1,3 +1,5 @@
+## 1.4.1
+* Move item.js enums from diablo2-protocol to diablo2-data
 
 ## 1.4.0
 * Start option for different versions of diablo
