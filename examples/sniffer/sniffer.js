@@ -15,6 +15,7 @@ const ws = new WebSocket('ws://localhost:8080')
 ws.onmessage = (message) => console.log(message.data)
  */
 
+const Parser = require('protodef').Parser
 const networkInterface = process.argv[2]
 
 const pcap = require('pcap')
@@ -73,12 +74,12 @@ const bnftpToServer = new ProtoDef(false)
 bnftpToServer.addProtocol(protocol[version].bnftp, ['toServer'])
 
 const bnftpToClient = new ProtoDef(false)
-bnftpToClient.addProtocol(protocol[version].bnftp, ['toClient'])
+bnftpToClient.addProtocol(protocol['1.13'].bnftp, ['toClient'])
 
 const d2gsToClient = new ProtoDef(false)
 d2gsToClient.addTypes(d2gsReader)
 d2gsToClient.addTypes(bitfieldLE)
-d2gsToClient.addProtocol(protocol[version].d2gs, ['toClient'])
+d2gsToClient.addProtocol(protocol['1.13'].d2gs, ['toClient'])
 
 const d2gsToServer = new ProtoDef(false)
 d2gsToServer.addProtocol(protocol[version].d2gs, ['toServer'])
@@ -145,12 +146,12 @@ function displayD2gsToClient (data) {
   }
 }
 
-function displayParsed (proto, protoName, data) {
+function displayParsed (proto, protoName, data, raw = false) {
   try {
     const { name, params } = proto.parsePacketBuffer('packet', data).data
     console.log(protoName, ':', name, JSON.stringify(params))
     wss.broadcast(JSON.stringify({ protocol: protoName, name, params }))
-    // console.log('raw', protoName, name, data)
+    if (raw) console.log('raw', protoName, name, data.toString('hex'))
     messagesToServer.push(`${protoName}:${name} ${JSON.stringify(params)}`)
   } catch (error) {
     console.log(protoName, ':', error.message)
@@ -170,36 +171,57 @@ function displayMcpToClient (data) {
 }
 
 function displaySidToServer (data) {
-  displayParsed(sidToServer, 'sidToServer', data)
+  displayParsed(sidToServer, 'sidToServer', data, true)
 }
 
 function displaySidToClient (data) {
   displayParsed(sidToClient, 'sidToClient', data)
 }
 
+const challengeParserClient = new Parser(bnftpToClient, 'CHALLENGE')
+challengeParserClient.on('error', err => console.log('bnftpToClient challenge error : ', err.message))
+challengeParserClient.on('data', (parsed) => {
+  console.info('bnftpToClient challenge : ', JSON.stringify(parsed))
+})
+
+
+const protocolParserClient = new Parser(bnftpToClient, 'FILE_TRANSFER_PROTOCOL')
+protocolParserClient.on('error', err => console.log('bnftpToClient protocol error : ', err.message))
+protocolParserClient.on('data', (parsed) => {
+  console.info('bnftpToClient protocol : ', JSON.stringify(parsed))
+})
+
 function displayBnftpToClient (data) {
   try {
-    console.log('bnftpToClient protocol: ', JSON.stringify(bnftpToClient.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
+    protocolParserClient.write('FILE_TRANSFER_PROTOCOL')
+    // console.log('bnftpToClient protocol: ', JSON.stringify(bnftpToClient.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
   } catch (error) {
-    try {
-      console.log('bnftpToClient challenge: ', JSON.stringify(bnftpToClient.parsePacketBuffer('CHALLENGE', data).data))
-    } catch (error) {
-      console.log('bnftpToClient challenge: ', data)
-      console.log('bnftpToClient challenge: ', error)
-    }
+    console.log('bnftpToClient error: ', error)
+    console.log('bnftpToClient protocol: ', data)
+    // challengeParserClient.write(data)
   }
 }
 
+const challengeParserServer = new Parser(bnftpToServer, 'CHALLENGE')
+challengeParserServer.on('error', err => console.log('bnftpToServer bnftp error : ', err.message))
+challengeParserServer.on('data', (parsed) => {
+  console.info('bnftpToServer challenge : ', JSON.stringify(parsed))
+})
+const protocolParserServer = new Parser(bnftpToServer, 'FILE_TRANSFER_PROTOCOL')
+protocolParserServer.on('error', err => console.log('bnftpToServer bnftp error : ', err.message))
+protocolParserServer.on('data', (parsed) => {
+  console.info('bnftpToServer protocol : ', JSON.stringify(parsed))
+})
 function displayBnftpToServer (data) {
   try {
-    console.log('bnftpToServer protocol: ', JSON.stringify(bnftpToServer.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
+    protocolParserServer.write('FILE_TRANSFER_PROTOCOL')
+    // console.log('bnftpToServer protocol: ', JSON.stringify(bnftpToServer.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
+    // console.log('bnftpToServer protocol: ', data)
   } catch (error) {
-    try {
-      console.log('bnftpToServer challenge: ', JSON.stringify(bnftpToServer.parsePacketBuffer('CHALLENGE', data).data))
-    } catch (error) {
-      console.log('bnftpToServer challenge: ', data)
-      console.log('bnftpToServer challenge: ', error)
-    }
+
+    console.log('bnftpToServer error: ', error)
+    console.log('bnftpToServer write challenge', data)
+    // challengeParserServer.write(data)
   }
 }
 
@@ -210,8 +232,11 @@ tcpTracker.on('session', function (session) {
   if (!trackedPorts.has(srcPort) && !trackedPorts.has(dstPort)) {
     return
   }
+
+  /*
   if (dstPort === sidPort) {
     if (clientPortSid === null) {
+      console.log('zalloooo')
       clientPortSid = srcPort
     } else {
       clientPortBnFtp = srcPort
@@ -223,7 +248,7 @@ tcpTracker.on('session', function (session) {
     } else {
       clientPortBnFtp = dstPort
     }
-  }
+  } */
 
   session.on('start', function () {
     if (srcPort === d2gsPort || dstPort === d2gsPort) {
@@ -253,6 +278,18 @@ tcpTracker.on('session', function (session) {
       displayMcpToServer(data)
     }
 
+    if (dstPort === sidPort && data.length === 1 && data[0] === 1) {
+      console.log(`sid on port ${srcPort} : ${data}`)
+      clientPortSid = srcPort
+      return
+    }
+
+    if (dstPort === sidPort && data.length === 1 && data[0] === 2) {
+      console.log(`bnftp on port ${srcPort} : ${data}`)
+      clientPortBnFtp = srcPort
+      return
+    }
+
     if (srcPort === sidPort && dstPort === clientPortSid) {
       displaySidToClient(data)
     }
@@ -262,11 +299,11 @@ tcpTracker.on('session', function (session) {
     }
 
     if (srcPort === sidPort && dstPort === clientPortBnFtp) {
-      // displayBnftpToClient(data)
+      displayBnftpToClient(data)
     }
 
     if (dstPort === sidPort && srcPort === clientPortBnFtp) {
-      // displayBnftpToServer(data)
+      displayBnftpToServer(data)
     }
   })
   session.on('data recv', function (session_, data) {
@@ -286,6 +323,18 @@ tcpTracker.on('session', function (session) {
       displayMcpToClient(data)
     }
 
+    if (srcPort === sidPort && data.length === 1 && data[0] === 1) {
+      console.log(`sid on port ${dstPort} : ${data}`)
+      clientPortSid = dstPort
+      return
+    }
+
+    if (srcPort === sidPort && data.length === 1 && data[0] === 2) {
+      console.log(`bnftp on port ${dstPort} : ${data}`)
+      clientPortBnFtp = dstPort
+      return
+    }
+
     if (srcPort === sidPort && dstPort === clientPortSid) {
       displaySidToServer(data)
     }
@@ -295,11 +344,11 @@ tcpTracker.on('session', function (session) {
     }
 
     if (srcPort === sidPort && dstPort === clientPortBnFtp) {
-      // displayBnftpToServer(data)
+      displayBnftpToServer(data)
     }
 
     if (dstPort === sidPort && srcPort === clientPortBnFtp) {
-      // displayBnftpToClient(data)
+      displayBnftpToClient(data)
     }
   })
 
