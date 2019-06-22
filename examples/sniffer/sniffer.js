@@ -1,7 +1,12 @@
-if (process.argv.length !== 3) {
-  console.log('Usage : node sniffer.js <networkInterface>')
+const { supportedVersions, defaultVersion } = require('../..')
+
+if (process.argv.length !== 4) {
+  console.log('Usage : node sniffer.js <networkInterface> <version>')
   process.exit(1)
 }
+
+// If the version correspond to a supported version else use default
+const version = supportedVersions.find(v => v === process.argv[3]) ? process.argv[3] : defaultVersion
 
 /*
 in a new chrome tab press f12 then do this :
@@ -44,42 +49,39 @@ const app = express()
 // app.use(express.static(`${__dirname}/public`))
 
 const {
-  mcpProtocol,
-  sidProtocol,
-  bnftpProtocol,
+  protocol,
   createSplitter,
   decompress,
-  d2gsProtocol,
   d2gsReader,
   itemParser,
   bitfieldLE
 } = require('../..')
 
 const mcpToServer = new ProtoDef(false)
-mcpToServer.addProtocol(mcpProtocol, ['toServer'])
+mcpToServer.addProtocol(protocol[version].mcpProtocol, ['toServer'])
 
 const mcpToClient = new ProtoDef(false)
-mcpToClient.addProtocol(mcpProtocol, ['toClient'])
+mcpToClient.addProtocol(protocol[version].mcp, ['toClient'])
 
 const sidToServer = new ProtoDef(false)
-sidToServer.addProtocol(sidProtocol, ['toServer'])
+sidToServer.addProtocol(protocol[version].sid, ['toServer'])
 
 const sidToClient = new ProtoDef(false)
-sidToClient.addProtocol(sidProtocol, ['toClient'])
+sidToClient.addProtocol(protocol[version].sid, ['toClient'])
 
 const bnftpToServer = new ProtoDef(false)
-bnftpToServer.addProtocol(bnftpProtocol, ['toServer'])
+bnftpToServer.addProtocol(protocol[version].bnftp, ['toServer'])
 
 const bnftpToClient = new ProtoDef(false)
-bnftpToClient.addProtocol(bnftpProtocol, ['toClient'])
+bnftpToClient.addProtocol(protocol[version].bnftp, ['toClient'])
 
 const d2gsToClient = new ProtoDef(false)
 d2gsToClient.addTypes(d2gsReader)
 d2gsToClient.addTypes(bitfieldLE)
-d2gsToClient.addProtocol(d2gsProtocol, ['toClient'])
+d2gsToClient.addProtocol(protocol[version].d2gs, ['toClient'])
 
 const d2gsToServer = new ProtoDef(false)
-d2gsToServer.addProtocol(d2gsProtocol, ['toServer'])
+d2gsToServer.addProtocol(protocol[version].d2gs, ['toServer'])
 
 const toClientParser = new FullPacketParser(d2gsToClient, 'packet')
 const splitter = createSplitter()
@@ -102,10 +104,11 @@ toClientParser.on('data', ({ data, buffer }) => {
     }
     wss.broadcast(JSON.stringify({ protocol: 'd2gsToClient', name, params }))
     console.info('d2gsToClient : ', name, JSON.stringify(params))
-    // console.log('raw', 'd2gsToClient', name, buffer)
+    console.log('raw', 'd2gsToClient', name, buffer)
     messagesToClient.push(`d2gsToClient : ${name} ${JSON.stringify(params)}`)
   } catch (err) {
     console.log(err)
+    console.log('raw', 'd2gsToClient', buffer)
   }
 })
 
@@ -138,6 +141,7 @@ function displayD2gsToClient (data) {
     }
   } catch (error) {
     console.log('d2gsToClient : ', error.message)
+    console.log('raw', 'd2gsToClient', data)
   }
 }
 
@@ -175,17 +179,27 @@ function displaySidToClient (data) {
 
 function displayBnftpToClient (data) {
   try {
-    console.log('bnftpToClient : ', JSON.stringify(bnftpToClient.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
+    console.log('bnftpToClient protocol: ', JSON.stringify(bnftpToClient.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
   } catch (error) {
-    console.log('bnftpToClient : ', error)
+    try {
+      console.log('bnftpToClient challenge: ', JSON.stringify(bnftpToClient.parsePacketBuffer('CHALLENGE', data).data))
+    } catch (error) {
+      console.log('bnftpToClient challenge: ', data)
+      console.log('bnftpToClient challenge: ', error)
+    }
   }
 }
 
 function displayBnftpToServer (data) {
   try {
-    console.log('bnftpToServer : ', JSON.stringify(bnftpToServer.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
+    console.log('bnftpToServer protocol: ', JSON.stringify(bnftpToServer.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
   } catch (error) {
-    console.log('bnftpToServer : ', error)
+    try {
+      console.log('bnftpToServer challenge: ', JSON.stringify(bnftpToServer.parsePacketBuffer('CHALLENGE', data).data))
+    } catch (error) {
+      console.log('bnftpToServer challenge: ', data)
+      console.log('bnftpToServer challenge: ', error)
+    }
   }
 }
 
@@ -248,11 +262,11 @@ tcpTracker.on('session', function (session) {
     }
 
     if (srcPort === sidPort && dstPort === clientPortBnFtp) {
-      displayBnftpToClient(data)
+      // displayBnftpToClient(data)
     }
 
     if (dstPort === sidPort && srcPort === clientPortBnFtp) {
-      displayBnftpToServer(data)
+      // displayBnftpToServer(data)
     }
   })
   session.on('data recv', function (session_, data) {
@@ -281,11 +295,11 @@ tcpTracker.on('session', function (session) {
     }
 
     if (srcPort === sidPort && dstPort === clientPortBnFtp) {
-      displayBnftpToServer(data)
+      // displayBnftpToServer(data)
     }
 
     if (dstPort === sidPort && srcPort === clientPortBnFtp) {
-      displayBnftpToClient(data)
+      // displayBnftpToClient(data)
     }
   })
 

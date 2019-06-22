@@ -1,10 +1,6 @@
 const createClientDiablo = require('./lib/client/createClientDiablo')
-const mcpProtocol = require('./data/mcp')
-const sidProtocol = require('./data/sid')
-const bnftpProtocol = require('./data/bnftp')
 const { createSplitter } = require('./lib/utils/splitter')
 const { decompress, compress, getPacketSize } = require('./lib/utils/compression')
-const d2gsProtocol = require('./data/d2gs')
 const d2gsReader = require('./lib/utils/d2gsSpecialReader')
 const getHash = require('./lib/utils/getHash')
 const createServerDiablo = require('./lib/server/createServerDiablo')
@@ -14,18 +10,25 @@ const createServerMcp = require('./lib/server/createServerMcp')
 const ServerD2gs = require('./lib/server/serverD2gs')
 const itemParser = require('./lib/utils/itemParser')
 const bitfieldLE = require('./lib/utils/bitfieldLE')
-const supportedVersions = require('./version').supportedVersions
+const { defaultVersion, supportedVersions } = require('./version')
+
+const protocol = supportedVersions.reduce((acc, version) => {
+  acc[version] = {
+    sid: require(`./data/${version}/sid`),
+    bnftp: require(`./data/${version}/bnftp`),
+    mcp: require(`./data/${version}/mcp`),
+    d2gs: require(`./data/${version}/d2gs`)
+  }
+  return acc
+}, {})
 
 module.exports = {
+  protocol,
   createClientDiablo,
-  mcpProtocol,
-  sidProtocol,
-  bnftpProtocol,
   createSplitter,
   decompress,
   compress,
   getPacketSize,
-  d2gsProtocol,
   d2gsReader,
   getHash,
   createServerDiablo,
@@ -35,5 +38,6 @@ module.exports = {
   ServerDiablo,
   itemParser,
   bitfieldLE,
-  supportedVersions
+  supportedVersions,
+  defaultVersion
 }

@@ -8,6 +8,7 @@ Connect to diablo and returns a promise resolving to a `ClientDiablo` instance
  * username : username of the account
  * password : password of the account
  * host : sid host : diablo server host
+ * version : version of diablo
  
 
 ## diablo.ClientDiablo

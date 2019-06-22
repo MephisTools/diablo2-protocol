@@ -1,0 +1,487 @@
+{
+  "types": {
+    "cstring": "native",
+    "lu16": "native",
+    "lu8": "native",
+    "lu64": "native",
+    "lu32": "native",
+    "bool": "native",
+    "lf32": "native",
+    "lf64": "native",
+    "option": "native",
+    "container": "native",
+    "switch": "native",
+    "void": "native",
+    "array": "native",
+    "string": "cstring",
+    "restBuffer": "native"
+  },
+  "toServer": {
+    "types": {
+      "MCP_JOINGAME": ["container", [
+        {
+          "name": "requestId",
+          "type": "lu16"
+        },
+        {
+          "name": "gameName",
+          "type": "string"
+        },
+        {
+          "name": "gamePassword",
+          "type": "string"
+        }
+      ]],
+      "MCP_CREATEGAME": ["container", [
+        {
+          "name": "requestId",
+          "type": "lu16"
+        },
+        {
+          "name": "difficulty",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "levelRestrictionDifference",
+          "type": "lu8"
+        },
+        {
+          "name": "maximumPlayers",
+          "type": "lu8"
+        },
+        {
+          "name": "gameName",
+          "type": "string"
+        },
+        {
+          "name": "gamePassword",
+          "type": "string"
+        },
+        {
+          "name": "gameDescription",
+          "type": "string"
+        }
+      ]],
+      "MCP_MOTD": ["container", []],
+      "MCP_STARTUP": [
+        "container",
+        [
+          {
+            "name": "MCPCookie",
+            "type": "lu32"
+          },
+          {
+            "name": "MCPStatus",
+            "type": "lu32"
+          },
+          {
+            "name": "MCPChunk1",
+            "type": [
+              "array",
+              {
+                "count": 2,
+                "type": "lu32"
+              }
+            ]
+          },
+          {
+            "name": "MCPChunk2",
+            "type": [
+              "array",
+              {
+                "count": 12,
+                "type": "lu32"
+              }
+            ]
+          },
+          {
+            "name": "battleNetUniqueName",
+            "type": "string"
+          }
+        ]
+      ],
+      "MCP_CHARLIST2": [
+        "container",
+        [
+          {
+            "name": "numberOfCharacterToList",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "MCP_CHARLOGON": [
+        "container",
+        [
+          {
+            "name": "characterName",
+            "type": "string"
+          }
+        ]
+      ],
+      "MCP_GAMELIST": [
+        "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu16"
+          },
+          {
+            "name": "unknown",
+            "type": "lu32"
+          },
+          {
+            "name": "searchString",
+            "type": "string"
+          }
+        ]
+      ],
+      "MCP_GAMEINFO": [
+        "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu16"
+          },
+          {
+            "name": "gameName",
+            "type": "string"
+          }
+        ]
+      ],
+      "MCP_CHARCREATE": [
+        "container",
+        [
+          {
+            "name": "characterClass",
+            "type": "lu32"
+          },
+          {
+            "name": "characterFlags",
+            "type": "lu16"
+          },
+          {
+            "name": "characterName",
+            "type": "string"
+          }
+        ]
+      ],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "size",
+            "type": "lu16"
+          },
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "lu8",
+                "mappings": {
+                  "0x01": "MCP_STARTUP",
+                  "0x02": "MCP_CHARCREATE",
+                  "0x03": "MCP_CREATEGAME",
+                  "0x04": "MCP_JOINGAME",
+                  "0x05": "MCP_GAMELIST",
+                  "0x06": "MCP_GAMEINFO",
+                  "0x07": "MCP_CHARLOGON",
+                  "0x12": "MCP_MOTD",
+                  "0x19": "MCP_CHARLIST2"
+                }
+              }
+            ]
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "MCP_STARTUP": "MCP_STARTUP",
+                  "MCP_CHARLOGON": "MCP_CHARLOGON",
+                  "MCP_CHARLIST2": "MCP_CHARLIST2",
+                  "MCP_MOTD": "MCP_MOTD",
+                  "MCP_CREATEGAME": "MCP_CREATEGAME",
+                  "MCP_JOINGAME": "MCP_JOINGAME",
+                  "MCP_GAMELIST": "MCP_GAMELIST",
+                  "MCP_GAMEINFO": "MCP_GAMEINFO",
+                  "MCP_CHARCREATE": "MCP_CHARCREATE"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  },
+  "toClient": {
+    "types": {
+      "MCP_JOINGAME": ["container",[
+        {
+          "name": "requestId",
+          "type": "lu16"
+        },
+        {
+          "name": "gameToken",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "IPOfD2GSServer",
+          "type": ["array", {
+            "count": 4,
+            "type": "lu8"
+          }]
+        },
+        {
+          "name": "gameHash",
+          "type": "lu32"
+        },
+        {
+          "name": "result",
+          "type": "lu32"
+        }
+      ]],
+      "MCP_CREATEGAME": ["container", [
+        {
+          "name": "requestId",
+          "type": "lu16"
+        },
+        {
+          "name": "gameToken",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "result",
+          "type": "lu32"
+        }
+      ]],
+      "MCP_MOTD": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "motd",
+          "type": "string"
+        }
+      ]],
+      "MCP_CHARLOGON": [
+        "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "MCP_STARTUP": [
+        "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "MCP_CHARLIST2": [
+        "container",
+        [
+          {
+            "name": "numbersOfCharactersRequested",
+            "type": "lu16"
+          },
+          {
+            "name": "numbersOfCharactersInAccount",
+            "type": "lu32"
+          },
+          {
+            "name": "characters",
+            "type": ["array",{
+              "countType": "lu16",
+              "type": ["container",[
+                {
+                  "name": "expirationDate",
+                  "type": "lu32"
+                },
+                {
+                  "name": "characterName",
+                  "type": "string"
+                },
+                {
+                  "name": "characterStatstring",
+                  "type": "string"
+                }
+              ]]
+            }]
+          }
+        ]
+      ],
+      "MCP_GAMELIST": [
+        "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu16"
+          },
+          {
+            "name": "index",
+            "type": "lu32"
+          },
+          {
+            "name": "numberOfPlayersInGame",
+            "type": "lu8"
+          },
+          {
+            "name": "status",
+            "type": "lu32"
+          },
+          {
+            "name": "gameName",
+            "type": "string"
+          },
+          {
+            "name": "gameDescription",
+            "type": "string"
+          }
+        ]
+      ],
+      "MCP_GAMEINFO": [
+        "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu16"
+          },
+          {
+            "name": "status",
+            "type": "lu32"
+          },
+          {
+            "name": "gameUptime",
+            "type": "lu32"
+          },
+          {
+            "name": "unknown",
+            "type": "lu16"
+          },
+          {
+            "name": "maximumPlayersAllowed",
+            "type": "lu8"
+          },
+          {
+            "name": "nbCharacters",
+            "type": "lu8"
+          },
+          {
+            "name": "classes",
+            "type": ["array",{
+              "count": "nbCharacters",
+              "type": "lu8"
+            }]
+          },
+          {
+            "name": "levels",
+            "type": ["array",{
+              "count": "nbCharacters",
+              "type": "lu8"
+            }]
+          },
+          {
+            "name": "gameDescription",
+            "type": "string"
+          },
+          {
+            "name": "names",
+            "type": ["array",{
+              "count": "nbCharacters",
+              "type": "string"
+            }]
+          }
+        ]
+      ],
+      "MCP_CHARCREATE": [
+        "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "MCP_CREATEQUEUE": [
+        "container",
+        [
+          {
+            "name": "position",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "size",
+            "type": "lu16"
+          },
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "lu8",
+                "mappings": {
+                  "0x01": "MCP_STARTUP",
+                  "0x02": "MCP_CHARCREATE",
+                  "0x03": "MCP_CREATEGAME",
+                  "0x04": "MCP_JOINGAME",
+                  "0x05": "MCP_GAMELIST",
+                  "0x06": "MCP_GAMEINFO",
+                  "0x07": "MCP_CHARLOGON",
+                  "0x12": "MCP_MOTD",
+                  "0x14": "MCP_CREATEQUEUE",
+                  "0x19": "MCP_CHARLIST2"
+                }
+              }
+            ]
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "MCP_STARTUP": "MCP_STARTUP",
+                  "MCP_CHARLOGON": "MCP_CHARLOGON",
+                  "MCP_CHARLIST2": "MCP_CHARLIST2",
+                  "MCP_MOTD": "MCP_MOTD",
+                  "MCP_CREATEGAME": "MCP_CREATEGAME",
+                  "MCP_JOINGAME": "MCP_JOINGAME",
+                  "MCP_GAMELIST": "MCP_GAMELIST",
+                  "MCP_GAMEINFO": "MCP_GAMEINFO",
+                  "MCP_CHARCREATE": "MCP_CHARCREATE",
+                  "MCP_CREATEQUEUE": "MCP_CREATEQUEUE"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,1018 @@
+{
+  "types": {
+    "cstring": "native",
+    "lu16": "native",
+    "lu8": "native",
+    "lu64": "native",
+    "lu32": "native",
+    "bool": "native",
+    "lf32": "native",
+    "lf64": "native",
+    "option": "native",
+    "container": "native",
+    "switch": "native",
+    "void": "native",
+    "array": "native",
+    "string": "cstring",
+    "restBuffer": "native"
+  },
+  "toServer": {
+    "types": {
+      "SID_DISPLAYAD": ["container",[
+        {
+          "name": "platformId",
+          "type": "lu32"
+        },
+        {
+          "name": "productId",
+          "type": "lu32"
+        },
+        {
+          "name": "adId",
+          "type": "lu32"
+        },
+        {
+          "name": "filename",
+          "type": "string"
+        },
+        {
+          "name": "URL",
+          "type": "string"
+        }
+      ]],
+      "SID_NEWS_INFO": ["container",[
+        {
+          "name": "newsTimestamp",
+          "type": "lu32"
+        }
+      ]],
+      "SID_CHECKAD": ["container",[
+        {
+          "name": "platformId",
+          "type": "lu32"
+        },
+        {
+          "name": "productId",
+          "type": "lu32"
+        },
+        {
+          "name": "idOfLastDisplayedBanner",
+          "type": "lu32"
+        },
+        {
+          "name": "currentTime",
+          "type": "lu32"
+        }
+      ]],
+      "SID_LEAVECHAT": ["container",[]],
+      "SID_NOTIFYJOIN": ["container", [
+        {
+          "name": "productId",
+          "type": "lu32"
+        },
+        {
+          "name": "productVersion",
+          "type": "lu32"
+        },
+        {
+          "name": "gameName",
+          "type": "string"
+        },
+        {
+          "name": "gamePassword",
+          "type": "string"
+        }
+      ]],
+      "SID_STARTADVEX3": ["container", [
+        {
+          "name": "gameStats",
+          "type": "lu32"
+        },
+        {
+          "name": "gameUptimeInSeconds",
+          "type": "lu32"
+        },
+        {
+          "name": "gameType",
+          "type": "lu16"
+        },
+        {
+          "name": "subGameType",
+          "type": "lu16"
+        },
+        {
+          "name": "providerVersionConstant",
+          "type": "lu32"
+        },
+        {
+          "name": "ladderType",
+          "type": "lu32"
+        },
+        {
+          "name": "gameName",
+          "type": "string"
+        },
+        {
+          "name": "gamePassword",
+          "type": "string"
+        },
+        {
+          "name": "gameStatstring",
+          "type": "string"
+        }
+      ]],
+      "SID_ENTERCHAT": ["container", [
+        {
+          "name": "characterName",
+          "type": "string"
+        },
+        {
+          "name": "realm",
+          "type": "string"
+        }
+      ]],
+      "SID_GETCHANNELLIST": ["container",[
+        {
+          "name": "productId",
+          "type": "lu32"
+        }
+      ]],
+      "SID_LOGONREALMEX": ["container",[
+        {
+          "name": "clientToken",
+          "type": "lu32"
+        },
+        {
+          "name": "hashedRealmPassword",
+          "type": ["buffer",{
+            "count":20
+          }]
+        },
+        {
+          "name": "realmTitle",
+          "type": "string"
+        }
+      ]],
+      "SID_QUERYREALMS2": ["container",[]],
+      "SID_LOGONRESPONSE2": [
+        "container",
+        [
+          {
+            "name": "clientToken",
+            "type": "lu32"
+          },
+          {
+            "name": "serverToken",
+            "type": "lu32"
+          },
+          {
+            "name": "passwordHash",
+            "type": ["buffer",{
+              "count":20
+            }]
+          },
+          {
+            "name": "username",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_GETFILETIME": [
+        "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu32"
+          },
+          {
+            "name": "unknown",
+            "type": "lu32"
+          },
+          {
+            "name": "filename",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_AUTH_CHECK": [
+        "container",
+        [
+          {
+            "name": "clientToken",
+            "type": "lu32"
+          },
+          {
+            "name": "exeVersion",
+            "type": "lu32"
+          },
+          {
+            "name": "exeHash",
+            "type": "lu32"
+          },
+          {
+            "name": "numberOfCDKeys",
+            "type": "lu32"
+          },
+          {
+            "name": "spawnKey",
+            "type": "lu32"
+          },
+          {
+            "name": "cdKeys",
+            "type": ["array",
+              {
+                "count":"numberOfCDKeys",
+                "type": ["container",[
+                  {
+                    "name": "keyLength",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "keyProductValue",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "keyPublicValue",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "unknown",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "hashedKeyData",
+                    "type": ["buffer",{
+                      "count":20
+                    }]
+                  }
+                ]]
+              }
+            ]
+          },
+          {
+            "name": "exeInformation",
+            "type": "string"
+          },
+          {
+            "name": "keyOwnerName",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_PING": [
+        "container",
+        [
+          {
+            "name": "pingValue",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "SID_AUTH_INFO": [
+        "container",
+        [
+          {
+            "name": "protocolId",
+            "type": "lu32"
+          },
+          {
+            "name": "platformCode",
+            "type": "lu32"
+          },
+          {
+            "name": "productCode",
+            "type": "lu32"
+          },
+          {
+            "name": "versionByte",
+            "type": "lu32"
+          },
+          {
+            "name": "languageCode",
+            "type": "lu32"
+          },
+          {
+            "name": "localIp",
+            "type": "lu32"
+          },
+          {
+            "name": "timeZoneBias",
+            "type": "lu32"
+          },
+          {
+            "name": "mpqLocaleId",
+            "type": "lu32"
+          },
+          {
+            "name": "userLanguageId",
+            "type": "lu32"
+          },
+          {
+            "name": "countryAbreviation",
+            "type": "string"
+          },
+          {
+            "name": "country",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_LEAVEGAME": ["container",[]],
+      "SID_GETADVLISTEX": ["container",[
+        {
+          "name": "gameType",
+          "type": "lu16"
+        },
+        {
+          "name": "subGameType",
+          "type": "lu16"
+        },
+        {
+          "name": "viewingFilter",
+          "type": "lu32"
+        },
+        {
+          "name": "reserved",
+          "type": "lu32"
+        },
+        {
+          "name": "numberOfGames",
+          "type": "lu32"
+        },
+        {
+          "name": "gameName",
+          "type": "string"
+        },
+        {
+          "name": "gamePassword",
+          "type": "string"
+        },
+        {
+          "name": "gameStatstring",
+          "type": "string"
+        }
+      ]],
+      "SID_CREATEACCOUNT": [
+        "container",
+        [
+          {
+            "name": "hashedPassword",
+            "type": ["array", {
+              "count": 5,
+              "type": "lu32"
+            }]
+          },
+          {
+            "name": "username",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_EXTRAWORK": [
+        "container",
+        [
+          {
+            "name": "gameType",
+            "type": "lu16"
+          },
+          {
+            "name": "length",
+            "type": "lu16"
+          },
+          {
+            "name": "data",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_CREATEACCOUNT2": [
+        "container",
+        [
+          {
+            "name": "passwordHash",
+            "type": ["array", {
+              "count": 5,
+              "type": "lu32"
+            }]
+          },
+          {
+            "name": "userName",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_SETEMAIL": [
+        "container",
+        [
+          {
+            "name": "emailAddress",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_NULL": ["container",[]],
+      "SID_CHATCOMMAND": [
+        "container",
+        [
+          {
+            "name": "text",
+            "type": "string"
+          }
+        ]
+      ],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "ff",
+            "type": "lu8"
+          },
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "lu8",
+                "mappings": {
+                  "0x00": "SID_NULL",
+                  "0x09": "SID_GETADVLISTEX",
+                  "0x0A": "SID_ENTERCHAT",
+                  "0x0B": "SID_GETCHANNELLIST",
+                  "0x0E": "SID_CHATCOMMAND",
+                  "0x10": "SID_LEAVECHAT",
+                  "0x15": "SID_CHECKAD",
+                  "0x1C": "SID_STARTADVEX3",
+                  "0x1F": "SID_LEAVEGAME",
+                  "0x21": "SID_DISPLAYAD",
+                  "0x22": "SID_NOTIFYJOIN",
+                  "0x25": "SID_PING",
+                  "0x2A": "SID_CREATEACCOUNT",
+                  "0x33": "SID_GETFILETIME",
+                  "0x3A": "SID_LOGONRESPONSE2",
+                  "0x3D": "SID_CREATEACCOUNT2",
+                  "0x3E": "SID_LOGONREALMEX",
+                  "0x40": "SID_QUERYREALMS2",
+                  "0x46": "SID_NEWS_INFO",
+                  "0x4B": "SID_EXTRAWORK",
+                  "0x50": "SID_AUTH_INFO",
+                  "0x51": "SID_AUTH_CHECK",
+                  "0x59": "SID_SETEMAIL"
+                }
+              }
+            ]
+          },
+          {
+            "name": "size",
+            "type": "lu16"
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "SID_AUTH_INFO": "SID_AUTH_INFO",
+                  "SID_PING": "SID_PING",
+                  "SID_AUTH_CHECK": "SID_AUTH_CHECK",
+                  "SID_GETFILETIME": "SID_GETFILETIME",
+                  "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2",
+                  "SID_QUERYREALMS2": "SID_QUERYREALMS2",
+                  "SID_LOGONREALMEX": "SID_LOGONREALMEX",
+                  "SID_GETCHANNELLIST": "SID_GETCHANNELLIST",
+                  "SID_ENTERCHAT": "SID_ENTERCHAT",
+                  "SID_STARTADVEX3": "SID_STARTADVEX3",
+                  "SID_NOTIFYJOIN": "SID_NOTIFYJOIN",
+                  "SID_LEAVECHAT": "SID_LEAVECHAT",
+                  "SID_CHECKAD": "SID_CHECKAD",
+                  "SID_NEWS_INFO": "SID_NEWS_INFO",
+                  "SID_DISPLAYAD": "SID_DISPLAYAD",
+                  "SID_LEAVEGAME": "SID_LEAVEGAME",
+                  "SID_GETADVLISTEX": "SID_GETADVLISTEX",
+                  "SID_CREATEACCOUNT": "SID_CREATEACCOUNT",
+                  "SID_EXTRAWORK": "SID_EXTRAWORK",
+                  "SID_CREATEACCOUNT2": "SID_CREATEACCOUNT2",
+                  "SID_SETEMAIL": "SID_SETEMAIL",
+                  "SID_NULL": "SID_NULL",
+                  "SID_CHATCOMMAND": "SID_CHATCOMMAND"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  },
+  "toClient": {
+    "types": {
+      "SID_NEWS_INFO": ["container",[
+        {
+          "name": "numberOfEntries",
+          "type": "lu8"
+        },
+        {
+          "name": "lastLogonTimestamp",
+          "type": "lu32"
+        },
+        {
+          "name": "oldestNewsTimestamp",
+          "type": "lu32"
+        },
+        {
+          "name": "newestNewsTimestamp",
+          "type": "lu32"
+        },
+        {
+          "name": "entries",
+          "type": ["array",
+            {
+              "count": "numberOfEntries",
+              "type": [
+                "container",
+                [
+                  {
+                    "name": "timestamp",
+                    "type": "lu32"
+                  },
+                  {
+                    "name": "news",
+                    "type": "string"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]],
+      "SID_CHATEVENT": ["container", [
+        {
+          "name": "eventId",
+          "type": "lu32"
+        },
+        {
+          "name": "usersFlags",
+          "type": "lu32"
+        },
+        {
+          "name": "ping",
+          "type": "lu32"
+        },
+        {
+          "name": "ipAdress",
+          "type": "lu32"
+        },
+        {
+          "name": "accountNumber",
+          "type": "lu32"
+        },
+        {
+          "name": "registrationAuthority",
+          "type": "lu32"
+        },
+        {
+          "name": "username",
+          "type": "lu32"
+        },
+        {
+          "name": "text",
+          "type": "lu32"
+        }
+      ]],
+      "SID_STARTADVEX3": ["container", [
+        {
+          "name": "status",
+          "type": "lu32"
+        }
+      ]],
+      "SID_ENTERCHAT": ["container",[
+        {
+          "name": "uniqueName",
+          "type": "string"
+        },
+        {
+          "name": "statstring",
+          "type": "string"
+        },
+        {
+          "name": "accountName",
+          "type": "string"
+        }
+      ]],
+      "SID_GETCHANNELLIST": ["container",[
+        {
+          "name": "channelNames",
+          "type": ["array", {
+            "count": "string",
+            "type": "string"
+          }]
+        }
+      ]],
+      "SID_LOGONREALMEX": ["container",[
+        {
+          "name": "MCPCookie",
+          "type": "lu32"
+        },
+        {
+          "name": "MCPStatus",
+          "type": "lu32"
+        },
+        {
+          "name": "MCPChunk1",
+          "type": ["array", {
+            "count": 2,
+            "type": "lu32"
+          }]
+        },
+        {
+          "name": "IP",
+          "type": ["array", {
+            "count": 4,
+            "type": "lu8"
+          }]
+        },
+        {
+          "name": "port",
+          "type": "u16"
+        },
+        {
+          "name": "zero",
+          "type": "u16"
+        },
+        {
+          "name": "MCPChunk2",
+          "type": ["array", {
+            "count": 12,
+            "type": "lu32"
+          }]
+        },
+        {
+          "name": "battleNetUniqueName",
+          "type": "string"
+        }
+
+      ]
+      ],
+      "SID_QUERYREALMS2": ["container",[
+        {
+          "name": "unknown2",
+          "type": "lu32"
+        },
+        {
+          "name": "realms",
+          "type": ["array", {
+            "countType": "lu32",
+            "type": ["container",[
+              {
+                "name": "unknown",
+                "type": "lu32"
+              },
+              {
+                "name": "realmTitle",
+                "type": "string"
+              },
+              {
+                "name": "realmDescription",
+                "type": "string"
+              }
+            ]]
+          }]
+        }
+      ]],
+      "SID_LOGONRESPONSE2": [ "container",
+        [
+          {
+            "name": "status",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "SID_GETFILETIME": [ "container",
+        [
+          {
+            "name": "requestId",
+            "type": "lu32"
+          },
+          {
+            "name": "unknown",
+            "type": "lu32"
+          },
+          {
+            "name": "lastUpdateTime",
+            "type": "lu64"
+          },
+          {
+            "name": "filename",
+            "type": "string"
+          }
+        ]
+
+      ],
+      "SID_AUTH_CHECK": [ "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          },
+          {
+            "name": "additionalInformation",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_PING": [
+        "container",
+        [
+          {
+            "name": "pingValue",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "SID_AUTH_INFO": [
+        "container",
+        [
+          {
+            "name": "logonType",
+            "type": "lu32"
+          },
+          {
+            "name": "serverToken",
+            "type": "lu32"
+          },
+          {
+            "name": "udpValue",
+            "type": "lu32"
+          },
+          {
+            "name": "mpqFiletime",
+            "type": "lu64"
+          },
+          {
+            "name": "mpqFilename",
+            "type": "string"
+          },
+          {
+            "name": "valuestring",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_CHECKAD": ["container",[
+        {
+          "name": "adId",
+          "type": "lu32"
+        },
+        {
+          "name": "fileExtension",
+          "type": "lu32"
+        },
+        {
+          "name": "localFileTime",
+          "type": "lu64"
+        },
+        {
+          "name": "filename",
+          "type": "string"
+        },
+        {
+          "name": "linkURL",
+          "type": "string"
+        }
+      ]],
+      "SID_GETADVLISTEX": ["container", [
+        {
+          "name": "numberOfGames",
+          "type": "lu32"
+        },
+        {
+          "name": "games",
+          "type": ["array",
+            {
+              "count":"numberOfGames",
+              "type": ["container",[
+                {
+                  "name": "gameSettings",
+                  "type": "lu32"
+                },
+                {
+                  "name": "languageId",
+                  "type": "lu32"
+                },
+                {
+                  "name": "addressFamily",
+                  "type": "lu16"
+                },
+                {
+                  "name": "port",
+                  "type": "lu16"
+                },
+                {
+                  "name": "hostIp",
+                  "type": "lu32"
+                },
+                {
+                  "name": "zero1",
+                  "type": "lu32"
+                },
+                {
+                  "name": "zero2",
+                  "type": "lu32"
+                },
+                {
+                  "name": "gameStatus",
+                  "type": "lu32"
+                },
+                {
+                  "name": "elapsedTime",
+                  "type": "lu32"
+                },
+                {
+                  "name": "gameName",
+                  "type": "string"
+                },
+                {
+                  "name": "gamePassword",
+                  "type": "string"
+                },
+                {
+                  "name": "gameStatstring",
+                  "type": "string"
+                }
+              ]]
+            }
+          ]
+        }
+      ]],
+      "SID_CREATEACCOUNT": [
+        "container",
+        [
+          {
+            "name": "result",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "SID_AUTH_ACCOUNTCREATE": [
+        "container",
+        [
+          {
+            "name": "status",
+            "type": "lu32"
+          }
+        ]
+      ],
+      "SID_REQUIREDWORK": [
+        "container",
+        [
+          {
+            "name": "fileName",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_CREATEACCOUNT2": [
+        "container",
+        [
+          {
+            "name": "status",
+            "type": "lu32"
+          },
+          {
+            "name": "accountName",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_SETEMAIL": ["container",[]],
+      "SID_NULL": ["container",[]],
+      "SID_FRIENDSADD": [
+        "container",
+        [
+          {
+            "name": "account",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": "lu8"
+          },
+          {
+            "name": "locatrionId",
+            "type": "lu8"
+          },
+          {
+            "name": "productId",
+            "type": "lu32"
+          },
+          {
+            "name": "locationName",
+            "type": "string"
+          }
+        ]
+      ],
+      "SID_FRIENDSREMOVE": [
+        "container",
+        [
+          {
+            "name": "number",
+            "type": "lu8"
+          }
+        ]
+      ],
+      "SID_FRIENDSPOSITION": [
+        "container",
+        [
+          {
+            "name": "number",
+            "type": "lu8"
+          },
+          {
+            "name": "newPosition",
+            "type": "lu8"
+          }
+        ]
+      ],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "ff",
+            "type": "lu8"
+          },
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "lu8",
+                "mappings": {
+                  "0x00": "SID_NULL",
+                  "0x09": "SID_GETADVLISTEX",
+                  "0x0A": "SID_ENTERCHAT",
+                  "0x0B": "SID_GETCHANNELLIST",
+                  "0x0F": "SID_CHATEVENT",
+                  "0x15": "SID_CHECKAD",
+                  "0x1C": "SID_STARTADVEX3",
+                  "0x25": "SID_PING",
+                  "0x2A": "SID_CREATEACCOUNT",
+                  "0x33": "SID_GETFILETIME",
+                  "0x3A": "SID_LOGONRESPONSE2",
+                  "0x3E": "SID_LOGONREALMEX",
+                  "0x3D": "SID_CREATEACCOUNT2",
+                  "0x40": "SID_QUERYREALMS2",
+                  "0x46": "SID_NEWS_INFO",
+                  "0x4C": "SID_REQUIREDWORK",
+                  "0x50": "SID_AUTH_INFO",
+                  "0x51": "SID_AUTH_CHECK",
+                  "0x52": "SID_AUTH_ACCOUNTCREATE",
+                  "0x59": "SID_SETEMAIL",
+                  "0x67": "SID_FRIENDSADD",
+                  "0x68": "SID_FRIENDSREMOVE",
+                  "0x69": "SID_FRIENDSPOSITION"
+                }
+              }
+            ]
+          },
+          {
+            "name": "size",
+            "type": "lu16"
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "SID_AUTH_INFO": "SID_AUTH_INFO",
+                  "SID_PING": "SID_PING",
+                  "SID_AUTH_CHECK": "SID_AUTH_CHECK",
+                  "SID_GETFILETIME": "SID_GETFILETIME",
+                  "SID_LOGONRESPONSE2": "SID_LOGONRESPONSE2",
+                  "SID_QUERYREALMS2": "SID_QUERYREALMS2",
+                  "SID_LOGONREALMEX": "SID_LOGONREALMEX",
+                  "SID_GETCHANNELLIST": "SID_GETCHANNELLIST",
+                  "SID_ENTERCHAT": "SID_ENTERCHAT",
+                  "SID_STARTADVEX3": "SID_STARTADVEX3",
+                  "SID_CHATEVENT": "SID_CHATEVENT",
+                  "SID_CHECKAD": "SID_CHECKAD",
+                  "SID_NEWS_INFO": "SID_NEWS_INFO",
+                  "SID_GETADVLISTEX": "SID_GETADVLISTEX",
+                  "SID_CREATEACCOUNT": "SID_CREATEACCOUNT",
+                  "SID_AUTH_ACCOUNTCREATE": "SID_AUTH_ACCOUNTCREATE",
+                  "SID_REQUIREDWORK": "SID_REQUIREDWORK",
+                  "SID_CREATEACCOUNT2": "SID_CREATEACCOUNT2",
+                  "SID_SETEMAIL": "SID_SETEMAIL",
+                  "SID_NULL": "SID_NULL",
+                  "SID_FRIENDSADD": "SID_FRIENDSADD",
+                  "SID_FRIENDSREMOVE": "SID_FRIENDSREMOVE",
+                  "SID_FRIENDSPOSITION": "SID_FRIENDSPOSITION"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}

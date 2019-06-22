@@ -26,7 +26,8 @@ async function start () {
   const clientDiablo = await createClientDiablo({
     host: 'battlenetip',
     username: 'myuser',
-    password: 'mypassword'
+    password: 'mypassword',
+    version: '1.14'
   })
   clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
     clientDiablo.write('D2GS_RUNTOLOCATION', {

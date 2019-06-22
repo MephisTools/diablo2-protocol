@@ -1,0 +1,3179 @@
+{
+  "types": {
+    "cstring": "native",
+    "lu16": "native",
+    "lu8": "native",
+    "lu64": "native",
+    "lu32": "native",
+    "bool": "native",
+    "lf32": "native",
+    "lf64": "native",
+    "option": "native",
+    "container": "native",
+    "switch": "native",
+    "void": "native",
+    "array": "native",
+    "string": "cstring",
+    "restBuffer": "native",
+    "subtractor": "native",
+    "bitfieldLE": "native"
+  },
+  "toServer": {
+    "types": {
+      "D2GS_UNKNOWN2": ["container", []],
+      "D2GS_PING": ["container", [
+        {
+          "name": "tickCount",
+          "type": "lu32"
+        },
+        {
+          "name": "delay",
+          "type": "lu32"
+        },
+        {
+          "name": "wardenResponse",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ENTERGAMEENVIRONMENT": ["container", []],
+      "D2GS_GAMELOGON": ["container", [
+        {
+          "name": "MCPCookie",
+          "type": "lu32"
+        },
+        {
+          "name": "gameId",
+          "type": "lu16"
+        },
+        {
+          "name": "characterClass",
+          "type": "lu8"
+        },
+        {
+          "name": "gameVersion",
+          "type": "lu32"
+        },
+        {
+          "name": "gameConstant",
+          "type": "lu64"
+        },
+        {
+          "name": "locale",
+          "type": "lu8"
+        },
+        {
+          "name": "characterName",
+          "type": ["array", {
+            "count": 16,
+            "type": "lu8"
+          }]
+        }
+      ]],
+      "D2GS_POTIONTOMERCENARY": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_PARTY": ["container", [
+        {
+          "name": "actionId",
+          "type": "lu8"
+        },
+        {
+          "name": "playerId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_DROPGOLD": ["container", [
+        {
+          "name": "playedId",
+          "type": "lu32"
+        },
+        {
+          "name": "goldAmount",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_TRADE": ["container", [
+        {
+          "name": "requestId",
+          "type": "lu32"
+        },
+        {
+          "name": "goldAmount",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_WAYPOINT": ["container", [
+        {
+          "name": "waypointId",
+          "type": "lu32"
+        },
+        {
+          "name": "levelNumber",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_CHARACTERPHRASE": ["container", [
+        {
+          "name": "phraseId",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_NPCTRADE": ["container", [
+        {
+          "name": "tradeType",
+          "type": "lu32"
+        },
+        {
+          "name": "npcId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_NPCSELL": ["container", [
+        {
+          "name": "npcId",
+          "type": "lu32"
+        },
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "bufferType",
+          "type": "lu32"
+        },
+        {
+          "name": "cost",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_NPCBUY": ["container", [
+        {
+          "name": "npcId",
+          "type": "lu32"
+        },
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "bufferType",
+          "type": "lu32"
+        },
+        {
+          "name": "cost",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_NPCCANCEL": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "npcId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_NPCINIT": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNSELECTOBJ": ["container", []],
+      "D2GS_ITEMTOCUBE": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "cubeId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SCROLLTOTOME": ["container", [
+        {
+          "name": "scrollId",
+          "type": "lu32"
+        },
+        {
+          "name": "tomeId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_INSERTSOCKETITEM": ["container", [
+        {
+          "name": "itemSocketing",
+          "type": "lu32"
+        },
+        {
+          "name": "itemSocketed",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_USEBELTITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SWITCHBELTITEM": ["container", [
+        {
+          "name": "itemReplacing",
+          "type": "lu32"
+        },
+        {
+          "name": "itemReplaced",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_REMOVEBELTITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ITEMTOBELT": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "beltLocation",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_REMOVESTACKITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_STACKITEM": ["container", [
+        {
+          "name": "stackItem",
+          "type": "lu32"
+        },
+        {
+          "name": "targetItem",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_USEITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "x",
+          "type": "lu32"
+        },
+        {
+          "name": "y",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SWITCHINVENTORYITEM": ["container", [
+        {
+          "name": "itemReplacing",
+          "type": "lu32"
+        },
+        {
+          "name": "itemReplaced",
+          "type": "lu32"
+        },
+        {
+          "name": "x",
+          "type": "lu32"
+        },
+        {
+          "name": "y",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SWITCHBODYITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "bodyLocation",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PICKUPBODYITEM": ["container", [
+        {
+          "name": "bodyLocation",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_SWAP2HANDEDITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "bodyLocation",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ITEMTOBODY": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "bodyLocation",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PICKUPBUFFERITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ITEMTOBUFFER": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        },
+        {
+          "name": "x",
+          "type": "lu32"
+        },
+        {
+          "name": "y",
+          "type": "lu32"
+        },
+        {
+          "name": "bufferType",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_DROPITEM": ["container", [
+        {
+          "name": "itemId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PICKUPITEM": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu32"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "actionId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_OVERHEADMESSAGE": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "name": "unused",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_INTERACTWITHENTITY": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONENTITYEX3": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONENTITYEX2": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONLOCATIONEX": ["container",[
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONENTITYEX": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONENTITY": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RIGHTSKILLONLOCATION": ["container",[
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_LEFTSKILLONENTITYEX3": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_LEFTSKILLONENTITYEX2": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_LEFTSKILLONLOCATIONEX": ["container",[
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_LEFTSKILLONENTITYEX": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_LEFTSKILLONENTITY": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_LEFTSKILLONLOCATION": ["container", [
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_RUNTOENTITY": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RUNTOLOCATION": ["container", [
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_WALKTOENTITY": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu32"
+        },
+        {
+          "name": "entityId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_WALKTOLOCATION": ["container",[
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_SWITCHSKILL": ["container", [
+        {
+          "name": "skill",
+          "type": "lu8"
+        },
+        {
+          "name": "unk1",
+          "type": "lu16"
+        },
+        {
+          "name": "hand",
+          "type": "lu8"
+        },
+        {"name":"unknown","type" : ["array", {"count": 4, "type": "lu8" } ] }
+      ]],
+      "D2GS_SKILLUNK1": ["container", []],
+      "D2GS_SKILLUNK2": ["container", []],
+      "D2GS_CHATMESSAGE": ["container", [
+        {
+          "name": "type",
+          "type": "lu8"
+        },
+        {
+          "name": "unk1",
+          "type": "lu8"
+        },
+        {
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "name": "unk2",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_SWITCHBODYITEM2": ["container", [
+        {
+          "name": "id",
+          "type": "lu32"
+        },
+        {
+          "name": "location",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_IDENTIFYITEM": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_CHATUNK1": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_QUESTMESSAGE": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        },
+        {
+          "name": "unk2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_CAINIDENTIFY": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_REPAIR": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        },
+        {
+          "name": "id3",
+          "type": "lu32"
+        },
+        {
+          "name": "id4",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_HIRE": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_GAMBLED": ["container", [
+        {
+          "name": "id",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_BUYHEALTH": ["container", [
+        {
+          "name": "type",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_STATPOINT": ["container", [
+        {
+          "name": "type",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_SKILLPOINT": ["container", [
+        {
+          "name": "type",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_CLOSEDOOR": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UPDATEITEMSTAT": ["container", [
+        {
+          "name": "id",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_QUESTLOG": ["container", []],
+      "D2GS_RESPAWN": ["container", []],
+      "D2GS_UNK2": ["container", []],
+      "D2GS_PUTSLOT": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        },
+        {
+          "name": "id3",
+          "type": "lu32"
+        },
+        {
+          "name": "id4",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_CHANGETP": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        },
+        {
+          "name": "id3",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_MERCINTER": ["container", [
+        {
+          "name": "mercId",
+          "type": "lu32"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "type",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_MOVEMERC": ["container", [
+        {
+          "name": "mercId",
+          "type": "lu32"
+        },
+        {
+          "name": "x",
+          "type": "lu32"
+        },
+        {
+          "name": "y",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_REASSIGN": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        },
+        {
+          "name": "id2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_DISAPPEARITEM": ["container", [
+        {
+          "name": "id1",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNKNOWN1": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_ASSIGNMENT": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        },
+        {
+          "name": "unk2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_STAON": ["container", []],
+      "D2GS_STAOFF": ["container", []],
+      "D2GS_CLOSEQUEST": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_TOWNFOLK": ["container", [
+        {
+          "name": "unk1",
+          "type": "lu32"
+        },
+        {
+          "name": "unk2",
+          "type": "lu32"
+        },
+        {
+          "name": "unk3",
+          "type": "lu32"
+        },
+        {
+          "name": "unk4",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RELATION": ["container", [
+        {
+          "name": "id",
+          "type": "lu8"
+        },
+        {
+          "name": "type",
+          "type": "lu8"
+        },
+        {
+          "name": "player",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UPDATEPOSITION": ["container", [
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_RESURRECTMERC": ["container", [
+        {
+          "name": "id",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SWITCHEQUIP": ["container", []],
+      "D2GS_INVENTORYTOBELT": ["container", [
+        {
+          "name": "id",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_GAMEEXIT": ["container", []],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "lu8",
+                "mappings": {
+                  "0x01": "D2GS_WALKTOLOCATION",
+                  "0x02": "D2GS_WALKTOENTITY",
+                  "0x03": "D2GS_RUNTOLOCATION",
+                  "0x04": "D2GS_RUNTOENTITY",
+                  "0x05": "D2GS_LEFTSKILLONLOCATION",
+                  "0x06": "D2GS_LEFTSKILLONENTITY",
+                  "0x07": "D2GS_LEFTSKILLONENTITYEX",
+                  "0x08": "D2GS_LEFTSKILLONLOCATIONEX",
+                  "0x09": "D2GS_LEFTSKILLONENTITYEX2",
+                  "0x0A": "D2GS_LEFTSKILLONENTITYEX3",
+                  "0x0B": "D2GS_SKILLUNK1",
+                  "0x0C": "D2GS_RIGHTSKILLONLOCATION",
+                  "0x0D": "D2GS_RIGHTSKILLONENTITY",
+                  "0x0E": "D2GS_RIGHTSKILLONENTITYEX",
+                  "0x0F": "D2GS_RIGHTSKILLONLOCATIONEX",
+                  "0x10": "D2GS_RIGHTSKILLONENTITYEX2",
+                  "0x11": "D2GS_RIGHTSKILLONENTITYEX3",
+                  "0x12": "D2GS_SKILLUNK2",
+                  "0x13": "D2GS_INTERACTWITHENTITY",
+                  "0x14": "D2GS_OVERHEADMESSAGE",
+                  "0x15": "D2GS_CHATMESSAGE",
+                  "0x16": "D2GS_PICKUPITEM",
+                  "0x17": "D2GS_DROPITEM",
+                  "0x18": "D2GS_ITEMTOBUFFER",
+                  "0x19": "D2GS_PICKUPBUFFERITEM",
+                  "0x1A": "D2GS_ITEMTOBODY",
+                  "0x1B": "D2GS_SWAP2HANDEDITEM",
+                  "0x1C": "D2GS_PICKUPBODYITEM",
+                  "0x1D": "D2GS_SWITCHBODYITEM",
+                  "0x1E": "D2GS_SWITCHBODYITEM2",
+                  "0x1F": "D2GS_SWITCHINVENTORYITEM",
+                  "0x20": "D2GS_USEITEM",
+                  "0x21": "D2GS_STACKITEM",
+                  "0x22": "D2GS_REMOVESTACKITEM",
+                  "0x23": "D2GS_ITEMTOBELT",
+                  "0x24": "D2GS_REMOVEBELTITEM",
+                  "0x25": "D2GS_SWITCHBELTITEM",
+                  "0x26": "D2GS_USEBELTITEM",
+                  "0x27": "D2GS_IDENTIFYITEM",
+                  "0x28": "D2GS_INSERTSOCKETITEM",
+                  "0x29": "D2GS_SCROLLTOTOME",
+                  "0x2A": "D2GS_ITEMTOCUBE",
+                  "0x2D": "D2GS_UNSELECTOBJ",
+                  "0x2E": "D2GS_CHATUNK1",
+                  "0x2F": "D2GS_NPCINIT",
+                  "0x30": "D2GS_NPCCANCEL",
+                  "0x31": "D2GS_QUESTMESSAGE",
+                  "0x32": "D2GS_NPCBUY",
+                  "0x33": "D2GS_NPCSELL",
+                  "0x34": "D2GS_CAINIDENTIFY",
+                  "0x35": "D2GS_REPAIR",
+                  "0x36": "D2GS_HIRE",
+                  "0x37": "D2GS_GAMBLED",
+                  "0x38": "D2GS_NPCTRADE",
+                  "0x39": "D2GS_BUYHEALTH",
+                  "0x3A": "D2GS_STATPOINT",
+                  "0x3B": "D2GS_SKILLPOINT",
+                  "0x3C": "D2GS_SWITCHSKILL",
+                  "0x3D": "D2GS_CLOSEDOOR",
+                  "0x3E": "D2GS_UPDATEITEMSTAT",
+                  "0x3F": "D2GS_CHARACTERPHRASE",
+                  "0x40": "D2GS_QUESTLOG",
+                  "0x41": "D2GS_RESPAWN",
+                  "0x44": "D2GS_PUTSLOT",
+                  "0x45": "D2GS_CHANGETP",
+                  "0x46": "D2GS_MERCINTER",
+                  "0x47": "D2GS_MOVEMERC",
+                  "0x48": "D2GS_UNKNOWN2",
+                  "0x49": "D2GS_WAYPOINT",
+                  "0x4B": "D2GS_REASSIGN",
+                  "0x4C": "D2GS_DISAPPEARITEM",
+                  "0x4D": "D2GS_UNKNOWN1",
+                  "0x4F": "D2GS_TRADE",
+                  "0x50": "D2GS_DROPGOLD",
+                  "0x51": "D2GS_ASSIGNMENT",
+                  "0x53": "D2GS_STAON",
+                  "0x54": "D2GS_STAOFF",
+                  "0x58": "D2GS_CLOSEQUEST",
+                  "0x59": "D2GS_TOWNFOLK",
+                  "0x5D": "D2GS_RELATION",
+                  "0x5E": "D2GS_PARTY",
+                  "0x5F": "D2GS_UPDATEPOSITION",
+                  "0x60": "D2GS_SWITCHEQUIP",
+                  "0x61": "D2GS_POTIONTOMERCENARY",
+                  "0x62": "D2GS_RESURRECTMERC",
+                  "0x63": "D2GS_INVENTORYTOBELT",
+                  "0x68": "D2GS_GAMELOGON",
+                  "0x69": "D2GS_GAMEEXIT",
+                  "0x6B": "D2GS_ENTERGAMEENVIRONMENT",
+                  "0x6D": "D2GS_PING"
+                }
+              }
+            ]
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "D2GS_WALKTOLOCATION": "D2GS_WALKTOLOCATION",
+                  "D2GS_WALKTOENTITY": "D2GS_WALKTOENTITY",
+                  "D2GS_RUNTOLOCATION": "D2GS_RUNTOLOCATION",
+                  "D2GS_RUNTOENTITY": "D2GS_RUNTOENTITY",
+                  "D2GS_LEFTSKILLONLOCATION": "D2GS_LEFTSKILLONLOCATION",
+                  "D2GS_LEFTSKILLONENTITY": "D2GS_LEFTSKILLONENTITY",
+                  "D2GS_LEFTSKILLONENTITYEX": "D2GS_LEFTSKILLONENTITYEX",
+                  "D2GS_LEFTSKILLONLOCATIONEX": "D2GS_LEFTSKILLONLOCATIONEX",
+                  "D2GS_LEFTSKILLONENTITYEX2": "D2GS_LEFTSKILLONENTITYEX2",
+                  "D2GS_LEFTSKILLONENTITYEX3": "D2GS_LEFTSKILLONENTITYEX3",
+                  "D2GS_RIGHTSKILLONLOCATION": "D2GS_RIGHTSKILLONLOCATION",
+                  "D2GS_RIGHTSKILLONENTITY": "D2GS_RIGHTSKILLONENTITY",
+                  "D2GS_RIGHTSKILLONENTITYEX": "D2GS_RIGHTSKILLONENTITYEX",
+                  "D2GS_RIGHTSKILLONLOCATIONEX": "D2GS_RIGHTSKILLONLOCATIONEX",
+                  "D2GS_RIGHTSKILLONENTITYEX2": "D2GS_RIGHTSKILLONENTITYEX2",
+                  "D2GS_RIGHTSKILLONENTITYEX3": "D2GS_RIGHTSKILLONENTITYEX3",
+                  "D2GS_INTERACTWITHENTITY": "D2GS_INTERACTWITHENTITY",
+                  "D2GS_OVERHEADMESSAGE": "D2GS_OVERHEADMESSAGE",
+                  "D2GS_PICKUPITEM": "D2GS_PICKUPITEM",
+                  "D2GS_DROPITEM": "D2GS_DROPITEM",
+                  "D2GS_ITEMTOBUFFER": "D2GS_ITEMTOBUFFER",
+                  "D2GS_PICKUPBUFFERITEM": "D2GS_PICKUPBUFFERITEM",
+                  "D2GS_ITEMTOBODY": "D2GS_ITEMTOBODY",
+                  "D2GS_SWAP2HANDEDITEM": "D2GS_SWAP2HANDEDITEM",
+                  "D2GS_PICKUPBODYITEM": "D2GS_PICKUPBODYITEM",
+                  "D2GS_SWITCHBODYITEM": "D2GS_SWITCHBODYITEM",
+                  "D2GS_SWITCHINVENTORYITEM": "D2GS_SWITCHINVENTORYITEM",
+                  "D2GS_USEITEM": "D2GS_USEITEM",
+                  "D2GS_STACKITEM": "D2GS_STACKITEM",
+                  "D2GS_REMOVESTACKITEM": "D2GS_REMOVESTACKITEM",
+                  "D2GS_ITEMTOBELT": "D2GS_ITEMTOBELT",
+                  "D2GS_REMOVEBELTITEM": "D2GS_REMOVEBELTITEM",
+                  "D2GS_SWITCHBELTITEM": "D2GS_SWITCHBELTITEM",
+                  "D2GS_USEBELTITEM": "D2GS_USEBELTITEM",
+                  "D2GS_INSERTSOCKETITEM": "D2GS_INSERTSOCKETITEM",
+                  "D2GS_SCROLLTOTOME": "D2GS_SCROLLTOTOME",
+                  "D2GS_ITEMTOCUBE": "D2GS_ITEMTOCUBE",
+                  "D2GS_UNSELECTOBJ": "D2GS_UNSELECTOBJ",
+                  "D2GS_NPCINIT": "D2GS_NPCINIT",
+                  "D2GS_NPCCANCEL": "D2GS_NPCCANCEL",
+                  "D2GS_NPCBUY": "D2GS_NPCBUY",
+                  "D2GS_NPCSELL": "D2GS_NPCSELL",
+                  "D2GS_NPCTRADE": "D2GS_NPCTRADE",
+                  "D2GS_CHARACTERPHRASE": "D2GS_CHARACTERPHRASE",
+                  "D2GS_WAYPOINT": "D2GS_WAYPOINT",
+                  "D2GS_TRADE": "D2GS_TRADE",
+                  "D2GS_DROPGOLD": "D2GS_DROPGOLD",
+                  "D2GS_PARTY": "D2GS_PARTY",
+                  "D2GS_POTIONTOMERCENARY": "D2GS_POTIONTOMERCENARY",
+                  "D2GS_GAMELOGON": "D2GS_GAMELOGON",
+                  "D2GS_ENTERGAMEENVIRONMENT": "D2GS_ENTERGAMEENVIRONMENT",
+                  "D2GS_PING": "D2GS_PING",
+                  "D2GS_SWITCHSKILL": "D2GS_SWITCHSKILL",
+                  "D2GS_SKILLUNK1": "D2GS_SKILLUNK1",
+                  "D2GS_SKILLUNK2": "D2GS_SKILLUNK2",
+                  "D2GS_CHATMESSAGE": "D2GS_CHATMESSAGE",
+                  "D2GS_SWITCHBODYITEM2": "D2GS_SWITCHBODYITEM2",
+                  "D2GS_IDENTIFYITEM": "D2GS_IDENTIFYITEM",
+                  "D2GS_CHATUNK1": "D2GS_CHATUNK1",
+                  "D2GS_QUESTMESSAGE": "D2GS_QUESTMESSAGE",
+                  "D2GS_CAINIDENTIFY": "D2GS_CAINIDENTIFY",
+                  "D2GS_REPAIR": "D2GS_REPAIR",
+                  "D2GS_HIRE": "D2GS_HIRE",
+                  "D2GS_GAMBLED": "D2GS_GAMBLED",
+                  "D2GS_BUYHEALTH": "D2GS_BUYHEALTH",
+                  "D2GS_STATPOINT": "D2GS_STATPOINT",
+                  "D2GS_SKILLPOINT": "D2GS_SKILLPOINT",
+                  "D2GS_CLOSEDOOR": "D2GS_CLOSEDOOR",
+                  "D2GS_UPDATEITEMSTAT": "D2GS_UPDATEITEMSTAT",
+                  "D2GS_QUESTLOG": "D2GS_QUESTLOG",
+                  "D2GS_RESPAWN": "D2GS_RESPAWN",
+                  "D2GS_UNKNOWN2": "D2GS_UNKNOWN2",
+                  "D2GS_PUTSLOT": "D2GS_PUTSLOT",
+                  "D2GS_CHANGETP": "D2GS_CHANGETP",
+                  "D2GS_MERCINTER": "D2GS_MERCINTER",
+                  "D2GS_MOVEMERC": "D2GS_MOVEMERC",
+                  "D2GS_REASSIGN": "D2GS_REASSIGN",
+                  "D2GS_DISAPPEARITEM": "D2GS_DISAPPEARITEM",
+                  "D2GS_UNKNOWN1": "D2GS_UNKNOWN1",
+                  "D2GS_ASSIGNMENT": "D2GS_ASSIGNMENT",
+                  "D2GS_STAON": "D2GS_STAON",
+                  "D2GS_STAOFF": "D2GS_STAOFF",
+                  "D2GS_CLOSEQUEST": "D2GS_CLOSEQUEST",
+                  "D2GS_TOWNFOLK": "D2GS_TOWNFOLK",
+                  "D2GS_RELATION": "D2GS_RELATION",
+                  "D2GS_UPDATEPOSITION": "D2GS_UPDATEPOSITION",
+                  "D2GS_SWITCHEQUIP": "D2GS_SWITCHEQUIP",
+                  "D2GS_RESURRECTMERC": "D2GS_RESURRECTMERC",
+                  "D2GS_INVENTORYTOBELT": "D2GS_INVENTORYTOBELT",
+                  "D2GS_GAMEEXIT": "D2GS_GAMEEXIT"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  },
+  "toClient": {
+    "types": {
+      "D2GS_NEGOTIATECOMPRESSION": ["container", [
+        {
+          "name": "compressionMode",
+          "type": "lu8"
+        },
+        {
+          "name": "customCompressionData",
+          "type": ["switch",{
+              "compareTo": "compressionMode",
+              "fields":
+              {
+                "0":"void",
+                "1":"void",
+                "129":["array", {
+                  "count": 16,
+                  "type": "lu8"
+                }]
+              }
+            }
+          ]
+        }
+      ]],
+      "D2GS_UNIQUEEVENTS": ["container", [
+        {
+          "name": "eventId",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_LOGONRESPONSE": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_TRADEACTION": ["container", [
+        {
+          "name": "requestType",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_STARTGAME": ["container", []],
+      "D2GS_PLAYERLEFT": ["container", [
+        {
+          "name": "playerId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_WORLDOBJECT": ["container", [
+        {
+          "name": "objectType",
+          "type": "lu8"
+        },
+        {
+          "name": "objectId",
+          "type": "lu32"
+        },
+        {
+          "name": "objectUniqueCode",
+          "type": "lu16"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "state",
+          "type": "lu8"
+        },
+        {
+          "name": "interactionCondition",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_CREATECLIENTPLAYER": ["container", [
+        {
+          "name": "guid",
+          "type": "lu32"
+        },
+        {
+          "name": "class",
+          "type": "lu8"
+        },
+        {
+          "name": "szname",
+          "type": ["array", {
+            "count": 16,
+            "type": "lu8"
+            }]
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_SETDWORDATTR": ["container", [
+        {
+          "name": "attribute",
+          "type": "lu8"
+        },
+        {
+          "name": "amount",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SETWORDATTR": ["container", [
+        {
+          "name": "attribute",
+          "type": "lu8"
+        },
+        {
+          "name": "amount",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_SETBYTEATTR": ["container", [
+        {
+          "name": "attribute",
+          "type": "lu8"
+        },
+        {
+          "name": "amount",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_SMALLGOLDPICKUP": ["container", [
+        {
+          "name": "amount",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_CHARTOOBJ": ["container", [
+        {
+          "name": "unknown",
+          "type":  "lu8"
+        },
+        {
+          "name": "playerId",
+          "type": "lu32"
+        },
+        {
+          "name": "movementType",
+          "type": "lu8"
+        },
+        {
+          "name": "destinationType",
+          "type": "lu8"
+        },
+        {
+          "name": "objectId",
+          "type": "lu32"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_STATEADD": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "guid",
+          "type": "lu32"
+        },
+        {
+          "name": "stream",
+          "type":  ["array", {
+            "countType": ["subtractor",{
+              "type": "lu8",
+              "difference": 7
+            }],
+            "type": "lu8"
+          }]
+        }
+      ]],
+      "D2GS_GAMELOADING": ["container", []],
+      "D2GS_GAMEFLAGS": ["container", [
+        {
+          "name": "difficulty",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "hardcore",
+          "type": "lu16"
+        },
+        {
+          "name": "expansion",
+          "type": "lu8"
+        },
+        {
+          "name": "ladder",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_LOADSUCCESSFUL": ["container", []],
+      "D2GS_LOADACT": ["container", [
+        {
+          "name": "act",
+          "type": "lu8"
+        },
+        {
+          "name": "mapId",
+          "type": "lu32"
+        },
+        {
+          "name": "areaId",
+          "type": "lu16"
+        },
+        {
+          "name": "unkwown",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_LOADCOMPLETE": ["container", []],
+      "D2GS_UNLOADCOMPLETE": ["container", []],
+      "D2GS_GAMEEXITSUCCESSFUL": ["container", []],
+      "D2GS_MAPREVEAL": ["container", [
+        {
+          "name": "tileX",
+          "type": "lu16"
+        },
+        {
+          "name": "tileY",
+          "type": "lu16"
+        },
+        {
+          "name": "areaId",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_MAPHIDE": ["container", [
+        {
+          "name": "tileX",
+          "type": "lu16"
+        },
+        {
+          "name": "tileY",
+          "type": "lu16"
+        },
+        {
+          "name": "areaId",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_ASSIGNLVLWARP": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "warpId",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_REMOVEOBJECT": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_GAMEHANDSHAKE": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_NPCHIT": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "animationId",
+          "type": "lu16"
+        },
+        {
+          "name": "life",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_PLAYERSTOP": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "life",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_OBJECTSTATE": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "unitState",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_REPORTKILL": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_UNKNOWN1": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 25, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN2": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 13, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN3": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 17, "type": "lu8" } ] }
+      ]],
+      "D2GS_REASSIGNPLAYER": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "value",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_UNKNOWN4": ["container", []],
+      "D2GS_UNUSED1": ["container", []],
+      "D2GS_UNKNOWN5": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 14, "type": "lu8" } ] }
+      ]],
+      "D2GS_PLAYERMOVE": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "move",
+          "type": "lu8"
+        },
+        {
+          "name": "targetX",
+          "type": "lu16"
+        },
+        {
+          "name": "targetY",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "currentX",
+          "type": "lu16"
+        },
+        {
+          "name": "currentY",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_BADDEXP": ["container", [
+        {
+          "name": "amount",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_WADDEXP": ["container", [
+        {
+          "name": "amount",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_DWADDEXP": ["container", [
+        {
+          "name": "amount",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ATTRIBUTEUPDATE": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "attribute",
+          "type": "lu8"
+        },
+        {
+          "name": "amount",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UPDATEITEMOSKILL": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "skill",
+          "type": "lu16"
+        },
+        {
+          "name": "baseLevel",
+          "type": "lu8"
+        },
+        {
+          "name": "bonusAmount",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_UPDATEITEMSKILL": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "skill",
+          "type": "lu16"
+        },
+        {
+          "name": "amount",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_SETSKILL": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "hand",
+          "type": "lu8"
+        },
+        {
+          "name": "skill",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNKNOWN6": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 89, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN7": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 89, "type": "lu8" } ] }
+      ]],
+      "D2GS_GAMECHAT": ["container", [
+        {
+          "name": "chatKind",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        },
+        {
+          "name": "type",
+          "type": "lu8"
+        },
+        {
+          "name": "charName",
+          "type": "cstring"
+        },
+        {
+          "name": "message",
+          "type": "cstring"
+        }
+      ]],
+      "D2GS_OVERHEAD": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 3, "type": "lu8" } ] },
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "message",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_NPCINFO": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {"name":"unknown","type" : ["array", {"count": 34, "type": "lu8" } ] }
+      ]],
+      "D2GS_QUESTINFO": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 102, "type": "lu8" } ] }
+      ]],
+      "D2GS_GAMEQUESTINFO": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 96, "type": "lu8" } ] }
+      ]],
+      "D2GS_NPCTRANSACTION": ["container", [
+        {
+          "name": "tradeType",
+          "type": "lu8"
+        },
+        {
+          "name": "result",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        },
+        {
+          "name": "merchandiseId",
+          "type": "lu32"
+        },
+        {
+          "name": "goldInInventory",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNUSED2": ["container", []],
+      "D2GS_PLAYSOUND": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "sound",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_UNUSED3": ["container", []],
+      "D2GS_UNUSED4": ["container", []],
+      "D2GS_UNUSED5": ["container", []],
+      "D2GS_UNUSED6": ["container", []],
+      "D2GS_UNUSED7": ["container", []],
+      "D2GS_UNUSED8": ["container", []],
+      "D2GS_UNUSED9": ["container", []],
+      "D2GS_UNUSED10": ["container", []],
+      "D2GS_UNUSED11": ["container", []],
+      "D2GS_UNUSED12": ["container", []],
+      "D2GS_UNUSED13": ["container", []],
+      "D2GS_UNUSED14": ["container", []],
+      "D2GS_UNUSED15": ["container", []],
+      "D2GS_UNUSED16": ["container", []],
+      "D2GS_UNUSED17": ["container", []],
+      "D2GS_UNUSED18": ["container", []],
+      "D2GS_UNUSED19": ["container", []],
+      "D2GS_UPDATEITEMSTATS": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 1, "type": "lu8" } ] }
+      ]],
+      "D2GS_USESTACKABLEITEM": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 7, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN8": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 12, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNUSED20": ["container", []],
+      "D2GS_CLEARCURSOR": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "playerId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNUSED21": ["container", []],
+      "D2GS_UNUSED22": ["container", []],
+      "D2GS_UNKNOWN9": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 12, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNUSED23": ["container", []],
+      "D2GS_RELATOR1": ["container", [
+        {
+          "name": "param1",
+          "type": "lu16"
+        },
+        {
+          "name": "unityId",
+          "type": "lu32"
+        },
+        {
+          "name": "param2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_RELATOR2": ["container", [
+        {
+          "name": "param1",
+          "type": "lu16"
+        },
+        {
+          "name": "unityId",
+          "type": "lu32"
+        },
+        {
+          "name": "param2",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNUSED24": ["container", []],
+      "D2GS_UNUSED25": ["container", []],
+      "D2GS_UNUSED26": ["container", []],
+      "D2GS_UNITSKILLONTARGET": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "skill",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "targetId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_UNITCASTSKILL": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "skill",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_MERCFORHIRE": ["container", [
+        {
+          "name": "mercId",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_STARTMERCLIST": ["container", []],
+      "D2GS_QUESTLOGINFO": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 41, "type": "lu8" } ] }
+      ]],
+      "D2GS_PLAYERSLOTREFRESH": ["container", [
+        {
+          "name": "slot",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "tickCount",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNKNOWN10": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 9, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN11": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 2, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNUSED27": ["container", []],
+      "D2GS_UNUSED28": ["container", []],
+      "D2GS_UNKNOWN12": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 13, "type": "lu8" } ] }
+      ]],
+      "D2GS_EVENTMESSAGES": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 39, "type": "lu8" } ] }
+      ]],
+      "D2GS_PLAYERJOINED": ["container", [
+        {
+          "name": "packetLength",
+          "type": "lu16"
+        },
+        {
+          "name": "playerId",
+          "type": "lu32"
+        },
+        {
+          "name": "charType",
+          "type": "lu8"
+        },
+        {
+          "name": "charName",
+          "type": ["array", {
+            "count": 16,
+            "type": "lu8"
+            }]
+        },
+        {
+          "name": "charLvl",
+          "type": "lu16"
+        },
+        {
+          "name": "partyId",
+          "type": "lu16"
+        },
+        {"name":"unknown","type" : ["array", {"count": 8, "type": "lu8" } ] }
+      ]],
+      "D2GS_QUESTITEMSTATE": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "state",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_UNKNOWN13": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 37, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN14": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 4, "type": "lu8" } ] }
+      ]],
+      "D2GS_TOWNPORTALSTATE": ["container", [
+        {
+          "name": "state",
+          "type": "lu8"
+        },
+        {
+          "name": "areaId",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNKNOWN15": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 1, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN16": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 6, "type": "lu8" } ] }
+      ]],
+      "D2GS_WAYPOINTMENU": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "availableWaypoints",
+          "type":  "lu64"
+        }
+      ]],
+      "D2GS_UNUSED29": ["container", []],
+      "D2GS_PLAYERKILLCOUNT": ["container", [
+        {
+          "name": "playerId",
+          "type": "lu32"
+        },
+        {
+          "name": "count",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_UNKNOWN17": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 6, "type": "lu8" } ] }
+      ]],
+      "D2GS_NPCMOVE": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "type",
+          "type": "lu8"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_NPCMOVETOTARGET": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "type",
+          "type": "lu8"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "targetUnitType",
+          "type": "lu8"
+        },
+        {
+          "name": "targetId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_NPCSTATE": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "state",
+          "type": "lu8"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "unitLife",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_UNKNOWN18": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 6, "type": "lu8" } ] }
+      ]],
+      "D2GS_NPCACTION": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "action",
+          "type": "lu8"
+        },
+        {"name":"unknown","type" : ["array", {"count": 6, "type": "lu8" } ] },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_NPCATTACK": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "attackType",
+          "type": "lu16"
+        },
+        {
+          "name": "targetId",
+          "type": "lu32"
+        },
+        {
+          "name": "targetType",
+          "type": "lu8"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_NPCSTOP": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "unitLife",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_UNKNOWN19": ["container", []],
+      "D2GS_UNKNOWN20": ["container", []],
+      "D2GS_UNKNOWN21": ["container", []],
+      "D2GS_UNKNOWN22": ["container", []],
+      "D2GS_UNKNOWN23": ["container", []],
+      "D2GS_UNKNOWN24": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 31, "type": "lu8" } ] }
+      ]],
+      "D2GS_PLAYERCORPSEASSIGN": ["container", [
+        {
+          "name": "assign",
+          "type": "lu8"
+        },
+        {
+          "name": "ownerId",
+          "type": "lu32"
+        },
+        {
+          "name": "corpseId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PLAYERPARTYINFO": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "partyId",
+          "type": "lu16"
+        },
+        {
+          "name": "charLvl",
+          "type": "lu16"
+        },
+        {
+          "name": "relationship",
+          "type": "lu16"
+        },
+        {
+          "name": "inYourParty",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_PLAYERINPROXIMITY": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_TRADEACCEPTED": ["container", [
+        {
+          "name": "charName",
+          "type": ["array", {
+            "count": 16,
+            "type": "lu8"
+            }]
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_GOLDINTRADE": ["container", [
+        {
+          "name": "goldOwner",
+          "type": "lu8"
+        },
+        {
+          "name": "amount",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ASSIGNSKILLHOTKEY": ["container", [
+        {
+          "name": "slot",
+          "type": "lu8"
+        },
+        {
+          "name": "skill",
+          "type": "lu8"
+        },
+        {
+          "name": "hand",
+          "type": "lu8"
+        },
+        {"name":"unknown","type" : ["array", {"count": 4, "type": "lu8" } ] }
+      ]],
+      "D2GS_USESCROLL": ["container", [
+        {
+          "name": "type",
+          "type": "lu8"
+        },
+        {
+          "name": "itemId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_SETITEMSTATE": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 17, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN25": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 4, "type": "lu8" } ] }
+      ]],
+      "D2GS_ALLYPARTYINFO": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitLife",
+          "type": "lu16"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "unitAreaId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNUSED30": ["container", []],
+      "D2GS_ASSIGNMERC": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu8"
+        },
+        {
+          "name": "mercKind",
+          "type": "lu16"
+        },
+        {
+          "name": "ownerId",
+          "type": "lu32"
+        },
+        {
+          "name": "mercId",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PORTALOWNERSHIP": ["container", [
+        {
+          "name": "ownerId",
+          "type": "lu32"
+        },
+        {
+          "name": "ownerName",
+          "type": ["array", {
+            "count": 16,
+            "type": "lu8"
+            }]
+        },
+        {
+          "name": "localId",
+          "type": "lu32"
+        },
+        {
+          "name": "remoteId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNUSED31": ["container", []],
+      "D2GS_UNUSED32": ["container", []],
+      "D2GS_UNUSED33": ["container", []],
+      "D2GS_UNUSED34": ["container", []],
+      "D2GS_UNUSED35": ["container", []],
+      "D2GS_UNUSED36": ["container", []],
+      "D2GS_NPCWANTSTOINTERACT": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PLAYERRELATIONSHIP": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "state",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_RELATIONSHIPUPDATE": ["container", [
+        {
+          "name": "player1Id",
+          "type": "lu32"
+        },
+        {
+          "name": "player2Id",
+          "type": "lu32"
+        },
+        {
+          "name": "relationshipState",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_ASSIGNPLAYERTOPARTY": ["container", [
+        {
+          "name": "playerId",
+          "type": "lu32"
+        },
+        {
+          "name": "partyId",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_CORPSEASSIGN": ["container", [
+        {
+          "name": "assign",
+          "type": "lu8"
+        },
+        {
+          "name": "ownerId",
+          "type": "lu32"
+        },
+        {
+          "name": "corpseId",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_PONG": ["container", [
+        {
+          "name": "tickCount",
+          "type": ["array", {
+            "count": 32,
+            "type": "lu8"
+          }]
+        }
+      ]],
+      "D2GS_PARTYAUTOMAPINFO": ["container", [
+        {
+          "name": "playerId",
+          "type": "lu32"
+        },
+        {
+          "name": "x",
+          "type": "lu32"
+        },
+        {
+          "name": "y",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNKNOWN26": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 25, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN27": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 5, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN28": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 7, "type": "lu8" } ] }
+      ]],
+      "D2GS_BASESKILLLEVELS": ["container", [
+        {
+          "name": "amount",
+          "type": "lu8"
+        },
+        {
+          "name": "playerId",
+          "type": "lu32"
+        },
+        {
+          "name": "skills",
+          "type": [
+            "array",
+            {
+              "count": "amount",
+              "type": [
+                "container",
+                [
+                  {
+                    "name": "skill",
+                    "type": "lu16"
+                  },
+                  {
+                    "name": "level",
+                    "type": "lu8"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]],
+      "D2GS_LIFEANDMANAUPDATE": ["bitfieldLE", [
+        {
+          "name": "life",
+          "size": 15,
+          "signed": false
+        },
+        {
+          "name": "mana",
+          "size": 15,
+          "signed": false
+        },
+        {
+          "name": "stamina",
+          "size": 15,
+          "signed": false
+        },
+        {
+          "name": "x",
+          "size": 16,
+          "signed": false
+        },
+        {
+          "name": "y",
+          "size": 16,
+          "signed": false
+        },
+        {
+          "name": "unknown",
+          "size": 19,
+          "signed": false
+        }
+      ]],
+      "D2GS_WALKVERIFY": ["bitfieldLE", [
+        {
+          "name": "stamina",
+          "size": 15,
+          "signed": false
+        },
+        {
+          "name": "x",
+          "size": 15,
+          "signed": false
+        },
+        {
+          "name": "unknown1",
+          "size": 1,
+          "signed": false
+        },
+        {
+          "name": "y",
+          "size": 15,
+          "signed": false
+        },
+        {
+          "name": "unknown2",
+          "size": 18,
+          "signed": false
+        }
+      ]],
+      "D2GS_WEAPONSWITCH": ["container", []],
+      "D2GS_UNKNOWN29": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 6, "type": "lu8" } ] }
+      ]],
+      "D2GS_SKILLTRIGGERED": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 15, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN30": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 16, "type": "lu8" } ] }
+      ]],
+      "D2GS_MERCRELATED": ["container", [
+        {
+          "name": "unknown",
+          "type": "lu16"
+        },
+        {
+          "name": "unknown",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_ITEMACTIONWORLD": ["container", [
+        {
+          "name": "entityType",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown2",
+          "type": ["array",{
+            "type":"lu8",
+            "countType": ["subtractor",{"type":"lu8","difference":"3"}]
+          }]
+        }
+      ]],
+      "D2GS_ITEMACTIONOWNED": ["container", [
+        {
+          "name": "unknown1",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown2",
+          "type": ["array",{
+            "type":"lu8",
+            "countType": ["subtractor",{"type":"lu8","difference":"3"}]
+            }]
+          }
+        ]],
+      "D2GS_BMERCATTRIBUTE": ["container", [
+        {
+          "name": "attribute",
+          "type": "lu8"
+        },
+        {
+          "name": "mercId",
+          "type": "lu32"
+        },
+        {
+          "name": "amount",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_WMERCATTRIBUTE": ["container", [
+        {
+          "name": "attribute",
+          "type": "lu8"
+        },
+        {
+          "name": "mercId",
+          "type": "lu32"
+        },
+        {
+          "name": "amount",
+          "type": "lu16"
+        }
+      ]],
+      "D2GS_DWMERCATTRIBUTE": ["container", [
+        {
+          "name": "attribute",
+          "type": "lu8"
+        },
+        {
+          "name": "mercId",
+          "type": "lu32"
+        },
+        {
+          "name": "amount",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_BMERCADDEXP": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 6, "type": "lu8" } ] }
+      ]],
+      "D2GS_WMERCADDEXP": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 7, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN31": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 23, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN32": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 2, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN33": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 7, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN34": ["container", []],
+      "D2GS_DELAYEDSTATE": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "state",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_SETSTATE": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "packetLength",
+          "type": ["subtractor", {"type":"lu8","difference":"8"}]
+        },
+        {
+          "name": "state",
+          "type": "lu8"
+        },
+        {
+          "name": "stateEffects",
+          "type": ["array", {
+            "count": "packetLength",
+            "type": "lu8"
+          }]
+        }
+      ]],
+      "D2GS_ENDSTATE": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "state",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_NPCHEAL": ["container", [
+        {
+          "name": "unitType",
+          "type": "lu8"
+        },
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "unitLife",
+          "type": "lu8"
+        }
+      ]],
+      "D2GS_ASSIGNNPC": ["container", [
+        {
+          "name": "unitId",
+          "type": "lu32"
+        },
+        {
+          "name": "unitCode",
+          "type": "lu16"
+        },
+        {
+          "name": "x",
+          "type": "lu16"
+        },
+        {
+          "name": "y",
+          "type": "lu16"
+        },
+        {
+          "name": "unitLife",
+          "type": "lu8"
+        },
+        {
+          "name": "stateInfo",
+          "type": ["array", {
+            "countType": ["subtractor", {
+              "type": "lu8",
+              "difference": 13
+            }],
+            "type": "lu8"
+          }]
+        }
+      ]],
+      "D2GS_UNKNOWN35": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 8, "type": "lu8" } ] }
+      ]],
+      "D2GS_WARDENREQUEST": ["container", [
+        {
+          "name": "data",
+          "type": ["array", {
+            "countType": "lu16",
+            "type": "lu8"
+          }]
+        }
+      ]],
+      "D2GS_GAMECONNECTIONTERMINATED": ["container", []],
+      "D2GS_UNKNOWN36": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 52, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN37": ["container", []],
+      "D2GS_IPBAN": ["container", [
+        {
+          "name": "param",
+          "type": "lu32"
+        }
+      ]],
+      "D2GS_UNKNOWN38": ["container", []],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "lu8",
+                "mappings": {
+                  "0x00":"D2GS_GAMELOADING",
+                  "0x01":"D2GS_GAMEFLAGS",
+                  "0x02":"D2GS_LOADSUCCESSFUL",
+                  "0x03":"D2GS_LOADACT",
+                  "0x04":"D2GS_LOADCOMPLETE",
+                  "0x05":"D2GS_UNLOADCOMPLETE",
+                  "0x06":"D2GS_GAMEEXITSUCCESSFUL",
+                  "0x07":"D2GS_MAPREVEAL",
+                  "0x08":"D2GS_MAPHIDE",
+                  "0x09":"D2GS_ASSIGNLVLWARP",
+                  "0x0A":"D2GS_REMOVEOBJECT",
+                  "0x0B":"D2GS_GAMEHANDSHAKE",
+                  "0x0C":"D2GS_NPCHIT",
+                  "0x0D":"D2GS_PLAYERSTOP",
+                  "0x0E":"D2GS_OBJECTSTATE",
+                  "0x0F":"D2GS_PLAYERMOVE",
+                  "0x10":"D2GS_CHARTOOBJ",
+                  "0x11":"D2GS_REPORTKILL",
+                  "0x12":"D2GS_UNKNOWN1",
+                  "0x13":"D2GS_UNKNOWN2",
+                  "0x14":"D2GS_UNKNOWN3",
+                  "0x15":"D2GS_REASSIGNPLAYER",
+                  "0x16":"D2GS_UNKNOWN4",
+                  "0x17":"D2GS_UNUSED1",
+                  "0x18":"D2GS_UNKNOWN5",
+                  "0x19": "D2GS_SMALLGOLDPICKUP",
+                  "0x1A": "D2GS_BADDEXP",
+                  "0x1B": "D2GS_WADDEXP",
+                  "0x1C": "D2GS_DWADDEXP",
+                  "0x1D": "D2GS_SETBYTEATTR",
+                  "0x1E": "D2GS_SETWORDATTR",
+                  "0x1F": "D2GS_SETDWORDATTR",
+                  "0x20": "D2GS_ATTRIBUTEUPDATE",
+                  "0x21": "D2GS_UPDATEITEMOSKILL",
+                  "0x22": "D2GS_UPDATEITEMSKILL",
+                  "0x23": "D2GS_SETSKILL",
+                  "0x24": "D2GS_UNKNOWN6",
+                  "0x25": "D2GS_UNKNOWN7",
+                  "0x26": "D2GS_GAMECHAT",
+                  "0x27": "D2GS_NPCINFO",
+                  "0x28": "D2GS_QUESTINFO",
+                  "0x29": "D2GS_GAMEQUESTINFO",
+                  "0x2A": "D2GS_NPCTRANSACTION",
+                  "0x2B": "D2GS_UNUSED2",
+                  "0x2C": "D2GS_PLAYSOUND",
+                  "0x2D": "D2GS_UNUSED3",
+                  "0x2E": "D2GS_UNUSED4",
+                  "0x2F": "D2GS_UNUSED5",
+                  "0x30": "D2GS_UNUSED6",
+                  "0x31": "D2GS_UNUSED7",
+                  "0x32": "D2GS_UNUSED8",
+                  "0x33": "D2GS_UNUSED9",
+                  "0x34": "D2GS_UNUSED10",
+                  "0x35": "D2GS_UNUSED11",
+                  "0x36": "D2GS_UNUSED12",
+                  "0x37": "D2GS_UNUSED13",
+                  "0x38": "D2GS_UNUSED14",
+                  "0x39": "D2GS_UNUSED15",
+                  "0x3A": "D2GS_UNUSED16",
+                  "0x3B": "D2GS_UNUSED17",
+                  "0x3C": "D2GS_UNUSED18",
+                  "0x3D": "D2GS_UNUSED19",
+                  "0x3E": "D2GS_UPDATEITEMSTATS",
+                  "0x3F": "D2GS_USESTACKABLEITEM",
+                  "0x40": "D2GS_UNKNOWN8",
+                  "0x41": "D2GS_UNUSED20",
+                  "0x42": "D2GS_CLEARCURSOR",
+                  "0x43": "D2GS_UNUSED21",
+                  "0x44": "D2GS_UNUSED22",
+                  "0x45": "D2GS_UNKNOWN9",
+                  "0x46": "D2GS_UNUSED23",
+                  "0x47": "D2GS_RELATOR1",
+                  "0x48": "D2GS_RELATOR2",
+                  "0x49": "D2GS_UNUSED24",
+                  "0x4A": "D2GS_UNUSED25",
+                  "0x4B": "D2GS_UNUSED26",
+                  "0x4C": "D2GS_UNITSKILLONTARGET",
+                  "0x4D": "D2GS_UNITCASTSKILL",
+                  "0x4E": "D2GS_MERCFORHIRE",
+                  "0x4F": "D2GS_STARTMERCLIST",
+                  "0x50": "D2GS_STARTGAME",
+                  "0x51": "D2GS_WORLDOBJECT",
+                  "0x52": "D2GS_QUESTLOGINFO",
+                  "0x53": "D2GS_PLAYERSLOTREFRESH",
+                  "0x54": "D2GS_UNKNOWN10",
+                  "0x55": "D2GS_UNKNOWN11",
+                  "0x56": "D2GS_UNUSED27",
+                  "0x57": "D2GS_UNUSED28",
+                  "0x58": "D2GS_UNKNOWN12",
+                  "0x59": "D2GS_CREATECLIENTPLAYER",
+                  "0x5A": "D2GS_EVENTMESSAGES",
+                  "0x5B": "D2GS_PLAYERJOINED",
+                  "0x5C": "D2GS_PLAYERLEFT",
+                  "0x5D": "D2GS_QUESTITEMSTATE",
+                  "0x5E": "D2GS_UNKNOWN13",
+                  "0x5F": "D2GS_UNKNOWN14",
+                  "0x60": "D2GS_TOWNPORTALSTATE",
+                  "0x61": "D2GS_UNKNOWN15",
+                  "0x62": "D2GS_UNKNOWN16",
+                  "0x63": "D2GS_WAYPOINTMENU",
+                  "0x64": "D2GS_UNUSED29",
+                  "0x65": "D2GS_PLAYERKILLCOUNT",
+                  "0x66": "D2GS_UNKNOWN17",
+                  "0x67": "D2GS_NPCMOVE",
+                  "0x68": "D2GS_NPCMOVETOTARGET",
+                  "0x69": "D2GS_NPCSTATE",
+                  "0x6A": "D2GS_UNKNOWN18",
+                  "0x6B": "D2GS_NPCACTION",
+                  "0x6C": "D2GS_NPCATTACK",
+                  "0x6D": "D2GS_NPCSTOP",
+                  "0x6E": "D2GS_UNKNOWN19",
+                  "0x6F": "D2GS_UNKNOWN20",
+                  "0x70": "D2GS_UNKNOWN21",
+                  "0x71": "D2GS_UNKNOWN22",
+                  "0x72": "D2GS_UNKNOWN23",
+                  "0x73": "D2GS_UNKNOWN24",
+                  "0x74": "D2GS_PLAYERCORPSEASSIGN",
+                  "0x75": "D2GS_PLAYERPARTYINFO",
+                  "0x76": "D2GS_PLAYERINPROXIMITY",
+                  "0x77": "D2GS_TRADEACTION",
+                  "0x78": "D2GS_TRADEACCEPTED",
+                  "0x79": "D2GS_GOLDINTRADE",
+                  "0x7A": "D2GS_LOGONRESPONSE",
+                  "0x7B": "D2GS_ASSIGNSKILLHOTKEY",
+                  "0x7C": "D2GS_USESCROLL",
+                  "0x7D": "D2GS_SETITEMSTATE",
+                  "0x7E": "D2GS_UNKNOWN25",
+                  "0x7F": "D2GS_ALLYPARTYINFO",
+                  "0x80": "D2GS_UNUSED30",
+                  "0x81": "D2GS_ASSIGNMERC",
+                  "0x82": "D2GS_PORTALOWNERSHIP",
+                  "0x83": "D2GS_UNUSED31",
+                  "0x84": "D2GS_UNUSED32",
+                  "0x85": "D2GS_UNUSED33",
+                  "0x86": "D2GS_UNUSED34",
+                  "0x87": "D2GS_UNUSED35",
+                  "0x88": "D2GS_UNUSED36",
+                  "0x89": "D2GS_UNIQUEEVENTS",
+                  "0x8A": "D2GS_NPCWANTSTOINTERACT",
+                  "0x8B": "D2GS_PLAYERRELATIONSHIP",
+                  "0x8C": "D2GS_RELATIONSHIPUPDATE",
+                  "0x8D": "D2GS_ASSIGNPLAYERTOPARTY",
+                  "0x8E": "D2GS_CORPSEASSIGN",
+                  "0x8F": "D2GS_PONG",
+                  "0x90": "D2GS_PARTYAUTOMAPINFO",
+                  "0x91": "D2GS_UNKNOWN26",
+                  "0x92": "D2GS_UNKNOWN27",
+                  "0x93": "D2GS_UNKNOWN28",
+                  "0x94": "D2GS_BASESKILLLEVELS",
+                  "0x95": "D2GS_LIFEANDMANAUPDATE",
+                  "0x96": "D2GS_WALKVERIFY",
+                  "0x97": "D2GS_WEAPONSWITCH",
+                  "0x98": "D2GS_UNKNOWN29",
+                  "0x99": "D2GS_SKILLTRIGGERED",
+                  "0x9A": "D2GS_UNKNOWN30",
+                  "0x9B": "D2GS_MERCRELATED",
+                  "0x9C": "D2GS_ITEMACTIONWORLD",
+                  "0x9D": "D2GS_ITEMACTIONOWNED",
+                  "0x9E": "D2GS_BMERCATTRIBUTE",
+                  "0x9F": "D2GS_WMERCATTRIBUTE",
+                  "0xA0": "D2GS_DWMERCATTRIBUTE",
+                  "0xA1": "D2GS_BMERCADDEXP",
+                  "0xA2": "D2GS_WMERCADDEXP",
+                  "0xA3": "D2GS_UNKNOWN31",
+                  "0xA4": "D2GS_UNKNOWN32",
+                  "0xA5": "D2GS_UNKNOWN33",
+                  "0xA6": "D2GS_UNKNOWN34",
+                  "0xA7": "D2GS_DELAYEDSTATE",
+                  "0xA8": "D2GS_SETSTATE",
+                  "0xA9": "D2GS_ENDSTATE",
+                  "0xAA": "D2GS_STATEADD",
+                  "0xAB": "D2GS_NPCHEAL",
+                  "0xAC": "D2GS_ASSIGNNPC",
+                  "0xAD": "D2GS_UNKNOWN35",
+                  "0xAE": "D2GS_WARDENREQUEST",
+                  "0xAF": "D2GS_NEGOTIATECOMPRESSION",
+                  "0xB0": "D2GS_GAMECONNECTIONTERMINATED",
+                  "0xB1": "D2GS_UNKNOWN36",
+                  "0xB2": "D2GS_UNKNOWN37",
+                  "0xB3": "D2GS_IPBAN",
+                  "0xB4": "D2GS_UNKNOWN38",
+                  "0xB5": "D2GS_OVERHEAD"
+                }
+              }
+            ]
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "D2GS_GAMELOADING": "D2GS_GAMELOADING",
+                  "D2GS_GAMEFLAGS": "D2GS_GAMEFLAGS",
+                  "D2GS_LOADSUCCESSFUL": "D2GS_LOADSUCCESSFUL",
+                  "D2GS_LOADACT": "D2GS_LOADACT",
+                  "D2GS_LOADCOMPLETE": "D2GS_LOADCOMPLETE",
+                  "D2GS_UNLOADCOMPLETE": "D2GS_UNLOADCOMPLETE",
+                  "D2GS_GAMEEXITSUCCESSFUL": "D2GS_GAMEEXITSUCCESSFUL",
+                  "D2GS_MAPREVEAL": "D2GS_MAPREVEAL",
+                  "D2GS_MAPHIDE": "D2GS_MAPHIDE",
+                  "D2GS_ASSIGNLVLWARP": "D2GS_ASSIGNLVLWARP",
+                  "D2GS_REMOVEOBJECT": "D2GS_REMOVEOBJECT",
+                  "D2GS_GAMEHANDSHAKE": "D2GS_GAMEHANDSHAKE",
+                  "D2GS_NPCHIT": "D2GS_NPCHIT",
+                  "D2GS_PLAYERSTOP": "D2GS_PLAYERSTOP",
+                  "D2GS_OBJECTSTATE": "D2GS_OBJECTSTATE",
+                  "D2GS_PLAYERMOVE": "D2GS_PLAYERMOVE",
+                  "D2GS_CHARTOOBJ": "D2GS_CHARTOOBJ",
+                  "D2GS_REPORTKILL": "D2GS_REPORTKILL",
+                  "D2GS_UNKNOWN1": "D2GS_UNKNOWN1",
+                  "D2GS_UNKNOWN2": "D2GS_UNKNOWN2",
+                  "D2GS_UNKNOWN3": "D2GS_UNKNOWN3",
+                  "D2GS_REASSIGNPLAYER": "D2GS_REASSIGNPLAYER",
+                  "D2GS_UNKNOWN4": "D2GS_UNKNOWN4",
+                  "D2GS_UNUSED1": "D2GS_UNUSED1",
+                  "D2GS_UNKNOWN5": "D2GS_UNKNOWN5",
+                  "D2GS_SMALLGOLDPICKUP": "D2GS_SMALLGOLDPICKUP",
+                  "D2GS_BADDEXP": "D2GS_BADDEXP",
+                  "D2GS_WADDEXP": "D2GS_WADDEXP",
+                  "D2GS_DWADDEXP": "D2GS_DWADDEXP",
+                  "D2GS_SETBYTEATTR": "D2GS_SETBYTEATTR",
+                  "D2GS_SETWORDATTR": "D2GS_SETWORDATTR",
+                  "D2GS_SETDWORDATTR": "D2GS_SETDWORDATTR",
+                  "D2GS_ATTRIBUTEUPDATE": "D2GS_ATTRIBUTEUPDATE",
+                  "D2GS_UPDATEITEMOSKILL": "D2GS_UPDATEITEMOSKILL",
+                  "D2GS_UPDATEITEMSKILL": "D2GS_UPDATEITEMSKILL",
+                  "D2GS_SETSKILL": "D2GS_SETSKILL",
+                  "D2GS_UNKNOWN6": "D2GS_UNKNOWN6",
+                  "D2GS_UNKNOWN7": "D2GS_UNKNOWN7",
+                  "D2GS_GAMECHAT": "D2GS_GAMECHAT",
+                  "D2GS_OVERHEAD": "D2GS_OVERHEAD",
+                  "D2GS_NPCINFO": "D2GS_NPCINFO",
+                  "D2GS_QUESTINFO": "D2GS_QUESTINFO",
+                  "D2GS_GAMEQUESTINFO": "D2GS_GAMEQUESTINFO",
+                  "D2GS_NPCTRANSACTION": "D2GS_NPCTRANSACTION",
+                  "D2GS_UNUSED2": "D2GS_UNUSED2",
+                  "D2GS_PLAYSOUND": "D2GS_PLAYSOUND",
+                  "D2GS_UNUSED3": "D2GS_UNUSED3",
+                  "D2GS_UNUSED4": "D2GS_UNUSED4",
+                  "D2GS_UNUSED5": "D2GS_UNUSED5",
+                  "D2GS_UNUSED6": "D2GS_UNUSED6",
+                  "D2GS_UNUSED7": "D2GS_UNUSED7",
+                  "D2GS_UNUSED8": "D2GS_UNUSED8",
+                  "D2GS_UNUSED9": "D2GS_UNUSED9",
+                  "D2GS_UNUSED10": "D2GS_UNUSED10",
+                  "D2GS_UNUSED11": "D2GS_UNUSED11",
+                  "D2GS_UNUSED12": "D2GS_UNUSED12",
+                  "D2GS_UNUSED13": "D2GS_UNUSED13",
+                  "D2GS_UNUSED14": "D2GS_UNUSED14",
+                  "D2GS_UNUSED15": "D2GS_UNUSED15",
+                  "D2GS_UNUSED16": "D2GS_UNUSED16",
+                  "D2GS_UNUSED17": "D2GS_UNUSED17",
+                  "D2GS_UNUSED18": "D2GS_UNUSED18",
+                  "D2GS_UNUSED19": "D2GS_UNUSED19",
+                  "D2GS_UPDATEITEMSTATS": "D2GS_UPDATEITEMSTATS",
+                  "D2GS_USESTACKABLEITEM": "D2GS_USESTACKABLEITEM",
+                  "D2GS_UNKNOWN8": "D2GS_UNKNOWN8",
+                  "D2GS_UNUSED20": "D2GS_UNUSED20",
+                  "D2GS_CLEARCURSOR": "D2GS_CLEARCURSOR",
+                  "D2GS_UNUSED21": "D2GS_UNUSED21",
+                  "D2GS_UNUSED22": "D2GS_UNUSED22",
+                  "D2GS_UNKNOWN9": "D2GS_UNKNOWN9",
+                  "D2GS_UNUSED23": "D2GS_UNUSED23",
+                  "D2GS_RELATOR1": "D2GS_RELATOR1",
+                  "D2GS_RELATOR2": "D2GS_RELATOR2",
+                  "D2GS_UNUSED24": "D2GS_UNUSED24",
+                  "D2GS_UNUSED25": "D2GS_UNUSED25",
+                  "D2GS_UNUSED26": "D2GS_UNUSED26",
+                  "D2GS_UNITSKILLONTARGET": "D2GS_UNITSKILLONTARGET",
+                  "D2GS_UNITCASTSKILL": "D2GS_UNITCASTSKILL",
+                  "D2GS_MERCFORHIRE": "D2GS_MERCFORHIRE",
+                  "D2GS_STARTMERCLIST": "D2GS_STARTMERCLIST",
+                  "D2GS_STARTGAME": "D2GS_STARTGAME",
+                  "D2GS_WORLDOBJECT": "D2GS_WORLDOBJECT",
+                  "D2GS_QUESTLOGINFO": "D2GS_QUESTLOGINFO",
+                  "D2GS_PLAYERSLOTREFRESH": "D2GS_PLAYERSLOTREFRESH",
+                  "D2GS_UNKNOWN10": "D2GS_UNKNOWN10",
+                  "D2GS_UNKNOWN11": "D2GS_UNKNOWN11",
+                  "D2GS_UNUSED27": "D2GS_UNUSED27",
+                  "D2GS_UNUSED28": "D2GS_UNUSED28",
+                  "D2GS_UNKNOWN12": "D2GS_UNKNOWN12",
+                  "D2GS_CREATECLIENTPLAYER": "D2GS_CREATECLIENTPLAYER",
+                  "D2GS_EVENTMESSAGES": "D2GS_EVENTMESSAGES",
+                  "D2GS_PLAYERJOINED": "D2GS_PLAYERJOINED",
+                  "D2GS_PLAYERLEFT": "D2GS_PLAYERLEFT",
+                  "D2GS_QUESTITEMSTATE": "D2GS_QUESTITEMSTATE",
+                  "D2GS_UNKNOWN13": "D2GS_UNKNOWN13",
+                  "D2GS_UNKNOWN14": "D2GS_UNKNOWN14",
+                  "D2GS_TOWNPORTALSTATE": "D2GS_TOWNPORTALSTATE",
+                  "D2GS_UNKNOWN15": "D2GS_UNKNOWN15",
+                  "D2GS_UNKNOWN16": "D2GS_UNKNOWN16",
+                  "D2GS_WAYPOINTMENU": "D2GS_WAYPOINTMENU",
+                  "D2GS_UNUSED29": "D2GS_UNUSED29",
+                  "D2GS_PLAYERKILLCOUNT": "D2GS_PLAYERKILLCOUNT",
+                  "D2GS_UNKNOWN17": "D2GS_UNKNOWN17",
+                  "D2GS_NPCMOVE": "D2GS_NPCMOVE",
+                  "D2GS_NPCMOVETOTARGET": "D2GS_NPCMOVETOTARGET",
+                  "D2GS_NPCSTATE": "D2GS_NPCSTATE",
+                  "D2GS_UNKNOWN18": "D2GS_UNKNOWN18",
+                  "D2GS_NPCACTION": "D2GS_NPCACTION",
+                  "D2GS_NPCATTACK": "D2GS_NPCATTACK",
+                  "D2GS_NPCSTOP": "D2GS_NPCSTOP",
+                  "D2GS_UNKNOWN19": "D2GS_UNKNOWN19",
+                  "D2GS_UNKNOWN20": "D2GS_UNKNOWN20",
+                  "D2GS_UNKNOWN21": "D2GS_UNKNOWN21",
+                  "D2GS_UNKNOWN22": "D2GS_UNKNOWN22",
+                  "D2GS_UNKNOWN23": "D2GS_UNKNOWN23",
+                  "D2GS_UNKNOWN24": "D2GS_UNKNOWN24",
+                  "D2GS_PLAYERCORPSEASSIGN": "D2GS_PLAYERCORPSEASSIGN",
+                  "D2GS_PLAYERPARTYINFO": "D2GS_PLAYERPARTYINFO",
+                  "D2GS_PLAYERINPROXIMITY": "D2GS_PLAYERINPROXIMITY",
+                  "D2GS_TRADEACTION": "D2GS_TRADEACTION",
+                  "D2GS_TRADEACCEPTED": "D2GS_TRADEACCEPTED",
+                  "D2GS_GOLDINTRADE": "D2GS_GOLDINTRADE",
+                  "D2GS_LOGONRESPONSE": "D2GS_LOGONRESPONSE",
+                  "D2GS_ASSIGNSKILLHOTKEY": "D2GS_ASSIGNSKILLHOTKEY",
+                  "D2GS_USESCROLL": "D2GS_USESCROLL",
+                  "D2GS_SETITEMSTATE": "D2GS_SETITEMSTATE",
+                  "D2GS_UNKNOWN25": "D2GS_UNKNOWN25",
+                  "D2GS_ALLYPARTYINFO": "D2GS_ALLYPARTYINFO",
+                  "D2GS_UNUSED30": "D2GS_UNUSED30",
+                  "D2GS_ASSIGNMERC": "D2GS_ASSIGNMERC",
+                  "D2GS_PORTALOWNERSHIP": "D2GS_PORTALOWNERSHIP",
+                  "D2GS_UNUSED31": "D2GS_UNUSED31",
+                  "D2GS_UNUSED32": "D2GS_UNUSED32",
+                  "D2GS_UNUSED33": "D2GS_UNUSED33",
+                  "D2GS_UNUSED34": "D2GS_UNUSED34",
+                  "D2GS_UNUSED35": "D2GS_UNUSED35",
+                  "D2GS_UNUSED36": "D2GS_UNUSED36",
+                  "D2GS_UNIQUEEVENTS": "D2GS_UNIQUEEVENTS",
+                  "D2GS_NPCWANTSTOINTERACT": "D2GS_NPCWANTSTOINTERACT",
+                  "D2GS_PLAYERRELATIONSHIP": "D2GS_PLAYERRELATIONSHIP",
+                  "D2GS_RELATIONSHIPUPDATE": "D2GS_RELATIONSHIPUPDATE",
+                  "D2GS_ASSIGNPLAYERTOPARTY": "D2GS_ASSIGNPLAYERTOPARTY",
+                  "D2GS_CORPSEASSIGN": "D2GS_CORPSEASSIGN",
+                  "D2GS_PONG": "D2GS_PONG",
+                  "D2GS_PARTYAUTOMAPINFO": "D2GS_PARTYAUTOMAPINFO",
+                  "D2GS_UNKNOWN26": "D2GS_UNKNOWN26",
+                  "D2GS_UNKNOWN27": "D2GS_UNKNOWN27",
+                  "D2GS_UNKNOWN28": "D2GS_UNKNOWN28",
+                  "D2GS_BASESKILLLEVELS": "D2GS_BASESKILLLEVELS",
+                  "D2GS_LIFEANDMANAUPDATE": "D2GS_LIFEANDMANAUPDATE",
+                  "D2GS_WALKVERIFY": "D2GS_WALKVERIFY",
+                  "D2GS_WEAPONSWITCH": "D2GS_WEAPONSWITCH",
+                  "D2GS_UNKNOWN29": "D2GS_UNKNOWN29",
+                  "D2GS_SKILLTRIGGERED": "D2GS_SKILLTRIGGERED",
+                  "D2GS_UNKNOWN30": "D2GS_UNKNOWN30",
+                  "D2GS_MERCRELATED": "D2GS_MERCRELATED",
+                  "D2GS_ITEMACTIONWORLD": "D2GS_ITEMACTIONWORLD",
+                  "D2GS_ITEMACTIONOWNED": "D2GS_ITEMACTIONOWNED",
+                  "D2GS_BMERCATTRIBUTE": "D2GS_BMERCATTRIBUTE",
+                  "D2GS_WMERCATTRIBUTE": "D2GS_WMERCATTRIBUTE",
+                  "D2GS_DWMERCATTRIBUTE": "D2GS_DWMERCATTRIBUTE",
+                  "D2GS_BMERCADDEXP": "D2GS_BMERCADDEXP",
+                  "D2GS_WMERCADDEXP": "D2GS_WMERCADDEXP",
+                  "D2GS_UNKNOWN31": "D2GS_UNKNOWN31",
+                  "D2GS_UNKNOWN32": "D2GS_UNKNOWN32",
+                  "D2GS_UNKNOWN33": "D2GS_UNKNOWN33",
+                  "D2GS_UNKNOWN34": "D2GS_UNKNOWN34",
+                  "D2GS_DELAYEDSTATE": "D2GS_DELAYEDSTATE",
+                  "D2GS_SETSTATE": "D2GS_SETSTATE",
+                  "D2GS_ENDSTATE": "D2GS_ENDSTATE",
+                  "D2GS_STATEADD": "D2GS_STATEADD",
+                  "D2GS_NPCHEAL": "D2GS_NPCHEAL",
+                  "D2GS_ASSIGNNPC": "D2GS_ASSIGNNPC",
+                  "D2GS_UNKNOWN35": "D2GS_UNKNOWN35",
+                  "D2GS_WARDENREQUEST": "D2GS_WARDENREQUEST",
+                  "D2GS_NEGOTIATECOMPRESSION": "D2GS_NEGOTIATECOMPRESSION",
+                  "D2GS_GAMECONNECTIONTERMINATED": "D2GS_GAMECONNECTIONTERMINATED",
+                  "D2GS_UNKNOWN36": "D2GS_UNKNOWN36",
+                  "D2GS_UNKNOWN37": "D2GS_UNKNOWN37",
+                  "D2GS_IPBAN": "D2GS_IPBAN",
+                  "D2GS_UNKNOWN38": "D2GS_UNKNOWN38"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}

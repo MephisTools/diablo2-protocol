@@ -1,7 +1,8 @@
 const { createClientDiablo, ServerDiablo, createServerSid, createServerMcp, ServerD2gs } = require('..')
+const { supportedVersions, defaultVersion } = require('..')
 
-if (process.argv.length !== 10) {
-  console.log('Usage : node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver> <externalHost> <sidServer>')
+if (process.argv.length !== 11) {
+  console.log('Usage : node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver> <externalHost> <sidServer> <version>')
   process.exit(1)
 }
 
@@ -14,22 +15,25 @@ const gameServer = process.argv[7]
 const externalHost = process.argv[8]
 const sidServer = process.argv[9]
 
+// If the version correspond to a supported version else use default
+const version = supportedVersions.find(v => v === process.argv[9]) ? process.argv[9] : defaultVersion
+
 const host = '127.0.0.1'
 
-const serverDiablo = new ServerDiablo()
+const serverDiablo = new ServerDiablo(version)
 
-const serverSid = createServerSid(host, externalHost)
+const serverSid = createServerSid(host, externalHost, version)
 
 serverDiablo.setServerSid(serverSid)
 
-const serverMcp = createServerMcp(host, externalHost)
+const serverMcp = createServerMcp(host, externalHost, version)
 
 serverDiablo.setServerMcp(serverMcp)
 
 // Connect to battlenet
-function createServerD2gs (host) {
+function createServerD2gs (host, version) {
   const portD2gs = 4000
-  const serverD2gs = new ServerD2gs()
+  const serverD2gs = new ServerD2gs(version)
   serverD2gs.listen(host, portD2gs)
   serverD2gs.on('connection', async clientD2gsServer => {
     console.log('new client d2gs', clientD2gsServer.socket.address())
@@ -37,7 +41,8 @@ function createServerD2gs (host) {
     const clientDiablo = await createClientDiablo({
       host: sidServer,
       username,
-      password
+      password,
+      version: version
     })
 
     let posX = 0
@@ -68,7 +73,7 @@ function createServerD2gs (host) {
   return serverD2gs
 }
 
-const serverD2gs = createServerD2gs(host)
+const serverD2gs = createServerD2gs(host, version)
 
 serverDiablo.setServerD2gs(serverD2gs)
 
