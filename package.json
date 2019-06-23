@@ -7,7 +7,7 @@
     "test": "npm run lint && npm run validateProtocols && mocha",
     "lint": "standard",
     "fix": "standard --fix",
-    "validateProtocols": "protodef-validator data/d2gs.json && protodef-validator data/mcp.json && protodef-validator data/sid.json && protodef-validator data/bnftp.json"
+    "validateProtocols": "protodef-validator data/1.14/d2gs.json && protodef-validator data/1.14/mcp.json && protodef-validator data/1.14/sid.json && protodef-validator data/1.14/bnftp.json"
   },
   "repository": {
     "type": "git",
