@@ -59,7 +59,7 @@ const {
 } = require('../..')
 
 const mcpToServer = new ProtoDef(false)
-mcpToServer.addProtocol(protocol[version].mcpProtocol, ['toServer'])
+mcpToServer.addProtocol(protocol[version].mcp, ['toServer'])
 
 const mcpToClient = new ProtoDef(false)
 mcpToClient.addProtocol(protocol[version].mcp, ['toClient'])
@@ -105,22 +105,23 @@ toClientParser.on('data', ({ data, buffer }) => {
     }
     wss.broadcast(JSON.stringify({ protocol: 'd2gsToClient', name, params }))
     console.info('d2gsToClient : ', name, JSON.stringify(params))
-    console.log('raw', 'd2gsToClient', name, buffer)
+    // console.log('raw', 'd2gsToClient', name, buffer)
     messagesToClient.push(`d2gsToClient : ${name} ${JSON.stringify(params)}`)
   } catch (err) {
     console.log(err)
-    console.log('raw', 'd2gsToClient', buffer)
+    // console.log('raw', 'd2gsToClient', buffer)
   }
 })
 
 let clientPortSid = null
 let clientPortBnFtp = null
-let compression = true
+let compression = false
 
 // server ports
 const sidPort = '6112'
 const d2gsPort = '4000'
-const mcpPort = '6113'
+let mcpPort = '6113'
+let mcpIp = null
 
 const trackedPorts = new Set([sidPort, d2gsPort, mcpPort])
 
@@ -135,6 +136,7 @@ function displayD2gsToClient (data) {
       wss.broadcast(JSON.stringify({ protocol: 'd2gsToClient', name, params }))
       console.info('d2gsToClient (uncompressed): ', name, JSON.stringify(params))
       if (name === 'D2GS_NEGOTIATECOMPRESSION' && params.compressionMode !== 0) {
+        console.log('enable compression')
         compression = true
       }
     } else {
@@ -142,7 +144,7 @@ function displayD2gsToClient (data) {
     }
   } catch (error) {
     console.log('d2gsToClient : ', error.message)
-    console.log('raw', 'd2gsToClient', data)
+    // console.log('raw', 'd2gsToClient', data)
   }
 }
 
@@ -151,8 +153,9 @@ function displayParsed (proto, protoName, data, raw = false) {
     const { name, params } = proto.parsePacketBuffer('packet', data).data
     console.log(protoName, ':', name, JSON.stringify(params))
     wss.broadcast(JSON.stringify({ protocol: protoName, name, params }))
-    if (raw) console.log('raw', protoName, name, data.toString('hex'))
+    // if (raw) console.log('raw', protoName, name, data.toString('hex'))
     messagesToServer.push(`${protoName}:${name} ${JSON.stringify(params)}`)
+    return { name, params }
   } catch (error) {
     console.log(protoName, ':', error.message)
   }
@@ -175,7 +178,13 @@ function displaySidToServer (data) {
 }
 
 function displaySidToClient (data) {
-  displayParsed(sidToClient, 'sidToClient', data)
+  const parsed = displayParsed(sidToClient, 'sidToClient', data)
+  if (parsed.name === 'SID_LOGONREALMEX') {
+    const IP = parsed.params.IP
+    mcpIp = IP[0] + '.' + IP[1] + '.' + IP[2] + '.' + IP[3]
+    mcpPort = parsed.params.port + ''
+    console.log(`received SID_LOGONREALMEX ${JSON.stringify({ mcpIp, mcpPort })}`)
+  }
 }
 
 const challengeParserClient = new Parser(bnftpToClient, 'CHALLENGE')
@@ -227,6 +236,8 @@ function displayBnftpToServer (data) {
 tcpTracker.on('session', function (session) {
   const srcPort = session.src_name.split(':')[1]
   const dstPort = session.dst_name.split(':')[1]
+  const srcIp = session.src_name.split(':')[0]
+  const dstIp = session.dst_name.split(':')[0]
   if (!trackedPorts.has(srcPort) && !trackedPorts.has(dstPort)) {
     return
   }
@@ -252,10 +263,10 @@ tcpTracker.on('session', function (session) {
     if (srcPort === d2gsPort || dstPort === d2gsPort) {
       console.log('Start of d2gs session')
     }
-    if (srcPort === mcpPort || dstPort === mcpPort) {
+    if ((srcPort === mcpPort || dstPort === mcpPort) && (dstIp === mcpIp || srcIp === mcpIp || mcpIp === null)) {
       console.log('Start of mcp session')
     }
-    if (srcPort === sidPort || dstPort === sidPort) {
+    if ((srcPort === sidPort || dstPort === sidPort) && ((dstIp !== mcpIp && srcIp !== mcpIp) || mcpIp === null)) {
       console.log('Start of sid session')
     }
   })
@@ -268,11 +279,11 @@ tcpTracker.on('session', function (session) {
       displayD2gsToServer(data)
     }
 
-    if (srcPort === mcpPort) {
+    if (srcPort === mcpPort && (srcIp === mcpIp || mcpIp === null)) {
       displayMcpToClient(data)
     }
 
-    if (dstPort === mcpPort) {
+    if (dstPort === mcpPort && (dstIp === mcpIp || mcpIp === null)) {
       displayMcpToServer(data)
     }
 
@@ -288,11 +299,11 @@ tcpTracker.on('session', function (session) {
       return
     }
 
-    if (srcPort === sidPort && dstPort === clientPortSid) {
+    if (srcPort === sidPort && dstPort === clientPortSid && (srcIp !== mcpIp || mcpIp === null)) {
       displaySidToClient(data)
     }
 
-    if (dstPort === sidPort && srcPort === clientPortSid) {
+    if (dstPort === sidPort && srcPort === clientPortSid && (dstIp !== mcpIp || mcpIp === null)) {
       displaySidToServer(data)
     }
 
@@ -313,11 +324,11 @@ tcpTracker.on('session', function (session) {
       displayD2gsToClient(data)
     }
 
-    if (srcPort === mcpPort) {
+    if (srcPort === mcpPort && (srcIp === mcpIp || mcpIp === null)) {
       displayMcpToServer(data)
     }
 
-    if (dstPort === mcpPort) {
+    if (dstPort === mcpPort && (dstIp === mcpIp || mcpIp === null)) {
       displayMcpToClient(data)
     }
 
@@ -333,11 +344,11 @@ tcpTracker.on('session', function (session) {
       return
     }
 
-    if (srcPort === sidPort && dstPort === clientPortSid) {
+    if (srcPort === sidPort && dstPort === clientPortSid && (srcIp !== mcpIp || mcpIp === null)) {
       displaySidToServer(data)
     }
 
-    if (dstPort === sidPort && srcPort === clientPortSid) {
+    if (dstPort === sidPort && srcPort === clientPortSid && (dstIp !== mcpIp || mcpIp === null)) {
       displaySidToClient(data)
     }
 
@@ -354,10 +365,10 @@ tcpTracker.on('session', function (session) {
     if (srcPort === d2gsPort || dstPort === d2gsPort) {
       console.log('End of d2gs session')
     }
-    if (srcPort === mcpPort || dstPort === mcpPort) {
+    if ((srcPort === mcpPort || dstPort === mcpPort) && (dstIp === mcpIp || srcIp === mcpIp || mcpIp === null)) {
       console.log('End of mcp session')
     }
-    if (srcPort === sidPort || dstPort === sidPort) {
+    if ((srcPort === sidPort || dstPort === sidPort) && (dstIp === mcpIp || srcIp === mcpIp || mcpIp === null)) {
       console.log('End of sid session')
     }
   })
