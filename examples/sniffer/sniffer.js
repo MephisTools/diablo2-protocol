@@ -184,7 +184,6 @@ challengeParserClient.on('data', (parsed) => {
   console.info('bnftpToClient challenge : ', JSON.stringify(parsed))
 })
 
-
 const protocolParserClient = new Parser(bnftpToClient, 'FILE_TRANSFER_PROTOCOL')
 protocolParserClient.on('error', err => console.log('bnftpToClient protocol error : ', err.message))
 protocolParserClient.on('data', (parsed) => {
@@ -218,7 +217,6 @@ function displayBnftpToServer (data) {
     // console.log('bnftpToServer protocol: ', JSON.stringify(bnftpToServer.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
     // console.log('bnftpToServer protocol: ', data)
   } catch (error) {
-    
     console.log('bnftpToServer error: ', error)
     console.log('bnftpToServer write challenge', data)
     // challengeParserServer.write(data)
