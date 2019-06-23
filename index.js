@@ -11,6 +11,9 @@ const ServerD2gs = require('./lib/server/serverD2gs')
 const itemParser = require('./lib/utils/itemParser')
 const bitfieldLE = require('./lib/utils/bitfieldLE')
 const { defaultVersion, supportedVersions } = require('./version')
+const cdKey = require('./lib/utils/cdkey')
+const cdKey26 = require('./lib/utils/cdkey26')
+const checkRevision = require('./lib/utils/checkRevision')
 
 const protocol = supportedVersions.reduce((acc, version) => {
   acc[version] = {
@@ -39,5 +42,8 @@ module.exports = {
   itemParser,
   bitfieldLE,
   supportedVersions,
-  defaultVersion
+  defaultVersion,
+  cdKey,
+  cdKey26,
+  checkRevision
 }

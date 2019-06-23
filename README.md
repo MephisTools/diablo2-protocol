@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/circleci/project/MephisTools/diablo2-protocol/master.svg)](https://circleci.com/gh/MephisTools/diablo2-protocol)
 
 
-Network protocol for diablo 2 : create client and servers for diablo 1.13.
+Network protocol for diablo 2 : create client and servers for diablo 1.13 and 1.14.
 
 [Usage example](https://www.youtube.com/watch?v=KYPTijLiwMI&feature=youtu.be)
 
@@ -50,7 +50,9 @@ See docs/API.md
 Follow bot example
 
 ```
-node examples/simpleBot.js myusername mypassword mycharacter mygamename mygamepassword 4 myserverip
+node examples/simpleBot.js [-h] [-v] -au USERNAME -ap PASSWORD -c CHARACTER -gn
+                    GAMENAME -gp GAMEPASSWORD -gs GAMESERVER -s SIDSERVER
+                    [-dv DIABLOVERSION] -k1 KEYCLASSIC -k2 KEYEXTENSION
 ```
 
 Sniffer (Linux / MacOS only)

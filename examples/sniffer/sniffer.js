@@ -218,7 +218,7 @@ function displayBnftpToServer (data) {
     // console.log('bnftpToServer protocol: ', JSON.stringify(bnftpToServer.parsePacketBuffer('FILE_TRANSFER_PROTOCOL', data).data))
     // console.log('bnftpToServer protocol: ', data)
   } catch (error) {
-
+    
     console.log('bnftpToServer error: ', error)
     console.log('bnftpToServer write challenge', data)
     // challengeParserServer.write(data)

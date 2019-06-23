@@ -1,26 +1,33 @@
 const { createClientDiablo } = require('..')
-const { supportedVersions, defaultVersion } = require('..')
+const { defaultVersion } = require('..')
 
-if (process.argv.length !== 10) {
-  console.log('Usage : node bot.js <username> <password> <character> <gamename> <gamepasswd> <gameserver> <sidserver> <version>')
-  process.exit(1)
-}
+var ArgumentParser = require('argparse').ArgumentParser
+var parser = new ArgumentParser({
+  version: '1.4.1',
+  addHelp: true,
+  description: 'Simple bot'
+})
+parser.addArgument([ '-au', '--username' ], { required: true })
+parser.addArgument([ '-ap', '--password' ], { required: true })
+parser.addArgument([ '-c', '--character' ], { required: true })
+parser.addArgument([ '-gn', '--gameName' ], { required: true })
+parser.addArgument([ '-gp', '--gamePassword' ], { required: true })
+parser.addArgument([ '-gs', '--gameServer' ], { required: true })
+parser.addArgument([ '-s', '--sidServer' ], { required: true })
+parser.addArgument([ '-dv', '--diabloVersion' ], { defaultValue: defaultVersion })
+parser.addArgument([ '-k1', '--keyClassic' ], { required: true })
+parser.addArgument([ '-k2', '--keyExtension' ], { required: true })
 
-const character = process.argv[4]
-const gameName = process.argv[5]
-const gamePassword = process.argv[6]
-const gameServer = process.argv[7]
-const sidserver = process.argv[8]
-
-// If the version correspond to a supported version else use default
-const version = supportedVersions.find(v => v === process.argv[9]) ? process.argv[9] : defaultVersion
+const { username, password, character, gameName, gamePassword, gameServer, sidServer, diabloVersion, keyClassic, keyExtension } = parser.parseArgs()
 
 async function start () {
   const clientDiablo = createClientDiablo({
-    host: sidserver,
-    username: process.argv[2],
-    password: process.argv[3],
-    version: version
+    host: sidServer,
+    username,
+    password,
+    version: diabloVersion,
+    keyClassic,
+    keyExtension
   })
   clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
     clientDiablo.write('D2GS_RUNTOLOCATION', {
