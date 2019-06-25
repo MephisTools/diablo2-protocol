@@ -35,7 +35,8 @@
   "standard": {
     "ignore": [
       "lib/utils/getHash.js",
-      "lib/utils/cdkey26.js"
+      "lib/utils/cdkey26.js",
+      "test/csharp/*"
     ]
   },
   "devDependencies": {
