@@ -1,3 +1,5 @@
+// TODO: UPDATE WITH NEW API (CLIENTDIABLO CHANGES ...)
+
 const { createClientDiablo, ServerDiablo, createServerSid, createServerMcp, ServerD2gs } = require('..')
 const { supportedVersions, defaultVersion } = require('..')
 

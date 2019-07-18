@@ -1,6 +1,7 @@
 # diablo2-protocol
 [![NPM version](https://img.shields.io/npm/v/diablo2-protocol.svg)](http://npmjs.com/package/diablo2-protocol)
 [![Build Status](https://img.shields.io/circleci/project/MephisTools/diablo2-protocol/master.svg)](https://circleci.com/gh/MephisTools/diablo2-protocol)
+[![Discord Chat](https://img.shields.io/badge/discord-here-blue.svg)](https://discord.gg/9RqtApv)  
 
 
 Network protocol for diablo 2 : create client and servers for diablo 1.13 and 1.14.
@@ -24,10 +25,12 @@ const { createClientDiablo } = require('diablo2-protocol')
 
 async function start () {
   const clientDiablo = await createClientDiablo({
-    host: 'battlenetip',
-    username: 'myuser',
-    password: 'mypassword',
-    version: '1.14'
+    host: 'battlenetIp',
+    username: 'myUser',
+    password: 'myPassword',
+    version: '1.14',
+    keyClassic: 'my16CharsKey',
+    keyExtension: 'my16CharsKey'
   })
   clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
     clientDiablo.write('D2GS_RUNTOLOCATION', {

@@ -17,8 +17,9 @@ parser.addArgument([ '-s', '--sidServer' ], { required: true })
 parser.addArgument([ '-dv', '--diabloVersion' ], { defaultValue: defaultVersion })
 parser.addArgument([ '-k1', '--keyClassic' ], { required: true })
 parser.addArgument([ '-k2', '--keyExtension' ], { required: true })
+parser.addArgument([ '-dp', '--delayPackets' ], { defaultValue: 500 }) // Only servers with anti hack system should use delay between packets
 
-const { username, password, character, gameName, gamePassword, gameServer, sidServer, diabloVersion, keyClassic, keyExtension } = parser.parseArgs()
+const { username, password, character, gameName, gamePassword, gameServer, sidServer, diabloVersion, keyClassic, keyExtension, delayPackets } = parser.parseArgs()
 
 async function start () {
   const clientDiablo = createClientDiablo({
@@ -27,7 +28,8 @@ async function start () {
     password,
     version: diabloVersion,
     keyClassic,
-    keyExtension
+    keyExtension,
+    delayPackets
   })
   clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
     clientDiablo.write('D2GS_RUNTOLOCATION', {
