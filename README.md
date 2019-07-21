@@ -1,7 +1,8 @@
 # diablo2-protocol
 [![NPM version](https://img.shields.io/npm/v/diablo2-protocol.svg)](http://npmjs.com/package/diablo2-protocol)
 [![Build Status](https://img.shields.io/circleci/project/MephisTools/diablo2-protocol/master.svg)](https://circleci.com/gh/MephisTools/diablo2-protocol)
-[![Discord Chat](https://img.shields.io/badge/discord-here-blue.svg)](https://discord.gg/9RqtApv)  
+[![Discord Chat](https://img.shields.io/badge/discord-here-blue.svg)](https://discord.gg/9RqtApv)
+[![Try it on gitpod](https://img.shields.io/badge/try-on%20gitpod-brightgreen.svg)](https://gitpod.io/#https://github.com/MephisTools/diablo2-protocol)
 
 
 Network protocol for diablo 2 : create client and servers for diablo 1.13 and 1.14.
