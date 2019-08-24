@@ -109,7 +109,7 @@ toClientParser.on('data', ({ data, buffer }) => {
     messagesToClient.push(`d2gsToClient : ${name} ${JSON.stringify(params)}`)
   } catch (err) {
     console.log(err)
-    // console.log('raw', 'd2gsToClient', buffer)
+    console.log('raw', 'd2gsToClient', buffer)
   }
 })
 
@@ -144,7 +144,7 @@ function displayD2gsToClient (data) {
     }
   } catch (error) {
     console.log('d2gsToClient : ', error.message)
-    // console.log('raw', 'd2gsToClient', data)
+    console.log('raw', 'd2gsToClient', data)
   }
 }
 
@@ -153,10 +153,11 @@ function displayParsed (proto, protoName, data, raw = false) {
     const { name, params } = proto.parsePacketBuffer('packet', data).data
     console.log(protoName, ':', name, JSON.stringify(params))
     wss.broadcast(JSON.stringify({ protocol: protoName, name, params }))
-    // if (raw) console.log('raw', protoName, name, data.toString('hex'))
+    if (raw) console.log('raw', protoName, name, data.toString('hex'))
     messagesToServer.push(`${protoName}:${name} ${JSON.stringify(params)}`)
     return { name, params }
   } catch (error) {
+    if (raw) console.log('raw', protoName, data.toString('hex'))
     console.log(protoName, ':', error.message)
   }
 }
@@ -174,7 +175,7 @@ function displayMcpToClient (data) {
 }
 
 function displaySidToServer (data) {
-  displayParsed(sidToServer, 'sidToServer', data, true)
+  displayParsed(sidToServer, 'sidToServer', data)
 }
 
 function displaySidToClient (data) {

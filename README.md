@@ -6,8 +6,9 @@
 
 Network protocol for diablo 2 : create client and servers for diablo 1.13 and 1.14.
 
-[Usage example](https://www.youtube.com/watch?v=KYPTijLiwMI&feature=youtu.be)
+[Bot example](https://www.youtube.com/watch?v=KYPTijLiwMI&feature=youtu.be)
 
+[Sniffer example](https://www.youtube.com/watch?v=irNWgVk5ioI)
 
 
 ## Installation
@@ -53,8 +54,8 @@ See docs/API.md
 Follow bot example
 
 ```
-node examples/simpleBot.js [-h] [-v] -au USERNAME -ap PASSWORD -c CHARACTER -gn
-                    GAMENAME -gp GAMEPASSWORD -gs GAMESERVER -s SIDSERVER
+node examples/simpleBot.js [-h] [-v] -au USERNAME -ap PASSWORD -c CHARACTER -gn \
+                    GAMENAME -gp GAMEPASSWORD -gs GAMESERVER -s SIDSERVER \
                     [-dv DIABLOVERSION] -k1 KEYCLASSIC -k2 KEYEXTENSION
 ```
 
