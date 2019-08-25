@@ -9,7 +9,7 @@ Network protocol for diablo 2 : create client and servers for diablo 1.13 and 1.
 
 [Bot example](https://www.youtube.com/watch?v=KYPTijLiwMI&feature=youtu.be)
 
-[Sniffer example](https://www.youtube.com/watch?v=irNWgVk5ioI)
+[Sniffer example](https://www.youtube.com/watch?v=R5yfRTR3-mY)
 
 
 ## Installation
