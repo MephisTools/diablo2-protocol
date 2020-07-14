@@ -14,6 +14,7 @@ const { defaultVersion, supportedVersions } = require('./version')
 const cdKey = require('./lib/utils/cdkey')
 const cdKey26 = require('./lib/utils/cdkey26')
 const checkRevision = require('./lib/utils/checkRevision')
+const basicLogger = require('./lib/utils/logger')
 
 const protocol = supportedVersions.reduce((acc, version) => {
   acc[version] = {
@@ -45,5 +46,6 @@ module.exports = {
   defaultVersion,
   cdKey,
   cdKey26,
-  checkRevision
+  checkRevision,
+  basicLogger
 }

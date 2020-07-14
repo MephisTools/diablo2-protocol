@@ -1,23 +1,88 @@
-# diablo2-protocol
-[![NPM version](https://img.shields.io/npm/v/diablo2-protocol.svg)](http://npmjs.com/package/diablo2-protocol)
-[![Build Status](https://img.shields.io/circleci/project/MephisTools/diablo2-protocol/master.svg)](https://circleci.com/gh/MephisTools/diablo2-protocol)
-[![Discord Chat](https://img.shields.io/badge/discord-here-blue.svg)](https://discord.gg/9RqtApv)
-[![Try it on gitpod](https://img.shields.io/badge/try-on%20gitpod-brightgreen.svg)](https://gitpod.io/#https://github.com/MephisTools/diablo2-protocol)
 
+# diablo2-protocol
+
+<!-- PROJECT SHIELDS -->
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![NPM version](npm-shield)](npm-url)
+[![Build Status](build-shield)](build-url)
+[![Discord](discord-shield)](https://discord.gg/9RqtApv)
+[![Try it on gitpod](gitpod-shield)](gitpod-url)
+
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/Mephistools/diablo2-protocol">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Best-README-Template</h3>
+
+  <p align="center">
+    An awesome README template to jumpstart your projects!
+    <br />
+    <a href="https://github.com/Mephistools/diablo2-protocol"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Mephistools/diablo2-protocol">View Demo</a>
+    ·
+    <a href="https://github.com/Mephistools/diablo2-protocol/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Mephistools/diablo2-protocol/issues">Request Feature</a>
+  </p>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Projects using diablo2-protocol](#projects-using-diablo2-protocol)
+* [Documentation](#documentation)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Acknowledgements](#acknowledgements)
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
 Network protocol for diablo 2 : create client and servers for diablo 1.13 and 1.14.
 
-[Bot example](https://www.youtube.com/watch?v=KYPTijLiwMI&feature=youtu.be)
+* [Bot video](https://www.youtube.com/watch?v=KYPTijLiwMI&feature=youtu.be)
 
-[Sniffer example](https://www.youtube.com/watch?v=R5yfRTR3-mY)
+### Built With
 
+* <https://github.com/ProtoDef-io/node-protodef>
+* <https://github.com/ProtoDef-io/ProtoDef/blob/master/doc/datatypes.md>
 
-## Installation
+<!-- GETTING STARTED -->
+## Getting Started
 
+### Prerequisites
+
+```sh
+npm install npm@latest -g
 ```
+
+### Installation
+
+```js
 npm install diablo2-protocol
 ```
 
+<!-- USAGE EXAMPLES -->
 ## Usage
 
 Follow bot in a few lines
@@ -50,52 +115,64 @@ start()
 
 ```
 
-See docs/API.md
+## Projects using diablo2-protocol
 
-Follow bot example
+* [mephistools-sniffer](https://github.com/MephisTools/mephistools-sniffer) diablo 2 packet sniffing.
+* [diablo2-live-viewer](https://github.com/MephisTools/diablo2-live-viewer) web map hack, packets table and inventory.
+* [AutoTathamet](https://github.com/MephisTools/AutoTathamet) high level API to build bots for example
 
-```
-node examples/simpleBot.js [-h] [-v] -au USERNAME -ap PASSWORD -c CHARACTER -gn \
-                    GAMENAME -gp GAMEPASSWORD -gs GAMESERVER -s SIDSERVER \
-                    [-dv DIABLOVERSION] -k1 KEYCLASSIC -k2 KEYEXTENSION
-```
+## Documentation
 
-Sniffer (Linux / MacOS only)
+* <https://github.com/MephisTools/diablo2-protocol/wiki/Diablo-2-implementations-and-docs>
 
-```
-cd example/sniffer
-npm install
-sudo node sniffer.js
-```
-
-## Projects using diablo-protocol
-
-* [diablo2-live-viewer](https://github.com/MephisTools/diablo2-live-viewer) displaying a live diablo map and live packets table
-* [AutoTathamet](https://github.com/MephisTools/AutoTathamet) Create Diablo2 bots with a powerful, stable, and high level JavaScript API.
-
-
+<!-- ROADMAP -->
 ## Roadmap
-- [ ] Test all packets
-- [x] Sniffer
-- [x] more documentation
-- [ ] Proxy ?
-- [ ] More examples
-- [ ] Web / mobile interface
 
-## Docs
+See the [open issues](https://github.com/Mephistools/diablo2-protocol/issues) for a list of proposed features (and known issues).
 
-### Diablo
+<!-- CONTRIBUTING -->
+## Contributing
 
-* doc of diablo2 implementations https://github.com/MephisTools/diablo2-protocol/wiki/Diablo-2-implementations-and-docs
-* packets general description http://www.blizzhackers.cc/viewtopic.php?f=182&t=444264
-* dump of a normal connection sequence http://www.blizzhackers.cc/viewtopic.php?t=406445
-* index of packets https://bnetdocs.org/packet/index
-* example of packet doc https://bnetdocs.org/packet/146
-* basic example of packet parsing in python of a diablo2 packet https://gist.github.com/rom1504/8d2824d9d89dbd8b991b102696a1321e
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-### Libs
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-* node basic client implementation https://nodejs.org/api/net.html#net_net_createconnection_options_connectlistener
-* protodef js implementation doc https://github.com/ProtoDef-io/node-protodef https://github.com/ProtoDef-io/node-protodef/blob/master/doc/api.md and https://github.com/ProtoDef-io/node-protodef/blob/master/example.js
-* protodef types https://github.com/ProtoDef-io/ProtoDef/blob/master/doc/datatypes.md
-* nodepcap for sniffing https://github.com/node-pcap/node_pcap
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## Acknowledgements
+
+* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [Img Shields](https://shields.io)
+* [Choose an Open Source License](https://choosealicense.com)
+* [GitHub Pages](https://pages.github.com)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/Mephistools/diablo2-protocol.svg?style=flat-square
+[contributors-url]: https://github.com/Mephistools/diablo2-protocol/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Mephistools/diablo2-protocol.svg?style=flat-square
+[forks-url]: https://github.com/Mephistools/diablo2-protocol/network/members
+[stars-shield]: https://img.shields.io/github/stars/Mephistools/diablo2-protocol.svg?style=flat-square
+[stars-url]: https://github.com/Mephistools/diablo2-protocol/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Mephistools/diablo2-protocol.svg?style=flat-square
+[issues-url]: https://github.com/Mephistools/diablo2-protocol/issues
+[license-shield]: https://img.shields.io/github/license/Mephistools/diablo2-protocol.svg?style=flat-square
+[license-url]: https://github.com/Mephistools/diablo2-protocol/blob/master/LICENSE.txt
+[product-screenshot]: images/screenshot.png
+[npm-shield]: https://img.shields.io/npm/v/diablo2-protocol.svg
+[npm-url]: http://npmjs.com/package/diablo2-protocol
+[build-shield]: https://github.com/Mephistools/diablo2-protocol/workflows/CI/badge.svg
+[build-url]: https://github.com/Mephistools/diablo2-protocol/actions?query=workflow%3A%22CI%22
+[discord-shield]: https://img.shields.io/badge/chat-on%20discord-brightgreen.svg
+[discord-url]: https://discord.gg/9RqtApv
+[gitpod-shield]: https://img.shields.io/badge/try-on%20gitpod-brightgreen.svg
+[gitpod-url]: https://gitpod.io/#https://github.com/MephisTools/diablo2-protocol
