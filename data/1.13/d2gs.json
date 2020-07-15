@@ -1311,38 +1311,18 @@
       "D2GS_LOADACT": ["container", [
         {
           "name": "act",
-          "type": "lu32"
+          "type": "lu8"
         },
         {
           "name": "mapId",
           "type": "lu32"
         },
         {
-          "name": "unknown1",
-          "type": "lu32"
-        },
-        {
-          "name": "unknown2",
-          "type": "lu32"
-        },
-        {
-          "name": "unknown3",
-          "type": "lu32"
-        },
-        {
-          "name": "unknown4",
-          "type": "lu32"
-        },
-        {
           "name": "areaId",
-          "type": "lu32"
+          "type": "lu16"
         },
         {
-          "name": "func1",
-          "type": "lu32"
-        },
-        {
-          "name": "func2",
+          "name": "unkwown",
           "type": "lu32"
         }
       ]],

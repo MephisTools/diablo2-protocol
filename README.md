@@ -8,30 +8,27 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![NPM version](npm-shield)](npm-url)
-[![Build Status](build-shield)](build-url)
-[![Discord](discord-shield)](https://discord.gg/9RqtApv)
-[![Try it on gitpod](gitpod-shield)](gitpod-url)
-
-
-
+[![NPM version](https://img.shields.io/npm/v/diablo2-protocol.svg)](npm-url)
+[![Build Status](https://github.com/Mephistools/diablo2-protocol/workflows/CI/badge.svg)](build-url)
+[![Discord](https://img.shields.io/badge/chat-on%20discord-brightgreen.svg)](discord-url)
+[![Try it on gitpod](https://img.shields.io/badge/try-on%20gitpod-brightgreen.svg)](gitpod-url)
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/Mephistools/diablo2-protocol">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="docs/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">diablo2-protocol</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Network protocol for diablo 2 : create client and servers for diablo 1.13 and 1.14.
     <br />
-    <a href="https://github.com/Mephistools/diablo2-protocol"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/MephisTools/diablo2-protocol/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Mephistools/diablo2-protocol">View Demo</a>
+    <a href="https://www.youtube.com/watch?v=KYPTijLiwMI&feature=youtu.be">View Demo</a>
     ·
     <a href="https://github.com/Mephistools/diablo2-protocol/issues">Report Bug</a>
     ·
@@ -55,14 +52,7 @@
 * [License](#license)
 * [Acknowledgements](#acknowledgements)
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-Network protocol for diablo 2 : create client and servers for diablo 1.13 and 1.14.
-
-* [Bot video](https://www.youtube.com/watch?v=KYPTijLiwMI&feature=youtu.be)
-
-### Built With
+## Built With
 
 * <https://github.com/ProtoDef-io/node-protodef>
 * <https://github.com/ProtoDef-io/ProtoDef/blob/master/doc/datatypes.md>
