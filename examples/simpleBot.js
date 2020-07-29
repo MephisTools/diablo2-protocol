@@ -1,8 +1,8 @@
 const { createClientDiablo } = require('..')
 const { defaultVersion } = require('..')
 
-var ArgumentParser = require('argparse').ArgumentParser
-var parser = new ArgumentParser({
+const ArgumentParser = require('argparse').ArgumentParser
+const parser = new ArgumentParser({
   version: '1.4.1',
   addHelp: true,
   description: 'Simple bot'
@@ -31,13 +31,7 @@ async function start () {
     keyExtension,
     delayPackets
   })
-  clientDiablo.on('D2GS_PLAYERMOVE', ({ targetX, targetY }) => {
-    clientDiablo.write('D2GS_RUNTOLOCATION', {
-      x: targetX,
-      y: targetY
-    })
-  })
-
+  clientDiablo.on('packet', packet => console.log(packet))
   await clientDiablo.connect()
   await clientDiablo.selectCharacter(character)
   await clientDiablo.createGame(gameName, gamePassword, gameServer, 0)
