@@ -31,7 +31,11 @@ async function start () {
     keyExtension,
     delayPackets
   })
-  clientDiablo.on('packet', packet => console.log(packet))
+  clientDiablo.on('packet', packet => console.log(`packet: ${JSON.stringify(packet)}`))
+  clientDiablo.on('log', log => console.log(`log: ${log}`))
+  clientDiablo.on('error', err => {
+    console.log(`Error: message: ${JSON.stringify(err.message)}, raw: ${JSON.stringify(err.raw.toString('hex'))}`)
+  })
   await clientDiablo.connect()
   await clientDiablo.selectCharacter(character)
   await clientDiablo.createGame(gameName, gamePassword, gameServer, 0)
