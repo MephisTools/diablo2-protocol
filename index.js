@@ -4,10 +4,15 @@ const { decompress, compress, getPacketSize } = require('./lib/utils/compression
 const d2gsReader = require('./lib/utils/d2gsSpecialReader')
 const getHash = require('./lib/utils/getHash')
 const createServerDiablo = require('./lib/server/createServerDiablo')
+const ClientSid = require('./lib/client/clientSid')
+const ClientMcp = require('./lib/client/clientMcp')
+const ClientD2gs = require('./lib/client/clientD2gs')
+const ClientDiablo = require('./lib/client/clientDiablo')
 const ServerDiablo = require('./lib/server/serverDiablo')
+const ServerD2gs = require('./lib/server/serverD2gs')
+
 const createServerSid = require('./lib/server/createServerSid')
 const createServerMcp = require('./lib/server/createServerMcp')
-const ServerD2gs = require('./lib/server/serverD2gs')
 const itemParser = require('./lib/utils/itemParser')
 const bitfieldLE = require('./lib/utils/bitfieldLE')
 const { defaultVersion, supportedVersions } = require('./version')
@@ -37,6 +42,10 @@ module.exports = {
   createServerDiablo,
   createServerSid,
   createServerMcp,
+  ClientSid,
+  ClientMcp,
+  ClientD2gs,
+  ClientDiablo,
   ServerD2gs,
   ServerDiablo,
   itemParser,

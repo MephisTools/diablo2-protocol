@@ -1298,6 +1298,10 @@
         {
           "name": "ladder",
           "type": "lu8"
+        },
+        {
+          "name": "unknown",
+          "type": "lu8"
         }
       ]],
       "D2GS_LOADSUCCESSFUL": ["container", []],
@@ -2783,6 +2787,7 @@
         }
       ]],
       "D2GS_UNKNOWN38": ["container", []],
+      "D2GS_UNKNOWN39": ["container", []],
       "D2GS_UNKOWNFF": ["container", []],
       "packet": [
         "container",
@@ -2976,6 +2981,7 @@
                   "0xB3": "D2GS_IPBAN",
                   "0xB4": "D2GS_UNKNOWN38",
                   "0xB5": "D2GS_OVERHEAD",
+                  "0xD5": "D2GS_UNKNOWN39",
                   "0xFF": "D2GS_UNKOWNFF"
                 }
               }
@@ -3170,6 +3176,7 @@
                   "D2GS_UNKNOWN37": "D2GS_UNKNOWN37",
                   "D2GS_IPBAN": "D2GS_IPBAN",
                   "D2GS_UNKNOWN38": "D2GS_UNKNOWN38",
+                  "D2GS_UNKNOWN39": "D2GS_UNKNOWN39",
                   "D2GS_UNKOWNFF": "D2GS_UNKOWNFF"
                 }
               }

@@ -878,6 +878,7 @@
         }
       ]],
       "D2GS_GAMEEXIT": ["container", []],
+      "D2GS_UNKNOWN3": ["container", []],
       "packet": [
         "container",
         [
@@ -930,6 +931,7 @@
                   "0x28": "D2GS_INSERTSOCKETITEM",
                   "0x29": "D2GS_SCROLLTOTOME",
                   "0x2A": "D2GS_ITEMTOCUBE",
+                  "0x2B": "D2GS_UNKNOWN3",
                   "0x2D": "D2GS_UNSELECTOBJ",
                   "0x2E": "D2GS_CHATUNK1",
                   "0x2F": "D2GS_NPCINIT",
@@ -1078,7 +1080,8 @@
                   "D2GS_SWITCHEQUIP": "D2GS_SWITCHEQUIP",
                   "D2GS_RESURRECTMERC": "D2GS_RESURRECTMERC",
                   "D2GS_INVENTORYTOBELT": "D2GS_INVENTORYTOBELT",
-                  "D2GS_GAMEEXIT": "D2GS_GAMEEXIT"
+                  "D2GS_GAMEEXIT": "D2GS_GAMEEXIT",
+                  "D2GS_UNKNOWN3": "D2GS_UNKNOWN3"
                 }
               }
             ]
@@ -1297,6 +1300,10 @@
         },
         {
           "name": "ladder",
+          "type": "lu8"
+        },
+        {
+          "name": "unknown",
           "type": "lu8"
         }
       ]],
@@ -2783,6 +2790,13 @@
         }
       ]],
       "D2GS_UNKNOWN38": ["container", []],
+      "D2GS_UNKNOWN39": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 356, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKNOWN40": ["container", [
+        {"name":"unknown","type" : ["array", {"count": 12, "type": "lu8" } ] }
+      ]],
+      "D2GS_UNKOWNFF": ["container", []],
       "packet": [
         "container",
         [
@@ -2974,7 +2988,10 @@
                   "0xB2": "D2GS_UNKNOWN37",
                   "0xB3": "D2GS_IPBAN",
                   "0xB4": "D2GS_UNKNOWN38",
-                  "0xB5": "D2GS_OVERHEAD"
+                  "0xB5": "D2GS_OVERHEAD",
+                  "0xD5": "D2GS_UNKNOWN39",
+                  "0xF5": "D2GS_UNKNOWN40",
+                  "0xFF": "D2GS_UNKOWNFF"
                 }
               }
             ]
@@ -3167,7 +3184,10 @@
                   "D2GS_UNKNOWN36": "D2GS_UNKNOWN36",
                   "D2GS_UNKNOWN37": "D2GS_UNKNOWN37",
                   "D2GS_IPBAN": "D2GS_IPBAN",
-                  "D2GS_UNKNOWN38": "D2GS_UNKNOWN38"
+                  "D2GS_UNKNOWN38": "D2GS_UNKNOWN38",
+                  "D2GS_UNKNOWN39": "D2GS_UNKNOWN39",
+                  "D2GS_UNKNOWN40": "D2GS_UNKNOWN40",
+                  "D2GS_UNKOWNFF": "D2GS_UNKOWNFF"
                 }
               }
             ]
